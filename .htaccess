@@ -1,5 +1,8 @@
 # SEO & Performance Optimization for Free Fire Point Calculator
-# Cara Hitung Poin Turnamen Free Fire
+# Domain: freefirepoint.my.id
+# Cara Hitung Poin Turnamen Free Fire Indonesia
+# Last Updated: 2024-12-30
+# Note: GitHub Pages has limited .htaccess support, some rules may not apply
 
 # Enable Gzip Compression
 <IfModule mod_deflate.c>

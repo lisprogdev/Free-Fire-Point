@@ -5,23 +5,68 @@
     
     <!-- Main Page - Cara Hitung Poin Turnamen Free Fire -->
     <url>
-        <loc>https://yoursite.com/</loc>
-        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+        <loc>https://freefirepoint.my.id/</loc>
+        <lastmod>2024-12-30T12:00:00+07:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
-            <image:loc>https://yoursite.com/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Free Fire Point Calculator</image:title>
-            <image:caption>Cara hitung poin turnamen Free Fire - panduan lengkap</image:caption>
+            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
+            <image:title>Free Fire Point Calculator Indonesia</image:title>
+            <image:caption>Cara hitung poin turnamen Free Fire 2024 - Kalkulator kill point dan placement point terlengkap</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://freefirepoint.my.id/images/Logo/Logo.png</image:loc>
+            <image:title>Logo Free Fire Point Calculator</image:title>
+            <image:caption>Logo kalkulator poin Free Fire Indonesia</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://freefirepoint.my.id/images/Logo/Booyah%20Logo.png</image:loc>
+            <image:title>Booyah Logo Free Fire</image:title>
+            <image:caption>Logo Booyah Free Fire untuk ranking #1 turnamen</image:caption>
         </image:image>
     </url>
     
-    <!-- Additional pages can be added here -->
+    <!-- Calculator Page -->
     <url>
-        <loc>https://yoursite.com/index.html</loc>
-        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+        <loc>https://freefirepoint.my.id/pages/kalkulator.html</loc>
+        <lastmod>2024-12-30T12:00:00+07:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
+            <image:title>Kalkulator Poin Free Fire Turnamen</image:title>
+            <image:caption>Halaman kalkulator untuk menghitung kill point dan placement point turnamen Free Fire</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Index HTML (alternative access) -->
+    <url>
+        <loc>https://freefirepoint.my.id/index.html</loc>
+        <lastmod>2024-12-30T12:00:00+07:00</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Section-specific URLs for better indexing -->
+    <url>
+        <loc>https://freefirepoint.my.id/#tentang</loc>
+        <lastmod>2024-12-30T12:00:00+07:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://freefirepoint.my.id/#kontak</loc>
+        <lastmod>2024-12-30T12:00:00+07:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://freefirepoint.my.id/#faq</loc>
+        <lastmod>2024-12-30T12:00:00+07:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     
 </urlset>

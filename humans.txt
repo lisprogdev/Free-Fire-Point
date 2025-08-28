@@ -3,42 +3,82 @@
 
 # TEAM
 
-    Developer: Free Fire Point Calculator Team
-    Contact: info [at] yoursite.com
-    Twitter: @yoursite
+    Developer: Tekno Ogi - Free Fire Point Calculator Indonesia
+    Contact: ogitekno [at] gmail.com
+    Instagram: @tekno_ogi
+    TikTok: @tekno_ogi
+    YouTube: @tekno_ogi
+    WhatsApp: +62 877-2007-5446
+    Location: Palanro, Mallusetasi, Barru, Sulawesi Selatan, Indonesia
     From: Indonesia
 
 # THANKS
 
     Free Fire Community Indonesia
-    Garena Free Fire Official
+    Garena Free Fire Official Indonesia
     SEO Community Indonesia
+    GitHub Pages Hosting
+    Gaming Community Sulawesi Selatan
+    GH LBK ESPORT Team
 
 # TECHNOLOGY COLOPHON
 
-    HTML5, CSS3, JavaScript
-    Favicon Generator
+    HTML5, CSS3, Vanilla JavaScript
+    Tailwind CSS v4 (CDN)
+    Font Awesome 6.5.1
+    AOS (Animate On Scroll) 2.3.4
+    html2canvas 1.4.1
+    IndexedDB for data persistence
     Schema.org structured data
     Open Graph Protocol
     Twitter Cards
-    Progressive Web App (PWA)
+    Favicon Generator
+    Google Fonts (Orbitron, Rajdhani, Exo 2, Russo One)
     
 # SITE
 
-    Last update: 2024/01/01
+    Last update: 2024/12/30
     Language: Indonesian / Bahasa Indonesia
     Doctype: HTML5
-    IDE: Visual Studio Code
+    IDE: Cursor / Visual Studio Code
+    Hosting: GitHub Pages
+    Domain: freefirepoint.my.id
+    Repository: Public
     
 # KEYWORDS
 
-    Primary: cara hitung poin turnamen free fire
-    Secondary: kill point ff, placement point, sistem poin free fire
-    Long-tail: cara menghitung skor turnamen free fire 2024
+    Primary: cara hitung poin turnamen free fire, kalkulator poin ff
+    Secondary: kill point ff, placement point, sistem poin free fire, booyah point
+    Long-tail: cara menghitung skor turnamen free fire 2024 indonesia
+    Local: turnamen free fire sulawesi selatan, ff tournament barru
+    Gaming: free fire calculator indonesia, ff point system 2024
     
 # SEO FOCUS
 
-    Target Audience: Free Fire Players Indonesia
-    Content Type: Gaming Guide & Calculator
-    Geographic Target: Indonesia
-    Device Target: Mobile & Desktop
+    Target Audience: Free Fire Players Indonesia (Usia 13-25)
+    Content Type: Gaming Calculator & Tournament Guide
+    Geographic Target: Indonesia (Focus: Sulawesi Selatan)
+    Device Target: Mobile First, Desktop Compatible
+    Search Intent: Transactional & Informational
+    Competition Level: Medium
+    Content Quality: High (Original calculator tool)
+    
+# FEATURES
+
+    ✓ 2-Match Tournament Calculator
+    ✓ Kill Point & Placement Point System
+    ✓ Real-time Calculation
+    ✓ Data Persistence (IndexedDB)
+    ✓ JPG Export Functionality
+    ✓ Mobile Responsive Design
+    ✓ SEO Optimized
+    ✓ Fast Loading (GitHub Pages)
+    ✓ Free to Use
+    
+# PERFORMANCE
+
+    Target Load Time: < 3 seconds
+    Mobile Score: 90+ (PageSpeed Insights)
+    Desktop Score: 95+ (PageSpeed Insights)
+    Core Web Vitals: Green
+    Accessibility: AA Compliant

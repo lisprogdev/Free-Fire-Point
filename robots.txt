@@ -2,20 +2,23 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://yoursite.com/sitemap.xml
+Sitemap: https://freefirepoint.my.id/sitemap.xml
 
-# Crawl-delay for better server performance
+# Crawl-delay for better server performance (GitHub Pages optimized)
 Crawl-delay: 1
 
 # Disallow admin areas (if any)
 Disallow: /admin/
 Disallow: /private/
 Disallow: /.git/
+Disallow: /.github/
+Disallow: /node_modules/
 
-# Allow important files
+# Allow important files and directories
 Allow: /images/
 Allow: /css/
 Allow: /js/
+Allow: /pages/
 Allow: /*.css$
 Allow: /*.js$
 Allow: /*.png$
@@ -25,11 +28,25 @@ Allow: /*.gif$
 Allow: /*.webp$
 Allow: /*.svg$
 Allow: /*.ico$
+Allow: /*.html$
+Allow: /*.webmanifest$
 
-# Block common bot traps
+# Block common bot traps and unnecessary files
 Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /logs/
+Disallow: /*.log$
+Disallow: /README.md
+Disallow: /LICENSE
+Disallow: /package.json
+Disallow: /package-lock.json
 
-# Free Fire Point Calculator - SEO Optimized
-# Focus keywords: cara hitung poin turnamen free fire
+# Free Fire Point Calculator Indonesia - SEO Optimized
+# Primary keywords: cara hitung poin turnamen free fire, kalkulator poin ff
+# Target location: Indonesia
+# Last updated: 2024-12-30
+
+# Specific page priorities for crawlers
+# High priority: Calculator and main pages
+# Medium priority: Info sections
+# Low priority: Static assets
