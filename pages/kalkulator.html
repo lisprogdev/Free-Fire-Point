@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../images/favicon/android-chrome-512x512.png">
+    <link rel="manifest" href="../images/favicon/site.webmanifest">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Kalkulator Poin Free Fire - Hitung Kill Point & Placement Point</title>
+    <meta name="description" content="Kalkulator poin turnamen Free Fire terlengkap. Hitung kill point, placement point, dan total skor dengan mudah. Gratis dan akurat 100% sesuai sistem resmi FF.">
+    <meta name="keywords" content="kalkulator poin free fire, hitung poin ff, kill point calculator, placement point, turnamen free fire, kalkulator ff, poin free fire calculator">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kalkulator Poin Free Fire - Hitung Kill Point & Placement Point">
+    <meta property="og:description" content="Kalkulator poin turnamen Free Fire terlengkap. Hitung kill point, placement point, dan total skor dengan mudah. Gratis dan akurat 100% sesuai sistem resmi FF.">
+    <meta property="og:url" content="https://yoursite.com/kalkulator">
+    <meta property="og:site_name" content="Free Fire Point Calculator">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:image" content="../images/favicon/android-chrome-512x512.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kalkulator Poin Free Fire - Hitung Kill Point & Placement Point">
+    <meta name="twitter:description" content="Kalkulator poin turnamen Free Fire terlengkap. Hitung kill point, placement point, dan total skor dengan mudah. Gratis dan akurat 100% sesuai sistem resmi FF.">
+    <meta name="twitter:image" content="../images/favicon/android-chrome-512x512.png">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Free Fire Point Calculator">
+    <meta name="language" content="Indonesian">
+    <meta name="theme-color" content="#667eea">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yoursite.com/kalkulator">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Gaming Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Russo+One&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- AOS (Animate On Scroll) CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/kalkulator.css">
+</head>
+<body class="bg-gray-900 text-slate-100">
+    <!-- Main Content Wrapper (for blur effect) -->
+    <div id="mainContent" class="transition-all duration-300">
+    <!-- Top Navigation -->
+    <nav class="nav-gaming-bg fixed top-0 left-0 right-0 z-50 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo & Brand -->
+                <div class="flex items-center space-x-3">
+                    <img src="../images/Logo/Logo.png" alt="Free Fire Point Logo" class="h-10 w-10 logo-glow">
+                    <div class="font-gaming text-slate-100">
+                        <span class="text-xl font-bold logo-text">FREE FIRE</span>
+                        <span class="text-yellow-400 text-xl font-bold logo-text">POINT</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Actions -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <!-- Social Media Icons -->
+                    <div class="flex items-center space-x-3 mr-4">
+                        <a href="https://www.instagram.com/tekno_ogi/" target="_blank" class="social-icon instagram hover:scale-110 p-2 rounded-lg" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@tekno_ogi" target="_blank" class="social-icon tiktok hover:scale-110 p-2 rounded-lg" title="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@tekno_ogi" target="_blank" class="social-icon youtube hover:scale-110 p-2 rounded-lg" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Donation Button -->
+                    <a href="https://saweria.co/teknoogi" target="_blank" class="btn-gaming-nav px-6 py-2 rounded-full font-gaming-menu text-sm uppercase tracking-wider inline-flex items-center">
+                        <i class="fas fa-heart mr-2"></i>
+                        Donasi
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button type="button" class="mobile-menu-toggle p-2 rounded-lg" id="mobile-menu-button">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden mobile-menu hidden" id="mobile-menu">
+            <div class="px-4 pt-4 pb-6 space-y-4">
+                <!-- Mobile Social Links -->
+                <div class="flex items-center justify-center space-x-6 pb-4 border-b border-gray-700">
+                    <a href="https://www.instagram.com/tekno_ogi/" target="_blank" class="social-icon instagram p-2" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@tekno_ogi" target="_blank" class="social-icon tiktok p-2" title="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@tekno_ogi" target="_blank" class="social-icon youtube p-2" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+                
+                <!-- Mobile Donation Button -->
+                <a href="https://saweria.co/teknoogi" target="_blank" class="btn-gaming-nav w-full py-3 rounded-lg font-gaming-menu text-sm uppercase tracking-wider inline-flex items-center justify-center">
+                    <i class="fas fa-heart mr-2"></i>
+                    Donasi
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Secondary Navigation Menu -->
+    <nav class="nav-gaming-bg nav-secondary border-t border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-center md:justify-start">
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-1">
+                    <a href="../index.html" class="menu-nav-item font-gaming-menu flex items-center">
+                        <i class="fas fa-home mr-2"></i>
+                        Beranda
+                    </a>
+                    <a href="../index.html#tentang" class="menu-nav-item font-gaming-menu flex items-center">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        Tentang Kami
+                    </a>
+                    <a href="kalkulator.html" class="menu-nav-item active font-gaming-menu flex items-center">
+                        <i class="fas fa-calculator mr-2"></i>
+                        Kalkulator
+                    </a>
+                    <a href="../index.html#kontak" class="menu-nav-item font-gaming-menu flex items-center">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Kontak
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Navigation -->
+                <div class="md:hidden w-full">
+                    <div class="flex justify-around py-2">
+                        <a href="../index.html" class="menu-nav-item font-gaming-menu flex flex-col items-center text-xs">
+                            <i class="fas fa-home text-lg mb-1"></i>
+                            Beranda
+                        </a>
+                        <a href="../index.html#tentang" class="menu-nav-item font-gaming-menu flex flex-col items-center text-xs">
+                            <i class="fas fa-info-circle text-lg mb-1"></i>
+                            Tentang
+                        </a>
+                        <a href="kalkulator.html" class="menu-nav-item active font-gaming-menu flex flex-col items-center text-xs">
+                            <i class="fas fa-calculator text-lg mb-1"></i>
+                            Kalkulator
+                        </a>
+                        <a href="../index.html#kontak" class="menu-nav-item font-gaming-menu flex flex-col items-center text-xs">
+                            <i class="fas fa-envelope text-lg mb-1"></i>
+                            Kontak
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <section class="min-h-screen pt-32 pb-16 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center mb-8">
+                <h1 class="text-3xl md:text-5xl font-gaming font-bold mb-4">
+                    <span class="bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent">
+                        KALKULATOR POIN
+                    </span><br>
+                    <span class="text-slate-200">FREE FIRE TURNAMEN</span>
+                </h1>
+                <p class="text-lg text-slate-300">
+                    Masukkan data turnamen untuk menghitung poin dan ranking
+                </p>
+            </div> 
+
+            <!-- Tournament Info Form -->
+            <div class="mb-8 bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50">
+                <h3 class="text-xl font-gaming font-bold text-slate-100 mb-4 flex items-center">
+                    <i class="fas fa-trophy text-yellow-400 mr-3"></i>
+                    Informasi Turnamen
+                </h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="tournamentName" class="block text-sm font-medium text-slate-300 mb-2">
+                            <i class="fas fa-gamepad mr-2"></i>Nama Turnamen
+                        </label>
+                        <input type="text" id="tournamentName" placeholder="Contoh: Turnamen Free Fire Ramadan Cup" 
+                               class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50 transition-all duration-300">
+                    </div>
+                    <div>
+                        <label for="tournamentPhase" class="block text-sm font-medium text-slate-300 mb-2">
+                            <i class="fas fa-flag mr-2"></i>Fase Turnamen
+                        </label>
+                        <input type="text" id="tournamentPhase" placeholder="Contoh: Babak Penyisihan, Semi Final, Grand Final" 
+                               class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50 transition-all duration-300">
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Left Side - Input Table -->
+                <div class="bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-2xl font-gaming font-bold text-slate-100 flex items-center">
+                            <i class="fas fa-edit text-yellow-400 mr-3"></i>
+                            Input Data Tim
+                        </h2>
+                        <div class="flex space-x-2">
+                            <button id="resetAllData" class="btn-gaming-nav bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-gaming-menu text-sm">
+                                <i class="fas fa-trash mr-2"></i>
+                                Reset
+                            </button>
+                            <button id="saveAllData" class="btn-gaming-nav px-4 py-2 rounded-lg font-gaming-menu text-sm">
+                                <i class="fas fa-save mr-2"></i>
+                                Simpan Semua
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="bg-gradient-to-r from-yellow-500 to-orange-500">
+                                    <th class="px-3 py-3 text-center text-xs font-gaming font-bold text-slate-900 uppercase">
+                                        Nama Team
+                                    </th>
+                                    <th class="px-2 py-3 text-center text-xs font-gaming font-bold text-slate-900 uppercase" colspan="2">
+                                        Match 1
+                                    </th>
+                                    <th class="px-2 py-3 text-center text-xs font-gaming font-bold text-slate-900 uppercase" colspan="2">
+                                        Match 2
+                                    </th>
+                                </tr>
+                                <tr class="bg-gradient-to-r from-yellow-400 to-orange-400">
+                                    <th class="px-3 py-2 text-center text-xs font-gaming font-bold text-slate-900"></th>
+                                    <th class="px-2 py-2 text-center text-xs font-gaming font-bold text-slate-900">Rank</th>
+                                    <th class="px-2 py-2 text-center text-xs font-gaming font-bold text-slate-900">Kill</th>
+                                    <th class="px-2 py-2 text-center text-xs font-gaming font-bold text-slate-900">Rank</th>
+                                    <th class="px-2 py-2 text-center text-xs font-gaming font-bold text-slate-900">Kill</th>
+                                </tr>
+                            </thead>
+                            <tbody id="inputTableBody" class="divide-y divide-slate-600/50">
+                                <!-- Table rows will be generated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Usage Guide -->
+                    <div class="mt-6 bg-gradient-to-br from-blue-600/10 to-cyan-600/10 backdrop-blur-lg rounded-xl p-4 border border-blue-500/20">
+                        <h3 class="text-lg font-gaming font-bold text-slate-100 mb-3 flex items-center">
+                            <i class="fas fa-question-circle text-blue-400 mr-3"></i>
+                            Cara Penggunaan
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <div class="flex-shrink-0 w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs font-bold">1</div>
+                                <div class="text-slate-300 text-sm">
+                                    <strong class="text-blue-400">Isi Nama Tim:</strong> Ubah nama tim sesuai dengan peserta turnamen Anda.
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="flex-shrink-0 w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs font-bold">2</div>
+                                <div class="text-slate-300 text-sm">
+                                    <strong class="text-blue-400">Input Data Match:</strong> Pilih ranking akhir (1-12) dan jumlah kill untuk setiap match.
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="flex-shrink-0 w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs font-bold">3</div>
+                                <div class="text-slate-300 text-sm">
+                                    <strong class="text-blue-400">Simpan Data:</strong> Klik tombol "Simpan Semua" untuk menyimpan progress Anda.
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="flex-shrink-0 w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs font-bold">4</div>
+                                <div class="text-slate-300 text-sm">
+                                    <strong class="text-blue-400">Hitung Hasil:</strong> Klik "Hitung" di tabel hasil untuk melihat ranking final dan statistik.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 p-3 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
+                            <p class="text-yellow-400 text-xs flex items-center">
+                                <i class="fas fa-lightbulb mr-2"></i>
+                                <strong>Tips:</strong> Data akan tersimpan otomatis di browser. Gunakan "Reset" untuk turnamen baru.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Results Table -->
+                <div class="bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-2xl font-gaming font-bold text-slate-100 flex items-center">
+                            <i class="fas fa-trophy text-yellow-400 mr-3"></i>
+                            Hasil Ranking
+                        </h2>
+                        <div class="flex space-x-2">
+                            <button id="calculateResults" class="btn-gaming-nav px-4 py-2 rounded-lg font-gaming-menu text-sm">
+                                <i class="fas fa-calculator mr-2"></i>
+                                Hitung
+                            </button>
+                            <button id="downloadJPG" class="btn-gaming-nav bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg font-gaming-menu text-sm">
+                                <i class="fas fa-download mr-2"></i>
+                                Download JPG
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="bg-gradient-to-r from-yellow-500 to-orange-500">
+                                    <th class="px-3 py-3 text-center text-xs font-gaming font-bold text-slate-900 uppercase">
+                                        Rank
+                                    </th>
+                                    <th class="px-3 py-3 text-center text-xs font-gaming font-bold text-slate-900 uppercase">
+                                        Nama Team
+                                    </th>
+                                    <th class="px-2 py-3 text-center text-xs font-gaming font-bold text-slate-900 uppercase" colspan="2">
+                                        Point
+                                    </th>
+                                    <th class="px-3 py-3 text-center text-xs font-gaming font-bold text-slate-900 uppercase">
+                                        Total
+                                    </th>
+                                </tr>
+                                <tr class="bg-gradient-to-r from-yellow-400 to-orange-400">
+                                    <th class="px-3 py-2 text-center text-xs font-gaming font-bold text-slate-900"></th>
+                                    <th class="px-3 py-2 text-center text-xs font-gaming font-bold text-slate-900"></th>
+                                    <th class="px-2 py-2 text-center text-xs font-gaming font-bold text-slate-900">M1</th>
+                                    <th class="px-2 py-2 text-center text-xs font-gaming font-bold text-slate-900">M2</th>
+                                    <th class="px-3 py-2 text-center text-xs font-gaming font-bold text-slate-900">Point</th>
+                                </tr>
+                            </thead>
+                            <tbody id="resultsTableBody" class="divide-y divide-slate-600/50">
+                                <!-- Results will be generated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Most Kill Team Statistics -->
+                    <div id="killStatsSection" class="mt-6 bg-gradient-to-br from-red-600/10 to-orange-600/10 backdrop-blur-lg rounded-xl p-4 border border-red-500/20 hidden">
+                        <h3 class="text-lg font-gaming font-bold text-slate-100 mb-3 flex items-center">
+                            <i class="fas fa-crosshairs text-red-400 mr-3"></i>
+                            Most Kill Team
+                        </h3>
+                        <div id="killStatsContent" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <!-- Kill statistics will be generated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Placement Points Reference -->
+            <div class="mt-8 bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50">
+                <h3 class="text-xl font-gaming font-bold text-slate-100 mb-4 flex items-center">
+                    <i class="fas fa-info-circle text-blue-400 mr-3"></i>
+                    Referensi Poin Placement
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-center">
+                    <div class="bg-yellow-400/20 border border-yellow-400/30 rounded-lg p-3">
+                        <div class="text-yellow-400 font-bold">BOOYAH</div>
+                        <div class="text-slate-300 text-sm">12 Poin</div>
+                    </div>
+                    <div class="bg-slate-700/50 border border-slate-600/50 rounded-lg p-3">
+                        <div class="text-slate-300 font-bold">#2</div>
+                        <div class="text-slate-400 text-sm">9 Poin</div>
+                    </div>
+                    <div class="bg-slate-700/50 border border-slate-600/50 rounded-lg p-3">
+                        <div class="text-slate-300 font-bold">#3</div>
+                        <div class="text-slate-400 text-sm">8 Poin</div>
+                    </div>
+                    <div class="bg-slate-700/50 border border-slate-600/50 rounded-lg p-3">
+                        <div class="text-slate-300 font-bold">#4</div>
+                        <div class="text-slate-400 text-sm">7 Poin</div>
+                    </div>
+                    <div class="bg-slate-700/50 border border-slate-600/50 rounded-lg p-3">
+                        <div class="text-slate-300 font-bold">#5</div>
+                        <div class="text-slate-400 text-sm">6 Poin</div>
+                    </div>
+                    <div class="bg-slate-700/50 border border-slate-600/50 rounded-lg p-3">
+                        <div class="text-slate-300 font-bold">#6</div>
+                        <div class="text-slate-400 text-sm">5 Poin</div>
+                    </div>
+                    <div class="bg-slate-700/50 border border-slate-600/50 rounded-lg p-3">
+                        <div class="text-slate-300 font-bold">#7</div>
+                        <div class="text-slate-400 text-sm">4 Poin</div>
+                    </div>
+                    <div class="bg-slate-700/50 border border-slate-600/50 rounded-lg p-3">
+                        <div class="text-slate-300 font-bold">#8</div>
+                        <div class="text-slate-400 text-sm">3 Poin</div>
+                    </div>
+                    <div class="bg-slate-700/50 border border-slate-600/50 rounded-lg p-3">
+                        <div class="text-slate-300 font-bold">#9</div>
+                        <div class="text-slate-400 text-sm">2 Poin</div>
+                    </div>
+                    <div class="bg-slate-700/50 border border-slate-600/50 rounded-lg p-3">
+                        <div class="text-slate-300 font-bold">#10</div>
+                        <div class="text-slate-400 text-sm">1 Poin</div>
+                    </div>
+                    <div class="bg-slate-700/50 border border-slate-600/50 rounded-lg p-3">
+                        <div class="text-slate-300 font-bold">#11</div>
+                        <div class="text-slate-400 text-sm">0 Poin</div>
+                    </div>
+                    <div class="bg-slate-700/50 border border-slate-600/50 rounded-lg p-3">
+                        <div class="text-slate-300 font-bold">#12</div>
+                        <div class="text-slate-400 text-sm">0 Poin</div>
+                    </div>
+                </div>
+                <p class="text-slate-400 text-sm mt-4 text-center">
+                    <i class="fas fa-crosshairs mr-2"></i>
+                    Kill Point: 1 Kill = 1 Poin | Total Poin = Placement Point + Kill Point
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-slate-700/50 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-slate-400 text-sm mb-2">
+                    &copy; 2024 <span class="text-yellow-400 font-gaming font-bold">Free Fire Point Calculator</span>. All rights reserved.
+                </p>
+                <p class="text-slate-500 text-xs">
+                    <i class="fas fa-code text-yellow-400 mr-1"></i>
+                    Powered By <a href="https://www.instagram.com/tekno_ogi/" target="_blank" class="text-yellow-400 hover:text-yellow-300 font-medium transition-colors">Tekno Ogi</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <!-- End Main Content Wrapper -->
+
+    <!-- Reset Confirmation Modal -->
+    <div id="resetModal" class="modal-overlay fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] flex items-center justify-center p-6 hidden">
+        <div class="modal-content bg-gradient-to-br from-red-900/90 to-gray-900/90 rounded-2xl border border-red-500/30 max-w-md w-full mx-auto transform scale-95 opacity-0 transition-all duration-300" id="resetModalContent">
+            <!-- Modal Header -->
+            <div class="relative p-6 pb-4">
+                <button class="absolute top-4 right-4 text-slate-400 hover:text-slate-200 transition-colors" onclick="closeResetModal()">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                
+                <div class="text-center mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+                        <i class="fas fa-exclamation-triangle text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-2">
+                        Konfirmasi Reset Data! ⚠️
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Apakah Anda yakin ingin menghapus <strong>semua data turnamen</strong>? 
+                        Tindakan ini tidak dapat dibatalkan!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="px-6 pb-2">
+                <div class="space-y-4">
+                    <!-- Warning -->
+                    <div class="bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/30 rounded-lg p-4">
+                        <h4 class="text-red-400 font-bold mb-2 flex items-center">
+                            <i class="fas fa-fire mr-2"></i>
+                            Data Yang Akan Dihapus:
+                        </h4>
+                        <ul class="text-slate-300 text-sm space-y-1">
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mr-2 mt-0.5 text-xs"></i>
+                                <span>Semua nama tim (12 tim)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mr-2 mt-0.5 text-xs"></i>
+                                <span>Data ranking Match 1 & Match 2</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mr-2 mt-0.5 text-xs"></i>
+                                <span>Data kill semua match</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mr-2 mt-0.5 text-xs"></i>
+                                <span>Hasil perhitungan dan ranking</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tip -->
+                    <div class="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/30 rounded-lg p-4">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-lightbulb text-yellow-400 mr-2"></i>
+                            <span class="text-yellow-400 font-medium text-sm">Tips</span>
+                        </div>
+                        <p class="text-slate-300 text-sm">
+                            Jika Anda hanya ingin mengubah beberapa data, lebih baik edit manual 
+                            daripada reset semua. Reset berguna untuk turnamen baru.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-6 pt-4">
+                <div class="space-y-3">
+                    <!-- Reset Button -->
+                    <button id="confirmResetButton" onclick="performReset()" class="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+                        <i class="fas fa-trash-alt mr-2"></i>
+                        <span>Ya, Reset Semua Data</span>
+                        <i class="fas fa-fire ml-2 text-sm"></i>
+                    </button>
+                    
+                    <!-- Cancel Button -->
+                    <button class="w-full bg-slate-700 hover:bg-slate-600 text-slate-300 font-medium py-2 px-6 rounded-lg transition-colors duration-300" onclick="closeResetModal()">
+                        <i class="fas fa-shield-alt mr-2"></i>
+                        Batalkan, Jaga Data Saya
+                    </button>
+                    
+                    <!-- Info -->
+                    <div class="text-center">
+                        <p class="text-slate-500 text-xs">
+                            <i class="fas fa-info-circle mr-1"></i>
+                            Data akan dihapus secara permanen dari browser
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support Modal -->
+    <div id="supportModal" class="modal-overlay fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] flex items-center justify-center p-6 py-12 hidden">
+        <div class="modal-content bg-gradient-to-br from-slate-800 to-gray-900 rounded-2xl border border-slate-600/50 max-w-md w-full mx-auto transform scale-95 opacity-0 transition-all duration-300" id="modalContent">
+            <!-- Modal Header -->
+            <div class="relative p-6 pb-4">
+                <button class="absolute top-4 right-4 text-slate-400 hover:text-slate-200 transition-colors" onclick="closeSupportModal()">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                
+                <div class="text-center mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-slate-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-2">
+                        Dukung Kami! 💙
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Website <strong>Free Fire Point Calculator</strong> ini gratis untuk semua. 
+                        Bantu kami terus berkembang dengan memberikan dukungan!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="px-6 pb-2">
+                <div class="space-y-4">
+                    <!-- Benefits -->
+                    <div class="bg-gradient-to-r from-yellow-400/10 to-orange-400/10 border border-yellow-400/30 rounded-lg p-4">
+                        <h4 class="text-yellow-400 font-bold mb-2 flex items-center">
+                            <i class="fas fa-star mr-2"></i>
+                            Dukungan Anda Membantu:
+                        </h4>
+                        <ul class="text-slate-300 text-sm space-y-1">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mr-2 mt-0.5 text-xs"></i>
+                                <span>Fitur kalkulator lebih dari 2 match</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mr-2 mt-0.5 text-xs"></i>
+                                <span>Update sistem poin terbaru</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mr-2 mt-0.5 text-xs"></i>
+                                <span>Server yang lebih cepat</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mr-2 mt-0.5 text-xs"></i>
+                                <span>Fitur-fitur baru yang menarik</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Current Status -->
+                    <div class="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/30 rounded-lg p-4">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-info-circle text-blue-400 mr-2"></i>
+                            <span class="text-blue-400 font-medium text-sm">Status Saat Ini</span>
+                        </div>
+                        <p class="text-slate-300 text-sm">
+                            Gratis untuk <strong>2 match</strong> perhitungan. Dengan dukungan Anda, 
+                            kami bisa memberikan akses unlimited dan fitur premium!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-6 pt-4">
+                <div class="space-y-3">
+                    <!-- Support Button -->
+                    <a href="https://saweria.co/teknoogi" target="_blank" class="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center" onclick="closeSupportModal()">
+                        <img src="../images/Logo/Booyah Logo.png" alt="Booyah" class="w-5 h-5 mr-2">
+                        <span>Dukung Sekarang</span>
+                        <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                    </a>
+                    
+                    <!-- Maybe Later Button -->
+                    <button class="w-full bg-slate-700 hover:bg-slate-600 text-slate-300 font-medium py-2 px-6 rounded-lg transition-colors duration-300" onclick="closeSupportModal()">
+                        Nanti Saja
+                    </button>
+                    
+                    <!-- Don't Show Again -->
+                    <div class="text-center">
+                        <button class="text-slate-500 text-xs hover:text-slate-400 transition-colors" onclick="dontShowAgain()">
+                            Jangan tampilkan lagi
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AOS JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- html2canvas for JPG export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- JavaScript -->
+    <script src="../js/kalkulator.js"></script>
+</body>
+</html>

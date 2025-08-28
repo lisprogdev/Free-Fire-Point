@@ -41,7 +41,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     menuItems.forEach(item => {
         item.addEventListener('click', function(e) {
-            e.preventDefault();
+            const href = this.getAttribute('href');
+            
+            // Only prevent default for internal links (starting with #)
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
             
             menuItems.forEach(menuItem => {
                 menuItem.classList.remove('active');
@@ -54,6 +58,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 mobileMenuIcon.classList.remove('fa-times');
                 mobileMenuIcon.classList.add('fa-bars');
             }
+                
+                // Smooth scroll to target section
+                const targetSection = document.querySelector(href);
+                if (targetSection) {
+                    const navHeight = document.querySelector('nav').offsetHeight * 2; // Account for both navbars
+                    const targetPosition = targetSection.offsetTop - navHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+            // For external links (like pages/kalkulator.html), let the browser handle normally
         });
     });
 
@@ -86,18 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    const heroButton = document.querySelector('.btn-hero-primary');
-    if (heroButton) {
-        heroButton.addEventListener('click', function() {
-            const calculatorSection = document.querySelector('#kalkulator');
-            if (calculatorSection) {
-                calculatorSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    }
+    // Hero button now links directly to kalkulator.html - no need for scroll behavior
 
     const heroStatsNumbers = document.querySelectorAll('.hero-stats-number');
     const animateNumbers = () => {
@@ -222,26 +229,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Smooth scroll for navigation links
-    const navLinks = document.querySelectorAll('.menu-nav-item');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href && href.startsWith('#')) {
-                e.preventDefault();
-                const targetSection = document.querySelector(href);
-                if (targetSection) {
-                    const navHeight = document.querySelector('nav').offsetHeight * 2; // Account for both navbars
-                    const targetPosition = targetSection.offsetTop - navHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
-    });
+    // Smooth scroll for navigation links (handled in main menu event listener above)
+    // This section is now integrated into the main menuItems event listener to avoid conflicts
 
     // Parallax effect for background elements
     window.addEventListener('scroll', function() {
