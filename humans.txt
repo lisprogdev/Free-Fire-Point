@@ -1,0 +1,44 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Developer: Free Fire Point Calculator Team
+    Contact: info [at] yoursite.com
+    Twitter: @yoursite
+    From: Indonesia
+
+# THANKS
+
+    Free Fire Community Indonesia
+    Garena Free Fire Official
+    SEO Community Indonesia
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3, JavaScript
+    Favicon Generator
+    Schema.org structured data
+    Open Graph Protocol
+    Twitter Cards
+    Progressive Web App (PWA)
+    
+# SITE
+
+    Last update: 2024/01/01
+    Language: Indonesian / Bahasa Indonesia
+    Doctype: HTML5
+    IDE: Visual Studio Code
+    
+# KEYWORDS
+
+    Primary: cara hitung poin turnamen free fire
+    Secondary: kill point ff, placement point, sistem poin free fire
+    Long-tail: cara menghitung skor turnamen free fire 2024
+    
+# SEO FOCUS
+
+    Target Audience: Free Fire Players Indonesia
+    Content Type: Gaming Guide & Calculator
+    Geographic Target: Indonesia
+    Device Target: Mobile & Desktop

@@ -1,0 +1,41 @@
+{
+    "name": "Free Fire Point Calculator - Cara Hitung Poin Turnamen",
+    "short_name": "FF Point Calc",
+    "description": "Panduan lengkap cara menghitung poin turnamen Free Fire. Kill point, placement point, dan strategi untuk menang turnamen FF.",
+    "icons": [
+        {
+            "src": "/images/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/images/favicon/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "theme_color": "#667eea",
+    "background_color": "#667eea",
+    "display": "standalone",
+    "orientation": "portrait",
+    "start_url": "/",
+    "scope": "/",
+    "lang": "id",
+    "categories": ["games", "education", "entertainment"],
+    "shortcuts": [
+        {
+            "name": "Hitung Poin FF",
+            "short_name": "Hitung Poin",
+            "description": "Langsung ke kalkulator poin Free Fire",
+            "url": "/",
+            "icons": [
+                {
+                    "src": "/images/favicon/android-chrome-192x192.png",
+                    "sizes": "192x192"
+                }
+            ]
+        }
+    ]
+}

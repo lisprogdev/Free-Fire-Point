@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+    
+    <!-- Main Page - Cara Hitung Poin Turnamen Free Fire -->
+    <url>
+        <loc>https://yoursite.com/</loc>
+        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://yoursite.com/images/favicon/android-chrome-512x512.png</image:loc>
+            <image:title>Free Fire Point Calculator</image:title>
+            <image:caption>Cara hitung poin turnamen Free Fire - panduan lengkap</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Additional pages can be added here -->
+    <url>
+        <loc>https://yoursite.com/index.html</loc>
+        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+</urlset>
