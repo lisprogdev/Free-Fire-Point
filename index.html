@@ -122,9 +122,23 @@
         "image": "images/favicon/android-chrome-512x512.png"
     }
     </script>
+
+    <!-- Google AdSense AMP Auto Ads -->
+    <script async custom-element="amp-auto-ads"
+            src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+    <!-- Google AdSense Display Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789892641077279"
+         crossorigin="anonymous"></script>
 </head>
 
 <body class="bg-gray-900 text-slate-100">
+    <!-- Google AdSense AMP Auto Ads -->
+    <amp-auto-ads type="adsense"
+            data-ad-client="ca-pub-9789892641077279">
+    </amp-auto-ads>
+
     <!-- Main Content Wrapper (for blur effect) -->
     <div id="mainContent" class="transition-all duration-300">
         <!-- Top Navigation -->
@@ -305,11 +319,11 @@
 
                         <!-- Action Buttons -->
                         <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-                            <a href="pages/kalkulator.html"
+                            <button onclick="showAdModal()"
                                 class="btn-hero-primary px-8 py-4 rounded-full text-lg font-bold inline-flex items-center justify-center pulse-animation">
                                 <i class="fas fa-calculator mr-3"></i>
                                 Hitung Poin FF Sekarang
-                            </a>
+                            </button>
                             <a href="https://saweria.co/teknoogi" target="_blank"
                                 class="btn-hero-secondary px-8 py-4 rounded-full text-lg font-bold inline-flex items-center justify-center">
                                 <i class="fas fa-coffee mr-3"></i>
@@ -1176,6 +1190,72 @@
         </footer>
     </div>
     <!-- End Main Content Wrapper -->
+
+    <!-- Ad Modal -->
+    <div id="adModal"
+        class="modal-overlay fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] flex items-center justify-center p-6 py-12 hidden">
+        <div class="modal-content bg-gradient-to-br from-slate-800 to-gray-900 rounded-2xl border border-slate-600/50 max-w-2xl w-full mx-auto transform scale-95 opacity-0 transition-all duration-300" id="adModalContent">
+            <!-- Modal Header -->
+            <div class="relative p-6 pb-4">
+                <button class="absolute top-4 right-4 text-slate-400 hover:text-slate-200 transition-colors" onclick="closeAdModal()">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                
+                <div class="text-center mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-calculator text-slate-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-2">
+                        Kalkulator Poin Free Fire
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Akses kalkulator poin turnamen Free Fire yang akurat dan mudah digunakan
+                    </p>
+                </div>
+            </div>
+
+            <!-- Modal Body - Ad Content -->
+            <div class="px-6 pb-4">
+                <div class="bg-slate-700/30 rounded-lg p-4 mb-4">
+                    <p class="text-slate-400 text-xs text-center mb-3">
+                        <i class="fas fa-ad mr-1"></i>
+                        Iklan
+                    </p>
+                    <!-- Google AdSense Display Ad -->
+                    <div class="flex justify-center">
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-9789892641077279"
+                             data-ad-slot="7828481251"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-6 pt-4">
+                <div class="space-y-3">
+                    <!-- Continue to Calculator Button -->
+                    <a href="pages/kalkulator.html" onclick="closeAdModal()"
+                        class="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+                        <i class="fas fa-calculator mr-2"></i>
+                        <span>Lanjut ke Kalkulator</span>
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                    
+                    <!-- Close Button -->
+                    <button class="w-full bg-slate-700 hover:bg-slate-600 text-slate-300 font-medium py-2 px-6 rounded-lg transition-colors duration-300" onclick="closeAdModal()">
+                        <i class="fas fa-times mr-2"></i>
+                        Tutup
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Support Modal -->
     <div id="supportModal"

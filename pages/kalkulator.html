@@ -75,6 +75,10 @@
 
       gtag('config', 'G-P5J9WWT57D');
     </script>
+
+    <!-- Google AdSense Display Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789892641077279"
+         crossorigin="anonymous"></script>
 </head>
 <body class="bg-gray-900 text-slate-100">
     <!-- Main Content Wrapper (for blur effect) -->
@@ -211,6 +215,19 @@
                 <p class="text-lg text-slate-300">
                     Masukkan data turnamen untuk menghitung poin dan ranking
                 </p>
+            </div>
+
+            <!-- Google AdSense Display Ad -->
+            <div class="mb-8 flex justify-center">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-9789892641077279"
+                     data-ad-slot="7828481251"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div> 
 
             <!-- Tournament Info Form -->
@@ -559,6 +576,70 @@
                             Data akan dihapus secara permanen dari browser
                         </p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ad Modal for Button Triggers -->
+    <div id="adModal" class="modal-overlay fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] flex items-center justify-center p-6 py-12 hidden">
+        <div class="modal-content bg-gradient-to-br from-slate-800 to-gray-900 rounded-2xl border border-slate-600/50 max-w-2xl w-full mx-auto transform scale-95 opacity-0 transition-all duration-300" id="adModalContent">
+            <!-- Modal Header -->
+            <div class="relative p-6 pb-4">
+                <button class="absolute top-4 right-4 text-slate-400 hover:text-slate-200 transition-colors" onclick="closeAdModal()">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                
+                <div class="text-center mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-ad text-slate-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-2">
+                        Free Fire Point Calculator
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Terima kasih telah menggunakan kalkulator kami!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Modal Body - Ad Content -->
+            <div class="px-6 pb-4">
+                <div class="bg-slate-700/30 rounded-lg p-4 mb-4">
+                    <p class="text-slate-400 text-xs text-center mb-3">
+                        <i class="fas fa-ad mr-1"></i>
+                        Iklan
+                    </p>
+                    <!-- Google AdSense Display Ad - Button Trigger -->
+                    <div class="flex justify-center">
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-9789892641077279"
+                             data-ad-slot="8127864156"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-6 pt-4">
+                <div class="space-y-3">
+                    <!-- Continue Button -->
+                    <button onclick="closeAdModal()"
+                        class="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+                        <i class="fas fa-check mr-2"></i>
+                        <span>Lanjutkan</span>
+                    </button>
+                    
+                    <!-- Close Button -->
+                    <button class="w-full bg-slate-700 hover:bg-slate-600 text-slate-300 font-medium py-2 px-6 rounded-lg transition-colors duration-300" onclick="closeAdModal()">
+                        <i class="fas fa-times mr-2"></i>
+                        Tutup
+                    </button>
                 </div>
             </div>
         </div>

@@ -1,3 +1,66 @@
+// Ad Modal Functions for Calculator
+function showAdModal() {
+    const adModal = document.getElementById('adModal');
+    const adModalContent = document.getElementById('adModalContent');
+    
+    if (adModal && adModalContent) {
+        adModal.classList.remove('hidden');
+        adModal.classList.add('show');
+        
+        // Trigger animation
+        setTimeout(() => {
+            adModalContent.classList.add('show');
+        }, 10);
+        
+        // Blur main content
+        const mainContent = document.getElementById('mainContent');
+        if (mainContent) {
+            mainContent.classList.add('blur-active');
+        }
+    }
+}
+
+function closeAdModal() {
+    const adModal = document.getElementById('adModal');
+    const adModalContent = document.getElementById('adModalContent');
+    
+    if (adModal && adModalContent) {
+        adModalContent.classList.remove('show');
+        
+        setTimeout(() => {
+            adModal.classList.add('hidden');
+            adModal.classList.remove('show');
+        }, 300);
+        
+        // Remove blur from main content
+        const mainContent = document.getElementById('mainContent');
+        if (mainContent) {
+            mainContent.classList.remove('blur-active');
+        }
+    }
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', function(event) {
+    const adModal = document.getElementById('adModal');
+    
+    if (adModal && !adModal.classList.contains('hidden')) {
+        if (event.target === adModal) {
+            closeAdModal();
+        }
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const adModal = document.getElementById('adModal');
+        if (adModal && !adModal.classList.contains('hidden')) {
+            closeAdModal();
+        }
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize AOS (Animate On Scroll)
     if (typeof AOS !== 'undefined') {
@@ -473,6 +536,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listeners
     if (saveAllDataBtn) {
         saveAllDataBtn.addEventListener('click', async function() {
+            // Show ad modal first
+            showAdModal();
+            
             try {
                 // Get tournament info
                 const tournamentName = document.getElementById('tournamentName')?.value || '';
@@ -492,9 +558,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Show success alert
                 showAlert('Data turnamen berhasil disimpan!', 'success');
                 
-                // Show support modal
-                showSupportModal();
-                
             } catch (error) {
                 console.error('Error saving data:', error);
                 showAlert('Gagal menyimpan data. Silakan coba lagi.', 'error');
@@ -504,17 +567,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (calculateResultsBtn) {
         calculateResultsBtn.addEventListener('click', function() {
+            // Show ad modal first
+            showAdModal();
+            
             generateResultsTable();
             showAlert('Hasil berhasil dihitung!', 'success');
-            
-            // Show support modal
-            showSupportModal();
         });
     }
 
     // Reset All Data Button
     if (resetAllDataBtn) {
         resetAllDataBtn.addEventListener('click', function() {
+            // Show ad modal first
+            showAdModal();
+            
             showResetModal();
         });
     }
@@ -524,6 +590,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Download JPG Button
     if (downloadJPGBtn) {
         downloadJPGBtn.addEventListener('click', function() {
+            // Show ad modal first
+            showAdModal();
+            
             const resultsTableBody = document.getElementById('resultsTableBody');
             const tournamentName = document.getElementById('tournamentName');
             const tournamentPhase = document.getElementById('tournamentPhase');
