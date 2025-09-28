@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Favicon Links -->
-    <link rel="icon" type="image/x-icon" href="../images/favicon/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="../images/favicon/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../images/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../../images/favicon/android-chrome-512x512.png">
     <link rel="manifest" href="../images/favicon/site.webmanifest">
     
     
@@ -64,7 +64,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/kalkulator.css">
+    <link rel="stylesheet" href="../../css/kalkulator.css">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5J9WWT57D"></script>
@@ -89,7 +89,7 @@
             <div class="flex items-center justify-between h-16">
                 <!-- Logo & Brand -->
                 <div class="flex items-center space-x-3">
-                    <img src="../images/Logo/Logo.png" alt="Free Fire Point Logo" class="h-10 w-10 logo-glow">
+                    <img src="../../images/Logo/Logo.png" alt="Free Fire Point Logo" class="h-10 w-10 logo-glow">
                     <div class="font-gaming text-slate-100">
                         <span class="text-xl font-bold logo-text">FREE FIRE</span>
                         <span class="text-yellow-400 text-xl font-bold logo-text">POINT</span>
@@ -158,17 +158,149 @@
             <div class="flex items-center justify-center md:justify-start">
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-1">
-                    <a href="../index.html" class="menu-nav-item font-gaming-menu flex items-center">
+                    <a href="../../index.html" class="menu-nav-item font-gaming-menu flex items-center">
                         <i class="fas fa-home mr-2"></i>
                         Beranda
                     </a>
-                    <a href="../index.html#tentang" class="menu-nav-item font-gaming-menu flex items-center">
+                    <a href="../../index.html#tentang" class="menu-nav-item font-gaming-menu flex items-center">
                         <i class="fas fa-info-circle mr-2"></i>
                         Tentang Kami
                     </a>
-                    <a href="kalkulator.html" class="menu-nav-item active font-gaming-menu flex items-center">
-                        <i class="fas fa-calculator mr-2"></i>
-                        Kalkulator
+                    <div class="relative group">
+                        <a href="#" class="menu-nav-item active font-gaming-menu flex items-center">
+                            <i class="fas fa-calculator mr-2"></i>
+                            Kalkulator
+                            <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        
+                        <!-- Dropdown Menu -->
+                        <div class="absolute top-full left-0 mt-2 w-80 bg-gradient-to-br from-slate-800 to-gray-900 rounded-2xl border border-slate-600/50 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 max-h-96 overflow-y-auto dropdown-scroll">
+                            <div class="p-4">
+                                <!-- Fast Turnamen 12 Team -->
+                                <div class="mb-4">
+                                    <h4 class="text-sm font-gaming font-bold text-yellow-400 mb-2 flex items-center">
+                                        <i class="fas fa-bolt mr-2"></i>
+                                        Fast Turnamen | 12 Team
+                                    </h4>
+                                    <div class="space-y-1 ml-4">
+                                        <a href="2 Match.html" class="block text-slate-300 hover:text-yellow-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>2 Match
+                                        </a>
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>3 Match
+                                        </a>
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>4 Match
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- One Day 12 Team -->
+                                <div class="mb-4">
+                                    <h4 class="text-sm font-gaming font-bold text-orange-400 mb-2 flex items-center">
+                                        <i class="fas fa-calendar-day mr-2"></i>
+                                        One Day | 12 Team
+                                    </h4>
+                                    <div class="space-y-1 ml-4">
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>2M Kualifikasi 2M Final
+                                        </a>
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>2M Kualifikasi 3M Final
+                                        </a>
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>3M Kualifikasi 3M Final
+                                        </a>
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>3M Kualifikasi 4M Final
+                                        </a>
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>4M Kualifikasi 4M Final
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Fast Turnamen 15 Team -->
+                                <div class="mb-4">
+                                    <h4 class="text-sm font-gaming font-bold text-yellow-400 mb-2 flex items-center">
+                                        <i class="fas fa-bolt mr-2"></i>
+                                        Fast Turnamen | 15 Team
+                                    </h4>
+                                    <div class="space-y-1 ml-4">
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>2 Match
+                                        </a>
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>3 Match
+                                        </a>
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>4 Match
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- One Day 15 Team -->
+                                <div class="mb-4">
+                                    <h4 class="text-sm font-gaming font-bold text-orange-400 mb-2 flex items-center">
+                                        <i class="fas fa-calendar-day mr-2"></i>
+                                        One Day | 15 Team
+                                    </h4>
+                                    <div class="space-y-1 ml-4">
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>2M Kualifikasi 2M Final
+                                        </a>
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>2M Kualifikasi 3M Final
+                                        </a>
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>3M Kualifikasi 3M Final
+                                        </a>
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>3M Kualifikasi 4M Final
+                                        </a>
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>4M Kualifikasi 4M Final
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- League 12 Team -->
+                                <div class="mb-4">
+                                    <h4 class="text-sm font-gaming font-bold text-blue-400 mb-2 flex items-center">
+                                        <i class="fas fa-trophy mr-2"></i>
+                                        League | 12 Team
+                                    </h4>
+                                    <div class="space-y-1 ml-4">
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-blue-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>Champions Rush
+                                        </a>
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-blue-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>Old
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- League 15 Team -->
+                                <div class="mb-0">
+                                    <h4 class="text-sm font-gaming font-bold text-blue-400 mb-2 flex items-center">
+                                        <i class="fas fa-trophy mr-2"></i>
+                                        League | 15 Team
+                                    </h4>
+                                    <div class="space-y-1 ml-4">
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-blue-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>Champions Rush
+                                        </a>
+                                        <a href="../error/Empty.html" class="block text-slate-300 hover:text-blue-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
+                                            <i class="fas fa-play mr-2 text-xs"></i>Old
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="../index.html#cara-penggunaan" class="menu-nav-item font-gaming-menu flex items-center">
+                        <i class="fas fa-book mr-2"></i>
+                        Cara Penggunaan
                     </a>
                     <a href="../index.html#kontak" class="menu-nav-item font-gaming-menu flex items-center">
                         <i class="fas fa-envelope mr-2"></i>
@@ -187,9 +319,141 @@
                             <i class="fas fa-info-circle text-lg mb-1"></i>
                             Tentang
                         </a>
-                        <a href="kalkulator.html" class="menu-nav-item active font-gaming-menu flex flex-col items-center text-xs">
-                            <i class="fas fa-calculator text-lg mb-1"></i>
-                            Kalkulator
+                        <div class="relative group">
+                            <a href="#" class="menu-nav-item active font-gaming-menu flex flex-col items-center text-xs">
+                                <i class="fas fa-calculator text-lg mb-1"></i>
+                                Kalkulator
+                                <i class="fas fa-chevron-down text-xs mt-1 transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            
+                            <!-- Mobile Dropdown Menu -->
+                            <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-72 bg-gradient-to-br from-slate-800 to-gray-900 rounded-2xl border border-slate-600/50 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 max-h-80 overflow-y-auto dropdown-scroll">
+                                <div class="p-3">
+                                    <!-- Fast Turnamen 12 Team -->
+                                    <div class="mb-3">
+                                        <h4 class="text-xs font-gaming font-bold text-yellow-400 mb-1 flex items-center">
+                                            <i class="fas fa-bolt mr-1"></i>
+                                            Fast 12 Team
+                                        </h4>
+                                        <div class="space-y-1 ml-3">
+                                            <a href="2 Match.html" class="block text-slate-300 hover:text-yellow-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                2 Match
+                                            </a>
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                3 Match
+                                            </a>
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                4 Match
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- One Day 12 Team -->
+                                    <div class="mb-3">
+                                        <h4 class="text-xs font-gaming font-bold text-orange-400 mb-1 flex items-center">
+                                            <i class="fas fa-calendar-day mr-1"></i>
+                                            One Day 12 Team
+                                        </h4>
+                                        <div class="space-y-1 ml-3">
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                2M Kual 2M Final
+                                            </a>
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                2M Kual 3M Final
+                                            </a>
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                3M Kual 3M Final
+                                            </a>
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                3M Kual 4M Final
+                                            </a>
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                4M Kual 4M Final
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Fast Turnamen 15 Team -->
+                                    <div class="mb-3">
+                                        <h4 class="text-xs font-gaming font-bold text-yellow-400 mb-1 flex items-center">
+                                            <i class="fas fa-bolt mr-1"></i>
+                                            Fast 15 Team
+                                        </h4>
+                                        <div class="space-y-1 ml-3">
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                2 Match
+                                            </a>
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                3 Match
+                                            </a>
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                4 Match
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- One Day 15 Team -->
+                                    <div class="mb-3">
+                                        <h4 class="text-xs font-gaming font-bold text-orange-400 mb-1 flex items-center">
+                                            <i class="fas fa-calendar-day mr-1"></i>
+                                            One Day 15 Team
+                                        </h4>
+                                        <div class="space-y-1 ml-3">
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                2M Kual 2M Final
+                                            </a>
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                2M Kual 3M Final
+                                            </a>
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                3M Kual 3M Final
+                                            </a>
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                3M Kual 4M Final
+                                            </a>
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                4M Kual 4M Final
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- League 12 Team -->
+                                    <div class="mb-3">
+                                        <h4 class="text-xs font-gaming font-bold text-blue-400 mb-1 flex items-center">
+                                            <i class="fas fa-trophy mr-1"></i>
+                                            League 12 Team
+                                        </h4>
+                                        <div class="space-y-1 ml-3">
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-blue-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                Champions Rush
+                                            </a>
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-blue-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                Old
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- League 15 Team -->
+                                    <div class="mb-0">
+                                        <h4 class="text-xs font-gaming font-bold text-blue-400 mb-1 flex items-center">
+                                            <i class="fas fa-trophy mr-1"></i>
+                                            League 15 Team
+                                        </h4>
+                                        <div class="space-y-1 ml-3">
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-blue-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                Champions Rush
+                                            </a>
+                                            <a href="../error/Empty.html" class="block text-slate-300 hover:text-blue-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                Old
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="../index.html#cara-penggunaan" class="menu-nav-item font-gaming-menu flex flex-col items-center text-xs">
+                            <i class="fas fa-book text-lg mb-1"></i>
+                            Cara Pakai
                         </a>
                         <a href="../index.html#kontak" class="menu-nav-item font-gaming-menu flex flex-col items-center text-xs">
                             <i class="fas fa-envelope text-lg mb-1"></i>
