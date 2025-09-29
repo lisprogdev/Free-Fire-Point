@@ -72,101 +72,11 @@ document.addEventListener('DOMContentLoaded', function() {
             mirror: false
         });
     }
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuIcon = mobileMenuButton.querySelector('i');
+    // Navigation functionality moved to js/navigation.js
 
-    mobileMenuButton.addEventListener('click', function() {
-        const isHidden = mobileMenu.classList.contains('hidden');
-        
-        if (isHidden) {
-            mobileMenu.classList.remove('hidden');
-            mobileMenuIcon.classList.remove('fa-bars');
-            mobileMenuIcon.classList.add('fa-times');
-        } else {
-            mobileMenu.classList.add('hidden');
-            mobileMenuIcon.classList.remove('fa-times');
-            mobileMenuIcon.classList.add('fa-bars');
-        }
-    });
+    // Menu items and smooth scroll functionality moved to js/navigation.js
 
-    document.addEventListener('click', function(event) {
-        const isClickInsideMenu = mobileMenu.contains(event.target);
-        const isClickOnButton = mobileMenuButton.contains(event.target);
-        
-        if (!isClickInsideMenu && !isClickOnButton && !mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
-            mobileMenuIcon.classList.remove('fa-times');
-            mobileMenuIcon.classList.add('fa-bars');
-        }
-    });
-
-    const menuItems = document.querySelectorAll('.menu-nav-item');
-    
-    menuItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            // Only prevent default for internal links (starting with #)
-            if (href && href.startsWith('#')) {
-                e.preventDefault();
-            
-            menuItems.forEach(menuItem => {
-                menuItem.classList.remove('active');
-            });
-            
-            this.classList.add('active');
-            
-            if (!mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-                mobileMenuIcon.classList.remove('fa-times');
-                mobileMenuIcon.classList.add('fa-bars');
-            }
-                
-                // Smooth scroll to target section
-                const targetSection = document.querySelector(href);
-                if (targetSection) {
-                    const navHeight = document.querySelector('nav').offsetHeight * 2; // Account for both navbars
-                    const targetPosition = targetSection.offsetTop - navHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-            // For external links (like pages/kalkulator.html), let the browser handle normally
-        });
-    });
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    const navbars = document.querySelectorAll('nav');
-    
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        navbars.forEach(navbar => {
-            if (scrollTop > 50) {
-                navbar.style.backdropFilter = 'blur(15px)';
-                navbar.style.background = 'linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.95) 100%)';
-            } else {
-                navbar.style.backdropFilter = 'blur(10px)';
-                navbar.style.background = 'linear-gradient(135deg, var(--ff-primary) 0%, var(--ff-secondary) 100%)';
-            }
-        });
-    });
+    // Navigation scroll effects moved to js/navigation.js
 
     // Hero button now links directly to kalkulator.html - no need for scroll behavior
 

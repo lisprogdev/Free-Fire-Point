@@ -72,81 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Mobile Menu Navigation
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuIcon = mobileMenuButton.querySelector('i');
-
-    mobileMenuButton.addEventListener('click', function() {
-        const isHidden = mobileMenu.classList.contains('hidden');
-        
-        if (isHidden) {
-            mobileMenu.classList.remove('hidden');
-            mobileMenuIcon.classList.remove('fa-bars');
-            mobileMenuIcon.classList.add('fa-times');
-        } else {
-            mobileMenu.classList.add('hidden');
-            mobileMenuIcon.classList.remove('fa-times');
-            mobileMenuIcon.classList.add('fa-bars');
-        }
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const isClickInsideMenu = mobileMenu.contains(event.target);
-        const isClickOnButton = mobileMenuButton.contains(event.target);
-        
-        if (!isClickInsideMenu && !isClickOnButton && !mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
-            mobileMenuIcon.classList.remove('fa-times');
-            mobileMenuIcon.classList.add('fa-bars');
-        }
-    });
-
-    // Menu item interactions
-    const menuItems = document.querySelectorAll('.menu-nav-item');
-    
-    menuItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            // Close mobile menu when item is clicked
-            if (!mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-                mobileMenuIcon.classList.remove('fa-times');
-                mobileMenuIcon.classList.add('fa-bars');
-            }
-        });
-    });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // Navigation scroll effects
-    const navbars = document.querySelectorAll('nav');
-    
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        navbars.forEach(navbar => {
-            if (scrollTop > 50) {
-                navbar.style.backdropFilter = 'blur(15px)';
-                navbar.style.background = 'linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.95) 100%)';
-            } else {
-                navbar.style.backdropFilter = 'blur(10px)';
-                navbar.style.background = 'linear-gradient(135deg, var(--ff-primary) 0%, var(--ff-secondary) 100%)';
-            }
-        });
-    });
+    // Navigation functionality moved to js/navigation.js
 
     // Kalkulator Functionality (Elements removed - placeholder for future development)
     const killInput = document.getElementById('killInput');
@@ -273,6 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize teams data
     function initializeTeamsData() {
+        console.log('Initializing teams data...');
         teamsData = [];
         for (let i = 1; i <= 12; i++) {
             teamsData.push({
@@ -283,10 +210,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 totalPoints: 0
             });
         }
+        console.log('Teams data initialized:', teamsData);
     }
 
     // Generate input table
     function generateInputTable() {
+        console.log('Generating input table...');
+        console.log('teamsData:', teamsData);
+        console.log('inputTableBody:', inputTableBody);
+        
+        if (!inputTableBody) {
+            console.error('inputTableBody not found!');
+            return;
+        }
+        
         inputTableBody.innerHTML = '';
         
         teamsData.forEach((team, index) => {
@@ -982,6 +919,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize calculator
     async function initializeCalculator() {
+        console.log('Initializing calculator...');
+        console.log('inputTableBody:', inputTableBody);
+        console.log('resultsTableBody:', resultsTableBody);
+        
         if (inputTableBody && resultsTableBody) {
             try {
                 await initDB();
@@ -989,6 +930,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 generateInputTable();
                 generateResultsTable();
                 await loadSavedData();
+                console.log('Calculator initialized successfully');
             } catch (error) {
                 console.error('Error initializing calculator:', error);
                 showAlert('Terjadi kesalahan saat memuat kalkulator.', 'error');
@@ -997,14 +939,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 generateInputTable();
                 generateResultsTable();
             }
+        } else {
+            console.error('Required DOM elements not found!');
+            console.log('inputTableBody exists:', !!inputTableBody);
+            console.log('resultsTableBody exists:', !!resultsTableBody);
         }
-        
-
     }
 
 
 
 
+
+    // Make initializeCalculator globally available
+    window.initializeCalculator = initializeCalculator;
 
     // Start the calculator
     initializeCalculator().then(() => {
@@ -1016,6 +963,15 @@ document.addEventListener('DOMContentLoaded', function() {
             assignGlobalFunctions();
         }
     });
+
+    // Fallback initialization after 2 seconds
+    setTimeout(() => {
+        const inputTableBody = document.getElementById('inputTableBody');
+        if (inputTableBody && inputTableBody.children.length <= 1) {
+            console.log('Fallback: Re-initializing calculator...');
+            initializeCalculator();
+        }
+    }, 2000);
 
     // Only run old calculator functionality if elements exist
     if (killInput && placementInput && calculateBtn) {
