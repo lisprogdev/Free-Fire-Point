@@ -39,6 +39,19 @@
         </image:image>
     </url>
 
+    <!-- Fast Turnamen 12 Team - 2 Match Calculator -->
+    <url>
+        <loc>https://freefirepoint.my.id/pages/Fast%20Turnamen%20-%2012%20Team/2%20Match.html</loc>
+        <lastmod>2025-01-07T12:00:00+07:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.95</priority>
+        <image:image>
+            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
+            <image:title>Kalkulator Poin Free Fire Fast Turnamen 12 Team 2 Match</image:title>
+            <image:caption>Hitung poin turnamen Free Fire untuk 12 team 2 match - Kill point dan placement point</image:caption>
+        </image:image>
+    </url>
+
     <!-- Index HTML (alternative access) -->
     <url>
         <loc>https://freefirepoint.my.id/index.html</loc>
