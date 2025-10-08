@@ -34,18 +34,109 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Close mobile dropdowns when clicking outside
+    document.addEventListener('click', function(event) {
+        const isMobile = window.innerWidth < 768;
+        
+        if (isMobile) {
+            const mobileDropdowns = document.querySelectorAll('.absolute.top-full');
+            const calculatorItems = document.querySelectorAll('[data-section="kalkulator"]');
+            
+            let isClickInsideDropdown = false;
+            let isClickOnCalculatorItem = false;
+            
+            // Check if click is inside any dropdown
+            mobileDropdowns.forEach(dropdown => {
+                if (dropdown.contains(event.target)) {
+                    isClickInsideDropdown = true;
+                }
+            });
+            
+            // Check if click is on calculator item
+            calculatorItems.forEach(item => {
+                if (item.contains(event.target)) {
+                    isClickOnCalculatorItem = true;
+                }
+            });
+            
+            // Close dropdowns if click is outside
+            if (!isClickInsideDropdown && !isClickOnCalculatorItem) {
+                mobileDropdowns.forEach(dropdown => {
+                    dropdown.classList.add('hidden');
+                });
+            }
+        }
+    });
+
+    // Close mobile dropdown when clicking on dropdown links
+    document.addEventListener('click', function(event) {
+        const isMobile = window.innerWidth < 768;
+        
+        if (isMobile) {
+            // Check if clicked element is a dropdown link
+            const dropdownLink = event.target.closest('.absolute.top-full a');
+            
+            if (dropdownLink) {
+                // Close all mobile dropdowns
+                const mobileDropdowns = document.querySelectorAll('.absolute.top-full');
+                mobileDropdowns.forEach(dropdown => {
+                    dropdown.classList.add('hidden');
+                });
+                
+                // Close mobile menu
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    if (mobileMenuButton) {
+                        const mobileMenuIcon = mobileMenuButton.querySelector('i');
+                        mobileMenuIcon.classList.remove('fa-times');
+                        mobileMenuIcon.classList.add('fa-bars');
+                    }
+                }
+            }
+        }
+    });
+
     // Menu item interactions
     const menuItems = document.querySelectorAll('.menu-nav-item');
     
     menuItems.forEach(item => {
         item.addEventListener('click', function(e) {
-            // Close mobile menu when item is clicked
-            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-                if (mobileMenuButton) {
-                    const mobileMenuIcon = mobileMenuButton.querySelector('i');
-                    mobileMenuIcon.classList.remove('fa-times');
-                    mobileMenuIcon.classList.add('fa-bars');
+            // Check if this is the calculator dropdown item in mobile
+            const isCalculatorItem = item.getAttribute('data-section') === 'kalkulator';
+            const isMobile = window.innerWidth < 768; // md breakpoint
+            
+            if (isCalculatorItem && isMobile) {
+                e.preventDefault(); // Prevent default behavior
+                e.stopPropagation(); // Stop event bubbling
+                
+                // Toggle mobile dropdown
+                const mobileDropdown = item.parentElement.querySelector('.absolute');
+                if (mobileDropdown) {
+                    const isVisible = !mobileDropdown.classList.contains('hidden');
+                    
+                    // Close all other dropdowns first
+                    document.querySelectorAll('.absolute.top-full').forEach(dropdown => {
+                        if (dropdown !== mobileDropdown) {
+                            dropdown.classList.add('hidden');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    if (isVisible) {
+                        mobileDropdown.classList.add('hidden');
+                    } else {
+                        mobileDropdown.classList.remove('hidden');
+                    }
+                }
+            } else {
+                // Close mobile menu when other items are clicked
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    if (mobileMenuButton) {
+                        const mobileMenuIcon = mobileMenuButton.querySelector('i');
+                        mobileMenuIcon.classList.remove('fa-times');
+                        mobileMenuIcon.classList.add('fa-bars');
+                    }
                 }
             }
         });
@@ -80,6 +171,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 navbar.style.background = 'linear-gradient(135deg, var(--ff-primary) 0%, var(--ff-secondary) 100%)';
             }
         });
+    });
+
+    // Handle window resize to close mobile dropdowns when switching to desktop
+    window.addEventListener('resize', function() {
+        const isMobile = window.innerWidth < 768;
+        
+        if (!isMobile) {
+            // Close all mobile dropdowns when switching to desktop
+            const mobileDropdowns = document.querySelectorAll('.absolute.top-full');
+            mobileDropdowns.forEach(dropdown => {
+                dropdown.classList.add('hidden');
+            });
+        }
     });
 
     // Initialize AOS (Animate On Scroll) if available
