@@ -226,6 +226,56 @@ body {
     letter-spacing: 0.3px;
 }
 
+/* Dropdown Menu Styles - Click-based instead of hover */
+.dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Calculator dropdown specific styles */
+.calculator-dropdown {
+    position: relative;
+}
+
+.calculator-dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    margin-top: 0.5rem;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(71, 85, 105, 0.5);
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    max-height: 24rem;
+    overflow-y: auto;
+}
+
+/* Mobile dropdown positioning */
+@media (max-width: 768px) {
+    .calculator-dropdown .dropdown-menu {
+        left: 50%;
+        transform: translateX(-50%) translateY(-10px);
+        width: 18rem;
+    }
+    
+    .calculator-dropdown .dropdown-menu.show {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
 /* Dropdown Menu Scrollbar */
 .dropdown-scroll::-webkit-scrollbar {
     width: 6px;

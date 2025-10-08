@@ -34,66 +34,104 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Close mobile dropdowns when clicking outside
+    // Close calculator dropdowns when clicking outside
     document.addEventListener('click', function(event) {
-        const isMobile = window.innerWidth < 768;
+        const calculatorDropdowns = document.querySelectorAll('#calculator-dropdown, #calculator-dropdown-mobile');
+        const calculatorTriggers = document.querySelectorAll('#calculator-trigger, #calculator-trigger-mobile');
+        const calculatorArrows = document.querySelectorAll('#calculator-arrow, #calculator-arrow-mobile');
         
-        if (isMobile) {
-            const mobileDropdowns = document.querySelectorAll('.absolute.top-full');
-            const calculatorItems = document.querySelectorAll('[data-section="kalkulator"]');
-            
-            let isClickInsideDropdown = false;
-            let isClickOnCalculatorItem = false;
-            
-            // Check if click is inside any dropdown
-            mobileDropdowns.forEach(dropdown => {
-                if (dropdown.contains(event.target)) {
-                    isClickInsideDropdown = true;
-                }
+        let isClickInsideDropdown = false;
+        let isClickOnTrigger = false;
+        
+        // Check if click is inside any dropdown
+        calculatorDropdowns.forEach(dropdown => {
+            if (dropdown.contains(event.target)) {
+                isClickInsideDropdown = true;
+            }
+        });
+        
+        // Check if click is on calculator trigger
+        calculatorTriggers.forEach(trigger => {
+            if (trigger.contains(event.target)) {
+                isClickOnTrigger = true;
+            }
+        });
+        
+        // Close dropdowns if click is outside
+        if (!isClickInsideDropdown && !isClickOnTrigger) {
+            calculatorDropdowns.forEach(dropdown => {
+                dropdown.classList.remove('show');
             });
             
-            // Check if click is on calculator item
-            calculatorItems.forEach(item => {
-                if (item.contains(event.target)) {
-                    isClickOnCalculatorItem = true;
-                }
+            // Reset arrows
+            calculatorArrows.forEach(arrow => {
+                arrow.style.transform = 'rotate(0deg)';
+            });
+        }
+    });
+
+    // Close calculator dropdown when clicking on dropdown links
+    document.addEventListener('click', function(event) {
+        // Check if clicked element is a dropdown link
+        const dropdownLink = event.target.closest('#calculator-dropdown a, #calculator-dropdown-mobile a');
+        
+        if (dropdownLink) {
+            // Close all calculator dropdowns
+            const calculatorDropdowns = document.querySelectorAll('#calculator-dropdown, #calculator-dropdown-mobile');
+            const calculatorArrows = document.querySelectorAll('#calculator-arrow, #calculator-arrow-mobile');
+            
+            calculatorDropdowns.forEach(dropdown => {
+                dropdown.classList.remove('show');
             });
             
-            // Close dropdowns if click is outside
-            if (!isClickInsideDropdown && !isClickOnCalculatorItem) {
-                mobileDropdowns.forEach(dropdown => {
-                    dropdown.classList.add('hidden');
-                });
+            // Reset arrows
+            calculatorArrows.forEach(arrow => {
+                arrow.style.transform = 'rotate(0deg)';
+            });
+            
+            // Close mobile menu if on mobile
+            const isMobile = window.innerWidth < 768;
+            if (isMobile && mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                if (mobileMenuButton) {
+                    const mobileMenuIcon = mobileMenuButton.querySelector('i');
+                    mobileMenuIcon.classList.remove('fa-times');
+                    mobileMenuIcon.classList.add('fa-bars');
+                }
             }
         }
     });
 
-    // Close mobile dropdown when clicking on dropdown links
-    document.addEventListener('click', function(event) {
-        const isMobile = window.innerWidth < 768;
-        
-        if (isMobile) {
-            // Check if clicked element is a dropdown link
-            const dropdownLink = event.target.closest('.absolute.top-full a');
+    // Calculator dropdown functionality for both desktop and mobile
+    const calculatorTriggers = document.querySelectorAll('#calculator-trigger, #calculator-trigger-mobile');
+    const calculatorDropdowns = document.querySelectorAll('#calculator-dropdown, #calculator-dropdown-mobile');
+    const calculatorArrows = document.querySelectorAll('#calculator-arrow, #calculator-arrow-mobile');
+    
+    calculatorTriggers.forEach((trigger, index) => {
+        trigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             
-            if (dropdownLink) {
-                // Close all mobile dropdowns
-                const mobileDropdowns = document.querySelectorAll('.absolute.top-full');
-                mobileDropdowns.forEach(dropdown => {
-                    dropdown.classList.add('hidden');
-                });
-                
-                // Close mobile menu
-                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                    if (mobileMenuButton) {
-                        const mobileMenuIcon = mobileMenuButton.querySelector('i');
-                        mobileMenuIcon.classList.remove('fa-times');
-                        mobileMenuIcon.classList.add('fa-bars');
-                    }
-                }
+            const dropdown = calculatorDropdowns[index];
+            const arrow = calculatorArrows[index];
+            const isVisible = dropdown.classList.contains('show');
+            
+            // Close all dropdowns first
+            calculatorDropdowns.forEach(drop => {
+                drop.classList.remove('show');
+            });
+            
+            // Reset all arrows
+            calculatorArrows.forEach(arr => {
+                arr.style.transform = 'rotate(0deg)';
+            });
+            
+            // Toggle current dropdown
+            if (!isVisible) {
+                dropdown.classList.add('show');
+                arrow.style.transform = 'rotate(180deg)';
             }
-        }
+        });
     });
 
     // Menu item interactions
@@ -101,42 +139,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     menuItems.forEach(item => {
         item.addEventListener('click', function(e) {
-            // Check if this is the calculator dropdown item in mobile
-            const isCalculatorItem = item.getAttribute('data-section') === 'kalkulator';
-            const isMobile = window.innerWidth < 768; // md breakpoint
+            // Skip calculator items as they are handled separately
+            if (item.getAttribute('data-section') === 'kalkulator') {
+                return;
+            }
             
-            if (isCalculatorItem && isMobile) {
-                e.preventDefault(); // Prevent default behavior
-                e.stopPropagation(); // Stop event bubbling
-                
-                // Toggle mobile dropdown
-                const mobileDropdown = item.parentElement.querySelector('.absolute');
-                if (mobileDropdown) {
-                    const isVisible = !mobileDropdown.classList.contains('hidden');
-                    
-                    // Close all other dropdowns first
-                    document.querySelectorAll('.absolute.top-full').forEach(dropdown => {
-                        if (dropdown !== mobileDropdown) {
-                            dropdown.classList.add('hidden');
-                        }
-                    });
-                    
-                    // Toggle current dropdown
-                    if (isVisible) {
-                        mobileDropdown.classList.add('hidden');
-                    } else {
-                        mobileDropdown.classList.remove('hidden');
-                    }
-                }
-            } else {
-                // Close mobile menu when other items are clicked
-                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                    if (mobileMenuButton) {
-                        const mobileMenuIcon = mobileMenuButton.querySelector('i');
-                        mobileMenuIcon.classList.remove('fa-times');
-                        mobileMenuIcon.classList.add('fa-bars');
-                    }
+            // Close mobile menu when other items are clicked
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                if (mobileMenuButton) {
+                    const mobileMenuIcon = mobileMenuButton.querySelector('i');
+                    mobileMenuIcon.classList.remove('fa-times');
+                    mobileMenuIcon.classList.add('fa-bars');
                 }
             }
         });
@@ -180,17 +194,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Handle window resize to close mobile dropdowns when switching to desktop
+    // Handle window resize to close calculator dropdowns when switching between mobile/desktop
     window.addEventListener('resize', function() {
-        const isMobile = window.innerWidth < 768;
+        // Close all calculator dropdowns when resizing
+        const calculatorDropdowns = document.querySelectorAll('#calculator-dropdown, #calculator-dropdown-mobile');
+        const calculatorArrows = document.querySelectorAll('#calculator-arrow, #calculator-arrow-mobile');
         
-        if (!isMobile) {
-            // Close all mobile dropdowns when switching to desktop
-            const mobileDropdowns = document.querySelectorAll('.absolute.top-full');
-            mobileDropdowns.forEach(dropdown => {
-                dropdown.classList.add('hidden');
-            });
-        }
+        calculatorDropdowns.forEach(dropdown => {
+            dropdown.classList.remove('show');
+        });
+        
+        // Reset arrows
+        calculatorArrows.forEach(arrow => {
+            arrow.style.transform = 'rotate(0deg)';
+        });
     });
 
     // Initialize AOS (Animate On Scroll) if available
