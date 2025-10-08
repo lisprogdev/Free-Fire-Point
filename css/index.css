@@ -918,20 +918,25 @@ html {
     .modal-content {
         max-width: 90vw;
         margin: 0;
+        max-height: 90vh;
+        overflow-y: auto;
     }
     
     .modal-overlay {
-        padding: 1.5rem;
-        padding-top: 3rem;
-        padding-bottom: 3rem;
+        padding: 2rem 1.5rem;
+        align-items: center;
+        justify-content: center;
     }
 }
 
 @media (max-width: 480px) {
+    .modal-content {
+        max-width: 95vw;
+        max-height: 85vh;
+    }
+    
     .modal-overlay {
-        padding: 1rem;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding: 1.5rem 1rem;
     }
 }
 
