@@ -10,6 +10,18 @@ function showAdModal() {
         // Trigger animation
         setTimeout(() => {
             adModalContent.classList.add('show');
+            
+            // Load AdSense after modal is visible
+            setTimeout(() => {
+                const adElement = adModal.querySelector('.adsbygoogle');
+                if (adElement && typeof adsbygoogle !== 'undefined') {
+                    try {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    } catch (error) {
+                        console.log('AdSense loading error:', error);
+                    }
+                }
+            }, 100);
         }, 10);
         
         // Blur main content
