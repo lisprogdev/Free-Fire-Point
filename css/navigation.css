@@ -228,18 +228,33 @@ body {
 
 /* Dropdown Menu Styles - Click-based instead of hover */
 .dropdown-menu {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-10px) !important;
     transition: all 0.3s ease;
-    pointer-events: none;
+    pointer-events: none !important;
 }
 
 .dropdown-menu.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+}
+
+/* Override any Tailwind group-hover effects */
+.calculator-dropdown .dropdown-menu {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-10px) !important;
+    pointer-events: none !important;
+}
+
+.calculator-dropdown .dropdown-menu.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
 }
 
 /* Calculator dropdown specific styles */
