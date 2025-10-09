@@ -478,6 +478,61 @@ table input[type="number"] {
     }
 }
 
+/* Support Modal Specific Styles */
+#supportModal .modal-content {
+    max-height: 85vh;
+    margin: 1rem auto;
+    overflow-y: auto;
+    min-height: 60vh;
+}
+
+#supportModal .modal-overlay {
+    padding: 2rem 1.5rem;
+}
+
+/* Custom scrollbar for support modal */
+#supportModal .modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+#supportModal .modal-content::-webkit-scrollbar-track {
+    background: rgba(71, 85, 105, 0.3);
+    border-radius: 3px;
+}
+
+#supportModal .modal-content::-webkit-scrollbar-thumb {
+    background: rgba(251, 191, 36, 0.6);
+    border-radius: 3px;
+}
+
+#supportModal .modal-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(251, 191, 36, 0.8);
+}
+
+@media (max-width: 768px) {
+    #supportModal .modal-content {
+        max-height: 90vh;
+        margin: 1rem auto;
+        min-height: 70vh;
+    }
+    
+    #supportModal .modal-overlay {
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #supportModal .modal-content {
+        max-height: 95vh;
+        margin: 0.5rem auto;
+        min-height: 80vh;
+    }
+    
+    #supportModal .modal-overlay {
+        padding: 1rem 0.5rem;
+    }
+}
+
 /* Tournament Calculator Styles */
 .kalkulator-section {
     min-height: 100vh;

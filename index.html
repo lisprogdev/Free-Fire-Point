@@ -189,7 +189,7 @@
                         </div>
 
                     <!-- Donation Button -->
-                    <a href="https://saweria.co/teknoogi" target="_blank"
+                    <a href="https://saweria.co/teknoogi" target="_blank" onclick="showAdModal()"
                         class="btn-gaming-nav px-6 py-2 rounded-full font-gaming-menu text-sm uppercase tracking-wider inline-flex items-center">
                         <img src="images/icon/donate.png" alt="Donasi Dukung Kalkulator Poin Free Fire Indonesia" class="w-4 h-4 mr-2 nav-icon gradient-icon">
                         Donasi
@@ -225,7 +225,7 @@
                     </div>
 
                     <!-- Mobile Donation Button -->
-                    <a href="https://saweria.co/teknoogi" target="_blank"
+                    <a href="https://saweria.co/teknoogi" target="_blank" onclick="showAdModal()"
                         class="btn-gaming-nav w-full py-3 rounded-lg font-gaming-menu text-sm uppercase tracking-wider inline-flex items-center justify-center">
                         <img src="images/icon/donate.png" alt="Donate" class="w-4 h-4 mr-2 nav-icon gradient-icon">
                         Donasi
@@ -271,12 +271,14 @@
                                         <a href="pages/Fast Turnamen - 12 Team/2 Match.html" class="block text-slate-300 hover:text-yellow-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
                                             <img src="images/icon/joystick.png" alt="Kalkulator Poin Free Fire 2 Match - Fast Turnamen 12 Team" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">2 Match
                                         </a>
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">3 Match
-                                        </a>
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">4 Match
-                                        </a>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">3 Match
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">4 Match
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
                                         </div>
                                     </div>
 
@@ -287,21 +289,26 @@
                                         One Day | 12 Team
                                         </h4>
                                         <div class="space-y-1 ml-4">
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">2M Kualifikasi 2M Final
-                                        </a>
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">2M Kualifikasi 3M Final
-                                        </a>
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">3M Kualifikasi 3M Final
-                                        </a>
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">3M Kualifikasi 4M Final
-                                        </a>
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">4M Kualifikasi 4M Final
-                                        </a>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">2M Kualifikasi 2M Final
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">2M Kualifikasi 3M Final
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">3M Kualifikasi 3M Final
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">3M Kualifikasi 4M Final
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">4M Kualifikasi 4M Final
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
                                         </div>
                                     </div>
 
@@ -312,15 +319,18 @@
                                         Fast Turnamen | 15 Team
                                         </h4>
                                         <div class="space-y-1 ml-4">
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">2 Match
-                                        </a>
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">3 Match
-                                        </a>
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">4 Match
-                                        </a>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">2 Match
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">3 Match
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">4 Match
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
                                         </div>
                                     </div>
 
@@ -331,21 +341,26 @@
                                         One Day | 15 Team
                                         </h4>
                                         <div class="space-y-1 ml-4">
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">2M Kualifikasi 2M Final
-                                        </a>
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">2M Kualifikasi 3M Final
-                                        </a>
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">3M Kualifikasi 3M Final
-                                        </a>
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">3M Kualifikasi 4M Final
-                                        </a>
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">4M Kualifikasi 4M Final
-                                        </a>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">2M Kualifikasi 2M Final
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">2M Kualifikasi 3M Final
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">3M Kualifikasi 3M Final
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">3M Kualifikasi 4M Final
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">4M Kualifikasi 4M Final
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
                                         </div>
                                     </div>
 
@@ -356,12 +371,14 @@
                                         League | 12 Team
                                         </h4>
                                         <div class="space-y-1 ml-4">
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-blue-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">Champions Rush
-                                        </a>
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-blue-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">Old
-                                        </a>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">Champions Rush
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">Old
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
                                         </div>
                                     </div>
 
@@ -372,27 +389,34 @@
                                         League | 15 Team
                                         </h4>
                                         <div class="space-y-1 ml-4">
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-blue-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">Champions Rush
-                                        </a>
-                                        <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-blue-400 text-sm py-1 px-3 rounded-lg hover:bg-slate-700/50 transition-colors">
-                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon gradient-icon">Old
-                                        </a>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">Champions Rush
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
+                                        <div class="block text-slate-500 text-sm py-1 px-3 rounded-lg bg-slate-800/30 cursor-not-allowed relative">
+                                            <img src="images/icon/joystick.png" alt="Play" class="w-3 h-3 mr-2 inline nav-icon opacity-50">Old
+                                            <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">Coming Soon</span>
+                                        </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#cara-penggunaan" class="menu-nav-item font-gaming-menu flex items-center"
-                            data-section="cara-penggunaan">
-                            <img src="images/icon/how to use.png" alt="Cara Penggunaan Kalkulator Poin Free Fire - Panduan Lengkap" class="w-5 h-5 mr-2 nav-icon gradient-icon">
-                            Cara Penggunaan
-                        </a>
-                        <a href="#kontak" class="menu-nav-item font-gaming-menu flex items-center"
-                            data-section="kontak">
-                            <img src="images/icon/contact.png" alt="Kontak Customer Service Free Fire Point Calculator Indonesia" class="w-5 h-5 mr-2 nav-icon gradient-icon">
-                            Kontak
-                        </a>
+                    <a href="pages/more/cara-penggunaan.html" class="menu-nav-item font-gaming-menu flex items-center"
+                        data-section="cara-penggunaan">
+                        <img src="images/icon/how to use.png" alt="Cara Penggunaan Kalkulator Poin Free Fire - Panduan Lengkap" class="w-5 h-5 mr-2 nav-icon gradient-icon">
+                        Cara Penggunaan
+                    </a>
+                    <a href="pages/blog/sistem-poin-free-fire-2024.html" class="menu-nav-item font-gaming-menu flex items-center"
+                        data-section="blog">
+                        <img src="images/icon/code.png" alt="Blog Tutorial Free Fire Point Calculator" class="w-5 h-5 mr-2 nav-icon gradient-icon">
+                        Blog
+                    </a>
+                    <a href="#kontak" class="menu-nav-item font-gaming-menu flex items-center"
+                        data-section="kontak">
+                        <img src="images/icon/contact.png" alt="Kontak Customer Service Free Fire Point Calculator Indonesia" class="w-5 h-5 mr-2 nav-icon gradient-icon">
+                        Kontak
+                    </a>
                     </div>
 
                     <!-- Mobile Menu Navigation -->
@@ -430,12 +454,14 @@
                                             <a href="pages/Fast Turnamen - 12 Team/2 Match.html" class="block text-slate-300 hover:text-yellow-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
                                                 2 Match
                                             </a>
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 3 Match
-                                            </a>
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 4 Match
-                                            </a>
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
                                             </div>
                                         </div>
 
@@ -446,21 +472,26 @@
                                                 One Day 12 Team
                                             </h4>
                                             <div class="space-y-1 ml-3">
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 2M Kual 2M Final
-                                            </a>
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 2M Kual 3M Final
-                                            </a>
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 3M Kual 3M Final
-                                            </a>
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 3M Kual 4M Final
-                                            </a>
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 4M Kual 4M Final
-                                            </a>
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
                                             </div>
                                         </div>
 
@@ -471,15 +502,18 @@
                                                 Fast 15 Team
                                             </h4>
                                             <div class="space-y-1 ml-3">
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 2 Match
-                                            </a>
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 3 Match
-                                            </a>
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-yellow-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 4 Match
-                                            </a>
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
                                             </div>
                                         </div>
 
@@ -490,21 +524,26 @@
                                                 One Day 15 Team
                                             </h4>
                                             <div class="space-y-1 ml-3">
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 2M Kual 2M Final
-                                            </a>
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 2M Kual 3M Final
-                                            </a>
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 3M Kual 3M Final
-                                            </a>
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 3M Kual 4M Final
-                                            </a>
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-orange-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 4M Kual 4M Final
-                                            </a>
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
                                             </div>
                                         </div>
 
@@ -515,12 +554,14 @@
                                                 League 12 Team
                                             </h4>
                                             <div class="space-y-1 ml-3">
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-blue-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 Champions Rush
-                                            </a>
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-blue-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 Old
-                                            </a>
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
                                             </div>
                                         </div>
 
@@ -531,27 +572,34 @@
                                                 League 15 Team
                                             </h4>
                                             <div class="space-y-1 ml-3">
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-blue-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 Champions Rush
-                                            </a>
-                                            <a href="pages/error/Empty.html" class="block text-slate-300 hover:text-blue-400 text-xs py-1 px-2 rounded hover:bg-slate-700/50 transition-colors">
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
+                                            <div class="block text-slate-500 text-xs py-1 px-2 rounded bg-slate-800/30 cursor-not-allowed relative">
                                                 Old
-                                            </a>
+                                                <span class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs px-1 py-0.5 rounded-full font-bold">Soon</span>
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#cara-penggunaan" class="menu-nav-item font-gaming-menu flex flex-col items-center text-xs"
-                                data-section="cara-penggunaan">
-                                <img src="images/icon/how to use.png" alt="How to Use" class="w-6 h-6 mb-1 nav-icon gradient-icon">
-                                Cara Pakai
-                            </a>
-                            <a href="#kontak" class="menu-nav-item font-gaming-menu flex flex-col items-center text-xs"
-                                data-section="kontak">
-                                <img src="images/icon/contact.png" alt="Contact" class="w-6 h-6 mb-1 nav-icon gradient-icon">
-                                Kontak
-                            </a>
+                        <a href="pages/more/cara-penggunaan.html" class="menu-nav-item font-gaming-menu flex flex-col items-center text-xs"
+                            data-section="cara-penggunaan">
+                            <img src="images/icon/how to use.png" alt="How to Use" class="w-6 h-6 mb-1 nav-icon gradient-icon">
+                            Cara Pakai
+                        </a>
+                        <a href="pages/blog/sistem-poin-free-fire-2024.html" class="menu-nav-item font-gaming-menu flex flex-col items-center text-xs"
+                            data-section="blog">
+                            <img src="images/icon/code.png" alt="Blog" class="w-6 h-6 mb-1 nav-icon gradient-icon">
+                            Blog
+                        </a>
+                        <a href="#kontak" class="menu-nav-item font-gaming-menu flex flex-col items-center text-xs"
+                            data-section="kontak">
+                            <img src="images/icon/contact.png" alt="Contact" class="w-6 h-6 mb-1 nav-icon gradient-icon">
+                            Kontak
+                        </a>
                         </div>
                     </div>
                 </div>
@@ -605,7 +653,7 @@
                             <img src="images/icon/calculator.png" alt="Mulai Hitung Poin Free Fire - Kalkulator Kill Point dan Placement Point" class="w-5 h-5 mr-3 nav-icon gradient-icon">
                             Hitung Poin FF Sekarang
                         </button>
-                        <a href="https://saweria.co/teknoogi" target="_blank"
+                        <a href="https://saweria.co/teknoogi" target="_blank" onclick="showAdModal()"
                             class="btn-hero-secondary px-8 py-4 rounded-full text-lg font-bold inline-flex items-center justify-center">
                             <img src="images/icon/donate.png" alt="Donasi Untuk Developer Kalkulator Poin Free Fire Indonesia" class="w-5 h-5 mr-3 nav-icon gradient-icon">
                             Dukung Creator
@@ -765,7 +813,7 @@
                                 Sementara kami hanya dapat menyediakan <strong>2 match</strong> perhitungan gratis.
                                 Untuk mendapatkan lebih dari 2 match dan fitur premium lainnya, dukung pengembang kami!
                             </p>
-                            <a href="https://saweria.co/teknoogi" target="_blank"
+                            <a href="https://saweria.co/teknoogi" target="_blank" onclick="showAdModal()"
                                 class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-lg font-medium hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105">
                                 <img src="images/icon/donate.png" alt="Donasi Saweria - Dukung Pengembang Kalkulator Poin Free Fire" class="w-5 h-5 mr-2">
                                 Dukung Pengembang
@@ -919,201 +967,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Police Tape Divider -->
-        <div class="police-tape"></div>
-
-        <!-- Cara Penggunaan Section -->
-        <section id="cara-penggunaan"
-            class="py-16 lg:py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden">
-            <!-- Background Pattern -->
-            <div class="absolute inset-0 opacity-5">
-                <div class="absolute top-20 left-10 w-32 h-32 border-2 border-yellow-400 rounded-full animate-pulse">
-                </div>
-                <div class="absolute bottom-20 right-10 w-24 h-24 border-2 border-orange-400 rounded-full animate-pulse"
-                    style="animation-delay: 2s;"></div>
-                <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-yellow-400 rotate-45 animate-bounce"
-                    style="animation-delay: 1s;"></div>
-            </div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <!-- Section Header -->
-                <div class="text-center mb-12 lg:mb-16" data-aos="fade-up">
-                        <div
-                            class="inline-flex items-center justify-center p-2 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-full mb-6">
-                        <div
-                            class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-yellow-400/30 to-orange-400/30 rounded-full">
-                            <img src="images/icon/how to use.png" alt="Cara Menggunakan Kalkulator Poin Free Fire - Tutorial Lengkap" class="w-4 h-4 nav-icon gradient-icon">
-                            <span class="text-sm font-gaming-menu text-yellow-400 uppercase tracking-wider">Cara
-                                Penggunaan</span>
-                        </div>
-                    </div>
-
-                    <h2 class="text-3xl md:text-5xl lg:text-6xl font-gaming font-bold mb-6">
-                        <span
-                            class="bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent">
-                            CARA PENGGUNAAN
-                        </span><br>
-                        <span class="text-slate-200">KALKULATOR POIN FF</span>
-                    </h2>
-
-                    <p class="text-lg md:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-                        Ikuti panduan lengkap cara menggunakan <strong>kalkulator poin turnamen Free Fire</strong> 
-                        untuk mendapatkan hasil perhitungan yang akurat dan mudah dipahami.
-                    </p>
-                </div>
-
-                <!-- Steps Grid -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12" data-aos="fade-up" data-aos-delay="200">
-                    <!-- Step 1 -->
-                    <div class="bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-6 lg:p-8 border border-slate-700/50 hover:border-yellow-400/30 transition-all duration-300">
-                        <div class="flex items-center mb-6">
-                            <div class="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center mr-4">
-                                <span class="text-slate-900 font-gaming font-bold text-xl">1</span>
-                            </div>
-                            <h3 class="text-xl font-gaming font-bold text-slate-100">Isi Informasi Turnamen</h3>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400 mt-1"></i>
-                                <p class="text-slate-300 text-sm">Masukkan <strong>nama turnamen</strong> dan <strong>fase turnamen</strong></p>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400 mt-1"></i>
-                                <p class="text-slate-300 text-sm">Contoh: "Turnamen Free Fire Ramadan Cup"</p>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400 mt-1"></i>
-                                <p class="text-slate-300 text-sm">Fase: "Babak Penyisihan", "Semi Final", "Grand Final"</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-6 lg:p-8 border border-slate-700/50 hover:border-yellow-400/30 transition-all duration-300">
-                        <div class="flex items-center mb-6">
-                            <div class="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center mr-4">
-                                <span class="text-slate-900 font-gaming font-bold text-xl">2</span>
-                            </div>
-                            <h3 class="text-xl font-gaming font-bold text-slate-100">Input Data Tim</h3>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400 mt-1"></i>
-                                <p class="text-slate-300 text-sm">Ubah <strong>nama tim</strong> sesuai peserta turnamen</p>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400 mt-1"></i>
-                                <p class="text-slate-300 text-sm">Pilih <strong>ranking akhir</strong> (1-12) untuk setiap match</p>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400 mt-1"></i>
-                                <p class="text-slate-300 text-sm">Masukkan <strong>jumlah kill</strong> yang diperoleh</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-6 lg:p-8 border border-slate-700/50 hover:border-yellow-400/30 transition-all duration-300">
-                        <div class="flex items-center mb-6">
-                            <div class="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center mr-4">
-                                <span class="text-slate-900 font-gaming font-bold text-xl">3</span>
-                            </div>
-                            <h3 class="text-xl font-gaming font-bold text-slate-100">Simpan & Hitung</h3>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400 mt-1"></i>
-                                <p class="text-slate-300 text-sm">Klik <strong>"Simpan Semua"</strong> untuk menyimpan progress</p>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400 mt-1"></i>
-                                <p class="text-slate-300 text-sm">Klik <strong>"Hitung"</strong> untuk melihat hasil ranking</p>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400 mt-1"></i>
-                                <p class="text-slate-300 text-sm">Download hasil sebagai <strong>gambar JPG</strong></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Additional Tips -->
-                <div class="mt-16" data-aos="fade-up" data-aos-delay="400">
-                    <div class="bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50">
-                        <div class="text-center mb-8">
-                            <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-lightbulb text-slate-900 text-2xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-4">Tips & Trik</h3>
-                        </div>
-                        
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div class="space-y-4">
-                                <h4 class="text-lg font-gaming font-bold text-yellow-400 mb-4">Sistem Poin</h4>
-                                <div class="space-y-3">
-                                    <div class="flex items-start space-x-3">
-                                        <i class="fas fa-trophy text-yellow-400 mt-1"></i>
-                                        <p class="text-slate-300 text-sm"><strong>BOOYAH:</strong> 12 poin + kill point</p>
-                                    </div>
-                                    <div class="flex items-start space-x-3">
-                                        <i class="fas fa-medal text-slate-400 mt-1"></i>
-                                        <p class="text-slate-300 text-sm"><strong>#2:</strong> 9 poin + kill point</p>
-                                    </div>
-                                    <div class="flex items-start space-x-3">
-                                        <i class="fas fa-medal text-amber-600 mt-1"></i>
-                                        <p class="text-slate-300 text-sm"><strong>#3:</strong> 8 poin + kill point</p>
-                                    </div>
-                                    <div class="flex items-start space-x-3">
-                                        <i class="fas fa-crosshairs text-orange-400 mt-1"></i>
-                                        <p class="text-slate-300 text-sm"><strong>Kill Point:</strong> 1 kill = 1 poin</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="space-y-4">
-                                <h4 class="text-lg font-gaming font-bold text-orange-400 mb-4">Fitur Unggulan</h4>
-                                <div class="space-y-3">
-                                    <div class="flex items-start space-x-3">
-                                        <i class="fas fa-save text-yellow-400 mt-1"></i>
-                                        <p class="text-slate-300 text-sm">Data tersimpan otomatis di browser</p>
-                                    </div>
-                                    <div class="flex items-start space-x-3">
-                                        <i class="fas fa-download text-orange-400 mt-1"></i>
-                                        <p class="text-slate-300 text-sm">Download hasil sebagai gambar</p>
-                                    </div>
-                                    <div class="flex items-start space-x-3">
-                                        <i class="fas fa-mobile-alt text-yellow-400 mt-1"></i>
-                                        <p class="text-slate-300 text-sm">Responsif di semua perangkat</p>
-                                    </div>
-                                    <div class="flex items-start space-x-3">
-                                        <i class="fas fa-sync text-orange-400 mt-1"></i>
-                                        <p class="text-slate-300 text-sm">Reset data untuk turnamen baru</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CTA Section -->
-                <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="600">
-                    <div class="bg-gradient-to-r from-yellow-400/10 to-orange-400/10 border border-yellow-400/30 rounded-2xl p-8">
-                        <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-4">
-                            Siap Mencoba Kalkulator?
-                        </h3>
-                        <p class="text-slate-300 mb-6">
-                            Mulai hitung poin turnamen Free Fire dengan mudah dan akurat
-                        </p>
-                        <a href="pages/kalkulator.html"
-                            class="btn-hero-primary px-8 py-4 rounded-full text-lg font-bold inline-flex items-center justify-center">
-                            <i class="fas fa-calculator mr-3"></i>
-                            Mulai Hitung Sekarang
-                        </a>
                     </div>
                 </div>
             </div>
@@ -1306,6 +1159,116 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Police Tape Divider -->
+        <div class="police-tape"></div>
+
+        <!-- Blog Section -->
+        <section id="blog" class="py-16 lg:py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute top-20 left-10 w-32 h-32 border-2 border-blue-400 rounded-full animate-pulse"></div>
+                <div class="absolute bottom-20 right-10 w-24 h-24 border-2 border-purple-400 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
+                <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-blue-400 rotate-45 animate-bounce" style="animation-delay: 1s;"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <!-- Section Header -->
+                <div class="text-center mb-12 lg:mb-16" data-aos="fade-up">
+                    <div class="inline-flex items-center justify-center p-2 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full mb-6">
+                        <div class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-full">
+                            <img src="images/icon/code.png" alt="Blog Tutorial Free Fire Point Calculator" class="w-4 h-4 nav-icon gradient-icon">
+                            <span class="text-sm font-gaming-menu text-blue-400 uppercase tracking-wider">Tutorial & Tips</span>
+                        </div>
+                    </div>
+
+                    <h2 class="text-3xl md:text-5xl lg:text-6xl font-gaming font-bold mb-6">
+                        <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-500 bg-clip-text text-transparent">
+                            BLOG & TUTORIAL
+                        </span><br>
+                        <span class="text-slate-200">PANDUAN LENGKAP FREE FIRE</span>
+                    </h2>
+
+                    <p class="text-lg md:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+                        Pelajari strategi turnamen, sistem poin, dan tips pro player untuk meningkatkan skill Free Fire Anda
+                    </p>
+                </div>
+
+                <!-- Blog Articles Grid -->
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Article 1 -->
+                    <a href="pages/blog/sistem-poin-free-fire-2024.html" class="group bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 hover:border-blue-400/30 transition-all duration-300 transform hover:scale-105">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-calculator text-slate-900 text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="bg-blue-400/20 text-blue-400 px-3 py-1 rounded-full text-sm font-medium">Tutorial</span>
+                                <p class="text-slate-400 text-sm mt-1">15 Jan 2024 • 8 min read</p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-4 group-hover:text-blue-400 transition-colors">
+                            Sistem Poin Free Fire 2024
+                        </h3>
+                        
+                        <p class="text-slate-300 leading-relaxed mb-6">
+                            Panduan lengkap sistem poin Free Fire terbaru. Pelajari cara menghitung kill point, placement point, 
+                            dan strategi turnamen yang efektif untuk meraih kemenangan.
+                        </p>
+                        
+                        <div class="flex items-center text-blue-400 group-hover:text-blue-300 transition-colors">
+                            <span class="font-medium">Baca Selengkapnya</span>
+                            <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+
+                    <!-- Article 2 -->
+                    <a href="pages/blog/strategi-turnamen-free-fire.html" class="group bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 hover:border-red-400/30 transition-all duration-300 transform hover:scale-105">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-r from-red-400 to-orange-500 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-chess text-slate-900 text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="bg-red-400/20 text-red-400 px-3 py-1 rounded-full text-sm font-medium">Strategi</span>
+                                <p class="text-slate-400 text-sm mt-1">20 Jan 2024 • 12 min read</p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-4 group-hover:text-red-400 transition-colors">
+                            Strategi Turnamen Free Fire 2024
+                        </h3>
+                        
+                        <p class="text-slate-300 leading-relaxed mb-6">
+                            Tips pro player untuk turnamen Free Fire. Pelajari strategi landing, rotation, team fight, 
+                            dan mental game untuk meraih kemenangan di turnamen kompetitif.
+                        </p>
+                        
+                        <div class="flex items-center text-red-400 group-hover:text-red-300 transition-colors">
+                            <span class="font-medium">Baca Selengkapnya</span>
+                            <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-gradient-to-r from-blue-400/10 to-purple-400/10 border border-blue-400/30 rounded-2xl p-8">
+                        <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-4">
+                            Ingin Belajar Lebih Banyak?
+                        </h3>
+                        <p class="text-slate-300 mb-6">
+                            Baca artikel tutorial lengkap dan tingkatkan skill Free Fire Anda
+                        </p>
+                        <a href="pages/blog/sistem-poin-free-fire-2024.html" onclick="showAdModal()"
+                            class="btn-hero-primary px-8 py-4 rounded-full text-lg font-bold inline-flex items-center justify-center">
+                            <i class="fas fa-newspaper mr-3"></i>
+                            Lihat Semua Artikel
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1617,6 +1580,242 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- FAQ Item 7 -->
+                        <div
+                            class="faq-item bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl border border-slate-700/50">
+                            <button class="faq-question w-full text-left p-6 lg:p-8 focus:outline-none"
+                                onclick="toggleFAQ(this)">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-xl lg:text-2xl font-gaming font-bold text-slate-100 pr-4">
+                                        Apa perbedaan antara Fast Turnamen, One Day, dan League?
+                                    </h3>
+                                    <div class="faq-icon flex-shrink-0">
+                                        <i
+                                            class="fas fa-plus text-yellow-400 text-xl transition-transform duration-300"></i>
+                                    </div>
+                                </div>
+                            </button>
+                            <div class="faq-answer hidden px-6 lg:px-8 pb-6 lg:pb-8">
+                                <div class="pt-4 border-t border-slate-600/50">
+                                    <p class="text-slate-300 leading-relaxed mb-4">
+                                        Setiap format turnamen Free Fire memiliki karakteristik berbeda:
+                                    </p>
+                                    <div class="grid md:grid-cols-3 gap-4 mb-4">
+                                        <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+                                            <h4 class="text-yellow-400 font-bold mb-2 flex items-center">
+                                                <img src="images/Logo/Booyah Logo.png" alt="Fast" class="w-4 h-4 mr-2 nav-icon gradient-icon">Fast Turnamen
+                                            </h4>
+                                            <ul class="text-slate-300 text-sm space-y-1">
+                                                <li>• 2-4 match per hari</li>
+                                                <li>• Durasi singkat</li>
+                                                <li>• Format kompetitif</li>
+                                                <li>• 12-15 team</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
+                                            <h4 class="text-orange-400 font-bold mb-2 flex items-center">
+                                                <img src="images/Logo/Booyah Logo.png" alt="One Day" class="w-4 h-4 mr-2 nav-icon gradient-icon">One Day
+                                            </h4>
+                                            <ul class="text-slate-300 text-sm space-y-1">
+                                                <li>• Kualifikasi + Final</li>
+                                                <li>• 2-4 match kualifikasi</li>
+                                                <li>• 2-4 match final</li>
+                                                <li>• Sistem eliminasi</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+                                            <h4 class="text-blue-400 font-bold mb-2 flex items-center">
+                                                <img src="images/Logo/Booyah Logo.png" alt="League" class="w-4 h-4 mr-2 nav-icon gradient-icon">League
+                                            </h4>
+                                            <ul class="text-slate-300 text-sm space-y-1">
+                                                <li>• Champions Rush</li>
+                                                <li>• Format lama</li>
+                                                <li>• Sistem poin khusus</li>
+                                                <li>• Turnamen resmi</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p class="text-slate-300 leading-relaxed">
+                                        Pilih format yang sesuai dengan <em>turnamen yang Anda ikuti</em> untuk perhitungan yang akurat!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 8 -->
+                        <div
+                            class="faq-item bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl border border-slate-700/50">
+                            <button class="faq-question w-full text-left p-6 lg:p-8 focus:outline-none"
+                                onclick="toggleFAQ(this)">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-xl lg:text-2xl font-gaming font-bold text-slate-100 pr-4">
+                                        Kapan sistem poin Free Fire terakhir diupdate?
+                                    </h3>
+                                    <div class="faq-icon flex-shrink-0">
+                                        <i
+                                            class="fas fa-plus text-yellow-400 text-xl transition-transform duration-300"></i>
+                                    </div>
+                                </div>
+                            </button>
+                            <div class="faq-answer hidden px-6 lg:px-8 pb-6 lg:pb-8">
+                                <div class="pt-4 border-t border-slate-600/50">
+                                    <p class="text-slate-300 leading-relaxed mb-4">
+                                        <strong>Sistem poin Free Fire</strong> terakhir diupdate pada <strong>2024</strong> dengan perubahan berikut:
+                                    </p>
+                                    <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-4 mb-4">
+                                        <h4 class="text-green-400 font-bold mb-2 flex items-center">
+                                            <i class="fas fa-calendar-alt mr-2"></i>Update Terbaru 2024
+                                        </h4>
+                                        <ul class="text-slate-300 text-sm space-y-2">
+                                            <li>• <strong>Placement Point:</strong> BOOYAH = 12 poin (tidak berubah)</li>
+                                            <li>• <strong>Kill Point:</strong> 1 kill = 1 poin (konsisten)</li>
+                                            <li>• <strong>Ranking #11-12:</strong> 0 placement point</li>
+                                            <li>• <strong>Format turnamen:</strong> Lebih variatif</li>
+                                        </ul>
+                                    </div>
+                                    <p class="text-slate-300 leading-relaxed mb-3">
+                                        Kami selalu memantau update resmi dari <strong>Garena Free Fire Indonesia</strong> dan 
+                                        mengupdate kalkulator sesuai dengan perubahan terbaru.
+                                    </p>
+                                    <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3">
+                                        <p class="text-blue-300 text-sm">
+                                            <i class="fas fa-info-circle mr-2"></i>
+                                            <strong>Tips:</strong> Selalu cek rule book turnamen untuk memastikan sistem poin yang digunakan!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 9 -->
+                        <div
+                            class="faq-item bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl border border-slate-700/50">
+                            <button class="faq-question w-full text-left p-6 lg:p-8 focus:outline-none"
+                                onclick="toggleFAQ(this)">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-xl lg:text-2xl font-gaming font-bold text-slate-100 pr-4">
+                                        Bagaimana cara menggunakan kalkulator ini?
+                                    </h3>
+                                    <div class="faq-icon flex-shrink-0">
+                                        <i
+                                            class="fas fa-plus text-yellow-400 text-xl transition-transform duration-300"></i>
+                                    </div>
+                                </div>
+                            </button>
+                            <div class="faq-answer hidden px-6 lg:px-8 pb-6 lg:pb-8">
+                                <div class="pt-4 border-t border-slate-600/50">
+                                    <p class="text-slate-300 leading-relaxed mb-4">
+                                        <strong>Cara menggunakan kalkulator Free Fire Point:</strong>
+                                    </p>
+                                    <div class="space-y-4">
+                                        <div class="flex items-start space-x-3">
+                                            <div class="w-6 h-6 bg-yellow-500 text-slate-900 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
+                                            <div>
+                                                <p class="text-slate-300 font-medium">Pilih format turnamen</p>
+                                                <p class="text-slate-400 text-sm">Fast Turnamen, One Day, atau League</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <div class="w-6 h-6 bg-yellow-500 text-slate-900 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
+                                            <div>
+                                                <p class="text-slate-300 font-medium">Masukkan data match</p>
+                                                <p class="text-slate-400 text-sm">Ranking dan jumlah kill per match</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <div class="w-6 h-6 bg-yellow-500 text-slate-900 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
+                                            <div>
+                                                <p class="text-slate-300 font-medium">Lihat hasil perhitungan</p>
+                                                <p class="text-slate-400 text-sm">Total poin otomatis terhitung</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 mt-4">
+                                        <p class="text-yellow-300 text-sm">
+                                            <i class="fas fa-lightbulb mr-2"></i>
+                                            <strong>Pro Tip:</strong> Simpan hasil perhitungan untuk analisis performa tim!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 10 -->
+                        <div
+                            class="faq-item bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl border border-slate-700/50">
+                            <button class="faq-question w-full text-left p-6 lg:p-8 focus:outline-none"
+                                onclick="toggleFAQ(this)">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-xl lg:text-2xl font-gaming font-bold text-slate-100 pr-4">
+                                        Apakah ada tips untuk menang turnamen Free Fire?
+                                    </h3>
+                                    <div class="faq-icon flex-shrink-0">
+                                        <i
+                                            class="fas fa-plus text-yellow-400 text-xl transition-transform duration-300"></i>
+                                    </div>
+                                </div>
+                            </button>
+                            <div class="faq-answer hidden px-6 lg:px-8 pb-6 lg:pb-8">
+                                <div class="pt-4 border-t border-slate-600/50">
+                                    <p class="text-slate-300 leading-relaxed mb-4">
+                                        <strong>Tips menang turnamen Free Fire:</strong>
+                                    </p>
+                                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                        <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+                                            <h4 class="text-red-400 font-bold mb-2">
+                                                <i class="fas fa-crosshairs mr-2"></i>Early Game
+                                            </h4>
+                                            <ul class="text-slate-300 text-sm space-y-1">
+                                                <li>• Hot drop untuk early kill</li>
+                                                <li>• Ambil loot terbaik</li>
+                                                <li>• Eliminasi tim lemah</li>
+                                                <li>• Kontrol area strategis</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+                                            <h4 class="text-blue-400 font-bold mb-2">
+                                                <i class="fas fa-shield-alt mr-2"></i>Mid Game
+                                            </h4>
+                                            <ul class="text-slate-300 text-sm space-y-1">
+                                                <li>• Rotasi zone dengan aman</li>
+                                                <li>• Third party fights</li>
+                                                <li>• Jaga positioning</li>
+                                                <li>• Ambil kill opportunity</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+                                            <h4 class="text-yellow-400 font-bold mb-2">
+                                                <img src="images/icon/trophy.png" alt="Trophy" class="w-4 h-4 mr-2 nav-icon gradient-icon">Late Game
+                                            </h4>
+                                            <ul class="text-slate-300 text-sm space-y-1">
+                                                <li>• Fokus survival</li>
+                                                <li>• Positioning terbaik</li>
+                                                <li>• Timing push yang tepat</li>
+                                                <li>• Team coordination</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+                                            <h4 class="text-green-400 font-bold mb-2">
+                                                <i class="fas fa-users mr-2"></i>Team Strategy
+                                            </h4>
+                                            <ul class="text-slate-300 text-sm space-y-1">
+                                                <li>• Komunikasi yang baik</li>
+                                                <li>• Role assignment</li>
+                                                <li>• Backup plan</li>
+                                                <li>• Mental preparation</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/30 rounded-lg p-4">
+                                        <p class="text-yellow-300 text-sm">
+                                            <i class="fas fa-star mr-2"></i>
+                                            <strong>Kunci Sukses:</strong> Balance antara aggressive play dan survival untuk poin maksimal!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- CTA Section -->
@@ -1631,12 +1830,12 @@
                                 Indonesia
                             </p>
                             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                <a href="#kontak"
+                                <a href="#kontak" onclick="showAdModal()"
                                     class="btn-hero-primary px-6 py-3 rounded-full font-bold inline-flex items-center justify-center">
                                     <i class="fas fa-envelope mr-2"></i>
                                     Hubungi Kami
                                 </a>
-                                <a href="https://chat.whatsapp.com/Dzds3Vni8I0BoDE0ssIK3s" target="_blank"
+                                <a href="https://chat.whatsapp.com/Dzds3Vni8I0BoDE0ssIK3s" target="_blank" onclick="showAdModal()"
                                     class="btn-hero-secondary px-6 py-3 rounded-full font-bold inline-flex items-center justify-center">
                                     <i class="fab fa-whatsapp mr-2"></i>
                                     Gabung Grup
@@ -1736,18 +1935,18 @@
         <div class="modal-content bg-gradient-to-br from-slate-800 to-gray-900 rounded-2xl border border-slate-600/50 max-w-md w-full mx-auto transform scale-95 opacity-0 transition-all duration-300"
             id="modalContent">
             <!-- Modal Header -->
-            <div class="relative p-6 pb-4">
-                <button class="absolute top-4 right-4 text-slate-400 hover:text-slate-200 transition-colors"
+            <div class="relative p-4 pb-3">
+                <button class="absolute top-3 right-3 text-slate-400 hover:text-slate-200 transition-colors"
                     onclick="closeSupportModal()">
                     <i class="fas fa-times text-xl"></i>
                 </button>
 
-                <div class="text-center mb-4">
+                <div class="text-center mb-3">
                     <div
-                        class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-heart text-slate-900 text-2xl"></i>
+                        class="w-14 h-14 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-heart text-slate-900 text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-2">
+                    <h3 class="text-xl font-gaming font-bold text-slate-100 mb-2">
                         Dukung Kami! 💙
                     </h3>
                     <p class="text-slate-300 text-sm leading-relaxed">
@@ -1758,16 +1957,16 @@
             </div>
 
             <!-- Modal Body -->
-            <div class="px-6 pb-2">
+            <div class="px-4 pb-3">
                 <div class="space-y-4">
                     <!-- Benefits -->
                     <div
                         class="bg-gradient-to-r from-yellow-400/10 to-orange-400/10 border border-yellow-400/30 rounded-lg p-4">
-                        <h4 class="text-yellow-400 font-bold mb-2 flex items-center">
+                        <h4 class="text-yellow-400 font-bold mb-3 flex items-center">
                             <i class="fas fa-star mr-2"></i>
                             Dukungan Anda Membantu:
                         </h4>
-                        <ul class="text-slate-300 text-sm space-y-1">
+                        <ul class="text-slate-300 text-sm space-y-2">
                             <li class="flex items-start">
                                 <i class="fas fa-check text-green-400 mr-2 mt-0.5 text-xs"></i>
                                 <span>Fitur kalkulator lebih dari 2 match</span>
@@ -1784,6 +1983,18 @@
                                 <i class="fas fa-check text-green-400 mr-2 mt-0.5 text-xs"></i>
                                 <span>Fitur-fitur baru yang menarik</span>
                             </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mr-2 mt-0.5 text-xs"></i>
+                                <span>Export hasil ke Excel dan PDF</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mr-2 mt-0.5 text-xs"></i>
+                                <span>Analisis statistik turnamen</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mr-2 mt-0.5 text-xs"></i>
+                                <span>Template turnamen custom</span>
+                            </li>
                         </ul>
                     </div>
 
@@ -1794,22 +2005,55 @@
                             <i class="fas fa-info-circle text-blue-400 mr-2"></i>
                             <span class="text-blue-400 font-medium text-sm">Status Saat Ini</span>
                         </div>
-                        <p class="text-slate-300 text-sm">
+                        <p class="text-slate-300 text-sm mb-3">
                             Gratis untuk <strong>2 match</strong> perhitungan. Dengan dukungan Anda,
                             kami bisa memberikan akses unlimited dan fitur premium!
                         </p>
+                        <div class="bg-slate-700/30 rounded-lg p-3">
+                            <h5 class="text-yellow-400 font-bold text-xs mb-2">Fitur Premium yang Akan Datang:</h5>
+                            <ul class="text-slate-400 text-xs space-y-1">
+                                <li>• Kalkulator untuk 3-6 match</li>
+                                <li>• Export hasil ke Excel/PDF</li>
+                                <li>• Template turnamen custom</li>
+                                <li>• Analisis statistik mendalam</li>
+                                <li>• Notifikasi update sistem poin</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Developer Info -->
+                    <div
+                        class="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/30 rounded-lg p-4">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-code text-green-400 mr-2"></i>
+                            <span class="text-green-400 font-medium text-sm">Tentang Developer</span>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-2">
+                            Website ini dikembangkan oleh <strong>Tekno Ogi</strong>, seorang developer 
+                            yang fokus pada tools gaming untuk komunitas Free Fire Indonesia.
+                        </p>
+                        <div class="flex space-x-2">
+                            <a href="https://www.instagram.com/tekno_ogi/" target="_blank"
+                                class="text-green-400 hover:text-green-300 text-xs">
+                                <i class="fab fa-instagram mr-1"></i>Instagram
+                            </a>
+                            <a href="https://www.youtube.com/@tekno_ogi" target="_blank"
+                                class="text-green-400 hover:text-green-300 text-xs">
+                                <i class="fab fa-youtube mr-1"></i>YouTube
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Modal Footer -->
-            <div class="p-6 pt-4">
-                <div class="space-y-3">
+            <div class="p-4 pt-3">
+                <div class="space-y-2">
                     <!-- Support Button -->
                     <a href="https://saweria.co/teknoogi" target="_blank"
-                        class="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                        class="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold py-2.5 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
                         onclick="closeSupportModal()">
-                        <img src="images/Logo/Booyah Logo.png" alt="Booyah" class="w-5 h-5 mr-2">
+                        <img src="images/Logo/Booyah Logo.png" alt="Booyah" class="w-4 h-4 mr-2">
                         <span>Dukung Sekarang</span>
                         <i class="fas fa-external-link-alt ml-2 text-sm"></i>
                     </a>
