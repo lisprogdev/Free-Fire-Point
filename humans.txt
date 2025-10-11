@@ -37,20 +37,23 @@
     
 # SITE
 
-    Last update: 2024/12/30
+    Last update: 2025/01/11
     Language: Indonesian / Bahasa Indonesia
     Doctype: HTML5
     IDE: Cursor / Visual Studio Code
     Hosting: GitHub Pages
     Domain: freefirepoint.my.id
     Repository: Public
+    Pages: Homepage + 2 Match Calculator (Fully SEO Optimized)
     
 # KEYWORDS
 
-    Primary: free fire point, cara hitung poin turnamen free fire, fast turnamen ff
+    Primary (Homepage): free fire point, cara hitung poin turnamen free fire, fast turnamen ff
+    Primary (2 Match): cara hitung poin turnamen free fire 2 match, point free fire 2 match, fast turnamen ff 2 match
     Secondary: kalkulator poin ff, free fire point calculator, kill point ff, placement point ff
-    Tertiary: sistem poin free fire, booyah point, turnamen free fire
-    Long-tail: cara menghitung poin fast turnamen free fire 2024 indonesia
+    Tertiary: sistem poin free fire, booyah point, turnamen free fire, turnamen ff 2 match
+    Special: turnamen free fire 2025, ff esport id
+    Long-tail: cara menghitung poin fast turnamen free fire 2025 indonesia
     Local: turnamen free fire indonesia, ff tournament indonesia, free fire point calculator indonesia
     Gaming: kalkulator turnamen ff, hitung poin ff online, fast turnamen free fire calculator
     
@@ -63,6 +66,7 @@
     Search Intent: Transactional & Informational
     Competition Level: Medium
     Content Quality: High (Original calculator tool)
+    Keyword Focus 2025: Turnamen Free Fire 2025, FF Esport ID, Point Free Fire 2 Match
     
 # FEATURES
 

@@ -1619,4 +1619,45 @@ function generateRankOptions(selectedRank) {
     return options;
 }
 
+// FAQ Toggle Function
+function toggleFAQ(button) {
+    const answer = button.nextElementSibling;
+    const icon = button.querySelector('.faq-icon i');
+    const isOpen = !answer.classList.contains('hidden');
+    
+    if (isOpen) {
+        answer.classList.add('hidden');
+        icon.classList.remove('fa-minus');
+        icon.classList.add('fa-plus');
+        icon.style.transform = 'rotate(0deg)';
+    } else {
+        answer.classList.remove('hidden');
+        icon.classList.remove('fa-plus');
+        icon.classList.add('fa-minus');
+        icon.style.transform = 'rotate(180deg)';
+    }
+}
 
+// Make toggleFAQ globally available
+window.toggleFAQ = toggleFAQ;
+
+// Debug and Force Initialize Script
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, checking elements...');
+    const inputTableBody = document.getElementById('inputTableBody');
+    const resultsTableBody = document.getElementById('resultsTableBody');
+    console.log('inputTableBody found:', !!inputTableBody);
+    console.log('resultsTableBody found:', !!resultsTableBody);
+    
+    // Force initialize if elements exist but table is empty
+    if (inputTableBody && inputTableBody.children.length <= 1) {
+        console.log('Forcing table initialization...');
+        setTimeout(() => {
+            if (typeof initializeCalculator === 'function') {
+                initializeCalculator();
+            } else {
+                console.log('initializeCalculator function not found');
+            }
+        }, 1000);
+    }
+});

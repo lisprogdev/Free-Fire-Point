@@ -11,18 +11,18 @@
         <priority>1.0</priority>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Free Fire Point Calculator Indonesia</image:title>
-            <image:caption>Free Fire Point - Cara hitung poin turnamen free fire untuk fast turnamen ff 2024</image:caption>
+            <image:title>Free Fire Point Calculator Indonesia 2025</image:title>
+            <image:caption>Free Fire Point - Cara hitung poin turnamen free fire untuk fast turnamen ff, kalkulator poin ff gratis akurat 2025</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/Logo/Logo.png</image:loc>
-            <image:title>Logo Free Fire Point Calculator</image:title>
-            <image:caption>Logo kalkulator poin Free Fire Indonesia - Fast Turnamen FF</image:caption>
+            <image:title>Logo Free Fire Point Calculator Fast Turnamen FF</image:title>
+            <image:caption>Logo kalkulator free fire point untuk cara hitung poin turnamen free fire dan fast turnamen ff Indonesia</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/Logo/Booyah%20Logo.png</image:loc>
-            <image:title>Booyah Logo Free Fire</image:title>
-            <image:caption>Logo Booyah Free Fire untuk ranking #1 turnamen - 12 placement point</image:caption>
+            <image:title>Booyah Logo Fast Turnamen Free Fire</image:title>
+            <image:caption>Logo Booyah free fire point untuk ranking #1 fast turnamen ff - 12 placement point</image:caption>
         </image:image>
     </url>
     
@@ -47,15 +47,15 @@
         <priority>0.98</priority>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Fast Turnamen FF - Kalkulator Poin Free Fire Point 12 Team 2 Match</image:title>
-            <image:caption>Fast turnamen ff kalkulator - cara hitung poin turnamen free fire untuk 12 team 2 match dengan kill point dan placement point akurat</image:caption>
+            <image:title>Cara Hitung Poin Turnamen Free Fire 2 Match - Point Free Fire Fast Turnamen FF 2025</image:title>
+            <image:caption>Cara hitung poin turnamen free fire 2 match dengan point free fire 2 match calculator untuk fast turnamen ff 2 match. Turnamen free fire 2025 Indonesia - FF Esport ID akurat 100%</image:caption>
         </image:image>
     </url>
 
     <!-- Index HTML (alternative access) -->
     <url>
         <loc>https://freefirepoint.my.id/index.html</loc>
-        <lastmod>2024-12-30T12:00:00+07:00</lastmod>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -63,21 +63,21 @@
     <!-- Section-specific URLs for better indexing -->
     <url>
         <loc>https://freefirepoint.my.id/#tentang</loc>
-        <lastmod>2024-12-30T12:00:00+07:00</lastmod>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
         <loc>https://freefirepoint.my.id/#kontak</loc>
-        <lastmod>2024-12-30T12:00:00+07:00</lastmod>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://freefirepoint.my.id/#faq</loc>
-        <lastmod>2024-12-30T12:00:00+07:00</lastmod>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
