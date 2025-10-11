@@ -3,26 +3,26 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
     
-    <!-- Main Page - Cara Hitung Poin Turnamen Free Fire -->
+    <!-- Main Page - Free Fire Point Calculator -->
     <url>
         <loc>https://freefirepoint.my.id/</loc>
-        <lastmod>2024-12-30T12:00:00+07:00</lastmod>
-        <changefreq>weekly</changefreq>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
             <image:title>Free Fire Point Calculator Indonesia</image:title>
-            <image:caption>Cara hitung poin turnamen Free Fire 2024 - Kalkulator kill point dan placement point terlengkap</image:caption>
+            <image:caption>Free Fire Point - Cara hitung poin turnamen free fire untuk fast turnamen ff 2024</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/Logo/Logo.png</image:loc>
             <image:title>Logo Free Fire Point Calculator</image:title>
-            <image:caption>Logo kalkulator poin Free Fire Indonesia</image:caption>
+            <image:caption>Logo kalkulator poin Free Fire Indonesia - Fast Turnamen FF</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/Logo/Booyah%20Logo.png</image:loc>
             <image:title>Booyah Logo Free Fire</image:title>
-            <image:caption>Logo Booyah Free Fire untuk ranking #1 turnamen</image:caption>
+            <image:caption>Logo Booyah Free Fire untuk ranking #1 turnamen - 12 placement point</image:caption>
         </image:image>
     </url>
     
@@ -42,13 +42,13 @@
     <!-- Fast Turnamen 12 Team - 2 Match Calculator -->
     <url>
         <loc>https://freefirepoint.my.id/pages/Fast%20Turnamen%20-%2012%20Team/2%20Match.html</loc>
-        <lastmod>2025-01-07T12:00:00+07:00</lastmod>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
         <changefreq>daily</changefreq>
-        <priority>0.95</priority>
+        <priority>0.98</priority>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Kalkulator Poin Free Fire Fast Turnamen 12 Team 2 Match</image:title>
-            <image:caption>Hitung poin turnamen Free Fire untuk 12 team 2 match - Kill point dan placement point</image:caption>
+            <image:title>Fast Turnamen FF - Kalkulator Poin Free Fire Point 12 Team 2 Match</image:title>
+            <image:caption>Fast turnamen ff kalkulator - cara hitung poin turnamen free fire untuk 12 team 2 match dengan kill point dan placement point akurat</image:caption>
         </image:image>
     </url>
 

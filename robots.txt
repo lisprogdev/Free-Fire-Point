@@ -42,11 +42,12 @@ Disallow: /package.json
 Disallow: /package-lock.json
 
 # Free Fire Point Calculator Indonesia - SEO Optimized
-# Primary keywords: cara hitung poin turnamen free fire, kalkulator poin ff
+# Primary keywords: free fire point, cara hitung poin turnamen free fire, fast turnamen ff
+# Secondary keywords: kalkulator poin ff, free fire point calculator, kill point ff
 # Target location: Indonesia
-# Last updated: 2024-12-30
+# Last updated: 2025-01-11
 
 # Specific page priorities for crawlers
-# High priority: Calculator and main pages
-# Medium priority: Info sections
+# High priority: Calculator, main pages, and fast turnamen pages
+# Medium priority: Blog articles and info sections
 # Low priority: Static assets

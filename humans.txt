@@ -47,11 +47,12 @@
     
 # KEYWORDS
 
-    Primary: cara hitung poin turnamen free fire, kalkulator poin ff
-    Secondary: kill point ff, placement point, sistem poin free fire, booyah point
-    Long-tail: cara menghitung skor turnamen free fire 2024 indonesia
-    Local: turnamen free fire sulawesi selatan, ff tournament barru
-    Gaming: free fire calculator indonesia, ff point system 2024
+    Primary: free fire point, cara hitung poin turnamen free fire, fast turnamen ff
+    Secondary: kalkulator poin ff, free fire point calculator, kill point ff, placement point ff
+    Tertiary: sistem poin free fire, booyah point, turnamen free fire
+    Long-tail: cara menghitung poin fast turnamen free fire 2024 indonesia
+    Local: turnamen free fire indonesia, ff tournament indonesia, free fire point calculator indonesia
+    Gaming: kalkulator turnamen ff, hitung poin ff online, fast turnamen free fire calculator
     
 # SEO FOCUS
 
