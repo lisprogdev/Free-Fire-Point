@@ -92,6 +92,7 @@
     <link rel="stylesheet" href="../../css/navigation.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/cara-penggunaan.css">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5J9WWT57D"></script>
@@ -632,192 +633,215 @@
         <!-- Police Tape Divider -->
         <div class="police-tape"></div>
 
-        <!-- Cara Penggunaan Section -->
+        <!-- Tutorial Section with Tabs -->
         <section class="py-16 lg:py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden">
             <!-- Background Pattern -->
             <div class="absolute inset-0 opacity-5">
-                <div class="absolute top-20 left-10 w-32 h-32 border-2 border-yellow-400 rounded-full animate-pulse">
-                </div>
-                <div class="absolute bottom-20 right-10 w-24 h-24 border-2 border-orange-400 rounded-full animate-pulse"
-                    style="animation-delay: 2s;"></div>
-                <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-yellow-400 rotate-45 animate-bounce"
-                    style="animation-delay: 1s;"></div>
+                <div class="absolute top-20 left-10 w-32 h-32 border-2 border-yellow-400 rounded-full animate-pulse"></div>
+                <div class="absolute bottom-20 right-10 w-24 h-24 border-2 border-orange-400 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
+                <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-yellow-400 rotate-45 animate-bounce" style="animation-delay: 1s;"></div>
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <!-- Section Header -->
                 <div class="text-center mb-12 lg:mb-16" data-aos="fade-up">
-                        <div
-                            class="inline-flex items-center justify-center p-2 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-full mb-6">
-                        <div
-                            class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-yellow-400/30 to-orange-400/30 rounded-full">
+                    <div class="inline-flex items-center justify-center p-2 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-full mb-6">
+                        <div class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-yellow-400/30 to-orange-400/30 rounded-full">
                             <img src="../../images/icon/how to use.png" alt="Cara Menggunakan Kalkulator Poin Free Fire - Tutorial Lengkap" class="w-4 h-4 nav-icon gradient-icon">
-                            <span class="text-sm font-gaming-menu text-yellow-400 uppercase tracking-wider">Tutorial
-                                Lengkap</span>
+                            <span class="text-sm font-gaming-menu text-yellow-400 uppercase tracking-wider">Tutorial Lengkap</span>
                         </div>
                     </div>
 
                     <h2 class="text-3xl md:text-5xl lg:text-6xl font-gaming font-bold mb-6">
-                        <span
-                            class="bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent">
-                            STEP-BY-STEP
-                        </span><br>
-                        <span class="text-slate-200">TUTORIAL KALKULATOR</span>
+                        <span class="bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent">PILIH KALKULATOR</span><br>
+                        <span class="text-slate-200">TUTORIAL STEP-BY-STEP</span>
                     </h2>
 
                     <p class="text-lg md:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-                        Ikuti panduan lengkap cara menggunakan <strong>kalkulator poin turnamen Free Fire</strong> 
-                        untuk mendapatkan hasil perhitungan yang akurat dan mudah dipahami.
+                        Pilih jenis kalkulator turnamen Free Fire yang ingin kamu pelajari
                     </p>
                 </div>
 
-                <!-- Steps Grid -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12" data-aos="fade-up" data-aos-delay="200">
-                    <!-- Step 1 -->
-                    <div class="bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-6 lg:p-8 border border-slate-700/50 hover:border-yellow-400/30 transition-all duration-300">
-                        <div class="flex items-center mb-6">
-                            <div class="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center mr-4">
-                                <span class="text-slate-900 font-gaming font-bold text-xl">1</span>
-                            </div>
-                            <h3 class="text-xl font-gaming font-bold text-slate-100">Isi Informasi Turnamen</h3>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400 mt-1"></i>
-                                <p class="text-slate-300 text-sm">Masukkan <strong>nama turnamen</strong> dan <strong>fase turnamen</strong></p>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400 mt-1"></i>
-                                <p class="text-slate-300 text-sm">Contoh: "Turnamen Free Fire Ramadan Cup"</p>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400 mt-1"></i>
-                                <p class="text-slate-300 text-sm">Fase: "Babak Penyisihan", "Semi Final", "Grand Final"</p>
-                            </div>
+                <!-- Category Tabs Navigation -->
+                <div class="mb-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <button onclick="switchCategory('fast-12')" class="category-tab active" data-category="fast-12">
+                            <img src="../../images/Logo/Booyah Logo.png" alt="Fast Turnamen 12 Team" class="w-4 h-4 mr-2">
+                            Fast Turnamen 12 Team
+                        </button>
+                        <button onclick="switchCategory('oneday-12')" class="category-tab" data-category="oneday-12">
+                            <img src="../../images/Logo/Booyah Logo.png" alt="One Day 12 Team" class="w-4 h-4 mr-2">
+                            One Day 12 Team
+                        </button>
+                        <button onclick="switchCategory('fast-15')" class="category-tab" data-category="fast-15">
+                            <img src="../../images/Logo/Booyah Logo.png" alt="Fast Turnamen 15 Team" class="w-4 h-4 mr-2">
+                            Fast Turnamen 15 Team
+                        </button>
+                        <button onclick="switchCategory('oneday-15')" class="category-tab" data-category="oneday-15">
+                            <img src="../../images/Logo/Booyah Logo.png" alt="One Day 15 Team" class="w-4 h-4 mr-2">
+                            One Day 15 Team
+                        </button>
+                        <button onclick="switchCategory('league-12')" class="category-tab" data-category="league-12">
+                            <img src="../../images/Logo/Booyah Logo.png" alt="League 12 Team" class="w-4 h-4 mr-2">
+                            League 12 Team
+                        </button>
+                        <button onclick="switchCategory('league-15')" class="category-tab" data-category="league-15">
+                            <img src="../../images/Logo/Booyah Logo.png" alt="League 15 Team" class="w-4 h-4 mr-2">
+                            League 15 Team
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sub Tabs Navigation -->
+                <div class="mb-12" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Fast Turnamen 12 Team Tabs -->
+                    <div id="tabs-fast-12" class="sub-tabs-container active">
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <button onclick="switchTab('fast-12-2match')" class="sub-tab active" data-tab="fast-12-2match">
+                                <i class="fas fa-gamepad mr-2"></i>2 Match
+                            </button>
+                            <button onclick="switchTab('fast-12-3match')" class="sub-tab disabled" data-tab="fast-12-3match" disabled>
+                                <i class="fas fa-gamepad mr-2"></i>3 Match
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </button>
+                            <button onclick="switchTab('fast-12-4match')" class="sub-tab disabled" data-tab="fast-12-4match" disabled>
+                                <i class="fas fa-gamepad mr-2"></i>4 Match
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Step 2 -->
-                    <div class="bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-6 lg:p-8 border border-slate-700/50 hover:border-yellow-400/30 transition-all duration-300">
-                        <div class="flex items-center mb-6">
-                            <div class="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center mr-4">
-                                <span class="text-slate-900 font-gaming font-bold text-xl">2</span>
-                            </div>
-                            <h3 class="text-xl font-gaming font-bold text-slate-100">Input Data Tim</h3>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400 mt-1"></i>
-                                <p class="text-slate-300 text-sm">Ubah <strong>nama tim</strong> sesuai peserta turnamen</p>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400 mt-1"></i>
-                                <p class="text-slate-300 text-sm">Pilih <strong>ranking akhir</strong> (1-12) untuk setiap match</p>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400 mt-1"></i>
-                                <p class="text-slate-300 text-sm">Masukkan <strong>jumlah kill</strong> yang diperoleh</p>
-                            </div>
+                    <!-- One Day 12 Team Tabs -->
+                    <div id="tabs-oneday-12" class="sub-tabs-container">
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <button onclick="switchTab('oneday-12-2k2f')" class="sub-tab disabled" data-tab="oneday-12-2k2f" disabled>
+                                <i class="fas fa-gamepad mr-2"></i>2M Kual 2M Final
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </button>
+                            <button onclick="switchTab('oneday-12-2k3f')" class="sub-tab disabled" data-tab="oneday-12-2k3f" disabled>
+                                <i class="fas fa-gamepad mr-2"></i>2M Kual 3M Final
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </button>
+                            <button onclick="switchTab('oneday-12-3k3f')" class="sub-tab disabled" data-tab="oneday-12-3k3f" disabled>
+                                <i class="fas fa-gamepad mr-2"></i>3M Kual 3M Final
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </button>
+                            <button onclick="switchTab('oneday-12-3k4f')" class="sub-tab disabled" data-tab="oneday-12-3k4f" disabled>
+                                <i class="fas fa-gamepad mr-2"></i>3M Kual 4M Final
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </button>
+                            <button onclick="switchTab('oneday-12-4k4f')" class="sub-tab disabled" data-tab="oneday-12-4k4f" disabled>
+                                <i class="fas fa-gamepad mr-2"></i>4M Kual 4M Final
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Step 3 -->
-                    <div class="bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-6 lg:p-8 border border-slate-700/50 hover:border-yellow-400/30 transition-all duration-300">
-                        <div class="flex items-center mb-6">
-                            <div class="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center mr-4">
-                                <span class="text-slate-900 font-gaming font-bold text-xl">3</span>
-                            </div>
-                            <h3 class="text-xl font-gaming font-bold text-slate-100">Simpan & Hitung</h3>
+                    <!-- Fast Turnamen 15 Team Tabs -->
+                    <div id="tabs-fast-15" class="sub-tabs-container">
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <button onclick="switchTab('fast-15-2match')" class="sub-tab active" data-tab="fast-15-2match">
+                                <i class="fas fa-gamepad mr-2"></i>2 Match
+                            </button>
+                            <button onclick="switchTab('fast-15-3match')" class="sub-tab disabled" data-tab="fast-15-3match" disabled>
+                                <i class="fas fa-gamepad mr-2"></i>3 Match
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </button>
+                            <button onclick="switchTab('fast-15-4match')" class="sub-tab disabled" data-tab="fast-15-4match" disabled>
+                                <i class="fas fa-gamepad mr-2"></i>4 Match
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </button>
                         </div>
-                        <div class="space-y-4">
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400 mt-1"></i>
-                                <p class="text-slate-300 text-sm">Klik <strong>"Simpan Semua"</strong> untuk menyimpan progress</p>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400 mt-1"></i>
-                                <p class="text-slate-300 text-sm">Klik <strong>"Hitung"</strong> untuk melihat hasil ranking</p>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-check-circle text-yellow-400 mt-1"></i>
-                                <p class="text-slate-300 text-sm">Download hasil sebagai <strong>gambar JPG</strong></p>
-                            </div>
+                    </div>
+
+                    <!-- One Day 15 Team Tabs -->
+                    <div id="tabs-oneday-15" class="sub-tabs-container">
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <button onclick="switchTab('oneday-15-2k2f')" class="sub-tab disabled" data-tab="oneday-15-2k2f" disabled>
+                                <i class="fas fa-gamepad mr-2"></i>2M Kual 2M Final
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </button>
+                            <button onclick="switchTab('oneday-15-2k3f')" class="sub-tab disabled" data-tab="oneday-15-2k3f" disabled>
+                                <i class="fas fa-gamepad mr-2"></i>2M Kual 3M Final
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </button>
+                            <button onclick="switchTab('oneday-15-3k3f')" class="sub-tab disabled" data-tab="oneday-15-3k3f" disabled>
+                                <i class="fas fa-gamepad mr-2"></i>3M Kual 3M Final
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </button>
+                            <button onclick="switchTab('oneday-15-3k4f')" class="sub-tab disabled" data-tab="oneday-15-3k4f" disabled>
+                                <i class="fas fa-gamepad mr-2"></i>3M Kual 4M Final
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </button>
+                            <button onclick="switchTab('oneday-15-4k4f')" class="sub-tab disabled" data-tab="oneday-15-4k4f" disabled>
+                                <i class="fas fa-gamepad mr-2"></i>4M Kual 4M Final
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- League 12 Team Tabs -->
+                    <div id="tabs-league-12" class="sub-tabs-container">
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <button onclick="switchTab('league-12-cr')" class="sub-tab disabled" data-tab="league-12-cr" disabled>
+                                <i class="fas fa-trophy mr-2"></i>Champions Rush
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </button>
+                            <button onclick="switchTab('league-12-old')" class="sub-tab disabled" data-tab="league-12-old" disabled>
+                                <i class="fas fa-trophy mr-2"></i>Old
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- League 15 Team Tabs -->
+                    <div id="tabs-league-15" class="sub-tabs-container">
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <button onclick="switchTab('league-15-cr')" class="sub-tab disabled" data-tab="league-15-cr" disabled>
+                                <i class="fas fa-trophy mr-2"></i>Champions Rush
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </button>
+                            <button onclick="switchTab('league-15-old')" class="sub-tab disabled" data-tab="league-15-old" disabled>
+                                <i class="fas fa-trophy mr-2"></i>Old
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Additional Tips -->
-                <div class="mt-16" data-aos="fade-up" data-aos-delay="400">
-                    <div class="bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50">
-                        <div class="text-center mb-8">
-                            <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-lightbulb text-slate-900 text-2xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-4">Tips & Trik</h3>
-                        </div>
-                        
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div class="space-y-4">
-                                <h4 class="text-lg font-gaming font-bold text-yellow-400 mb-4">Sistem Poin</h4>
-                                <div class="space-y-3">
-                                    <div class="flex items-start space-x-3">
-                                        <i class="fas fa-trophy text-yellow-400 mt-1"></i>
-                                        <p class="text-slate-300 text-sm"><strong>BOOYAH:</strong> 12 poin + kill point</p>
-                                    </div>
-                                    <div class="flex items-start space-x-3">
-                                        <i class="fas fa-medal text-slate-400 mt-1"></i>
-                                        <p class="text-slate-300 text-sm"><strong>#2:</strong> 9 poin + kill point</p>
-                                    </div>
-                                    <div class="flex items-start space-x-3">
-                                        <i class="fas fa-medal text-amber-600 mt-1"></i>
-                                        <p class="text-slate-300 text-sm"><strong>#3:</strong> 8 poin + kill point</p>
-                                    </div>
-                                    <div class="flex items-start space-x-3">
-                                        <i class="fas fa-crosshairs text-orange-400 mt-1"></i>
-                                        <p class="text-slate-300 text-sm"><strong>Kill Point:</strong> 1 kill = 1 poin</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="space-y-4">
-                                <h4 class="text-lg font-gaming font-bold text-orange-400 mb-4">Fitur Unggulan</h4>
-                                <div class="space-y-3">
-                                    <div class="flex items-start space-x-3">
-                                        <i class="fas fa-save text-yellow-400 mt-1"></i>
-                                        <p class="text-slate-300 text-sm">Data tersimpan otomatis di browser</p>
-                                    </div>
-                                    <div class="flex items-start space-x-3">
-                                        <i class="fas fa-download text-orange-400 mt-1"></i>
-                                        <p class="text-slate-300 text-sm">Download hasil sebagai gambar</p>
-                                    </div>
-                                    <div class="flex items-start space-x-3">
-                                        <i class="fas fa-mobile-alt text-yellow-400 mt-1"></i>
-                                        <p class="text-slate-300 text-sm">Responsif di semua perangkat</p>
-                                    </div>
-                                    <div class="flex items-start space-x-3">
-                                        <i class="fas fa-sync text-orange-400 mt-1"></i>
-                                        <p class="text-slate-300 text-sm">Reset data untuk turnamen baru</p>
-                                    </div>
-                                </div>
+                <!-- Tab Content Container -->
+                <div class="tab-content-container" data-aos="fade-up" data-aos-delay="300">
+                    <!-- Fast 12 Team - 2 Match Content -->
+                    <div id="content-fast-12-2match" class="tab-content active">
+                        <div class="bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50">
+                            <div class="text-center">
+                                <h3 class="text-2xl font-gaming font-bold text-yellow-400 mb-4">Tutorial Fast Turnamen 12 Team - 2 Match</h3>
+                                <p class="text-slate-300">Konten tutorial akan ditambahkan di sini...</p>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- CTA Section -->
-                <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="600">
-                    <div class="bg-gradient-to-r from-yellow-400/10 to-orange-400/10 border border-yellow-400/30 rounded-2xl p-8">
-                        <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-4">
-                            Siap Mencoba Kalkulator?
-                        </h3>
-                        <p class="text-slate-300 mb-6">
-                            Mulai hitung poin turnamen Free Fire dengan mudah dan akurat
-                        </p>
-                        <a href="../Fast Turnamen - 12 Team/2 Match.html" onclick="showAdModal()"
-                            class="btn-hero-primary px-8 py-4 rounded-full text-lg font-bold inline-flex items-center justify-center">
-                            <i class="fas fa-calculator mr-3"></i>
-                            Mulai Hitung Sekarang
-                        </a>
+                    <!-- Fast 15 Team - 2 Match Content -->
+                    <div id="content-fast-15-2match" class="tab-content">
+                        <div class="bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50">
+                            <div class="text-center">
+                                <h3 class="text-2xl font-gaming font-bold text-yellow-400 mb-4">Tutorial Fast Turnamen 15 Team - 2 Match</h3>
+                                <p class="text-slate-300">Konten tutorial akan ditambahkan di sini...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder for other tabs -->
+                    <div id="content-placeholder" class="tab-content">
+                        <div class="bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50">
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <i class="fas fa-clock text-slate-900 text-3xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-4">Coming Soon</h3>
+                                <p class="text-slate-300">Tutorial untuk kalkulator ini sedang dalam pengembangan</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -854,6 +878,7 @@
     <script src="../../js/navigation.js"></script>
     <script src="../../js/footer.js"></script>
     <script src="../../js/index.js"></script>
+    <script src="../../js/cara-penggunaan.js"></script>
 </body>
 
 </html>

@@ -1,122 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     
     <!-- Main Page - Free Fire Point Calculator -->
     <url>
         <loc>https://freefirepoint.my.id/</loc>
-        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <lastmod>2025-10-11T12:00:00+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
             <image:title>Free Fire Point Calculator Indonesia 2025</image:title>
-            <image:caption>Free Fire Point - Cara hitung poin turnamen free fire untuk fast turnamen ff, kalkulator poin ff gratis akurat 2025</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/Logo/Logo.png</image:loc>
-            <image:title>Logo Free Fire Point Calculator Fast Turnamen FF</image:title>
-            <image:caption>Logo kalkulator free fire point untuk cara hitung poin turnamen free fire dan fast turnamen ff Indonesia</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://freefirepoint.my.id/images/Logo/Booyah%20Logo.png</image:loc>
-            <image:title>Booyah Logo Fast Turnamen Free Fire</image:title>
-            <image:caption>Logo Booyah free fire point untuk ranking #1 fast turnamen ff - 12 placement point</image:caption>
-        </image:image>
-    </url>
-    
-    <!-- Calculator Page -->
-    <url>
-        <loc>https://freefirepoint.my.id/pages/kalkulator.html</loc>
-        <lastmod>2024-12-30T12:00:00+07:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-        <image:image>
-            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Kalkulator Poin Free Fire Turnamen</image:title>
-            <image:caption>Halaman kalkulator untuk menghitung kill point dan placement point turnamen Free Fire</image:caption>
+            <image:title>Logo Free Fire Point Calculator</image:title>
         </image:image>
     </url>
 
     <!-- Fast Turnamen 12 Team - 2 Match Calculator -->
     <url>
         <loc>https://freefirepoint.my.id/pages/Fast%20Turnamen%20-%2012%20Team/2%20Match.html</loc>
-        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <lastmod>2025-10-11T12:00:00+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.98</priority>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Cara Hitung Poin Turnamen Free Fire 2 Match - Point Free Fire Fast Turnamen FF 2025</image:title>
-            <image:caption>Cara hitung poin turnamen free fire 2 match dengan point free fire 2 match calculator untuk fast turnamen ff 2 match. Turnamen free fire 2025 Indonesia - FF Esport ID akurat 100%</image:caption>
+            <image:title>Cara Hitung Poin Turnamen Free Fire 2 Match</image:title>
         </image:image>
-    </url>
-
-    <!-- Index HTML (alternative access) -->
-    <url>
-        <loc>https://freefirepoint.my.id/index.html</loc>
-        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Section-specific URLs for better indexing -->
-    <url>
-        <loc>https://freefirepoint.my.id/#tentang</loc>
-        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://freefirepoint.my.id/#kontak</loc>
-        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>https://freefirepoint.my.id/#faq</loc>
-        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
     
     <!-- Blog Articles -->
     <url>
         <loc>https://freefirepoint.my.id/pages/blog/sistem-poin-free-fire-2024.html</loc>
-        <lastmod>2024-01-15T12:00:00+07:00</lastmod>
+        <lastmod>2025-10-11T12:00:00+07:00</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.85</priority>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Sistem Poin Free Fire 2024 - Panduan Lengkap</image:title>
-            <image:caption>Panduan lengkap sistem poin Free Fire 2024 - Kill point dan placement point</image:caption>
+            <image:title>Sistem Poin Free Fire 2024</image:title>
         </image:image>
     </url>
     
     <url>
         <loc>https://freefirepoint.my.id/pages/blog/strategi-turnamen-free-fire.html</loc>
-        <lastmod>2024-01-20T12:00:00+07:00</lastmod>
+        <lastmod>2025-10-11T12:00:00+07:00</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.85</priority>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Strategi Turnamen Free Fire 2024 - Tips Pro Player</image:title>
-            <image:caption>Tips strategi turnamen Free Fire dari pro player untuk meraih kemenangan</image:caption>
+            <image:title>Strategi Turnamen Free Fire 2024</image:title>
         </image:image>
     </url>
     
     <!-- Tutorial Page -->
     <url>
         <loc>https://freefirepoint.my.id/pages/more/cara-penggunaan.html</loc>
-        <lastmod>2024-01-15T12:00:00+07:00</lastmod>
+        <lastmod>2025-10-11T12:00:00+07:00</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.80</priority>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
             <image:title>Cara Penggunaan Kalkulator Poin Free Fire</image:title>
-            <image:caption>Tutorial lengkap cara menggunakan kalkulator poin Free Fire</image:caption>
         </image:image>
     </url>
     
