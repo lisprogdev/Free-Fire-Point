@@ -53,15 +53,19 @@
         </image:image>
     </url>
     
-    <!-- Tutorial Page -->
+    <!-- Cara Penggunaan Tutorial Page -->
     <url>
         <loc>https://freefirepoint.my.id/pages/more/cara-penggunaan.html</loc>
-        <lastmod>2025-10-11T12:00:00+07:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Cara Penggunaan Kalkulator Poin Free Fire</image:title>
+            <image:title>Cara Penggunaan Kalkulator Poin Free Fire - Tutorial Lengkap 2024</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://freefirepoint.my.id/images/Logo/Booyah Logo.png</image:loc>
+            <image:title>Tutorial Kalkulator Fast Turnamen FF</image:title>
         </image:image>
     </url>
     

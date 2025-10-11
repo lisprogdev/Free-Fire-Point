@@ -44,16 +44,17 @@
     Hosting: GitHub Pages
     Domain: freefirepoint.my.id
     Repository: Public
-    Pages: Homepage + 2 Match Calculator (Fully SEO Optimized)
+    Pages: Homepage + 2 Match Calculator + Cara Penggunaan Tutorial (Fully SEO Optimized)
     
 # KEYWORDS
 
     Primary (Homepage): free fire point, cara hitung poin turnamen free fire, fast turnamen ff
     Primary (2 Match): cara hitung poin turnamen free fire 2 match, point free fire 2 match, fast turnamen ff 2 match
+    Primary (Cara Penggunaan): cara penggunaan kalkulator free fire, tutorial kalkulator poin ff, panduan hitung poin turnamen
     Secondary: kalkulator poin ff, free fire point calculator, kill point ff, placement point ff
-    Tertiary: sistem poin free fire, booyah point, turnamen free fire, turnamen ff 2 match
-    Special: turnamen free fire 2025, ff esport id
-    Long-tail: cara menghitung poin fast turnamen free fire 2025 indonesia
+    Tertiary: sistem poin free fire, booyah point, turnamen free fire, turnamen ff 2 match, cara pakai kalkulator ff
+    Special: turnamen free fire 2025, ff esport id, tutorial lengkap free fire point
+    Long-tail: cara menghitung poin fast turnamen free fire 2025 indonesia, panduan lengkap kalkulator poin ff
     Local: turnamen free fire indonesia, ff tournament indonesia, free fire point calculator indonesia
     Gaming: kalkulator turnamen ff, hitung poin ff online, fast turnamen free fire calculator
     
@@ -66,7 +67,7 @@
     Search Intent: Transactional & Informational
     Competition Level: Medium
     Content Quality: High (Original calculator tool)
-    Keyword Focus 2025: Turnamen Free Fire 2025, FF Esport ID, Point Free Fire 2 Match
+    Keyword Focus 2025: Turnamen Free Fire 2025, FF Esport ID, Point Free Fire 2 Match, Tutorial Kalkulator
     
 # FEATURES
 
@@ -75,8 +76,11 @@
     ✓ Real-time Calculation
     ✓ Data Persistence (IndexedDB)
     ✓ JPG Export Functionality
+    ✓ Comprehensive Tutorial Page with Tabbed Navigation
+    ✓ Interactive FAQ with Accordion
+    ✓ Step-by-Step Usage Guide
     ✓ Mobile Responsive Design
-    ✓ SEO Optimized
+    ✓ SEO Optimized (Homepage + 2 Match + Cara Penggunaan)
     ✓ Fast Loading (GitHub Pages)
     ✓ Free to Use
     

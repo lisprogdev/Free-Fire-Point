@@ -62,6 +62,23 @@ function hideAllTabContent() {
     });
 }
 
+// Toggle FAQ
+function toggleFAQ(button) {
+    const faqItem = button.parentElement;
+    const answer = faqItem.querySelector('.faq-answer');
+    const icon = button.querySelector('.fas');
+    
+    // Toggle answer visibility
+    answer.classList.toggle('hidden');
+    
+    // Rotate icon
+    if (answer.classList.contains('hidden')) {
+        icon.style.transform = 'rotate(0deg)';
+    } else {
+        icon.style.transform = 'rotate(90deg)';
+    }
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
     // Set default category and tab

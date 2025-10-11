@@ -15,6 +15,9 @@
 - fast turnamen ff 2 match (480/month) ⭐ 2 Match Page
 - turnamen free fire 2025 (1,200/month) ⭐ Both Pages
 - ff esport id (420/month) ⭐ 2 Match Page
+- cara penggunaan kalkulator free fire (720/month) ⭐ Cara Penggunaan Page
+- tutorial kalkulator poin ff (580/month) ⭐ Cara Penggunaan Page
+- panduan hitung poin turnamen (450/month) ⭐ Cara Penggunaan Page
 
 ## Secondary Keywords (Medium Volume):
 - poin free fire (1,600/month)
@@ -69,14 +72,16 @@
 2. "Kalkulator Poin Fast Turnamen FF: Kill Point + Placement Point" ✓ (Implemented - Homepage)
 3. "Cara Hitung Poin Turnamen Free Fire 2 Match - Point Free Fire Calculator" ✓ (Implemented - 2 Match Page)
 4. "Fast Turnamen FF 2 Match: Sistem Point Free Fire 2025" ✓ (Implemented - 2 Match Page)
-5. "Tips Menang Fast Turnamen Free Fire dengan Sistem Poin Terbaru"
-6. "Rumus Menghitung Total Poin Fast Turnamen Free Fire Indonesia"
-7. "Perbedaan Kill Point vs Placement Point di Fast Turnamen FF"
-8. "Strategi BOOYAH: Cara Dapat 12 Poin di Fast Turnamen FF"
-9. "Panduan Lengkap Ranking System Fast Turnamen Free Fire 2025"
-10. "Free Fire Point Calculator: Tool Gratis Fast Turnamen FF Indonesia"
-11. "FF Esport ID: Cara Hitung Poin Turnamen Free Fire 2 Match 2025"
-12. "Point Free Fire 2 Match: Panduan Lengkap Turnamen FF 2025"
+5. "Cara Penggunaan Kalkulator Poin Free Fire - Tutorial Lengkap 2024" ✓ (Implemented - Cara Penggunaan Page)
+6. "Tutorial Step-by-Step Kalkulator Fast Turnamen FF 2025" ✓ (Implemented - Cara Penggunaan Page)
+7. "Tips Menang Fast Turnamen Free Fire dengan Sistem Poin Terbaru"
+8. "Rumus Menghitung Total Poin Fast Turnamen Free Fire Indonesia"
+9. "Perbedaan Kill Point vs Placement Point di Fast Turnamen FF"
+10. "Strategi BOOYAH: Cara Dapat 12 Poin di Fast Turnamen FF"
+11. "Panduan Lengkap Ranking System Fast Turnamen Free Fire 2025"
+12. "Free Fire Point Calculator: Tool Gratis Fast Turnamen FF Indonesia"
+13. "FF Esport ID: Cara Hitung Poin Turnamen Free Fire 2 Match 2025"
+14. "Point Free Fire 2 Match: Panduan Lengkap Turnamen FF 2025"
 
 ## Meta Description Templates (Optimized):
 **Homepage:**
@@ -86,6 +91,10 @@
 **2 Match Calculator Page:**
 - "🏆 Cara hitung poin turnamen free fire 2 match! Point free fire 2 match fast turnamen ff 2025. Turnamen ff 2 match calculator Indonesia - FF Esport ID akurat 100% gratis!" ✓ (CURRENT 2 Match)
 - "Point free fire 2 match calculator untuk fast turnamen ff 2 match. Cara hitung poin turnamen free fire 2025 - FF Esport ID. Gratis & akurat 100%!"
+
+**Cara Penggunaan Page:**
+- "Panduan lengkap cara menggunakan kalkulator poin turnamen Free Fire. Tutorial step-by-step untuk menghitung kill point, placement point, dan total skor turnamen FF." ✓ (CURRENT Cara Penggunaan)
+- "Tutorial lengkap cara pakai kalkulator poin ff. Panduan hitung poin turnamen free fire step-by-step. Gratis & mudah dipahami!"
 
 ## Title Tag Variations (Updated):
 **Homepage:**
@@ -99,6 +108,11 @@
 - "Point Free Fire 2 Match Calculator - Fast Turnamen FF 2 Match Indonesia" (Alternative)
 - "Turnamen FF 2 Match - Cara Hitung Poin Free Fire 2025 - FF Esport ID" (Long-tail)
 
+**Cara Penggunaan Page:**
+- "Cara Penggunaan Kalkulator Poin Free Fire - Tutorial Lengkap 2024" ✓ (CURRENT Cara Penggunaan)
+- "Tutorial Kalkulator Poin FF - Panduan Hitung Poin Turnamen Free Fire" (Alternative)
+- "Panduan Lengkap Cara Pakai Kalkulator Free Fire Point Calculator" (Long-tail)
+
 ## H1 Variations (Optimized):
 **Homepage:**
 - "FREE FIRE POINT - CARA HITUNG POIN TURNAMEN FF 2025" ✓ (CURRENT Homepage)
@@ -109,6 +123,11 @@
 - "CARA HITUNG POIN TURNAMEN FREE FIRE 2 MATCH - FAST TURNAMEN FF 2025" ✓ (CURRENT 2 Match)
 - "POINT FREE FIRE 2 MATCH CALCULATOR - FAST TURNAMEN FF 2025" (Alternative)
 - "TURNAMEN FF 2 MATCH - FF ESPORT ID INDONESIA" (Alternative)
+
+**Cara Penggunaan Page:**
+- "CARA PENGGUNAAN KALKULATOR POIN FREE FIRE 2024" ✓ (CURRENT Cara Penggunaan)
+- "TUTORIAL LENGKAP KALKULATOR POIN FF" (Alternative)
+- "PANDUAN HITUNG POIN TURNAMEN FREE FIRE" (Alternative)
 
 ## Content Structure for SEO:
 1. Introduction (target keyword in first 100 words)
@@ -168,6 +187,7 @@
 ✅ Domain: freefirepoint.my.id
 ✅ Main Page (Homepage): Fully optimized with primary keywords (2025-01-11)
 ✅ 2 Match Calculator Page: Fully optimized with specific keywords (2025-01-11)
+✅ Cara Penggunaan Page: Fully optimized with tutorial keywords (2025-01-11)
 ✅ SEO Files: Updated with new keyword strategy (2025-01-11)
 ✅ Primary Keywords Implemented (Homepage):
    - free fire point ⭐
@@ -181,13 +201,19 @@
    - turnamen ff 2 match ⭐
    - turnamen free fire 2025 ⭐
    - ff esport id ⭐
+✅ Primary Keywords Implemented (Cara Penggunaan Page):
+   - cara penggunaan kalkulator free fire ⭐
+   - tutorial kalkulator poin ff ⭐
+   - panduan hitung poin turnamen ⭐
+   - cara pakai kalkulator ff ⭐
+   - tutorial lengkap free fire point ⭐
 ✅ Social Media Integration: Complete
 ✅ Contact Information: Updated
 ✅ Performance: Optimized for GitHub Pages
 ✅ Mobile First: Responsive design
 ✅ Local SEO: Indonesia targeting
-✅ Schema.org: Updated to SoftwareApplication type (Homepage)
-✅ All Sections Optimized: Hero, About, Contact, Blog, FAQ, Footer, Modals
+✅ Schema.org: SoftwareApplication (2 Match), Article (Cara Penggunaan), BreadcrumbList, FAQPage
+✅ All Sections Optimized: Hero, About, Contact, Blog, FAQ, Footer, Modals, Tutorial Tabs
 
 ## Next SEO Improvements:
 🔄 Google Search Console setup
