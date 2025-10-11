@@ -219,19 +219,83 @@ document.addEventListener('DOMContentLoaded', function() {
             mirror: false
         });
     }
+
+    // Update active navigation based on current page
+    // But only if no correct active is already set in HTML
+    const currentPath = window.location.pathname.toLowerCase();
+    const currentFilename = currentPath.split('/').pop().toLowerCase();
+    const existingActives = document.querySelectorAll('.menu-nav-item.active');
+    
+    let shouldUpdate = true;
+    
+    // Check if any existing active is correct
+    if (existingActives.length > 0) {
+        existingActives.forEach((activeEl, index) => {
+            const activeHref = activeEl.getAttribute('href');
+            const activeSection = activeEl.getAttribute('data-section');
+            
+            if (activeHref) {
+                const activeFilename = activeHref.split('/').pop().toLowerCase();
+                
+                if (activeFilename === currentFilename) {
+                    // Active is already correct, don't call updateActiveNavigation
+                    shouldUpdate = false;
+                }
+            }
+        });
+    }
+    
+    // Update active navigation if needed
+    if (shouldUpdate) {
+        updateActiveNavigation();
+    }
 });
 
 // Global navigation functions
 function updateActiveNavigation() {
-    const currentPath = window.location.pathname;
+    const currentPath = window.location.pathname.toLowerCase();
+    const currentFilename = currentPath.split('/').pop().toLowerCase();
     const menuItems = document.querySelectorAll('.menu-nav-item');
+    
+    let foundActive = false;
     
     menuItems.forEach(item => {
         const href = item.getAttribute('href');
-        if (href && currentPath.includes(href.replace('#', ''))) {
-            item.classList.add('active');
+        const section = item.getAttribute('data-section');
+        
+        // Skip calculator dropdown trigger (don't touch its active state)
+        if (section === 'kalkulator') {
+            return;
+        }
+        
+        let shouldBeActive = false;
+        
+        // Check if current page matches the menu item
+        if (href && !href.startsWith('#') && !href.includes('index.html#')) {
+            // Get filename from href
+            let hrefFilename = href.split('/').pop().toLowerCase();
+            
+            // Check if filenames match
+            if (hrefFilename && currentFilename && hrefFilename === currentFilename) {
+                shouldBeActive = true;
+                foundActive = true;
+            }
+        }
+        // For index/homepage
+        else if ((currentPath === '/' || currentPath.includes('index.html')) && section === 'hero') {
+            shouldBeActive = true;
+            foundActive = true;
+        }
+        
+        // Update active state only if needed
+        if (shouldBeActive) {
+            if (!item.classList.contains('active')) {
+                item.classList.add('active');
+            }
         } else {
-            item.classList.remove('active');
+            if (item.classList.contains('active')) {
+                item.classList.remove('active');
+            }
         }
     });
 }

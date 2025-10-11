@@ -36,12 +36,14 @@
     width: 1rem;
     height: 1rem;
     margin-right: 0.5rem;
-    filter: brightness(0) saturate(100%) invert(85%) sepia(14%) saturate(296%) hue-rotate(177deg) brightness(96%) contrast(92%);
+    filter: none !important;
+    -webkit-filter: none !important;
 }
 
 .category-tab.active img,
 .category-tab:hover img {
-    filter: brightness(0) saturate(100%) invert(79%) sepia(58%) saturate(456%) hue-rotate(358deg) brightness(101%) contrast(96%);
+    filter: none !important;
+    -webkit-filter: none !important;
 }
 
 /* Sub Tabs Container */

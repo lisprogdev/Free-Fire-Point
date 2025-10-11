@@ -18,7 +18,7 @@ function showAdModal() {
                     try {
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     } catch (error) {
-                        console.log('AdSense loading error:', error);
+                        // AdSense loading error
                     }
                 }
             }, 100);

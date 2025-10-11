@@ -1116,10 +1116,10 @@
                         <i class="fas fa-exclamation-triangle text-white text-2xl"></i>
                     </div>
                     <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-2">
-                        Konfirmasi Reset Data Point Free Fire 2 Match! ⚠️
+                        Konfirmasi Reset Data! ⚠️
                     </h3>
                     <p class="text-slate-300 text-sm leading-relaxed">
-                        Apakah Anda yakin ingin menghapus <strong>semua data turnamen ff 2 match</strong>? 
+                        Apakah Anda yakin ingin menghapus <strong>semua data turnamen</strong>? 
                         Tindakan ini tidak dapat dibatalkan!
                     </p>
                 </div>
@@ -1132,24 +1132,24 @@
                     <div class="bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/30 rounded-lg p-4">
                         <h4 class="text-red-400 font-bold mb-2 flex items-center">
                             <i class="fas fa-fire mr-2"></i>
-                            Data Fast Turnamen FF Yang Akan Dihapus:
+                            Data Yang Akan Dihapus:
                         </h4>
                         <ul class="text-slate-300 text-sm space-y-1">
                             <li class="flex items-start">
                                 <i class="fas fa-times text-red-400 mr-2 mt-0.5 text-xs"></i>
-                                <span>Semua nama tim turnamen free fire 2025 (12 tim)</span>
+                                <span>Semua nama tim (12 tim)</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-times text-red-400 mr-2 mt-0.5 text-xs"></i>
-                                <span>Data ranking fast turnamen ff Match 1 & Match 2</span>
+                                <span>Data ranking Match 1 & Match 2</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-times text-red-400 mr-2 mt-0.5 text-xs"></i>
-                                <span>Data kill point free fire 2 match</span>
+                                <span>Data kill semua match</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-times text-red-400 mr-2 mt-0.5 text-xs"></i>
-                                <span>Hasil cara hitung poin turnamen free fire 2 match</span>
+                                <span>Hasil perhitungan dan ranking</span>
                             </li>
                         </ul>
                     </div>
@@ -1158,11 +1158,11 @@
                     <div class="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/30 rounded-lg p-4">
                         <div class="flex items-center mb-2">
                             <i class="fas fa-lightbulb text-yellow-400 mr-2"></i>
-                            <span class="text-yellow-400 font-medium text-sm">Tips Point Free Fire 2 Match</span>
+                            <span class="text-yellow-400 font-medium text-sm">Tips</span>
                         </div>
                         <p class="text-slate-300 text-sm">
-                            Jika hanya ingin ubah beberapa data turnamen ff 2 match, lebih baik edit manual. 
-                            Reset berguna untuk fast turnamen ff atau turnamen free fire 2025 yang baru.
+                            Jika Anda hanya ingin mengubah beberapa data, lebih baik edit manual 
+                            daripada reset semua. Reset berguna untuk turnamen baru.
                         </p>
                     </div>
                 </div>
@@ -1174,21 +1174,21 @@
                     <!-- Reset Button -->
                     <button id="confirmResetButton" onclick="performReset()" class="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
                         <i class="fas fa-trash-alt mr-2"></i>
-                        <span>Ya, Reset Data Fast Turnamen FF</span>
+                        <span>Ya, Reset Semua Data</span>
                         <i class="fas fa-fire ml-2 text-sm"></i>
                     </button>
                     
                     <!-- Cancel Button -->
                     <button class="w-full bg-slate-700 hover:bg-slate-600 text-slate-300 font-medium py-2 px-6 rounded-lg transition-colors duration-300" onclick="closeResetModal()">
                         <i class="fas fa-shield-alt mr-2"></i>
-                        Batalkan, Jaga Data Point FF 2 Match
+                        Batalkan, Jaga Data Saya
                     </button>
                     
                     <!-- Info -->
                     <div class="text-center">
                         <p class="text-slate-500 text-xs">
                             <i class="fas fa-info-circle mr-1"></i>
-                            Data cara hitung poin turnamen free fire 2 match akan dihapus permanen
+                            Data akan dihapus secara permanen dari browser
                         </p>
                     </div>
                 </div>
@@ -1418,5 +1418,49 @@
     <script src="../../js/navigation.js"></script>
     <script src="../../js/footer.js"></script>
     <script src="../../js/Fast Turnamen - 12 Team/2 Match.js"></script>
+    
+    <!-- FAQ Toggle Function -->
+    <script>
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('.faq-icon i');
+            const isOpen = !answer.classList.contains('hidden');
+            
+            if (isOpen) {
+                answer.classList.add('hidden');
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                answer.classList.remove('hidden');
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
+
+    <!-- Debug Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, checking elements...');
+            const inputTableBody = document.getElementById('inputTableBody');
+            const resultsTableBody = document.getElementById('resultsTableBody');
+            console.log('inputTableBody found:', !!inputTableBody);
+            console.log('resultsTableBody found:', !!resultsTableBody);
+            
+            // Force initialize if elements exist but table is empty
+            if (inputTableBody && inputTableBody.children.length <= 1) {
+                console.log('Forcing table initialization...');
+                setTimeout(() => {
+                    if (typeof initializeCalculator === 'function') {
+                        initializeCalculator();
+                    } else {
+                        console.log('initializeCalculator function not found');
+                    }
+                }, 1000);
+            }
+        });
+    </script>
 </body>
 </html>

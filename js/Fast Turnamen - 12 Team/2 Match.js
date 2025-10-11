@@ -199,7 +199,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize teams data
     function initializeTeamsData() {
-        console.log('Initializing teams data...');
         teamsData = [];
         for (let i = 1; i <= 12; i++) {
             teamsData.push({
@@ -210,17 +209,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 totalPoints: 0
             });
         }
-        console.log('Teams data initialized:', teamsData);
     }
 
     // Generate input table
     function generateInputTable() {
-        console.log('Generating input table...');
-        console.log('teamsData:', teamsData);
-        console.log('inputTableBody:', inputTableBody);
-        
         if (!inputTableBody) {
-            console.error('inputTableBody not found!');
             return;
         }
         
@@ -496,7 +489,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 showAlert('Data turnamen berhasil disimpan!', 'success');
                 
             } catch (error) {
-                console.error('Error saving data:', error);
                 showAlert('Gagal menyimpan data. Silakan coba lagi.', 'error');
             }
         });
@@ -846,7 +838,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 showAlert('Hasil turnamen berhasil diunduh!', 'success');
                 
             }).catch(error => {
-                console.error('Error generating JPG:', error);
                 document.body.removeChild(exportContainer);
                 if (iframe.parentNode) {
                     document.body.removeChild(iframe);
@@ -895,7 +886,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 initializeTeamsData();
             }
         } catch (error) {
-            console.error('Error loading saved data:', error);
             // Fallback to localStorage for backward compatibility
             const localData = localStorage.getItem('ffTournamentData');
             if (localData) {
@@ -908,7 +898,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     await saveToIndexedDB(teamsData);
                     localStorage.removeItem('ffTournamentData'); // Clean up old data
                 } catch (e) {
-                    console.error('Error migrating localStorage data:', e);
                     initializeTeamsData();
                 }
             } else {
@@ -919,10 +908,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize calculator
     async function initializeCalculator() {
-        console.log('Initializing calculator...');
-        console.log('inputTableBody:', inputTableBody);
-        console.log('resultsTableBody:', resultsTableBody);
-        
         if (inputTableBody && resultsTableBody) {
             try {
                 await initDB();
@@ -930,19 +915,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 generateInputTable();
                 generateResultsTable();
                 await loadSavedData();
-                console.log('Calculator initialized successfully');
             } catch (error) {
-                console.error('Error initializing calculator:', error);
                 showAlert('Terjadi kesalahan saat memuat kalkulator.', 'error');
                 // Fallback initialization
                 initializeTeamsData();
                 generateInputTable();
                 generateResultsTable();
             }
-        } else {
-            console.error('Required DOM elements not found!');
-            console.log('inputTableBody exists:', !!inputTableBody);
-            console.log('resultsTableBody exists:', !!resultsTableBody);
         }
     }
 
@@ -955,9 +934,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Start the calculator
     initializeCalculator().then(() => {
-        console.log('Calculator initialized successfully');
+        // Calculator initialized successfully
     }).catch(error => {
-        console.error('Calculator initialization failed:', error);
         // Still assign global functions as fallback
         if (typeof assignGlobalFunctions === 'function') {
             assignGlobalFunctions();
@@ -968,7 +946,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         const inputTableBody = document.getElementById('inputTableBody');
         if (inputTableBody && inputTableBody.children.length <= 1) {
-            console.log('Fallback: Re-initializing calculator...');
             initializeCalculator();
         }
     }, 2000);
@@ -1453,8 +1430,6 @@ function closeResetModal() {
 
 // Global Reset Function
 function performReset() {
-    console.log('performReset called - global function');
-    
     // Get DOM elements
     const inputTableBody = document.getElementById('inputTableBody');
     const resultsTableBody = document.getElementById('resultsTableBody');
@@ -1570,14 +1545,13 @@ function performReset() {
                 const transaction = db.transaction(['tournamentData'], 'readwrite');
                 const store = transaction.objectStore('tournamentData');
                 store.clear();
-                console.log('IndexedDB cleared successfully');
             }
         };
         request.onerror = function() {
-            console.error('Error opening IndexedDB for clearing');
+            // Error opening IndexedDB for clearing
         };
     } catch (error) {
-        console.error('Error clearing IndexedDB:', error);
+        // Error clearing IndexedDB
     }
     
     // Close modal
@@ -1605,8 +1579,6 @@ function performReset() {
             alert.parentNode.removeChild(alert);
         }
     }, 3000);
-    
-    console.log('Reset completed successfully');
 }
 
 // Helper function for generating rank options
@@ -1643,20 +1615,14 @@ window.toggleFAQ = toggleFAQ;
 
 // Debug and Force Initialize Script
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, checking elements...');
     const inputTableBody = document.getElementById('inputTableBody');
     const resultsTableBody = document.getElementById('resultsTableBody');
-    console.log('inputTableBody found:', !!inputTableBody);
-    console.log('resultsTableBody found:', !!resultsTableBody);
     
     // Force initialize if elements exist but table is empty
     if (inputTableBody && inputTableBody.children.length <= 1) {
-        console.log('Forcing table initialization...');
         setTimeout(() => {
             if (typeof initializeCalculator === 'function') {
                 initializeCalculator();
-            } else {
-                console.log('initializeCalculator function not found');
             }
         }, 1000);
     }
