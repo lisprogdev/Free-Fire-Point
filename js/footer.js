@@ -57,13 +57,22 @@ function initializeFooter() {
                 }
             });
         }, {
-            threshold: 0.1
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px' // Add margin to trigger earlier on mobile
         });
 
-        // Set initial state
+        // Set initial state with fallback for mobile
         footer.style.opacity = '0';
         footer.style.transform = 'translateY(20px)';
         footer.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+        // Fallback: ensure footer is visible after a delay (for mobile compatibility)
+        setTimeout(() => {
+            if (footer.style.opacity === '0') {
+                footer.style.opacity = '1';
+                footer.style.transform = 'translateY(0)';
+            }
+        }, 1000);
 
         observer.observe(footer);
     }

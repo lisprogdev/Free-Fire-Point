@@ -73,6 +73,9 @@ footer::before {
 @media (max-width: 768px) {
     footer {
         padding: 1.5rem 0;
+        /* Ensure footer is always visible on mobile */
+        opacity: 1 !important;
+        transform: translateY(0) !important;
     }
     
     .footer-text {
@@ -83,6 +86,9 @@ footer::before {
 @media (max-width: 480px) {
     footer {
         padding: 1rem 0;
+        /* Ensure footer is always visible on mobile */
+        opacity: 1 !important;
+        transform: translateY(0) !important;
     }
     
     .footer-text {

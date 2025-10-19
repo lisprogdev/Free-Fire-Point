@@ -1216,6 +1216,334 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Advanced Analytics Section -->
+            <div class="mt-8 bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50">
+                <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-6 flex items-center">
+                    <i class="fas fa-chart-line text-green-400 mr-3"></i>
+                    Advanced Tournament Analytics
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/30 rounded-lg p-6">
+                        <h4 class="text-xl font-gaming font-bold text-blue-400 mb-4 flex items-center">
+                            <i class="fas fa-chart-bar mr-2"></i>
+                            Team Performance Metrics
+                        </h4>
+                        <div id="teamMetrics" class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-300 text-sm">Kill Rate:</span>
+                                <span class="text-blue-400 font-bold" id="killRate">-</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-300 text-sm">Survival Rate:</span>
+                                <span class="text-green-400 font-bold" id="survivalRate">-</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-300 text-sm">Avg Placement:</span>
+                                <span class="text-yellow-400 font-bold" id="avgPlacement">-</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-300 text-sm">Consistency Score:</span>
+                                <span class="text-purple-400 font-bold" id="consistencyScore">-</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/30 rounded-lg p-6">
+                        <h4 class="text-xl font-gaming font-bold text-green-400 mb-4 flex items-center">
+                            <i class="fas fa-crystal-ball mr-2"></i>
+                            Predictive Analysis
+                        </h4>
+                        <div id="predictiveAnalysis" class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-300 text-sm">Champion Probability:</span>
+                                <span class="text-yellow-400 font-bold" id="championProb">-</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-300 text-sm">Top 3 Probability:</span>
+                                <span class="text-green-400 font-bold" id="top3Prob">-</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-300 text-sm">Risk Level:</span>
+                                <span class="text-orange-400 font-bold" id="riskLevel">-</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-300 text-sm">Recommended Strategy:</span>
+                                <span class="text-cyan-400 font-bold text-xs" id="recommendedStrategy">-</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-lg p-6">
+                        <h4 class="text-xl font-gaming font-bold text-purple-400 mb-4 flex items-center">
+                            <i class="fas fa-lightbulb mr-2"></i>
+                            Smart Recommendations
+                        </h4>
+                        <div id="smartRecommendations" class="space-y-3">
+                            <div class="bg-slate-700/30 rounded-lg p-3">
+                                <div class="flex items-start">
+                                    <i class="fas fa-target text-yellow-400 mr-2 mt-1"></i>
+                                    <div>
+                                        <h5 class="text-yellow-400 font-bold text-sm mb-1">Landing Strategy</h5>
+                                        <p class="text-slate-300 text-xs" id="landingRecommendation">Input data untuk analisis</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-slate-700/30 rounded-lg p-3">
+                                <div class="flex items-start">
+                                    <i class="fas fa-users text-blue-400 mr-2 mt-1"></i>
+                                    <div>
+                                        <h5 class="text-blue-400 font-bold text-sm mb-1">Team Coordination</h5>
+                                        <p class="text-slate-300 text-xs" id="teamRecommendation">Input data untuk analisis</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-slate-700/30 rounded-lg p-3">
+                                <div class="flex items-start">
+                                    <i class="fas fa-shield-alt text-green-400 mr-2 mt-1"></i>
+                                    <div>
+                                        <h5 class="text-green-400 font-bold text-sm mb-1">Risk Management</h5>
+                                        <p class="text-slate-300 text-xs" id="riskRecommendation">Input data untuk analisis</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tournament History & Comparison -->
+            <div class="mt-8 bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50">
+                <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-6 flex items-center">
+                    <i class="fas fa-history text-orange-400 mr-3"></i>
+                    Tournament History & Performance Tracking
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-xl font-gaming font-bold text-slate-100 mb-4 flex items-center">
+                            <i class="fas fa-trophy text-yellow-400 mr-2"></i>
+                            Previous Tournaments
+                        </h4>
+                        <div id="tournamentHistory" class="space-y-4">
+                            <div class="bg-slate-700/30 rounded-lg p-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-slate-300 text-sm font-medium">No tournament data yet</span>
+                                    <span class="text-slate-500 text-xs">Start saving tournaments</span>
+                                </div>
+                                <p class="text-slate-400 text-xs">Save your first tournament to see analytics here</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-gaming font-bold text-slate-100 mb-4 flex items-center">
+                            <i class="fas fa-chart-line text-green-400 mr-2"></i>
+                            Performance Trends
+                        </h4>
+                        <div id="performanceTrends" class="space-y-4">
+                            <div class="bg-slate-700/30 rounded-lg p-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-slate-300 text-sm font-medium">No trend data available</span>
+                                    <span class="text-slate-500 text-xs">Need 2+ tournaments</span>
+                                </div>
+                                <p class="text-slate-400 text-xs">Complete multiple tournaments to see performance trends</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pro Tips & Strategy Guide -->
+            <div class="mt-8 bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50">
+                <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-6 flex items-center">
+                    <i class="fas fa-graduation-cap text-cyan-400 mr-3"></i>
+                    Pro Tips & Strategy Guide
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/30 rounded-lg p-6">
+                            <h4 class="text-lg font-gaming font-bold text-green-400 mb-4 flex items-center">
+                                <i class="fas fa-target mr-2"></i>
+                                Kill Point Strategy
+                            </h4>
+                            <ul class="text-slate-300 text-sm space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-400 mr-2 mt-1"></i>
+                                    <span>Target weak teams in early game for easy kills</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-400 mr-2 mt-1"></i>
+                                    <span>Focus on positioning and team coordination</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-400 mr-2 mt-1"></i>
+                                    <span>Time your pushes perfectly for maximum impact</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-400 mr-2 mt-1"></i>
+                                    <span>Use utility items strategically in team fights</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/30 rounded-lg p-6">
+                            <h4 class="text-lg font-gaming font-bold text-blue-400 mb-4 flex items-center">
+                                <i class="fas fa-shield-alt mr-2"></i>
+                                Placement Point Strategy
+                            </h4>
+                            <ul class="text-slate-300 text-sm space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-blue-400 mr-2 mt-1"></i>
+                                    <span>Choose safe landing spots to avoid early elimination</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-blue-400 mr-2 mt-1"></i>
+                                    <span>Avoid unnecessary conflicts in early game</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-blue-400 mr-2 mt-1"></i>
+                                    <span>Manage inventory efficiently for late game</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-blue-400 mr-2 mt-1"></i>
+                                    <span>Monitor zone timing and plan rotations</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-lg p-6">
+                            <h4 class="text-lg font-gaming font-bold text-purple-400 mb-4 flex items-center">
+                                <i class="fas fa-users mr-2"></i>
+                                Team Coordination
+                            </h4>
+                            <ul class="text-slate-300 text-sm space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-purple-400 mr-2 mt-1"></i>
+                                    <span>Clear and effective communication during matches</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-purple-400 mr-2 mt-1"></i>
+                                    <span>Assign specific roles to each team member</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-purple-400 mr-2 mt-1"></i>
+                                    <span>Develop backup plans for different scenarios</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-purple-400 mr-2 mt-1"></i>
+                                    <span>Maintain strong team chemistry and morale</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/30 rounded-lg p-6">
+                            <h4 class="text-lg font-gaming font-bold text-orange-400 mb-4 flex items-center">
+                                <i class="fas fa-chart-line mr-2"></i>
+                                Performance Analysis
+                            </h4>
+                            <ul class="text-slate-300 text-sm space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-400 mr-2 mt-1"></i>
+                                    <span>Review VODs after each tournament</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-400 mr-2 mt-1"></i>
+                                    <span>Identify team weaknesses and improve</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-400 mr-2 mt-1"></i>
+                                    <span>Practice regularly with consistent team</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-400 mr-2 mt-1"></i>
+                                    <span>Study successful teams and their strategies</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Learning Center -->
+            <div class="mt-8 bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50">
+                <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-6 flex items-center">
+                    <i class="fas fa-graduation-cap text-cyan-400 mr-3"></i>
+                    Interactive Learning Center
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-lg p-6">
+                        <h4 class="text-lg font-gaming font-bold text-cyan-400 mb-3 flex items-center">
+                            <i class="fas fa-play mr-2"></i>
+                            Video Tutorials
+                        </h4>
+                        <p class="text-slate-300 text-sm mb-4">Learn tournament strategies from professional players</p>
+                        <button class="btn-gaming-nav px-4 py-2 rounded-lg text-sm w-full" onclick="showAdModal()">
+                            <i class="fas fa-video mr-2"></i>
+                            Watch Tutorials
+                        </button>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/30 rounded-lg p-6">
+                        <h4 class="text-lg font-gaming font-bold text-green-400 mb-3 flex items-center">
+                            <i class="fas fa-book mr-2"></i>
+                            Strategy Guide
+                        </h4>
+                        <p class="text-slate-300 text-sm mb-4">Download comprehensive tournament strategy guide</p>
+                        <button class="btn-gaming-nav px-4 py-2 rounded-lg text-sm w-full" onclick="showAdModal()">
+                            <i class="fas fa-download mr-2"></i>
+                            Download Guide
+                        </button>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-lg p-6">
+                        <h4 class="text-lg font-gaming font-bold text-purple-400 mb-3 flex items-center">
+                            <i class="fas fa-comments mr-2"></i>
+                            Community
+                        </h4>
+                        <p class="text-slate-300 text-sm mb-4">Join our Free Fire tournament community</p>
+                        <button class="btn-gaming-nav px-4 py-2 rounded-lg text-sm w-full" onclick="showAdModal()">
+                            <i class="fab fa-discord mr-2"></i>
+                            Join Discord
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tournament Statistics Dashboard -->
+            <div class="mt-8 bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50">
+                <h3 class="text-2xl font-gaming font-bold text-slate-100 mb-6 flex items-center">
+                    <i class="fas fa-dashboard text-indigo-400 mr-3"></i>
+                    Tournament Statistics Dashboard
+                </h3>
+                
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/30 rounded-lg p-4 text-center">
+                        <div class="text-3xl font-gaming font-bold text-blue-400 mb-2" id="totalTournaments">0</div>
+                        <div class="text-slate-300 text-sm">Tournaments Played</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/30 rounded-lg p-4 text-center">
+                        <div class="text-3xl font-gaming font-bold text-green-400 mb-2" id="totalWins">0</div>
+                        <div class="text-slate-300 text-sm">Total Wins</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border border-yellow-500/30 rounded-lg p-4 text-center">
+                        <div class="text-3xl font-gaming font-bold text-yellow-400 mb-2" id="totalKills">0</div>
+                        <div class="text-slate-300 text-sm">Total Kills</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-lg p-4 text-center">
+                        <div class="text-3xl font-gaming font-bold text-purple-400 mb-2" id="avgPoints">0</div>
+                        <div class="text-slate-300 text-sm">Avg Points</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
