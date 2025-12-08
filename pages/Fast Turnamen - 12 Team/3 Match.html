@@ -480,6 +480,10 @@
                         <img src="../../images/icon/how to use.png" alt="How to Use" class="w-5 h-5 mr-2 nav-icon gradient-icon">
                         Cara Penggunaan
                     </a>
+                    <a href="../../index.html#download-asset" class="menu-nav-item font-gaming-menu flex items-center">
+                        <i class="fas fa-download text-yellow-400 mr-2"></i>
+                        Download Asset
+                    </a>
                     <a href="../blog/sistem-poin-free-fire-2024.html" class="menu-nav-item font-gaming-menu flex items-center">
                         <img src="../../images/icon/code.png" alt="Blog" class="w-5 h-5 mr-2 nav-icon gradient-icon">
                         Blog
@@ -2048,27 +2052,5 @@
         }
     </script>
 
-    <!-- Debug Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM loaded, checking elements...');
-            const inputTableBody = document.getElementById('inputTableBody');
-            const resultsTableBody = document.getElementById('resultsTableBody');
-            console.log('inputTableBody found:', !!inputTableBody);
-            console.log('resultsTableBody found:', !!resultsTableBody);
-            
-            // Force initialize if elements exist but table is empty
-            if (inputTableBody && inputTableBody.children.length <= 1) {
-                console.log('Forcing table initialization...');
-                setTimeout(() => {
-                    if (typeof initializeCalculator === 'function') {
-                        initializeCalculator();
-                    } else {
-                        console.log('initializeCalculator function not found');
-                    }
-                }, 1000);
-            }
-        });
-    </script>
 </body>
 </html>
