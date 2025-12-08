@@ -34,11 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Close calculator dropdowns when clicking outside
+    // Close calculator and alat dropdowns when clicking outside
     document.addEventListener('click', function(event) {
         const calculatorDropdowns = document.querySelectorAll('#calculator-dropdown, #calculator-dropdown-mobile');
         const calculatorTriggers = document.querySelectorAll('#calculator-trigger, #calculator-trigger-mobile');
         const calculatorArrows = document.querySelectorAll('#calculator-arrow, #calculator-arrow-mobile');
+        const alatDropdowns = document.querySelectorAll('#alat-dropdown, #alat-dropdown-mobile');
+        const alatTriggers = document.querySelectorAll('#alat-trigger, #alat-trigger-mobile');
+        const alatArrows = document.querySelectorAll('#alat-arrow, #alat-arrow-mobile');
         
         let isClickInsideDropdown = false;
         let isClickOnTrigger = false;
@@ -49,9 +52,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 isClickInsideDropdown = true;
             }
         });
+        alatDropdowns.forEach(dropdown => {
+            if (dropdown.contains(event.target)) {
+                isClickInsideDropdown = true;
+            }
+        });
         
-        // Check if click is on calculator trigger
+        // Check if click is on calculator or alat trigger
         calculatorTriggers.forEach(trigger => {
+            if (trigger.contains(event.target)) {
+                isClickOnTrigger = true;
+            }
+        });
+        alatTriggers.forEach(trigger => {
             if (trigger.contains(event.target)) {
                 isClickOnTrigger = true;
             }
@@ -62,30 +75,45 @@ document.addEventListener('DOMContentLoaded', function() {
             calculatorDropdowns.forEach(dropdown => {
                 dropdown.classList.remove('show');
             });
-            
-            // Reset arrows
-            calculatorArrows.forEach(arrow => {
-                arrow.style.transform = 'rotate(0deg)';
-            });
-        }
-    });
-
-    // Close calculator dropdown when clicking on dropdown links
-    document.addEventListener('click', function(event) {
-        // Check if clicked element is a dropdown link
-        const dropdownLink = event.target.closest('#calculator-dropdown a, #calculator-dropdown-mobile a');
-        
-        if (dropdownLink) {
-            // Close all calculator dropdowns
-            const calculatorDropdowns = document.querySelectorAll('#calculator-dropdown, #calculator-dropdown-mobile');
-            const calculatorArrows = document.querySelectorAll('#calculator-arrow, #calculator-arrow-mobile');
-            
-            calculatorDropdowns.forEach(dropdown => {
+            alatDropdowns.forEach(dropdown => {
                 dropdown.classList.remove('show');
             });
             
             // Reset arrows
             calculatorArrows.forEach(arrow => {
+                arrow.style.transform = 'rotate(0deg)';
+            });
+            alatArrows.forEach(arrow => {
+                arrow.style.transform = 'rotate(0deg)';
+            });
+        }
+    });
+
+    // Close calculator and alat dropdowns when clicking on dropdown links
+    document.addEventListener('click', function(event) {
+        // Check if clicked element is a dropdown link
+        const calculatorDropdownLink = event.target.closest('#calculator-dropdown a, #calculator-dropdown-mobile a');
+        const alatDropdownLink = event.target.closest('#alat-dropdown a, #alat-dropdown-mobile a');
+        
+        if (calculatorDropdownLink || alatDropdownLink) {
+            // Close all calculator and alat dropdowns
+            const calculatorDropdowns = document.querySelectorAll('#calculator-dropdown, #calculator-dropdown-mobile');
+            const calculatorArrows = document.querySelectorAll('#calculator-arrow, #calculator-arrow-mobile');
+            const alatDropdowns = document.querySelectorAll('#alat-dropdown, #alat-dropdown-mobile');
+            const alatArrows = document.querySelectorAll('#alat-arrow, #alat-arrow-mobile');
+            
+            calculatorDropdowns.forEach(dropdown => {
+                dropdown.classList.remove('show');
+            });
+            alatDropdowns.forEach(dropdown => {
+                dropdown.classList.remove('show');
+            });
+            
+            // Reset arrows
+            calculatorArrows.forEach(arrow => {
+                arrow.style.transform = 'rotate(0deg)';
+            });
+            alatArrows.forEach(arrow => {
                 arrow.style.transform = 'rotate(0deg)';
             });
             
@@ -116,13 +144,59 @@ document.addEventListener('DOMContentLoaded', function() {
             const arrow = calculatorArrows[index];
             const isVisible = dropdown.classList.contains('show');
             
-            // Close all dropdowns first
+            // Close all dropdowns first (calculator and alat)
             calculatorDropdowns.forEach(drop => {
+                drop.classList.remove('show');
+            });
+            const alatDropdowns = document.querySelectorAll('#alat-dropdown, #alat-dropdown-mobile');
+            alatDropdowns.forEach(drop => {
                 drop.classList.remove('show');
             });
             
             // Reset all arrows
             calculatorArrows.forEach(arr => {
+                arr.style.transform = 'rotate(0deg)';
+            });
+            const alatArrows = document.querySelectorAll('#alat-arrow, #alat-arrow-mobile');
+            alatArrows.forEach(arr => {
+                arr.style.transform = 'rotate(0deg)';
+            });
+            
+            // Toggle current dropdown
+            if (!isVisible) {
+                dropdown.classList.add('show');
+                arrow.style.transform = 'rotate(180deg)';
+            }
+        });
+    });
+
+    // Alat Lainnya dropdown functionality for both desktop and mobile
+    const alatTriggers = document.querySelectorAll('#alat-trigger, #alat-trigger-mobile');
+    const alatDropdowns = document.querySelectorAll('#alat-dropdown, #alat-dropdown-mobile');
+    const alatArrows = document.querySelectorAll('#alat-arrow, #alat-arrow-mobile');
+    
+    alatTriggers.forEach((trigger, index) => {
+        trigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const dropdown = alatDropdowns[index];
+            const arrow = alatArrows[index];
+            const isVisible = dropdown.classList.contains('show');
+            
+            // Close all dropdowns first (calculator and alat)
+            calculatorDropdowns.forEach(drop => {
+                drop.classList.remove('show');
+            });
+            alatDropdowns.forEach(drop => {
+                drop.classList.remove('show');
+            });
+            
+            // Reset all arrows
+            calculatorArrows.forEach(arr => {
+                arr.style.transform = 'rotate(0deg)';
+            });
+            alatArrows.forEach(arr => {
                 arr.style.transform = 'rotate(0deg)';
             });
             
@@ -139,8 +213,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     menuItems.forEach(item => {
         item.addEventListener('click', function(e) {
-            // Skip calculator items as they are handled separately
-            if (item.getAttribute('data-section') === 'kalkulator') {
+            // Skip calculator and alat items as they are handled separately
+            if (item.getAttribute('data-section') === 'kalkulator' || item.getAttribute('data-section') === 'alat-lainnya') {
                 return;
             }
             
@@ -194,18 +268,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Handle window resize to close calculator dropdowns when switching between mobile/desktop
+    // Handle window resize to close calculator and alat dropdowns when switching between mobile/desktop
     window.addEventListener('resize', function() {
-        // Close all calculator dropdowns when resizing
+        // Close all calculator and alat dropdowns when resizing
         const calculatorDropdowns = document.querySelectorAll('#calculator-dropdown, #calculator-dropdown-mobile');
         const calculatorArrows = document.querySelectorAll('#calculator-arrow, #calculator-arrow-mobile');
+        const alatDropdowns = document.querySelectorAll('#alat-dropdown, #alat-dropdown-mobile');
+        const alatArrows = document.querySelectorAll('#alat-arrow, #alat-arrow-mobile');
         
         calculatorDropdowns.forEach(dropdown => {
+            dropdown.classList.remove('show');
+        });
+        alatDropdowns.forEach(dropdown => {
             dropdown.classList.remove('show');
         });
         
         // Reset arrows
         calculatorArrows.forEach(arrow => {
+            arrow.style.transform = 'rotate(0deg)';
+        });
+        alatArrows.forEach(arrow => {
             arrow.style.transform = 'rotate(0deg)';
         });
     });
