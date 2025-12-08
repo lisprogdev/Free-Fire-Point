@@ -343,7 +343,7 @@
                         <ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-9789892641077279"
-                             data-ad-slot="7828481251"
+                             data-ad-slot="3250489022"
                              data-ad-format="auto"
                              data-full-width-responsive="true"></ins>
                         <script>
@@ -624,14 +624,14 @@
                             </div>
                         </div>
 
-                        <!-- Google AdSense Display Ad -->
+                        <!-- Google AdSense In-Article Ad -->
                         <div class="mb-8 flex justify-center">
                             <ins class="adsbygoogle"
-                                 style="display:block"
+                                 style="display:block; text-align:center;"
+                                 data-ad-layout="in-article"
+                                 data-ad-format="fluid"
                                  data-ad-client="ca-pub-9789892641077279"
-                                 data-ad-slot="7828481251"
-                                 data-ad-format="auto"
-                                 data-full-width-responsive="true"></ins>
+                                 data-ad-slot="5493508987"></ins>
                             <script>
                                  (adsbygoogle = window.adsbygoogle || []).push({});
                             </script>
@@ -885,6 +885,18 @@
                             </div>
                         </div>
 
+                        <!-- Google AdSense Multiplex Ad -->
+                        <div class="mb-8 flex justify-center">
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-format="autorelaxed"
+                                 data-ad-client="ca-pub-9789892641077279"
+                                 data-ad-slot="9241182303"></ins>
+                            <script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
+
                         <div class="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/30 rounded-lg p-6">
                             <h3 class="text-xl font-gaming font-bold text-yellow-400 mb-4 flex items-center">
                                 <i class="fas fa-star mr-2"></i>
@@ -958,6 +970,25 @@
                             <a href="#" class="telegram" title="Share on Telegram">
                                 <i class="fab fa-telegram-plane"></i>
                             </a>
+                        </div>
+                    </div>
+
+                    <!-- Google AdSense In-Feed Ad -->
+                    <div class="sidebar-widget">
+                        <h3>
+                            <i class="fas fa-ad"></i>
+                            Iklan
+                        </h3>
+                        <div class="mb-4">
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-format="fluid"
+                                 data-ad-layout-key="-gw-3+1f-3d+2z"
+                                 data-ad-client="ca-pub-9789892641077279"
+                                 data-ad-slot="8119672322"></ins>
+                            <script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
                         </div>
                     </div>
 
@@ -1045,13 +1076,10 @@
 
             <!-- Modal Body -->
             <div class="px-4 pb-3">
-                <div class="bg-slate-700/30 rounded-lg p-4 mb-4">
-                    <ins class="adsbygoogle"
-                         style="display:block; min-width: 300px; min-height: 250px;"
-                         data-ad-client="ca-pub-9789892641077279"
-                         data-ad-slot="7828481251"
-                         data-ad-format="rectangle"
-                         data-full-width-responsive="true"></ins>
+                <div class="text-center">
+                    <p class="text-slate-300 text-sm mb-4">
+                        Terima kasih telah mendukung pengembangan kalkulator Free Fire Point! 🎉
+                    </p>
                 </div>
             </div>
 
@@ -1098,18 +1126,6 @@
                 // Trigger animation
                 setTimeout(() => {
                     adModalContent.classList.add('show');
-                    
-                    // Load AdSense after modal is visible
-                    setTimeout(() => {
-                        const adElement = adModal.querySelector('.adsbygoogle');
-                        if (adElement && typeof adsbygoogle !== 'undefined') {
-                            try {
-                                (adsbygoogle = window.adsbygoogle || []).push({});
-                            } catch (error) {
-                                console.log('AdSense loading error:', error);
-                            }
-                        }
-                    }, 100);
                 }, 10);
                 
                 // Blur main content
