@@ -1997,141 +1997,294 @@
     <!-- Support Modal -->
     <div id="supportModal"
         class="modal-overlay fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] flex items-center justify-center p-4 hidden">
-        <div class="modal-content bg-gradient-to-br from-slate-800 to-gray-900 rounded-2xl border border-slate-600/50 max-w-md w-full mx-auto transform scale-95 opacity-0 transition-all duration-300"
+        <div class="modal-content bg-gradient-to-br from-slate-800 to-gray-900 rounded-2xl border-2 border-yellow-400/50 max-w-4xl w-full mx-auto transform scale-95 opacity-0 transition-all duration-300 shadow-2xl shadow-yellow-400/20 my-8 max-h-[85vh] flex flex-col"
             id="modalContent">
             <!-- Modal Header -->
-            <div class="relative p-4 pb-3">
-                <button class="absolute top-3 right-3 text-slate-400 hover:text-slate-200 transition-colors"
+            <div class="relative p-5 border-b border-slate-700/50 flex-shrink-0">
+                <button class="absolute top-4 right-4 text-slate-400 hover:text-slate-200 transition-colors z-10"
                     onclick="closeSupportModal()">
                     <i class="fas fa-times text-xl"></i>
                 </button>
 
-                <div class="text-center mb-3">
-                    <div
-                        class="w-14 h-14 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-heart text-slate-900 text-xl"></i>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg shadow-yellow-400/50">
+                        <i class="fas fa-heart text-slate-900 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-gaming font-bold text-slate-100 mb-2">
-                        Dukung Free Fire Point Calculator! 💙
-                    </h3>
-                    <p class="text-slate-300 text-sm leading-relaxed">
-                        <strong>Free Fire Point Calculator</strong> - cara hitung poin turnamen free fire dan kalkulator poin ff gratis untuk semua. 
-                        Bantu kami kembangkan fitur fast turnamen ff lebih baik!
+                    <h2 class="text-2xl md:text-3xl font-gaming font-bold mb-2">
+                        <span class="bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent">
+                            DUKUNG & REQUEST
+                        </span>
+                    </h2>
+                    <p class="text-slate-300 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+                        Bantu kembangkan <strong class="text-yellow-400">Free Fire Point Calculator</strong> atau request kalkulator baru!
                     </p>
                 </div>
             </div>
 
             <!-- Modal Body -->
-            <div class="px-4 pb-3">
-                <div class="space-y-4">
-                    <!-- Benefits -->
-                    <div
-                        class="bg-gradient-to-r from-yellow-400/10 to-orange-400/10 border border-yellow-400/30 rounded-lg p-4">
-                        <h4 class="text-yellow-400 font-bold mb-3 flex items-center">
-                            <i class="fas fa-star mr-2"></i>
-                            Dukungan Anda Membantu Free Fire Point:
-                        </h4>
-                        <ul class="text-slate-300 text-sm space-y-2">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-yellow-400 mr-2 mt-0.5 text-xs"></i>
-                                <span>Kalkulator poin ff lebih dari 2 match</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-yellow-400 mr-2 mt-0.5 text-xs"></i>
-                                <span>Update sistem poin fast turnamen ff terbaru</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-yellow-400 mr-2 mt-0.5 text-xs"></i>
-                                <span>Server free fire point calculator lebih cepat</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-yellow-400 mr-2 mt-0.5 text-xs"></i>
-                                <span>Fitur cara hitung poin turnamen lebih lengkap</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-yellow-400 mr-2 mt-0.5 text-xs"></i>
-                                <span>Export hasil kalkulator ke Excel dan PDF</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-yellow-400 mr-2 mt-0.5 text-xs"></i>
-                                <span>Analisis statistik fast turnamen free fire</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-yellow-400 mr-2 mt-0.5 text-xs"></i>
-                                <span>Template turnamen free fire custom</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Current Status -->
-                    <div
-                        class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
-                        <div class="flex items-center mb-2">
-                            <i class="fas fa-info-circle text-yellow-400 mr-2"></i>
-                            <span class="text-yellow-400 font-medium text-sm">Free Fire Point Calculator Gratis</span>
+            <div class="px-5 py-5 overflow-y-auto custom-scrollbar flex-1">
+                <!-- Copy Success Alert -->
+                <div id="copySuccessAlert" class="hidden fixed top-4 left-1/2 transform -translate-x-1/2 z-[10001] animate-slideDown">
+                    <div class="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-xl shadow-2xl shadow-green-500/50 flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-check-circle text-2xl"></i>
                         </div>
-                        <p class="text-slate-300 text-sm mb-3">
-                            <strong>Cara hitung poin turnamen free fire</strong> gratis untuk 2 match fast turnamen ff. 
-                            Dengan dukungan Anda, kalkulator poin ff bisa unlimited dan fitur premium!
-                        </p>
-                        <div class="bg-slate-700/30 rounded-lg p-3">
-                            <h5 class="text-yellow-400 font-bold text-xs mb-2">Fitur Premium Fast Turnamen FF:</h5>
-                            <ul class="text-slate-400 text-xs space-y-1">
-                                <li>• Kalkulator poin ff untuk 3-6 match</li>
-                                <li>• Export hasil fast turnamen ke Excel/PDF</li>
-                                <li>• Template turnamen free fire custom</li>
-                                <li>• Analisis statistik free fire point mendalam</li>
-                                <li>• Notifikasi update sistem poin ff</li>
+                        <div>
+                            <p class="font-bold text-sm">Format Berhasil Disalin!</p>
+                            <p class="text-xs opacity-90">Paste di pesan Saweria Anda</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <!-- Left Column: Support Info -->
+                    <div class="space-y-4">
+                        <!-- Benefits -->
+                        <div class="bg-gradient-to-r from-yellow-400/10 to-orange-400/10 border border-yellow-400/30 rounded-xl p-4">
+                            <h4 class="text-yellow-400 font-bold mb-3 flex items-center text-sm">
+                                <i class="fas fa-star mr-2"></i>
+                                Dukungan Membantu:
+                            </h4>
+                            <ul class="text-slate-300 text-xs space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-400 mr-2 mt-0.5 text-xs"></i>
+                                    <span>Kalkulator 3-6 match</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-400 mr-2 mt-0.5 text-xs"></i>
+                                    <span>Export Excel/PDF</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-400 mr-2 mt-0.5 text-xs"></i>
+                                    <span>Template custom</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-400 mr-2 mt-0.5 text-xs"></i>
+                                    <span>Analisis statistik</span>
+                                </li>
                             </ul>
                         </div>
+
+                        <!-- Available Calculators -->
+                        <div class="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/30 rounded-xl p-4">
+                            <h4 class="text-green-400 font-bold mb-3 flex items-center text-sm">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                Kalkulator Tersedia:
+                            </h4>
+                            <div class="bg-slate-800/50 rounded-lg p-3 border border-green-500/20">
+                                <div class="flex items-center">
+                                    <i class="fas fa-fire text-green-400 mr-2 text-sm"></i>
+                                    <span class="text-slate-200 text-xs">Fast 12 Team - 2 Match</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-400 text-xs mt-2">
+                                <i class="fas fa-info-circle mr-1"></i>
+                                Kalkulator lain dalam pengembangan
+                            </p>
+                        </div>
+
+                        <!-- Developer Info -->
+                        <div class="bg-slate-700/30 border border-slate-600/30 rounded-xl p-4">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-code text-yellow-400 mr-2 text-sm"></i>
+                                <span class="text-yellow-400 font-medium text-xs">Developer</span>
+                            </div>
+                            <p class="text-slate-300 text-xs mb-2">
+                                By <strong>Tekno Ogi</strong> - Kalkulator FF Indonesia
+                            </p>
+                            <div class="flex space-x-3">
+                                <a href="https://www.instagram.com/tekno_ogi/" target="_blank"
+                                    class="text-slate-400 hover:text-pink-400 transition-colors text-xs">
+                                    <i class="fab fa-instagram mr-1"></i>IG
+                                </a>
+                                <a href="https://www.youtube.com/@tekno_ogi" target="_blank"
+                                    class="text-slate-400 hover:text-red-400 transition-colors text-xs">
+                                    <i class="fab fa-youtube mr-1"></i>YT
+                                </a>
+                                <a href="https://www.tiktok.com/@tekno_ogi" target="_blank"
+                                    class="text-slate-400 hover:text-cyan-400 transition-colors text-xs">
+                                    <i class="fab fa-tiktok mr-1"></i>TT
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Developer Info -->
-                    <div
-                        class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
-                        <div class="flex items-center mb-2">
-                            <i class="fas fa-code text-yellow-400 mr-2"></i>
-                            <span class="text-yellow-400 font-medium text-sm">Developer Free Fire Point Calculator</span>
+                    <!-- Right Column: Request Format -->
+                    <div class="space-y-4">
+                        <!-- Request Format -->
+                        <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-xl p-4">
+                            <h4 class="text-purple-400 font-bold mb-3 flex items-center text-sm">
+                                <i class="fas fa-clipboard-list mr-2"></i>
+                                Format Request Kalkulator:
+                            </h4>
+                            
+                            <!-- Copyable Format -->
+                            <div class="bg-slate-800/70 rounded-lg p-3 border border-purple-500/20 mb-3">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-slate-400 text-xs">
+                                        <i class="fas fa-copy mr-1"></i>
+                                        Klik untuk salin
+                                    </span>
+                                    <button onclick="copyRequestFormat()" class="text-yellow-400 hover:text-yellow-300 text-xs font-bold">
+                                        <i class="fas fa-clipboard mr-1"></i>
+                                        SALIN
+                                    </button>
+                                </div>
+                                <div id="requestFormat" class="font-mono text-xs text-slate-300 space-y-1 bg-slate-900/50 rounded p-3 cursor-pointer" onclick="copyRequestFormat()">
+                                    <div class="flex items-start">
+                                        <i class="fas fa-list-alt text-yellow-400 mr-2 mt-0.5 w-3.5 flex-shrink-0"></i>
+                                        <span><strong class="text-yellow-400">Jenis:</strong> Fast Turnamen</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-users text-yellow-400 mr-2 mt-0.5 w-3.5 flex-shrink-0"></i>
+                                        <span><strong class="text-yellow-400">Team:</strong> 12 Team</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-gamepad text-yellow-400 mr-2 mt-0.5 w-3.5 flex-shrink-0"></i>
+                                        <span><strong class="text-yellow-400">Match:</strong> 4 Match</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-file-alt text-yellow-400 mr-2 mt-0.5 w-3.5 flex-shrink-0"></i>
+                                        <span><strong class="text-yellow-400">Format:</strong> Standard</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Format Guidelines -->
+                            <div class="space-y-2 text-xs">
+                                <div class="flex items-start">
+                                    <i class="fas fa-list-alt text-purple-400 mr-2 mt-0.5"></i>
+                                    <div>
+                                        <strong class="text-purple-400">Jenis:</strong>
+                                        <span class="text-slate-400 ml-1">Fast/One Day/League</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-users text-purple-400 mr-2 mt-0.5"></i>
+                                    <div>
+                                        <strong class="text-purple-400">Team:</strong>
+                                        <span class="text-slate-400 ml-1">12/15/18 Team</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-gamepad text-purple-400 mr-2 mt-0.5"></i>
+                                    <div>
+                                        <strong class="text-purple-400">Match:</strong>
+                                        <span class="text-slate-400 ml-1">2/3/4/5/6 Match</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-file-alt text-purple-400 mr-2 mt-0.5"></i>
+                                    <div>
+                                        <strong class="text-purple-400">Format:</strong>
+                                        <span class="text-slate-400 ml-1">Standard/Custom</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p class="text-slate-300 text-sm mb-2">
-                            <strong>Free fire point calculator</strong> ini dikembangkan oleh <strong>Tekno Ogi</strong>, 
-                            developer yang fokus pada kalkulator poin ff dan tools fast turnamen free fire Indonesia.
-                        </p>
-                        <div class="flex space-x-2">
-                            <a href="https://www.instagram.com/tekno_ogi/" target="_blank"
-                                class="text-yellow-400 hover:text-yellow-300 text-xs">
-                                <i class="fab fa-instagram mr-1"></i>Instagram
-                            </a>
-                            <a href="https://www.youtube.com/@tekno_ogi" target="_blank"
-                                class="text-yellow-400 hover:text-yellow-300 text-xs">
-                                <i class="fab fa-youtube mr-1"></i>YouTube
-                            </a>
+
+                        <!-- Priority Options -->
+                        <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-xl p-4">
+                            <h4 class="text-cyan-400 font-bold mb-3 flex items-center text-sm">
+                                <i class="fas fa-rocket mr-2"></i>
+                                Request Priority:
+                            </h4>
+                            <div class="space-y-2">
+                                <div class="bg-slate-800/50 rounded-lg p-3 border border-yellow-400/20">
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-yellow-400/20 flex items-center justify-center flex-shrink-0 mr-2">
+                                            <i class="fas fa-bolt text-yellow-400 text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-slate-200 font-bold text-xs mb-1 flex items-center">
+                                                <i class="far fa-clock mr-1 text-xs"></i>
+                                                Cepat (1-3 Hari)
+                                            </p>
+                                            <p class="text-yellow-400 text-xs flex items-center">
+                                                <i class="fas fa-coins mr-1 text-xs"></i>
+                                                Min. Rp 10.000
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-slate-800/50 rounded-lg p-3 border border-blue-400/20">
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-blue-400/20 flex items-center justify-center flex-shrink-0 mr-2">
+                                            <i class="fas fa-clock text-blue-400 text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-slate-200 font-bold text-xs mb-1 flex items-center">
+                                                <i class="far fa-calendar mr-1 text-xs"></i>
+                                                Normal (7-14 Hari)
+                                            </p>
+                                            <p class="text-green-400 text-xs flex items-center">
+                                                <i class="fas fa-gift mr-1 text-xs"></i>
+                                                Gratis (Rp 0)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Important Notes -->
+                        <div class="bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/30 rounded-xl p-4">
+                            <h4 class="text-red-400 font-bold mb-2 flex items-center text-sm">
+                                <i class="fas fa-exclamation-triangle mr-2"></i>
+                                Catatan Penting:
+                            </h4>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start text-xs">
+                                    <i class="fas fa-chevron-right text-red-400 mr-2 mt-0.5 text-xs"></i>
+                                    <span class="text-slate-300">Format turnamen <strong class="text-yellow-400">resmi</strong></span>
+                                </li>
+                                <li class="flex items-start text-xs">
+                                    <i class="fas fa-chevron-right text-red-400 mr-2 mt-0.5 text-xs"></i>
+                                    <span class="text-slate-300">Tulis <strong class="text-yellow-400">jelas & lengkap</strong></span>
+                                </li>
+                                <li class="flex items-start text-xs">
+                                    <i class="fas fa-chevron-right text-red-400 mr-2 mt-0.5 text-xs"></i>
+                                    <span class="text-slate-300">Donasi <strong class="text-yellow-400">sukarela</strong></span>
+                                </li>
+                                <li class="flex items-start text-xs">
+                                    <i class="fas fa-chevron-right text-red-400 mr-2 mt-0.5 text-xs"></i>
+                                    <span class="text-slate-300">Cek di <strong class="text-yellow-400">@tekno_ogi</strong></span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Modal Footer -->
-            <div class="p-4 pt-3">
-                <div class="space-y-2">
+            <div class="p-4 border-t border-slate-700/50 flex-shrink-0">
+                <div class="grid md:grid-cols-2 gap-3">
                     <!-- Support Button -->
-                    <a href="https://saweria.co/teknoogi" target="_blank"
-                        class="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold py-2.5 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                    <a href="https://saweria.co/teknoogi?amount=10000&message=Dukungan%20Free%20Fire%20Point%20Calculator" target="_blank"
+                        class="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center shadow-lg shadow-green-400/30 group"
                         onclick="closeSupportModal()">
-                        <img src="images/Logo/Booyah Logo.png" alt="Dukung Free Fire Point Calculator" class="w-4 h-4 mr-2">
-                        <span>Dukung Free Fire Point</span>
-                        <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        <i class="fas fa-heart mr-2 group-hover:animate-pulse"></i>
+                        <span class="font-gaming text-sm">BERI DUKUNGAN</span>
                     </a>
 
-                    <!-- Maybe Later Button -->
-                    <button
-                        class="w-full bg-slate-700 hover:bg-slate-600 text-slate-300 font-medium py-2 px-6 rounded-lg transition-colors duration-300"
+                    <!-- Request Button -->
+                    <a href="https://saweria.co/teknoogi?amount=0" target="_blank"
+                        class="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center shadow-lg shadow-yellow-400/30 group"
                         onclick="closeSupportModal()">
-                        Nanti Saja
+                        <i class="fas fa-paper-plane mr-2 group-hover:animate-bounce"></i>
+                        <span class="font-gaming text-sm">REQUEST</span>
+                    </a>
+
+                    <!-- Close Button -->
+                    <button
+                        class="bg-slate-700 hover:bg-slate-600 text-slate-300 font-medium py-2.5 px-4 rounded-xl transition-colors duration-300 text-sm col-span-2"
+                        onclick="closeSupportModal()">
+                        <i class="fas fa-times mr-2"></i>
+                        Tutup
                     </button>
 
                     <!-- Don't Show Again -->
-                    <div class="text-center">
+                    <div class="text-center col-span-2">
                         <button class="text-slate-500 text-xs hover:text-slate-400 transition-colors"
                             onclick="dontShowAgain()">
                             Jangan tampilkan lagi
@@ -2141,7 +2294,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- AOS JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"

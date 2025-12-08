@@ -448,3 +448,47 @@ document.addEventListener('keydown', function(event) {
         closeSupportModal();
     }
 });
+
+// ========================================
+// COPY REQUEST FORMAT FUNCTION
+// ========================================
+
+function copyRequestFormat() {
+    // Format text to copy
+    const formatText = `Jenis: Fast Turnamen
+Team: 12 Team
+Match: 4 Match
+Format: Standard`;
+    
+    // Copy to clipboard
+    navigator.clipboard.writeText(formatText).then(function() {
+        showCopySuccessAlert();
+    }).catch(function(err) {
+        console.error('Failed to copy: ', err);
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = formatText;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            showCopySuccessAlert();
+        } catch (err) {
+            console.error('Fallback copy failed: ', err);
+        }
+        document.body.removeChild(textArea);
+    });
+}
+
+function showCopySuccessAlert() {
+    const alert = document.getElementById('copySuccessAlert');
+    if (alert) {
+        // Show alert
+        alert.classList.remove('hidden');
+        
+        // Auto hide after 3 seconds
+        setTimeout(function() {
+            alert.classList.add('hidden');
+        }, 3000);
+    }
+}
