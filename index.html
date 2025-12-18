@@ -689,27 +689,43 @@
             </div>
         </nav>
 
-        <!-- Banner Informasi Perombakan Situs -->
-        <div id="renovation-banner" class="renovation-banner">
-            <div class="renovation-banner-content">
-                <div class="flex items-center justify-between w-full">
-                    <div class="flex items-center space-x-3 flex-1">
-                        <div class="renovation-icon">
-                            <i class="fas fa-tools"></i>
+        <!-- Renovation Info Modal -->
+        <div id="renovationModal"
+            class="modal-overlay fixed inset-0 bg-black/80 backdrop-blur-sm z-[10000] flex items-center justify-center p-4 hidden">
+            <div class="modal-content bg-gradient-to-br from-yellow-400/95 to-orange-500/95 rounded-2xl border-2 border-yellow-300/50 max-w-lg w-full mx-auto transform scale-95 opacity-0 transition-all duration-300 shadow-2xl shadow-yellow-400/30" id="renovationModalContent">
+                <!-- Modal Header -->
+                <div class="relative p-6 pb-4">
+                    <button id="close-renovation-modal" class="absolute top-4 right-4 text-slate-800 hover:text-slate-900 transition-colors" aria-label="Tutup modal">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                    
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i class="fas fa-rocket text-yellow-600 text-2xl"></i>
                         </div>
-                        <div class="flex-1">
-                            <h3 class="renovation-title">
-                                <i class="fas fa-rocket mr-2"></i>Perombakan Situs Akan Berlangsung!
-                            </h3>
-                            <p class="renovation-text">Semua perubahan akan di-live di TikTok. Silakan request dan ngobrol bersama kami di 
-                                <a href="https://www.tiktok.com/@tekno_ogi?is_from_webapp=1&sender_device=pc" target="_blank" class="renovation-link" rel="noopener noreferrer">
-                                    <i class="fab fa-tiktok"></i> TikTok
-                                </a> kami!
-                            </p>
-                        </div>
+                        <h3 class="text-2xl font-gaming font-bold text-slate-900 mb-2">
+                            Perombakan Situs Akan Berlangsung!
+                        </h3>
                     </div>
-                    <button id="close-renovation-banner" class="renovation-close-btn" aria-label="Tutup banner">
-                        <i class="fas fa-times"></i>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="px-6 pb-4">
+                    <div class="text-center">
+                        <p class="text-slate-800 text-base leading-relaxed font-medium mb-4">
+                            Semua perubahan akan di-live di TikTok. Silakan request dan ngobrol bersama kami di 
+                            <a href="https://www.tiktok.com/@tekno_ogi?is_from_webapp=1&sender_device=pc" target="_blank" class="renovation-link-modal font-bold hover:underline" rel="noopener noreferrer">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a> kami!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="p-6 pt-4">
+                    <button id="close-renovation-modal-btn" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+                        <i class="fas fa-check mr-2"></i>
+                        <span>Mengerti</span>
                     </button>
                 </div>
             </div>

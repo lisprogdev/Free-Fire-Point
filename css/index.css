@@ -1293,112 +1293,22 @@ body.modal-open {
     overflow: hidden;
 }
 
-/* Renovation Banner Styles */
-.renovation-banner {
-    position: fixed;
-    top: 128px; /* Di bawah navigasi utama (64px) + navigasi sekunder (64px) */
-    left: 0;
-    right: 0;
-    z-index: 998; /* Di bawah navigasi (nav utama: 1000, nav sekunder: 999) */
-    background: linear-gradient(135deg, rgba(251, 191, 36, 0.95), rgba(245, 158, 11, 0.95));
-    backdrop-filter: blur(10px);
-    border-bottom: 3px solid rgba(217, 119, 6, 0.8);
-    box-shadow: 0 4px 20px rgba(251, 191, 36, 0.3);
-    padding: 1rem;
-    transform: translateY(0);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
-    animation: slideDown 0.5s ease-out;
+/* Renovation Modal Styles */
+#renovationModal {
+    z-index: 10000 !important; /* Paling atas */
 }
 
-.renovation-banner.hidden {
-    transform: translateY(-100%);
-    opacity: 0;
-    pointer-events: none;
+#renovationModal.show {
+    display: flex !important;
 }
 
-@keyframes slideDown {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+#renovationModalContent.show {
+    transform: scale(1);
+    opacity: 1;
 }
 
-.renovation-banner-content {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    width: 100%;
-}
-
-@media (min-width: 640px) {
-    .renovation-banner-content {
-        padding: 0 1.5rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .renovation-banner-content {
-        padding: 0 2rem;
-    }
-}
-
-.renovation-icon {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    animation: pulse 2s infinite;
-}
-
-.renovation-icon i {
-    font-size: 1.5rem;
+.renovation-link-modal {
     color: #1e293b;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-}
-
-.renovation-title {
-    font-family: 'Orbitron', monospace;
-    font-weight: 700;
-    font-size: 1.125rem;
-    color: #1e293b;
-    margin-bottom: 0.25rem;
-    letter-spacing: 0.5px;
-    display: flex;
-    align-items: center;
-}
-
-.renovation-title i {
-    color: #1e293b;
-    font-size: 1rem;
-}
-
-.renovation-text {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.875rem;
-    color: #334155;
-    line-height: 1.5;
-    font-weight: 500;
-}
-
-.renovation-link {
-    color: #1e293b;
-    font-weight: 600;
     text-decoration: underline;
     transition: all 0.3s ease;
     display: inline-flex;
@@ -1406,75 +1316,15 @@ body.modal-open {
     gap: 0.25rem;
 }
 
-.renovation-link:hover {
+.renovation-link-modal:hover {
     color: #0f172a;
     text-decoration: none;
     transform: translateY(-1px);
 }
 
-.renovation-link i {
-    font-size: 0.875rem;
-    color: #1e293b;
-}
-
-.renovation-close-btn {
-    background: rgba(30, 41, 59, 0.2);
-    border: 2px solid rgba(30, 41, 59, 0.3);
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-    margin-left: 1rem;
-    color: #1e293b;
-}
-
-.renovation-close-btn:hover {
-    background: rgba(30, 41, 59, 0.4);
-    border-color: rgba(30, 41, 59, 0.5);
-    transform: rotate(90deg);
-}
-
-.renovation-close-btn i {
+.renovation-link-modal i {
     font-size: 1rem;
-}
-
-/* Responsive Design for Renovation Banner */
-@media (max-width: 768px) {
-    .renovation-banner {
-        padding: 0.75rem;
-    }
-    
-    .renovation-icon {
-        width: 40px;
-        height: 40px;
-    }
-    
-    .renovation-icon i {
-        font-size: 1.25rem;
-    }
-    
-    .renovation-title {
-        font-size: 1rem;
-    }
-    
-    .renovation-text {
-        font-size: 0.8125rem;
-    }
-    
-    .renovation-banner-content .flex {
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-    
-    .renovation-close-btn {
-        align-self: flex-end;
-        margin-left: 0;
-    }
+    color: #1e293b;
 }
 
 

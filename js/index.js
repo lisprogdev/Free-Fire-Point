@@ -493,53 +493,85 @@ function showCopySuccessAlert() {
     }
 }
 
-// Renovation Banner Functions
+// Renovation Modal Functions
+function showRenovationModal() {
+    const renovationModal = document.getElementById('renovationModal');
+    const renovationModalContent = document.getElementById('renovationModalContent');
+    
+    if (renovationModal && renovationModalContent) {
+        renovationModal.classList.remove('hidden');
+        renovationModal.classList.add('show');
+        
+        // Trigger animation
+        setTimeout(() => {
+            renovationModalContent.classList.add('show');
+            
+            // Blur main content
+            const mainContent = document.getElementById('mainContent');
+            if (mainContent) {
+                mainContent.classList.add('blur-active');
+            }
+        }, 10);
+    }
+}
+
+function closeRenovationModal() {
+    const renovationModal = document.getElementById('renovationModal');
+    const renovationModalContent = document.getElementById('renovationModalContent');
+    
+    if (renovationModal && renovationModalContent) {
+        renovationModalContent.classList.remove('show');
+        
+        setTimeout(() => {
+            renovationModal.classList.add('hidden');
+            renovationModal.classList.remove('show');
+        }, 300);
+        
+        // Remove blur from main content
+        const mainContent = document.getElementById('mainContent');
+        if (mainContent) {
+            mainContent.classList.remove('blur-active');
+        }
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    const renovationBanner = document.getElementById('renovation-banner');
-    const closeRenovationBtn = document.getElementById('close-renovation-banner');
+    const renovationModal = document.getElementById('renovationModal');
+    const closeRenovationBtn = document.getElementById('close-renovation-modal');
+    const closeRenovationBtnFooter = document.getElementById('close-renovation-modal-btn');
     
-    // Ensure banner is visible by default (remove hidden class if exists)
-    if (renovationBanner) {
-        renovationBanner.classList.remove('hidden');
-    }
-    
-    // Close banner function
-    if (closeRenovationBtn && renovationBanner) {
-        closeRenovationBtn.addEventListener('click', function() {
-            renovationBanner.classList.add('hidden');
-            // Save preference to localStorage
-            localStorage.setItem('renovationBannerClosed', 'true');
-        });
-    }
-    
-    // Adjust hero section padding when banner is visible
-    function adjustHeroPadding() {
-        const heroSection = document.getElementById('hero');
-        if (heroSection && !renovationBanner.classList.contains('hidden')) {
-            const bannerHeight = renovationBanner.offsetHeight;
-            heroSection.style.paddingTop = `calc(128px + ${bannerHeight}px)`;
-        } else if (heroSection) {
-            heroSection.style.paddingTop = '128px';
+    // Show modal on page load
+    if (renovationModal) {
+        // Check if user has closed the modal before
+        const modalClosed = localStorage.getItem('renovationModalClosed');
+        
+        if (modalClosed !== 'true') {
+            showRenovationModal();
         }
     }
     
-    // Adjust padding on load and resize
-    adjustHeroPadding();
-    window.addEventListener('resize', adjustHeroPadding);
-    
-    // Adjust padding when banner is closed
-    if (renovationBanner) {
-        const observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-                if (mutation.attributeName === 'class') {
-                    adjustHeroPadding();
-                }
-            });
+    // Close modal functions
+    if (closeRenovationBtn) {
+        closeRenovationBtn.addEventListener('click', function() {
+            closeRenovationModal();
+            localStorage.setItem('renovationModalClosed', 'true');
         });
-        
-        observer.observe(renovationBanner, {
-            attributes: true,
-            attributeFilter: ['class']
+    }
+    
+    if (closeRenovationBtnFooter) {
+        closeRenovationBtnFooter.addEventListener('click', function() {
+            closeRenovationModal();
+            localStorage.setItem('renovationModalClosed', 'true');
+        });
+    }
+    
+    // Close modal when clicking outside
+    if (renovationModal) {
+        renovationModal.addEventListener('click', function(e) {
+            if (e.target === renovationModal) {
+                closeRenovationModal();
+                localStorage.setItem('renovationModalClosed', 'true');
+            }
         });
     }
 });
