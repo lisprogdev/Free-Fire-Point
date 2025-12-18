@@ -1296,10 +1296,10 @@ body.modal-open {
 /* Renovation Banner Styles */
 .renovation-banner {
     position: fixed;
-    top: 0;
+    top: 128px; /* Di bawah navigasi utama (64px) + navigasi sekunder (64px) */
     left: 0;
     right: 0;
-    z-index: 9999;
+    z-index: 998; /* Di bawah navigasi (nav utama: 1000, nav sekunder: 999) */
     background: linear-gradient(135deg, rgba(251, 191, 36, 0.95), rgba(245, 158, 11, 0.95));
     backdrop-filter: blur(10px);
     border-bottom: 3px solid rgba(217, 119, 6, 0.8);
