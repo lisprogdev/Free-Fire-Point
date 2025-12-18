@@ -498,13 +498,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const renovationBanner = document.getElementById('renovation-banner');
     const closeRenovationBtn = document.getElementById('close-renovation-banner');
     
-    // Check if user has closed the banner before
-    const bannerClosed = localStorage.getItem('renovationBannerClosed');
-    
-    if (bannerClosed === 'true') {
-        if (renovationBanner) {
-            renovationBanner.classList.add('hidden');
-        }
+    // Ensure banner is visible by default (remove hidden class if exists)
+    if (renovationBanner) {
+        renovationBanner.classList.remove('hidden');
     }
     
     // Close banner function
