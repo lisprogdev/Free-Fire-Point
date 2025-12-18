@@ -1379,6 +1379,13 @@ body.modal-open {
     color: #1e293b;
     margin-bottom: 0.25rem;
     letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+}
+
+.renovation-title i {
+    color: #1e293b;
+    font-size: 1rem;
 }
 
 .renovation-text {
@@ -1387,6 +1394,27 @@ body.modal-open {
     color: #334155;
     line-height: 1.5;
     font-weight: 500;
+}
+
+.renovation-link {
+    color: #1e293b;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.renovation-link:hover {
+    color: #0f172a;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.renovation-link i {
+    font-size: 0.875rem;
+    color: #1e293b;
 }
 
 .renovation-close-btn {
