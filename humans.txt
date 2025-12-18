@@ -1,0 +1,93 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Developer: Tekno Ogi - Free Fire Point Calculator Indonesia
+    Contact: ogitekno [at] gmail.com
+    Instagram: @tekno_ogi
+    TikTok: @tekno_ogi
+    YouTube: @tekno_ogi
+    WhatsApp: +62 877-2007-5446
+    Location: Palanro, Mallusetasi, Barru, Sulawesi Selatan, Indonesia
+    From: Indonesia
+
+# THANKS
+
+    Free Fire Community Indonesia
+    Garena Free Fire Official Indonesia
+    SEO Community Indonesia
+    GitHub Pages Hosting
+    Gaming Community Sulawesi Selatan
+    GH LBK ESPORT Team
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3, Vanilla JavaScript
+    Tailwind CSS v4 (CDN)
+    Font Awesome 6.5.1
+    AOS (Animate On Scroll) 2.3.4
+    html2canvas 1.4.1
+    IndexedDB for data persistence
+    Schema.org structured data
+    Open Graph Protocol
+    Twitter Cards
+    Favicon Generator
+    Google Fonts (Orbitron, Rajdhani, Exo 2, Russo One)
+    
+# SITE
+
+    Last update: 2025/01/11
+    Language: Indonesian / Bahasa Indonesia
+    Doctype: HTML5
+    IDE: Cursor / Visual Studio Code
+    Hosting: GitHub Pages
+    Domain: freefirepoint.my.id
+    Repository: Public
+    Pages: Homepage + 2 Match Calculator + Cara Penggunaan Tutorial (Fully SEO Optimized)
+    
+# KEYWORDS
+
+    Primary (Homepage): free fire point, cara hitung poin turnamen free fire, fast turnamen ff
+    Primary (2 Match): cara hitung poin turnamen free fire 2 match, point free fire 2 match, fast turnamen ff 2 match
+    Primary (Cara Penggunaan): cara penggunaan kalkulator free fire, tutorial kalkulator poin ff, panduan hitung poin turnamen
+    Secondary: kalkulator poin ff, free fire point calculator, kill point ff, placement point ff
+    Tertiary: sistem poin free fire, booyah point, turnamen free fire, turnamen ff 2 match, cara pakai kalkulator ff
+    Special: turnamen free fire 2025, ff esport id, tutorial lengkap free fire point
+    Long-tail: cara menghitung poin fast turnamen free fire 2025 indonesia, panduan lengkap kalkulator poin ff
+    Local: turnamen free fire indonesia, ff tournament indonesia, free fire point calculator indonesia
+    Gaming: kalkulator turnamen ff, hitung poin ff online, fast turnamen free fire calculator
+    
+# SEO FOCUS
+
+    Target Audience: Free Fire Players Indonesia (Usia 13-25)
+    Content Type: Gaming Calculator & Tournament Guide
+    Geographic Target: Indonesia (Focus: Sulawesi Selatan)
+    Device Target: Mobile First, Desktop Compatible
+    Search Intent: Transactional & Informational
+    Competition Level: Medium
+    Content Quality: High (Original calculator tool)
+    Keyword Focus 2025: Turnamen Free Fire 2025, FF Esport ID, Point Free Fire 2 Match, Tutorial Kalkulator
+    
+# FEATURES
+
+    ✓ 2-Match Tournament Calculator
+    ✓ Kill Point & Placement Point System
+    ✓ Real-time Calculation
+    ✓ Data Persistence (IndexedDB)
+    ✓ JPG Export Functionality
+    ✓ Comprehensive Tutorial Page with Tabbed Navigation
+    ✓ Interactive FAQ with Accordion
+    ✓ Step-by-Step Usage Guide
+    ✓ Mobile Responsive Design
+    ✓ SEO Optimized (Homepage + 2 Match + Cara Penggunaan)
+    ✓ Fast Loading (GitHub Pages)
+    ✓ Free to Use
+    
+# PERFORMANCE
+
+    Target Load Time: < 3 seconds
+    Mobile Score: 90+ (PageSpeed Insights)
+    Desktop Score: 95+ (PageSpeed Insights)
+    Core Web Vitals: Green
+    Accessibility: AA Compliant

@@ -1,0 +1,364 @@
+:root {
+    --ff-primary: #1a1a2e;
+    --ff-secondary: #16213e;
+    --ff-accent: #fbbf24;
+    --ff-accent-hover: #f59e0b;
+    --ff-text-light: #f8fafc;
+    --ff-text-gray: #94a3b8;
+    --ff-border: #374151;
+}
+
+/* Navigation Styles */
+.nav-gaming-bg {
+    background: linear-gradient(135deg, var(--ff-primary) 0%, var(--ff-secondary) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--ff-border);
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-secondary {
+    position: fixed !important;
+    top: 64px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.logo-glow {
+    filter: drop-shadow(0 0 8px var(--ff-accent));
+    transition: all 0.3s ease;
+}
+
+.logo-glow:hover {
+    filter: drop-shadow(0 0 15px var(--ff-accent));
+    transform: scale(1.05);
+}
+
+.btn-gaming-nav {
+    background: linear-gradient(45deg, var(--ff-accent), var(--ff-accent-hover));
+    color: var(--ff-primary);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-gaming-nav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(251, 191, 36, 0.3);
+}
+
+.btn-gaming-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-gaming-nav:hover::before {
+    left: 100%;
+}
+
+.social-icon {
+    color: var(--ff-text-gray);
+    transition: all 0.3s ease;
+    font-size: 1.25rem;
+}
+
+.social-icon:hover {
+    color: var(--ff-accent);
+    transform: translateY(-2px);
+}
+
+.social-icon.instagram:hover {
+    color: #e1306c;
+}
+
+.social-icon.tiktok:hover {
+    color: #000000;
+}
+
+.social-icon.youtube:hover {
+    color: #ff0000;
+}
+
+/* Icon styling untuk navigation */
+.nav-icon {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    transition: all 0.3s ease;
+}
+
+.nav-icon:hover {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.menu-nav-item .nav-icon {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.menu-nav-item:hover .nav-icon,
+.menu-nav-item.active .nav-icon {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
+}
+
+/* Logo Booyah tanpa filter - biarkan warna asli */
+.nav-icon[src*="Booyah Logo.png"] {
+    filter: none !important;
+}
+
+.nav-icon[src*="Booyah Logo.png"]:hover {
+    filter: none !important;
+}
+
+/* Icon tombol Hitung Poin FF Sekarang - warna hitam */
+.btn-hero-primary .nav-icon {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%) !important;
+}
+
+.btn-hero-primary .nav-icon:hover {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%) !important;
+}
+
+/* Icon untuk tombol donasi */
+.btn-gaming-nav .nav-icon {
+    filter: brightness(0) saturate(100%) invert(20%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
+}
+
+/* Gradient icon styling - untuk icon yang seharusnya berwarna putih */
+.gradient-icon {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
+    transition: all 0.3s ease;
+}
+
+.gradient-icon:hover {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
+}
+
+.menu-nav-item.active .gradient-icon {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
+}
+
+/* Icon untuk submenu arrow */
+.submenu-arrow {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    transition: all 0.3s ease;
+}
+
+.menu-nav-item:hover .submenu-arrow,
+.menu-nav-item.active .submenu-arrow {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
+}
+
+.menu-nav-item {
+    color: var(--ff-text-gray);
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.menu-nav-item:hover {
+    color: var(--ff-accent);
+    background: rgba(251, 191, 36, 0.1);
+}
+
+.menu-nav-item.active {
+    color: var(--ff-accent);
+    background: rgba(251, 191, 36, 0.15);
+}
+
+.menu-nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--ff-accent);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.menu-nav-item:hover::after,
+.menu-nav-item.active::after {
+    width: 80%;
+}
+
+.mobile-menu-toggle {
+    color: var(--ff-text-light);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+    color: var(--ff-accent);
+}
+
+.mobile-menu {
+    background: linear-gradient(135deg, var(--ff-primary) 0%, var(--ff-secondary) 100%);
+    border-top: 1px solid var(--ff-border);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.font-gaming {
+    font-family: 'Orbitron', 'Rajdhani', monospace;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.font-gaming-menu {
+    font-family: 'Rajdhani', 'Exo 2', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* Dropdown Menu Styles - Click-based instead of hover */
+.dropdown-menu {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-10px) !important;
+    transition: all 0.3s ease;
+    pointer-events: none !important;
+}
+
+.dropdown-menu.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+}
+
+/* Override any Tailwind group-hover effects */
+.calculator-dropdown .dropdown-menu {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-10px) !important;
+    pointer-events: none !important;
+}
+
+.calculator-dropdown .dropdown-menu.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+}
+
+/* Calculator dropdown specific styles */
+.calculator-dropdown {
+    position: relative;
+}
+
+.calculator-dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    margin-top: 0.5rem;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(71, 85, 105, 0.5);
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    max-height: 24rem;
+    overflow-y: auto;
+}
+
+/* Mobile dropdown positioning */
+@media (max-width: 768px) {
+    .calculator-dropdown .dropdown-menu {
+        position: fixed !important;
+        left: 50% !important;
+        top: 85px !important;
+        transform: translateX(-50%) translateY(-10px) !important;
+        width: 90vw !important;
+        max-width: 20rem !important;
+        right: auto !important;
+        z-index: 1001 !important;
+    }
+    
+    .calculator-dropdown .dropdown-menu.show {
+        transform: translateX(-50%) translateY(0) !important;
+    }
+}
+
+/* Dropdown Menu Scrollbar */
+.dropdown-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 3px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, var(--ff-accent), var(--ff-accent-hover));
+    border-radius: 3px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, var(--ff-accent-hover), #d97706);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: 1rem;
+    }
+    
+    .social-icon {
+        font-size: 1rem;
+    }
+    
+    .btn-gaming-nav {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .nav-secondary {
+        top: 64px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 0.9rem;
+    }
+    
+    .nav-gaming-bg .h-16 {
+        height: 3.5rem;
+    }
+    
+    .nav-secondary {
+        top: 56px;
+    }
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced hover effects */
+.interactive-hover {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.interactive-hover:hover {
+    transform: translateY(-2px);
+}
