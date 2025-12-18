@@ -10,6 +10,7 @@
     overflow: hidden;
     padding-top: 128px;
     padding-bottom: 4rem;
+    transition: padding-top 0.3s ease;
 }
 
 .hero-section::before {
@@ -1290,6 +1291,162 @@ html {
 /* Prevent scroll when modal is open */
 body.modal-open {
     overflow: hidden;
+}
+
+/* Renovation Banner Styles */
+.renovation-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.95), rgba(245, 158, 11, 0.95));
+    backdrop-filter: blur(10px);
+    border-bottom: 3px solid rgba(217, 119, 6, 0.8);
+    box-shadow: 0 4px 20px rgba(251, 191, 36, 0.3);
+    padding: 1rem;
+    transform: translateY(0);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+    animation: slideDown 0.5s ease-out;
+}
+
+.renovation-banner.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.renovation-banner-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .renovation-banner-content {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .renovation-banner-content {
+        padding: 0 2rem;
+    }
+}
+
+.renovation-icon {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    animation: pulse 2s infinite;
+}
+
+.renovation-icon i {
+    font-size: 1.5rem;
+    color: #1e293b;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.renovation-title {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #1e293b;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.5px;
+}
+
+.renovation-text {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.875rem;
+    color: #334155;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.renovation-close-btn {
+    background: rgba(30, 41, 59, 0.2);
+    border: 2px solid rgba(30, 41, 59, 0.3);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    color: #1e293b;
+}
+
+.renovation-close-btn:hover {
+    background: rgba(30, 41, 59, 0.4);
+    border-color: rgba(30, 41, 59, 0.5);
+    transform: rotate(90deg);
+}
+
+.renovation-close-btn i {
+    font-size: 1rem;
+}
+
+/* Responsive Design for Renovation Banner */
+@media (max-width: 768px) {
+    .renovation-banner {
+        padding: 0.75rem;
+    }
+    
+    .renovation-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .renovation-icon i {
+        font-size: 1.25rem;
+    }
+    
+    .renovation-title {
+        font-size: 1rem;
+    }
+    
+    .renovation-text {
+        font-size: 0.8125rem;
+    }
+    
+    .renovation-banner-content .flex {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .renovation-close-btn {
+        align-self: flex-end;
+        margin-left: 0;
+    }
 }
 
 

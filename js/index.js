@@ -492,3 +492,58 @@ function showCopySuccessAlert() {
         }, 3000);
     }
 }
+
+// Renovation Banner Functions
+document.addEventListener('DOMContentLoaded', function() {
+    const renovationBanner = document.getElementById('renovation-banner');
+    const closeRenovationBtn = document.getElementById('close-renovation-banner');
+    
+    // Check if user has closed the banner before
+    const bannerClosed = localStorage.getItem('renovationBannerClosed');
+    
+    if (bannerClosed === 'true') {
+        if (renovationBanner) {
+            renovationBanner.classList.add('hidden');
+        }
+    }
+    
+    // Close banner function
+    if (closeRenovationBtn && renovationBanner) {
+        closeRenovationBtn.addEventListener('click', function() {
+            renovationBanner.classList.add('hidden');
+            // Save preference to localStorage
+            localStorage.setItem('renovationBannerClosed', 'true');
+        });
+    }
+    
+    // Adjust hero section padding when banner is visible
+    function adjustHeroPadding() {
+        const heroSection = document.getElementById('hero');
+        if (heroSection && !renovationBanner.classList.contains('hidden')) {
+            const bannerHeight = renovationBanner.offsetHeight;
+            heroSection.style.paddingTop = `calc(128px + ${bannerHeight}px)`;
+        } else if (heroSection) {
+            heroSection.style.paddingTop = '128px';
+        }
+    }
+    
+    // Adjust padding on load and resize
+    adjustHeroPadding();
+    window.addEventListener('resize', adjustHeroPadding);
+    
+    // Adjust padding when banner is closed
+    if (renovationBanner) {
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.attributeName === 'class') {
+                    adjustHeroPadding();
+                }
+            });
+        });
+        
+        observer.observe(renovationBanner, {
+            attributes: true,
+            attributeFilter: ['class']
+        });
+    }
+});
