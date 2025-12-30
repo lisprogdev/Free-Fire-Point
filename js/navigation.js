@@ -39,9 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const calculatorDropdowns = document.querySelectorAll('#calculator-dropdown, #calculator-dropdown-mobile');
         const calculatorTriggers = document.querySelectorAll('#calculator-trigger, #calculator-trigger-mobile');
         const calculatorArrows = document.querySelectorAll('#calculator-arrow, #calculator-arrow-mobile');
-        const alatDropdowns = document.querySelectorAll('#alat-dropdown, #alat-dropdown-mobile');
-        const alatTriggers = document.querySelectorAll('#alat-trigger, #alat-trigger-mobile');
-        const alatArrows = document.querySelectorAll('#alat-arrow, #alat-arrow-mobile');
         
         let isClickInsideDropdown = false;
         let isClickOnTrigger = false;
@@ -52,19 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 isClickInsideDropdown = true;
             }
         });
-        alatDropdowns.forEach(dropdown => {
-            if (dropdown.contains(event.target)) {
-                isClickInsideDropdown = true;
-            }
-        });
         
-        // Check if click is on calculator or alat trigger
+        // Check if click is on calculator trigger
         calculatorTriggers.forEach(trigger => {
-            if (trigger.contains(event.target)) {
-                isClickOnTrigger = true;
-            }
-        });
-        alatTriggers.forEach(trigger => {
             if (trigger.contains(event.target)) {
                 isClickOnTrigger = true;
             }
@@ -75,45 +62,30 @@ document.addEventListener('DOMContentLoaded', function() {
             calculatorDropdowns.forEach(dropdown => {
                 dropdown.classList.remove('show');
             });
-            alatDropdowns.forEach(dropdown => {
-                dropdown.classList.remove('show');
-            });
             
             // Reset arrows
             calculatorArrows.forEach(arrow => {
-                arrow.style.transform = 'rotate(0deg)';
-            });
-            alatArrows.forEach(arrow => {
                 arrow.style.transform = 'rotate(0deg)';
             });
         }
     });
 
-    // Close calculator and alat dropdowns when clicking on dropdown links
+    // Close calculator dropdowns when clicking on dropdown links
     document.addEventListener('click', function(event) {
         // Check if clicked element is a dropdown link
         const calculatorDropdownLink = event.target.closest('#calculator-dropdown a, #calculator-dropdown-mobile a');
-        const alatDropdownLink = event.target.closest('#alat-dropdown a, #alat-dropdown-mobile a');
         
-        if (calculatorDropdownLink || alatDropdownLink) {
-            // Close all calculator and alat dropdowns
+        if (calculatorDropdownLink) {
+            // Close all calculator dropdowns
             const calculatorDropdowns = document.querySelectorAll('#calculator-dropdown, #calculator-dropdown-mobile');
             const calculatorArrows = document.querySelectorAll('#calculator-arrow, #calculator-arrow-mobile');
-            const alatDropdowns = document.querySelectorAll('#alat-dropdown, #alat-dropdown-mobile');
-            const alatArrows = document.querySelectorAll('#alat-arrow, #alat-arrow-mobile');
             
             calculatorDropdowns.forEach(dropdown => {
-                dropdown.classList.remove('show');
-            });
-            alatDropdowns.forEach(dropdown => {
                 dropdown.classList.remove('show');
             });
             
             // Reset arrows
             calculatorArrows.forEach(arrow => {
-                arrow.style.transform = 'rotate(0deg)';
-            });
-            alatArrows.forEach(arrow => {
                 arrow.style.transform = 'rotate(0deg)';
             });
             
@@ -144,21 +116,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const arrow = calculatorArrows[index];
             const isVisible = dropdown.classList.contains('show');
             
-            // Close all dropdowns first (calculator and alat)
+            // Close all dropdowns first
             calculatorDropdowns.forEach(drop => {
-                drop.classList.remove('show');
-            });
-            const alatDropdowns = document.querySelectorAll('#alat-dropdown, #alat-dropdown-mobile');
-            alatDropdowns.forEach(drop => {
                 drop.classList.remove('show');
             });
             
             // Reset all arrows
             calculatorArrows.forEach(arr => {
-                arr.style.transform = 'rotate(0deg)';
-            });
-            const alatArrows = document.querySelectorAll('#alat-arrow, #alat-arrow-mobile');
-            alatArrows.forEach(arr => {
                 arr.style.transform = 'rotate(0deg)';
             });
             
@@ -170,51 +134,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Alat Lainnya dropdown functionality for both desktop and mobile
-    const alatTriggers = document.querySelectorAll('#alat-trigger, #alat-trigger-mobile');
-    const alatDropdowns = document.querySelectorAll('#alat-dropdown, #alat-dropdown-mobile');
-    const alatArrows = document.querySelectorAll('#alat-arrow, #alat-arrow-mobile');
-    
-    alatTriggers.forEach((trigger, index) => {
-        trigger.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const dropdown = alatDropdowns[index];
-            const arrow = alatArrows[index];
-            const isVisible = dropdown.classList.contains('show');
-            
-            // Close all dropdowns first (calculator and alat)
-            calculatorDropdowns.forEach(drop => {
-                drop.classList.remove('show');
-            });
-            alatDropdowns.forEach(drop => {
-                drop.classList.remove('show');
-            });
-            
-            // Reset all arrows
-            calculatorArrows.forEach(arr => {
-                arr.style.transform = 'rotate(0deg)';
-            });
-            alatArrows.forEach(arr => {
-                arr.style.transform = 'rotate(0deg)';
-            });
-            
-            // Toggle current dropdown
-            if (!isVisible) {
-                dropdown.classList.add('show');
-                arrow.style.transform = 'rotate(180deg)';
-            }
-        });
-    });
 
     // Menu item interactions
     const menuItems = document.querySelectorAll('.menu-nav-item');
     
     menuItems.forEach(item => {
         item.addEventListener('click', function(e) {
-            // Skip calculator and alat items as they are handled separately
-            if (item.getAttribute('data-section') === 'kalkulator' || item.getAttribute('data-section') === 'alat-lainnya') {
+            // Skip calculator items as they are handled separately
+            if (item.getAttribute('data-section') === 'kalkulator') {
                 return;
             }
             
@@ -268,26 +195,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Handle window resize to close calculator and alat dropdowns when switching between mobile/desktop
+    // Handle window resize to close calculator dropdowns when switching between mobile/desktop
     window.addEventListener('resize', function() {
-        // Close all calculator and alat dropdowns when resizing
+        // Close all calculator dropdowns when resizing
         const calculatorDropdowns = document.querySelectorAll('#calculator-dropdown, #calculator-dropdown-mobile');
         const calculatorArrows = document.querySelectorAll('#calculator-arrow, #calculator-arrow-mobile');
-        const alatDropdowns = document.querySelectorAll('#alat-dropdown, #alat-dropdown-mobile');
-        const alatArrows = document.querySelectorAll('#alat-arrow, #alat-arrow-mobile');
         
         calculatorDropdowns.forEach(dropdown => {
-            dropdown.classList.remove('show');
-        });
-        alatDropdowns.forEach(dropdown => {
             dropdown.classList.remove('show');
         });
         
         // Reset arrows
         calculatorArrows.forEach(arrow => {
-            arrow.style.transform = 'rotate(0deg)';
-        });
-        alatArrows.forEach(arrow => {
             arrow.style.transform = 'rotate(0deg)';
         });
     });
@@ -331,6 +250,89 @@ document.addEventListener('DOMContentLoaded', function() {
     if (shouldUpdate) {
         updateActiveNavigation();
     }
+
+    // Modern Sidebar Functionality
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebarToggleMobile = document.getElementById('sidebar-toggle-mobile');
+    const sidebarClose = document.getElementById('sidebar-close');
+    const sidebar = document.getElementById('modern-sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    
+    // Toggle sidebar
+    function toggleSidebar() {
+        if (sidebar && sidebarOverlay) {
+            sidebar.classList.toggle('active');
+            sidebarOverlay.classList.toggle('active');
+            document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+        }
+    }
+    
+    // Close sidebar
+    function closeSidebar() {
+        if (sidebar && sidebarOverlay) {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+    
+    // Event listeners
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener('click', toggleSidebar);
+    }
+    
+    // Mobile sidebar toggle
+    if (sidebarToggleMobile) {
+        sidebarToggleMobile.addEventListener('click', toggleSidebar);
+    }
+    
+    if (sidebarClose) {
+        sidebarClose.addEventListener('click', closeSidebar);
+    }
+    
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', closeSidebar);
+    }
+    
+    // Close sidebar on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sidebar && sidebar.classList.contains('active')) {
+            closeSidebar();
+        }
+    });
+    
+    // Sidebar dropdown functionality
+    const sidebarCalculatorTrigger = document.getElementById('sidebar-calculator-trigger');
+    const sidebarCalculatorDropdown = document.getElementById('sidebar-calculator-dropdown');
+    
+    if (sidebarCalculatorTrigger && sidebarCalculatorDropdown) {
+        sidebarCalculatorTrigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            sidebarCalculatorTrigger.classList.toggle('active');
+            sidebarCalculatorDropdown.classList.toggle('active');
+        });
+    }
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(event) {
+        if (sidebarCalculatorTrigger && sidebarCalculatorDropdown) {
+            const isClickInside = sidebarCalculatorTrigger.contains(event.target) || 
+                                 sidebarCalculatorDropdown.contains(event.target);
+            if (!isClickInside) {
+                sidebarCalculatorTrigger.classList.remove('active');
+                sidebarCalculatorDropdown.classList.remove('active');
+            }
+        }
+    });
+    
+    // Update active navigation in sidebar
+    const sidebarItems = document.querySelectorAll('.sidebar-item[data-section]');
+    sidebarItems.forEach(item => {
+        item.addEventListener('click', function() {
+            sidebarItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
 });
 
 // Global navigation functions
@@ -394,6 +396,24 @@ window.Navigation = {
             const mobileMenuIcon = mobileMenuButton.querySelector('i');
             mobileMenuIcon.classList.remove('fa-times');
             mobileMenuIcon.classList.add('fa-bars');
+        }
+    },
+    toggleSidebar: function() {
+        const sidebar = document.getElementById('modern-sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        if (sidebar && sidebarOverlay) {
+            sidebar.classList.toggle('active');
+            sidebarOverlay.classList.toggle('active');
+            document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+        }
+    },
+    closeSidebar: function() {
+        const sidebar = document.getElementById('modern-sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        if (sidebar && sidebarOverlay) {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            document.body.style.overflow = '';
         }
     }
 };

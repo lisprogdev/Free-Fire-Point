@@ -1,87 +1,148 @@
-// Cara Penggunaan Tabs JavaScript
+// Cara Penggunaan - Modern Animations & Interactions
 
-// Switch Category Tabs
-function switchCategory(category) {
-    // Remove active from all category tabs
-    document.querySelectorAll('.category-tab').forEach(tab => {
-        tab.classList.remove('active');
-    });
-
-    // Add active to clicked category tab
-    document.querySelector(`[data-category="${category}"]`).classList.add('active');
-
-    // Hide all sub-tabs containers
-    document.querySelectorAll('.sub-tabs-container').forEach(container => {
-        container.classList.remove('active');
-    });
-
-    // Show selected sub-tabs container
-    document.getElementById(`tabs-${category}`).classList.add('active');
-
-    // Get first active (non-disabled) tab in this category
-    const firstActiveTab = document.querySelector(`#tabs-${category} .sub-tab:not(.disabled)`);
-    if (firstActiveTab) {
-        const tabId = firstActiveTab.getAttribute('data-tab');
-        switchTab(tabId);
-    } else {
-        // If no active tabs, show placeholder
-        hideAllTabContent();
-        document.getElementById('content-placeholder').classList.add('active');
-    }
-}
-
-// Switch Sub Tabs
-function switchTab(tabId) {
-    // Find parent category
-    const parentContainer = document.querySelector(`[data-tab="${tabId}"]`).closest('.sub-tabs-container');
+// Scroll Reveal Animation
+function initScrollReveal() {
+    const revealElements = document.querySelectorAll('.usage-reveal');
     
-    // Remove active from all sub-tabs in this container
-    parentContainer.querySelectorAll('.sub-tab').forEach(tab => {
-        tab.classList.remove('active');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     });
-
-    // Add active to clicked sub-tab
-    document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
-
-    // Hide all tab content
-    hideAllTabContent();
-
-    // Show selected tab content or placeholder
-    const content = document.getElementById(`content-${tabId}`);
-    if (content) {
-        content.classList.add('active');
-    } else {
-        document.getElementById('content-placeholder').classList.add('active');
-    }
-}
-
-// Helper function to hide all tab content
-function hideAllTabContent() {
-    document.querySelectorAll('.tab-content').forEach(content => {
-        content.classList.remove('active');
+    
+    revealElements.forEach(element => {
+        observer.observe(element);
     });
 }
 
-// Toggle FAQ
-function toggleFAQ(button) {
-    const faqItem = button.parentElement;
-    const answer = faqItem.querySelector('.faq-answer');
-    const icon = button.querySelector('.fas');
+// Fade In Up Animation on Scroll
+function initFadeInUp() {
+    const fadeElements = document.querySelectorAll('.fade-in-up');
     
-    // Toggle answer visibility
-    answer.classList.toggle('hidden');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
     
-    // Rotate icon
-    if (answer.classList.contains('hidden')) {
-        icon.style.transform = 'rotate(0deg)';
-    } else {
-        icon.style.transform = 'rotate(90deg)';
-    }
+    fadeElements.forEach(element => {
+        observer.observe(element);
+    });
 }
 
-// Initialize on page load
+// Parallax Effect for Background
+function initParallax() {
+    const sections = document.querySelectorAll('.usage-section');
+    
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        
+        sections.forEach(section => {
+            const rate = scrolled * 0.5;
+            const before = section.querySelector('::before');
+            if (section) {
+                section.style.transform = `translateY(${rate * 0.1}px)`;
+            }
+        });
+    });
+}
+
+// Card Hover Effects Enhancement
+function initCardHoverEffects() {
+    const cards = document.querySelectorAll('.usage-step-card, .usage-guide-card, .usage-tips-card, .usage-calculator-card');
+    
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+        });
+    });
+}
+
+// Number Badge Animation
+function initNumberBadgeAnimation() {
+    const badges = document.querySelectorAll('.usage-step-number, .usage-calculator-badge');
+    
+    badges.forEach(badge => {
+        badge.addEventListener('mouseenter', function() {
+            this.style.animation = 'pulseGlow 1s ease infinite';
+        });
+        
+        badge.addEventListener('mouseleave', function() {
+            this.style.animation = 'pulseGlow 3s ease-in-out infinite';
+        });
+    });
+}
+
+// List Item Stagger Animation
+function initListStagger() {
+    const lists = document.querySelectorAll('.usage-list-item');
+    
+    lists.forEach((item, index) => {
+        item.style.animationDelay = `${index * 0.1}s`;
+    });
+}
+
+// Smooth Scroll for Internal Links
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+// Initialize all animations on page load
 document.addEventListener('DOMContentLoaded', function() {
-    // Set default category and tab
-    switchCategory('fast-12');
+    initScrollReveal();
+    initFadeInUp();
+    initParallax();
+    initCardHoverEffects();
+    initNumberBadgeAnimation();
+    initListStagger();
+    initSmoothScroll();
+    
+    // Add reveal class to elements that should animate on scroll
+    const gridItems = document.querySelectorAll('.usage-grid-item');
+    gridItems.forEach(item => {
+        item.classList.add('usage-reveal');
+    });
+    
+    // Trigger AOS refresh after dynamic content loads
+    if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+    }
 });
 
+// Re-initialize on window resize
+let resizeTimer;
+window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+        if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+        }
+    }, 250);
+});

@@ -1,0 +1,829 @@
+/* Usage Section Styles - Modern & Gaming Theme */
+.usage-section {
+    position: relative;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.95) 50%, rgba(26, 26, 46, 0.95) 100%);
+    overflow: hidden;
+}
+
+/* Usage Section Header */
+.usage-section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.usage-section-badge {
+    display: inline-flex;
+    margin-bottom: 1.5rem;
+}
+
+.usage-section-badge-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(245, 158, 11, 0.2) 100%);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 9999px;
+    backdrop-filter: blur(10px);
+}
+
+.usage-section-title {
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .usage-section-title {
+        font-size: 3.5rem;
+    }
+}
+
+.usage-section-title-gradient {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+}
+
+.usage-section-subtitle {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .usage-section-subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+.usage-section-description {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+    max-width: 3xl;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .usage-section-description {
+        font-size: 1.125rem;
+    }
+}
+
+/* Usage Read More Button */
+.usage-read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.875rem 2rem;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(245, 158, 11, 0.2) 100%);
+    border: 2px solid rgba(251, 191, 36, 0.5);
+    border-radius: 9999px;
+    color: #fbbf24;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.usage-read-more-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.usage-read-more-btn:hover::before {
+    left: 100%;
+}
+
+.usage-read-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(251, 191, 36, 0.3),
+                0 0 20px rgba(251, 191, 36, 0.2);
+    border-color: rgba(251, 191, 36, 0.8);
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.3) 0%, rgba(245, 158, 11, 0.3) 100%);
+}
+
+.usage-read-more-btn i {
+    transition: transform 0.3s ease;
+}
+
+.usage-read-more-btn:hover i {
+    transform: translateX(4px);
+}
+
+.usage-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(251, 191, 36, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Usage AdSense Container */
+.usage-ads-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+.usage-ads-container ins.adsbygoogle {
+    display: block !important;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Step Cards - Modern Gaming Style */
+.usage-step-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(51, 65, 85, 0.9) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 24px;
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.usage-step-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.15), transparent);
+    transition: left 0.8s ease;
+    z-index: 0;
+}
+
+.usage-step-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.usage-step-card:hover::before {
+    left: 100%;
+}
+
+.usage-step-card:hover::after {
+    opacity: 1;
+}
+
+.usage-step-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 24px 48px rgba(251, 191, 36, 0.2), 0 0 40px rgba(251, 191, 36, 0.1);
+    border-color: rgba(251, 191, 36, 0.5);
+}
+
+/* Step Number Badge */
+.usage-step-number {
+    position: relative;
+    z-index: 1;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    font-size: 2rem;
+    color: white;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    box-shadow: 0 8px 24px rgba(251, 191, 36, 0.4),
+                inset 0 2px 8px rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 8px 24px rgba(251, 191, 36, 0.4),
+                    inset 0 2px 8px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba(251, 191, 36, 0.6),
+                    inset 0 2px 8px rgba(255, 255, 255, 0.3),
+                    0 0 20px rgba(251, 191, 36, 0.3);
+    }
+}
+
+.usage-step-card:hover .usage-step-number {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 12px 36px rgba(251, 191, 36, 0.6),
+                inset 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Step Title */
+.usage-step-title {
+    position: relative;
+    z-index: 1;
+    font-family: 'Orbitron', monospace;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: #fbbf24;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+    transition: all 0.3s ease;
+}
+
+.usage-step-card:hover .usage-step-title {
+    color: #fcd34d;
+    text-shadow: 0 4px 16px rgba(251, 191, 36, 0.5);
+}
+
+/* Step Description */
+.usage-step-description {
+    position: relative;
+    z-index: 1;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+    transition: color 0.3s ease;
+}
+
+.usage-step-card:hover .usage-step-description {
+    color: #e2e8f0;
+}
+
+/* Guide Cards - Enhanced Style */
+.usage-guide-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(51, 65, 85, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 24px;
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.usage-guide-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.8), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s ease;
+}
+
+.usage-guide-card:hover::before {
+    transform: scaleX(1);
+}
+
+.usage-guide-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4),
+                0 0 32px rgba(251, 191, 36, 0.15);
+    border-color: rgba(251, 191, 36, 0.4);
+}
+
+/* Guide Icon Container */
+.usage-guide-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.usage-guide-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.usage-guide-card:hover .usage-guide-icon::before {
+    width: 200%;
+    height: 200%;
+}
+
+.usage-guide-card:hover .usage-guide-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Info Boxes */
+.usage-info-box {
+    background: rgba(30, 41, 59, 0.6);
+    border-radius: 16px;
+    padding: 1.25rem;
+    border-left: 4px solid;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.usage-info-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: currentColor;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s ease;
+}
+
+.usage-info-box:hover::before {
+    transform: scaleY(1);
+}
+
+.usage-info-box:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Tips Cards - Enhanced */
+.usage-tips-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(51, 65, 85, 0.9) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.usage-tips-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, transparent, rgba(251, 191, 36, 0.3), transparent);
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.usage-tips-card:hover::before {
+    opacity: 1;
+    animation: borderGlow 2s ease infinite;
+}
+
+@keyframes borderGlow {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+.usage-tips-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(251, 191, 36, 0.2);
+    border-color: rgba(251, 191, 36, 0.5);
+}
+
+/* Tips Icon */
+.usage-tips-icon {
+    font-size: 2rem;
+    margin-right: 0.75rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+}
+
+.usage-tips-card:hover .usage-tips-icon {
+    transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(0 4px 8px rgba(251, 191, 36, 0.4));
+}
+
+/* List Items Animation */
+.usage-list-item {
+    position: relative;
+    padding-left: 1.5rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideInLeft 0.6s ease forwards;
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.usage-list-item:nth-child(1) { animation-delay: 0.1s; }
+.usage-list-item:nth-child(2) { animation-delay: 0.2s; }
+.usage-list-item:nth-child(3) { animation-delay: 0.3s; }
+.usage-list-item:nth-child(4) { animation-delay: 0.4s; }
+
+.usage-list-item:hover {
+    transform: translateX(8px);
+    color: #fbbf24;
+}
+
+.usage-list-item i {
+    position: absolute;
+    left: 0;
+    top: 0.25rem;
+    transition: all 0.3s ease;
+}
+
+.usage-list-item:hover i {
+    transform: scale(1.2);
+    filter: drop-shadow(0 2px 4px rgba(251, 191, 36, 0.4));
+}
+
+/* Calculator Type Cards */
+.usage-calculator-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(51, 65, 85, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 24px;
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.usage-calculator-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(251, 191, 36, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.usage-calculator-card:hover::before {
+    opacity: 1;
+}
+
+.usage-calculator-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 24px 56px rgba(251, 191, 36, 0.25),
+                0 0 48px rgba(251, 191, 36, 0.15);
+    border-color: rgba(251, 191, 36, 0.6);
+}
+
+/* Calculator Number Badge */
+.usage-calculator-badge {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    font-size: 2rem;
+    color: white;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
+                inset 0 2px 8px rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.usage-calculator-badge::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: transform 0.6s ease;
+}
+
+.usage-calculator-card:hover .usage-calculator-badge::before {
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.usage-calculator-card:hover .usage-calculator-badge {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4),
+                inset 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Formula Box */
+.usage-formula-box {
+    position: relative;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(251, 191, 36, 0.3);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+                inset 0 0 40px rgba(251, 191, 36, 0.05);
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.usage-formula-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(251, 191, 36, 0.05) 50%, transparent 70%);
+    animation: shimmer 3s ease infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.usage-formula-box:hover {
+    border-color: rgba(251, 191, 36, 0.6);
+    box-shadow: 0 12px 48px rgba(251, 191, 36, 0.2),
+                inset 0 0 60px rgba(251, 191, 36, 0.1);
+    transform: scale(1.02);
+}
+
+/* Fade In Up Animation */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger Animation for Grid Items */
+.usage-grid-item {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUpStagger 0.8s ease forwards;
+}
+
+@keyframes fadeInUpStagger {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.usage-grid-item:nth-child(1) { animation-delay: 0.1s; }
+.usage-grid-item:nth-child(2) { animation-delay: 0.2s; }
+.usage-grid-item:nth-child(3) { animation-delay: 0.3s; }
+.usage-grid-item:nth-child(4) { animation-delay: 0.4s; }
+.usage-grid-item:nth-child(5) { animation-delay: 0.5s; }
+.usage-grid-item:nth-child(6) { animation-delay: 0.6s; }
+
+/* Button Hover Effects */
+.usage-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.usage-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.usage-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.usage-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(251, 191, 36, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .usage-step-card,
+    .usage-guide-card,
+    .usage-tips-card,
+    .usage-calculator-card {
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+    
+    .usage-step-number,
+    .usage-calculator-badge {
+        width: 64px;
+        height: 64px;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .usage-guide-icon {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .usage-step-title {
+        font-size: 1.125rem;
+    }
+    
+    .usage-step-description {
+        font-size: 0.875rem;
+    }
+    
+    .usage-formula-box {
+        padding: 1.5rem;
+    }
+}
+
+/* Loading Animation */
+@keyframes loadingPulse {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.usage-loading {
+    animation: loadingPulse 2s ease infinite;
+}
+
+/* Scroll Reveal Animation */
+.usage-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.usage-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Gradient Text Animation */
+.usage-gradient-text {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 100% center;
+    }
+    100% {
+        background-position: 0% center;
+    }
+}
+
+/* Glow Effect */
+.usage-glow {
+    position: relative;
+}
+
+.usage-glow::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.usage-glow:hover::after {
+    opacity: 1;
+}
+
+/* Section Divider */
+.usage-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.5), transparent);
+    margin: 3rem 0;
+    position: relative;
+}
+
+.usage-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background: #fbbf24;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.6);
+    animation: pulseDot 2s ease infinite;
+}
+
+@keyframes pulseDot {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0.7;
+    }
+}

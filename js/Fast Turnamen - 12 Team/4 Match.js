@@ -85,12 +85,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalPointsDisplay = document.getElementById('totalPoints');
     
     // Tournament Calculator Functionality
-    const inputTableBody = document.getElementById('inputTableBody');
-    const resultsTableBody = document.getElementById('resultsTableBody');
+    let inputTableBody = document.getElementById('inputTableBody');
+    let resultsTableBody = document.getElementById('resultsTableBody');
     const saveAllDataBtn = document.getElementById('saveAllData');
     const calculateResultsBtn = document.getElementById('calculateResults');
     const resetAllDataBtn = document.getElementById('resetAllData');
     const downloadJPGBtn = document.getElementById('downloadJPG');
+    
+    // Re-check elements if not found initially
+    if (!inputTableBody) {
+        inputTableBody = document.getElementById('inputTableBody');
+    }
+    if (!resultsTableBody) {
+        resultsTableBody = document.getElementById('resultsTableBody');
+    }
 
     // IndexedDB Setup
     let db;
@@ -206,6 +214,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: `Team ${i}`,
                 match1: { rank: 0, kills: 0 },
                 match2: { rank: 0, kills: 0 },
+                match3: { rank: 0, kills: 0 },
+                match4: { rank: 0, kills: 0 },
                 totalPoints: 0
             });
         }
@@ -214,7 +224,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Generate input table
     function generateInputTable() {
         if (!inputTableBody) {
+            console.error('inputTableBody not found!');
             return;
+        }
+        
+        // Ensure teamsData is initialized
+        if (!teamsData || teamsData.length === 0) {
+            console.log('teamsData is empty, initializing...');
+            initializeTeamsData();
         }
         
         inputTableBody.innerHTML = '';
@@ -258,6 +275,34 @@ document.addEventListener('DOMContentLoaded', function() {
                            class="w-full bg-slate-700/50 border border-slate-600/50 rounded px-2 py-1 text-slate-200 text-sm focus:border-yellow-400 focus:outline-none"
                            onchange="updateTeamData(${index}, 'match2', 'kills', parseInt(this.value) || 0)">
                 </td>
+                <td class="px-2 py-3">
+                    <select class="w-full bg-slate-700/50 border border-slate-600/50 rounded px-2 py-1 text-slate-200 text-sm focus:border-yellow-400 focus:outline-none"
+                            onchange="updateTeamData(${index}, 'match3', 'rank', parseInt(this.value))">
+                        <option value="0">-</option>
+                        ${generateRankOptions(team.match3.rank)}
+                    </select>
+                </td>
+                <td class="px-2 py-3">
+                    <input type="number" 
+                           min="0" max="50" 
+                           value="${team.match3.kills}" 
+                           class="w-full bg-slate-700/50 border border-slate-600/50 rounded px-2 py-1 text-slate-200 text-sm focus:border-yellow-400 focus:outline-none"
+                           onchange="updateTeamData(${index}, 'match3', 'kills', parseInt(this.value) || 0)">
+                </td>
+                <td class="px-2 py-3">
+                    <select class="w-full bg-slate-700/50 border border-slate-600/50 rounded px-2 py-1 text-slate-200 text-sm focus:border-yellow-400 focus:outline-none"
+                            onchange="updateTeamData(${index}, 'match4', 'rank', parseInt(this.value))">
+                        <option value="0">-</option>
+                        ${generateRankOptions(team.match4.rank)}
+                    </select>
+                </td>
+                <td class="px-2 py-3">
+                    <input type="number" 
+                           min="0" max="50" 
+                           value="${team.match4.kills}" 
+                           class="w-full bg-slate-700/50 border border-slate-600/50 rounded px-2 py-1 text-slate-200 text-sm focus:border-yellow-400 focus:outline-none"
+                           onchange="updateTeamData(${index}, 'match4', 'kills', parseInt(this.value) || 0)">
+                </td>
             `;
             
             inputTableBody.appendChild(row);
@@ -288,12 +333,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Calculate team points
     function calculateTeamPoints(team) {
-        const match1Points = (placementPoints[team.match1.rank] || 0) + team.match1.kills;
-        const match2Points = (placementPoints[team.match2.rank] || 0) + team.match2.kills;
+        const match1Points = (placementPoints[team.match1.rank] || 0) + (team.match1.kills || 0);
+        const match2Points = (placementPoints[team.match2.rank] || 0) + (team.match2.kills || 0);
+        const match3Points = (placementPoints[team.match3.rank] || 0) + (team.match3.kills || 0);
+        const match4Points = (placementPoints[team.match4.rank] || 0) + (team.match4.kills || 0);
         return {
             match1: match1Points,
             match2: match2Points,
-            total: match1Points + match2Points
+            match3: match3Points,
+            match4: match4Points,
+            total: match1Points + match2Points + match3Points + match4Points
         };
     }
 
@@ -345,6 +394,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     <td class="px-2 py-3 text-center">
                         <span class="text-slate-300">${team.points.match2}</span>
                     </td>
+                    <td class="px-2 py-3 text-center">
+                        <span class="text-slate-300">${team.points.match3}</span>
+                    </td>
+                    <td class="px-2 py-3 text-center">
+                        <span class="text-slate-300">${team.points.match4}</span>
+                    </td>
                     <td class="px-3 py-3 text-center">
                         <span class="font-bold text-lg ${isWinner ? 'text-yellow-400' : 'text-slate-200'}">${team.points.total}</span>
                     </td>
@@ -361,6 +416,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     </td>
                     <td class="px-3 py-3 text-center">
                         <span class="font-medium text-slate-500">-</span>
+                    </td>
+                    <td class="px-2 py-3 text-center">
+                        <span class="text-slate-500">0</span>
+                    </td>
+                    <td class="px-2 py-3 text-center">
+                        <span class="text-slate-500">0</span>
                     </td>
                     <td class="px-2 py-3 text-center">
                         <span class="text-slate-500">0</span>
@@ -392,12 +453,16 @@ document.addEventListener('DOMContentLoaded', function() {
         let maxTotalKills = 0;
         let maxMatch1Kills = 0;
         let maxMatch2Kills = 0;
+        let maxMatch3Kills = 0;
+        let maxMatch4Kills = 0;
         let mostKillTeam = null;
         let mostKillMatch1Team = null;
         let mostKillMatch2Team = null;
+        let mostKillMatch3Team = null;
+        let mostKillMatch4Team = null;
 
         teamsData.forEach(team => {
-            const totalKills = team.match1.kills + team.match2.kills;
+            const totalKills = team.match1.kills + team.match2.kills + team.match3.kills + team.match4.kills;
             
             // Total kills
             if (totalKills > maxTotalKills) {
@@ -416,6 +481,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 maxMatch2Kills = team.match2.kills;
                 mostKillMatch2Team = team;
             }
+            
+            // Match 3 kills
+            if (team.match3.kills > maxMatch3Kills) {
+                maxMatch3Kills = team.match3.kills;
+                mostKillMatch3Team = team;
+            }
+            
+            // Match 4 kills
+            if (team.match4.kills > maxMatch4Kills) {
+                maxMatch4Kills = team.match4.kills;
+                mostKillMatch4Team = team;
+            }
         });
 
         // Check if we have any teams with names (indicating there's data to show)
@@ -428,34 +505,54 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Total Kills - Full Width -->
                 <div class="bg-gradient-to-br from-red-500/20 to-red-600/20 border border-red-400/30 rounded-lg p-4 text-center col-span-full">
                     <div class="flex items-center justify-center mb-2">
-                        <i class="fas fa-trophy text-red-400 mr-2"></i>
                         <h4 class="font-gaming font-bold text-red-400">Total Kills</h4>
                     </div>
                     <div class="text-slate-200 font-bold text-lg">${mostKillTeam ? mostKillTeam.name : 'Belum ada data'}</div>
                     <div class="text-red-400 font-bold text-2xl">${maxTotalKills} Kills</div>
-                    <div class="text-slate-400 text-xs mt-1">M1: ${mostKillTeam ? mostKillTeam.match1.kills : 0} | M2: ${mostKillTeam ? mostKillTeam.match2.kills : 0}</div>
+                    <div class="text-slate-400 text-xs mt-1">M1: ${mostKillTeam ? mostKillTeam.match1.kills : 0} | M2: ${mostKillTeam ? mostKillTeam.match2.kills : 0} | M3: ${mostKillTeam ? mostKillTeam.match3.kills : 0} | M4: ${mostKillTeam ? mostKillTeam.match4.kills : 0}</div>
                 </div>
 
-                <!-- Match 1 Kills -->
-                <div class="bg-gradient-to-br from-orange-500/20 to-orange-600/20 border border-orange-400/30 rounded-lg p-4 text-center">
-                    <div class="flex items-center justify-center mb-2">
-                        <i class="fas fa-crosshairs text-orange-400 mr-2"></i>
-                        <h4 class="font-gaming font-bold text-orange-400">Match 1</h4>
+                <!-- Individual Match Kills -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 col-span-full">
+                    <!-- Match 1 Kills -->
+                    <div class="bg-gradient-to-br from-orange-500/20 to-orange-600/20 border border-orange-400/30 rounded-lg p-4 text-center">
+                        <div class="flex items-center justify-center mb-2">
+                            <h4 class="font-gaming font-bold text-orange-400">Match 1</h4>
+                        </div>
+                        <div class="text-slate-200 font-bold text-lg">${mostKillMatch1Team ? mostKillMatch1Team.name : 'Belum ada data'}</div>
+                        <div class="text-orange-400 font-bold text-2xl">${maxMatch1Kills} Kills</div>
+                        <div class="text-slate-400 text-xs mt-1">Highest in Match 1</div>
                     </div>
-                    <div class="text-slate-200 font-bold text-lg">${mostKillMatch1Team ? mostKillMatch1Team.name : 'Belum ada data'}</div>
-                    <div class="text-orange-400 font-bold text-2xl">${maxMatch1Kills} Kills</div>
-                    <div class="text-slate-400 text-xs mt-1">Highest in Match 1</div>
-                </div>
 
-                <!-- Match 2 Kills -->
-                <div class="bg-gradient-to-br from-yellow-500/20 to-yellow-600/20 border border-yellow-400/30 rounded-lg p-4 text-center">
-                    <div class="flex items-center justify-center mb-2">
-                        <i class="fas fa-bullseye text-yellow-400 mr-2"></i>
-                        <h4 class="font-gaming font-bold text-yellow-400">Match 2</h4>
+                    <!-- Match 2 Kills -->
+                    <div class="bg-gradient-to-br from-yellow-500/20 to-yellow-600/20 border border-yellow-400/30 rounded-lg p-4 text-center">
+                        <div class="flex items-center justify-center mb-2">
+                            <h4 class="font-gaming font-bold text-yellow-400">Match 2</h4>
+                        </div>
+                        <div class="text-slate-200 font-bold text-lg">${mostKillMatch2Team ? mostKillMatch2Team.name : 'Belum ada data'}</div>
+                        <div class="text-yellow-400 font-bold text-2xl">${maxMatch2Kills} Kills</div>
+                        <div class="text-slate-400 text-xs mt-1">Highest in Match 2</div>
                     </div>
-                    <div class="text-slate-200 font-bold text-lg">${mostKillMatch2Team ? mostKillMatch2Team.name : 'Belum ada data'}</div>
-                    <div class="text-yellow-400 font-bold text-2xl">${maxMatch2Kills} Kills</div>
-                    <div class="text-slate-400 text-xs mt-1">Highest in Match 2</div>
+
+                    <!-- Match 3 Kills -->
+                    <div class="bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-400/30 rounded-lg p-4 text-center">
+                        <div class="flex items-center justify-center mb-2">
+                            <h4 class="font-gaming font-bold text-green-400">Match 3</h4>
+                        </div>
+                        <div class="text-slate-200 font-bold text-lg">${mostKillMatch3Team ? mostKillMatch3Team.name : 'Belum ada data'}</div>
+                        <div class="text-green-400 font-bold text-2xl">${maxMatch3Kills} Kills</div>
+                        <div class="text-slate-400 text-xs mt-1">Highest in Match 3</div>
+                    </div>
+
+                    <!-- Match 4 Kills -->
+                    <div class="bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-400/30 rounded-lg p-4 text-center">
+                        <div class="flex items-center justify-center mb-2">
+                            <h4 class="font-gaming font-bold text-blue-400">Match 4</h4>
+                        </div>
+                        <div class="text-slate-200 font-bold text-lg">${mostKillMatch4Team ? mostKillMatch4Team.name : 'Belum ada data'}</div>
+                        <div class="text-blue-400 font-bold text-2xl">${maxMatch4Kills} Kills</div>
+                        <div class="text-slate-400 text-xs mt-1">Highest in Match 4</div>
+                    </div>
                 </div>
             `;
         } else {
@@ -613,7 +710,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <tr style="background: linear-gradient(135deg, #eab308 0%, #d97706 100%); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
                     <th style="color: #1f2937; font-weight: bold; padding: 14px 10px; text-align: center; font-size: 12px; text-transform: uppercase; border-top-left-radius: 8px; letter-spacing: 0.3px;">Peringkat</th>
                     <th style="color: #1f2937; font-weight: bold; padding: 14px 10px; text-align: center; font-size: 12px; text-transform: uppercase; letter-spacing: 0.3px;">Nama Tim</th>
-                    <th style="color: #1f2937; font-weight: bold; padding: 14px 10px; text-align: center; font-size: 12px; text-transform: uppercase; letter-spacing: 0.3px;" colspan="2">Poin</th>
+                    <th style="color: #1f2937; font-weight: bold; padding: 14px 10px; text-align: center; font-size: 12px; text-transform: uppercase; letter-spacing: 0.3px;" colspan="4">Poin</th>
                     <th style="color: #1f2937; font-weight: bold; padding: 14px 10px; text-align: center; font-size: 12px; text-transform: uppercase; border-top-right-radius: 8px; letter-spacing: 0.3px;">Total</th>
                 </tr>
                 <tr style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);">
@@ -621,6 +718,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <th style="color: #1f2937; font-weight: bold; padding: 10px; text-align: center; font-size: 10px; border-bottom: 2px solid #d97706;"></th>
                     <th style="color: #1f2937; font-weight: bold; padding: 10px; text-align: center; font-size: 10px; border-bottom: 2px solid #d97706;">M1</th>
                     <th style="color: #1f2937; font-weight: bold; padding: 10px; text-align: center; font-size: 10px; border-bottom: 2px solid #d97706;">M2</th>
+                    <th style="color: #1f2937; font-weight: bold; padding: 10px; text-align: center; font-size: 10px; border-bottom: 2px solid #d97706;">M3</th>
+                    <th style="color: #1f2937; font-weight: bold; padding: 10px; text-align: center; font-size: 10px; border-bottom: 2px solid #d97706;">M4</th>
                     <th style="color: #1f2937; font-weight: bold; padding: 10px; text-align: center; font-size: 10px; border-bottom: 2px solid #d97706;">Poin</th>
                 </tr>
             `;
@@ -632,7 +731,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const originalRows = resultsTableBody.querySelectorAll('tr');
             originalRows.forEach((originalRow, index) => {
                 const cells = originalRow.querySelectorAll('td');
-                if (cells.length >= 5) {
+                if (cells.length >= 7) {
                     const row = document.createElement('tr');
                     const bgColor = index % 2 === 0 ? 'rgba(51, 65, 85, 0.4)' : 'rgba(71, 85, 105, 0.3)';
                     const hoverColor = index % 2 === 0 ? 'rgba(51, 65, 85, 0.6)' : 'rgba(71, 85, 105, 0.5)';
@@ -652,7 +751,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         <td style="color: #e2e8f0; padding: 12px 8px; text-align: center; font-size: 12px; font-weight: 500; border-right: 1px solid rgba(148, 163, 184, 0.1);">${cells[1].textContent}</td>
                         <td style="color: #e2e8f0; padding: 12px 8px; text-align: center; font-size: 12px; border-right: 1px solid rgba(148, 163, 184, 0.1);">${cells[2].textContent}</td>
                         <td style="color: #e2e8f0; padding: 12px 8px; text-align: center; font-size: 12px; border-right: 1px solid rgba(148, 163, 184, 0.1);">${cells[3].textContent}</td>
-                        <td style="color: #fbbf24; padding: 12px 8px; text-align: center; font-size: 13px; font-weight: bold; background: rgba(251, 191, 36, 0.1);">${cells[4].textContent}</td>
+                        <td style="color: #e2e8f0; padding: 12px 8px; text-align: center; font-size: 12px; border-right: 1px solid rgba(148, 163, 184, 0.1);">${cells[4].textContent}</td>
+                        <td style="color: #e2e8f0; padding: 12px 8px; text-align: center; font-size: 12px; border-right: 1px solid rgba(148, 163, 184, 0.1);">${cells[5].textContent}</td>
+                        <td style="color: #fbbf24; padding: 12px 8px; text-align: center; font-size: 13px; font-weight: bold; background: rgba(251, 191, 36, 0.1);">${cells[6].textContent}</td>
                     `;
                     tbody.appendChild(row);
                 }
@@ -677,12 +778,16 @@ document.addEventListener('DOMContentLoaded', function() {
             let maxTotalKills = 0;
             let maxMatch1Kills = 0;
             let maxMatch2Kills = 0;
+            let maxMatch3Kills = 0;
+            let maxMatch4Kills = 0;
             let mostKillTeam = null;
             let mostKillMatch1Team = null;
             let mostKillMatch2Team = null;
+            let mostKillMatch3Team = null;
+            let mostKillMatch4Team = null;
 
             teamsData.forEach(team => {
-                const totalKills = team.match1.kills + team.match2.kills;
+                const totalKills = team.match1.kills + team.match2.kills + team.match3.kills + team.match4.kills;
                 
                 if (totalKills > maxTotalKills) {
                     maxTotalKills = totalKills;
@@ -698,6 +803,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     maxMatch2Kills = team.match2.kills;
                     mostKillMatch2Team = team;
                 }
+                
+                if (team.match3.kills > maxMatch3Kills) {
+                    maxMatch3Kills = team.match3.kills;
+                    mostKillMatch3Team = team;
+                }
+                
+                if (team.match4.kills > maxMatch4Kills) {
+                    maxMatch4Kills = team.match4.kills;
+                    mostKillMatch4Team = team;
+                }
             });
 
             killStatsDiv.innerHTML = `
@@ -706,28 +821,36 @@ document.addEventListener('DOMContentLoaded', function() {
                         MOST KILL TEAM STATISTICS
                     </h3>
                 </div>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <!-- Total Kills - Full Width -->
-                    <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 10px; text-align: center;">
-                        <div style="color: #ef4444; font-size: 11px; font-weight: bold; margin-bottom: 4px;">TOTAL KILLS</div>
-                        <div style="color: #e2e8f0; font-size: 13px; font-weight: bold; margin-bottom: 2px;">${mostKillTeam ? mostKillTeam.name : '-'}</div>
-                        <div style="color: #ef4444; font-size: 16px; font-weight: bold;">${maxTotalKills} Kills</div>
-                        <div style="color: #94a3b8; font-size: 9px; margin-top: 2px;">M1: ${mostKillTeam ? mostKillTeam.match1.kills : 0} | M2: ${mostKillTeam ? mostKillTeam.match2.kills : 0}</div>
+                <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 10px; text-align: center; margin-bottom: 12px;">
+                    <div style="color: #ef4444; font-size: 11px; font-weight: bold; margin-bottom: 4px;">TOTAL KILLS</div>
+                    <div style="color: #e2e8f0; font-size: 13px; font-weight: bold; margin-bottom: 2px;">${mostKillTeam ? mostKillTeam.name : '-'}</div>
+                    <div style="color: #ef4444; font-size: 16px; font-weight: bold;">${maxTotalKills} Kills</div>
+                    <div style="color: #94a3b8; font-size: 9px; margin-top: 2px;">M1: ${mostKillTeam ? mostKillTeam.match1.kills : 0} | M2: ${mostKillTeam ? mostKillTeam.match2.kills : 0} | M3: ${mostKillTeam ? mostKillTeam.match3.kills : 0} | M4: ${mostKillTeam ? mostKillTeam.match4.kills : 0}</div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px;">
+                    <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 10px; text-align: center;">
+                        <div style="color: #f59e0b; font-size: 11px; font-weight: bold; margin-bottom: 4px;">MATCH 1</div>
+                        <div style="color: #e2e8f0; font-size: 13px; font-weight: bold; margin-bottom: 2px;">${mostKillMatch1Team ? mostKillMatch1Team.name : '-'}</div>
+                        <div style="color: #f59e0b; font-size: 16px; font-weight: bold;">${maxMatch1Kills} Kills</div>
+                        <div style="color: #94a3b8; font-size: 9px; margin-top: 2px;">Highest in Match 1</div>
                     </div>
-                    <!-- Match 1 and 2 - Side by Side -->
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                        <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 10px; text-align: center;">
-                            <div style="color: #f59e0b; font-size: 11px; font-weight: bold; margin-bottom: 4px;">MATCH 1</div>
-                            <div style="color: #e2e8f0; font-size: 13px; font-weight: bold; margin-bottom: 2px;">${mostKillMatch1Team ? mostKillMatch1Team.name : '-'}</div>
-                            <div style="color: #f59e0b; font-size: 16px; font-weight: bold;">${maxMatch1Kills} Kills</div>
-                            <div style="color: #94a3b8; font-size: 9px; margin-top: 2px;">Terbanyak Match 1</div>
-                        </div>
-                        <div style="background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.3); border-radius: 8px; padding: 10px; text-align: center;">
-                            <div style="color: #fbbf24; font-size: 11px; font-weight: bold; margin-bottom: 4px;">MATCH 2</div>
-                            <div style="color: #e2e8f0; font-size: 13px; font-weight: bold; margin-bottom: 2px;">${mostKillMatch2Team ? mostKillMatch2Team.name : '-'}</div>
-                            <div style="color: #fbbf24; font-size: 16px; font-weight: bold;">${maxMatch2Kills} Kills</div>
-                            <div style="color: #94a3b8; font-size: 9px; margin-top: 2px;">Terbanyak Match 2</div>
-                        </div>
+                    <div style="background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.3); border-radius: 8px; padding: 10px; text-align: center;">
+                        <div style="color: #fbbf24; font-size: 11px; font-weight: bold; margin-bottom: 4px;">MATCH 2</div>
+                        <div style="color: #e2e8f0; font-size: 13px; font-weight: bold; margin-bottom: 2px;">${mostKillMatch2Team ? mostKillMatch2Team.name : '-'}</div>
+                        <div style="color: #fbbf24; font-size: 16px; font-weight: bold;">${maxMatch2Kills} Kills</div>
+                        <div style="color: #94a3b8; font-size: 9px; margin-top: 2px;">Highest in Match 2</div>
+                    </div>
+                    <div style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 8px; padding: 10px; text-align: center;">
+                        <div style="color: #22c55e; font-size: 11px; font-weight: bold; margin-bottom: 4px;">MATCH 3</div>
+                        <div style="color: #e2e8f0; font-size: 13px; font-weight: bold; margin-bottom: 2px;">${mostKillMatch3Team ? mostKillMatch3Team.name : '-'}</div>
+                        <div style="color: #22c55e; font-size: 16px; font-weight: bold;">${maxMatch3Kills} Kills</div>
+                        <div style="color: #94a3b8; font-size: 9px; margin-top: 2px;">Highest in Match 3</div>
+                    </div>
+                    <div style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 8px; padding: 10px; text-align: center;">
+                        <div style="color: #3b82f6; font-size: 11px; font-weight: bold; margin-bottom: 4px;">MATCH 4</div>
+                        <div style="color: #e2e8f0; font-size: 13px; font-weight: bold; margin-bottom: 2px;">${mostKillMatch4Team ? mostKillMatch4Team.name : '-'}</div>
+                        <div style="color: #3b82f6; font-size: 16px; font-weight: bold;">${maxMatch4Kills} Kills</div>
+                        <div style="color: #94a3b8; font-size: 9px; margin-top: 2px;">Highest in Match 4</div>
                     </div>
                 </div>
             `;
@@ -863,7 +986,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const downloadCertificate3Btn = document.getElementById('downloadCertificate3');
     const downloadCertificateKillBtn = document.getElementById('downloadCertificateKill');
     const certificateStatus = document.getElementById('certificateStatus');
-    const certificatePreviewGrid = document.getElementById('certificatePreviewGrid');
     
     // Function to get winners and most kill team
     function getWinnersData() {
@@ -882,11 +1004,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const winner2 = teamsWithPoints[1];
         const winner3 = teamsWithPoints[2];
         
-        // Get most kill team
+        // Get most kill team (4 matches)
         let maxTotalKills = 0;
         let mostKillTeam = null;
         teamsData.forEach(team => {
-            const totalKills = team.match1.kills + team.match2.kills;
+            const totalKills = team.match1.kills + team.match2.kills + team.match3.kills + team.match4.kills;
             if (totalKills > maxTotalKills) {
                 maxTotalKills = totalKills;
                 mostKillTeam = team;
@@ -894,69 +1016,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         return { winner1, winner2, winner3, mostKillTeam };
-    }
-    
-    // Function to generate certificate preview
-    function generateCertificatePreview() {
-        if (!certificatePreviewGrid) return;
-        
-        const { winner1, winner2, winner3, mostKillTeam } = getWinnersData();
-        const tournamentName = document.getElementById('tournamentName')?.value || 'Turnamen Free Fire';
-        const tournamentPhase = document.getElementById('tournamentPhase')?.value || 'Babak Final';
-        
-        certificatePreviewGrid.innerHTML = '';
-        
-        // Preview 1 - Juara 1
-        if (winner1 && winner1.points.total > 0) {
-            const preview1 = createPreviewCard('Juara 1', winner1.name, '#fbbf24', winner1);
-            certificatePreviewGrid.appendChild(preview1);
-        }
-        
-        // Preview 2 - Juara 2
-        if (winner2 && winner2.points.total > 0) {
-            const preview2 = createPreviewCard('Juara 2', winner2.name, '#94a3b8', winner2);
-            certificatePreviewGrid.appendChild(preview2);
-        }
-        
-        // Preview 3 - Juara 3
-        if (winner3 && winner3.points.total > 0) {
-            const preview3 = createPreviewCard('Juara 3', winner3.name, '#d97706', winner3);
-            certificatePreviewGrid.appendChild(preview3);
-        }
-        
-        // Preview 4 - Most Kill Team
-        if (mostKillTeam && (mostKillTeam.match1.kills + mostKillTeam.match2.kills) > 0) {
-            const preview4 = createPreviewCard('Most Kill Team', mostKillTeam.name, '#ef4444', mostKillTeam, true);
-            certificatePreviewGrid.appendChild(preview4);
-        }
-    }
-    
-    // Function to create preview card
-    function createPreviewCard(title, teamName, color, team, isKill = false) {
-        const card = document.createElement('div');
-        card.className = 'bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-lg rounded-xl p-4 border-2 transition-all hover:scale-105';
-        card.style.borderColor = color;
-        card.innerHTML = `
-            <div class="text-center">
-                <div class="mb-3">
-                    <div class="text-sm font-gaming font-bold mb-2" style="color: ${color};">
-                        <i class="fas fa-trophy mr-2"></i>${title}
-                    </div>
-                    <div class="text-lg font-bold text-slate-200">${teamName}</div>
-                </div>
-                <div class="w-full aspect-[8/5] bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg border-2 overflow-hidden relative" style="border-color: ${color};">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="text-center p-4">
-                            <div style="color: ${color}; font-size: 14px; font-weight: bold; margin-bottom: 8px;">SERTIFIKAT JUARA</div>
-                            <div style="color: ${color}; font-size: 20px; font-weight: bold; margin-bottom: 4px;">TURNAMEN FREE FIRE</div>
-                            <div style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-top: 12px;">${teamName}</div>
-                            <div style="color: #94a3b8; font-size: 12px; margin-top: 4px;">Sebagai ${title}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-        return card;
     }
     
     // Function to update certificate button state
@@ -974,17 +1033,14 @@ document.addEventListener('DOMContentLoaded', function() {
             downloadCertificate3Btn.disabled = !(winner3 && winner3.points.total > 0);
         }
         if (downloadCertificateKillBtn) {
-            const hasKills = mostKillTeam && (mostKillTeam.match1.kills + mostKillTeam.match2.kills) > 0;
+            const hasKills = mostKillTeam && (mostKillTeam.match1.kills + mostKillTeam.match2.kills + mostKillTeam.match3.kills + mostKillTeam.match4.kills) > 0;
             downloadCertificateKillBtn.disabled = !hasKills;
         }
-        
-        // Update preview
-        generateCertificatePreview();
         
         // Update status
         if (certificateStatus) {
             const hasData = (winner1 && winner1.points.total > 0) || 
-                           (mostKillTeam && (mostKillTeam.match1.kills + mostKillTeam.match2.kills) > 0);
+                           (mostKillTeam && (mostKillTeam.match1.kills + mostKillTeam.match2.kills + mostKillTeam.match3.kills + mostKillTeam.match4.kills) > 0);
             if (!hasData) {
                 certificateStatus.textContent = 'Harap hitung hasil turnamen terlebih dahulu untuk membuat sertifikat.';
                 certificateStatus.classList.remove('hidden');
@@ -1001,7 +1057,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(updateCertificateButtonState, 100);
     };
     
-    // Function to generate horizontal certificate
+    // Function to generate horizontal certificate (same as 2 Match, but adapted for 4 matches)
     function generateHorizontalCertificate(team, rank, rankText, rankColor, tournamentName, tournamentPhase, isKillTeam = false) {
         return new Promise((resolve, reject) => {
             // Show loading state
@@ -1093,7 +1149,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     lunaImage.onerror = () => res(null);
                 })
             ]).then(([logoBase64, booyahBase64, ffBase64, lunaBase64]) => {
-                // Create certificate HTML (without decorative elements)
+                // Create certificate HTML (same structure as 2 Match)
                 certificateContainer.innerHTML = `
                     <div style="width: 100%; height: 100%; min-height: 1000px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%); border: 4px solid ${rankColor}; border-radius: 20px; padding: 0; display: flex; position: relative; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); overflow: hidden;">
                         <!-- Luna Character as Background Image -->
@@ -1325,21 +1381,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Download Certificate 1 Button
     if (downloadCertificate1Btn) {
         downloadCertificate1Btn.addEventListener('click', function() {
-            // Validate tournament info first
-            if (!validateTournamentInfo()) {
-                return;
-            }
-            
+            if (!validateTournamentInfo()) return;
             showAdModal();
             const { winner1 } = getWinnersData();
             const tournamentName = document.getElementById('tournamentName')?.value.trim();
             const tournamentPhase = document.getElementById('tournamentPhase')?.value.trim();
-            
             if (!winner1 || winner1.points.total === 0) {
                 showAlert('Tidak ada data juara 1!', 'error');
                 return;
             }
-            
             generateHorizontalCertificate(winner1, 1, 'Juara Pertama', '#fbbf24', tournamentName, tournamentPhase);
         });
     }
@@ -1347,21 +1397,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Download Certificate 2 Button
     if (downloadCertificate2Btn) {
         downloadCertificate2Btn.addEventListener('click', function() {
-            // Validate tournament info first
-            if (!validateTournamentInfo()) {
-                return;
-            }
-            
+            if (!validateTournamentInfo()) return;
             showAdModal();
             const { winner2 } = getWinnersData();
             const tournamentName = document.getElementById('tournamentName')?.value.trim();
             const tournamentPhase = document.getElementById('tournamentPhase')?.value.trim();
-            
             if (!winner2 || winner2.points.total === 0) {
                 showAlert('Tidak ada data juara 2!', 'error');
                 return;
             }
-            
             generateHorizontalCertificate(winner2, 2, 'Juara Kedua', '#94a3b8', tournamentName, tournamentPhase);
         });
     }
@@ -1369,21 +1413,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Download Certificate 3 Button
     if (downloadCertificate3Btn) {
         downloadCertificate3Btn.addEventListener('click', function() {
-            // Validate tournament info first
-            if (!validateTournamentInfo()) {
-                return;
-            }
-            
+            if (!validateTournamentInfo()) return;
             showAdModal();
             const { winner3 } = getWinnersData();
             const tournamentName = document.getElementById('tournamentName')?.value.trim();
             const tournamentPhase = document.getElementById('tournamentPhase')?.value.trim();
-            
             if (!winner3 || winner3.points.total === 0) {
                 showAlert('Tidak ada data juara 3!', 'error');
                 return;
             }
-            
             generateHorizontalCertificate(winner3, 3, 'Juara Ketiga', '#d97706', tournamentName, tournamentPhase);
         });
     }
@@ -1391,27 +1429,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Download Certificate Most Kill Button
     if (downloadCertificateKillBtn) {
         downloadCertificateKillBtn.addEventListener('click', function() {
-            // Validate tournament info first
-            if (!validateTournamentInfo()) {
-                return;
-            }
-            
+            if (!validateTournamentInfo()) return;
             showAdModal();
             const { mostKillTeam } = getWinnersData();
             const tournamentName = document.getElementById('tournamentName')?.value.trim();
             const tournamentPhase = document.getElementById('tournamentPhase')?.value.trim();
-            
-            if (!mostKillTeam || (mostKillTeam.match1.kills + mostKillTeam.match2.kills) === 0) {
+            if (!mostKillTeam || (mostKillTeam.match1.kills + mostKillTeam.match2.kills + mostKillTeam.match3.kills + mostKillTeam.match4.kills) === 0) {
                 showAlert('Tidak ada data most kill team!', 'error');
                 return;
             }
-            
             generateHorizontalCertificate(mostKillTeam, 0, 'Most Kill Team', '#ef4444', tournamentName, tournamentPhase, true);
         });
     }
     
-    
-    // Initialize certificate button state and preview
+    // Initialize certificate button state
     setTimeout(() => {
         updateCertificateButtonState();
     }, 500);
@@ -1447,6 +1478,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 showAlert('Data turnamen berhasil dimuat!', 'info');
             } else {
                 initializeTeamsData();
+                generateInputTable();
+                generateResultsTable();
             }
         } catch (error) {
             // Fallback to localStorage for backward compatibility
@@ -1462,29 +1495,43 @@ document.addEventListener('DOMContentLoaded', function() {
                     localStorage.removeItem('ffTournamentData'); // Clean up old data
                 } catch (e) {
                     initializeTeamsData();
+                    generateInputTable();
+                    generateResultsTable();
                 }
             } else {
                 initializeTeamsData();
+                generateInputTable();
+                generateResultsTable();
             }
         }
     }
 
     // Initialize calculator
     async function initializeCalculator() {
+        console.log('initializeCalculator called');
+        console.log('inputTableBody:', inputTableBody);
+        console.log('resultsTableBody:', resultsTableBody);
+        
         if (inputTableBody && resultsTableBody) {
             try {
                 await initDB();
                 initializeTeamsData();
+                console.log('teamsData initialized, length:', teamsData.length);
                 generateInputTable();
                 generateResultsTable();
                 await loadSavedData();
             } catch (error) {
+                console.error('Error initializing calculator:', error);
                 showAlert('Terjadi kesalahan saat memuat kalkulator.', 'error');
                 // Fallback initialization
                 initializeTeamsData();
                 generateInputTable();
                 generateResultsTable();
             }
+        } else {
+            console.error('inputTableBody or resultsTableBody not found!');
+            console.log('inputTableBody:', inputTableBody);
+            console.log('resultsTableBody:', resultsTableBody);
         }
     }
 
@@ -2012,6 +2059,8 @@ function performReset() {
             name: `Team ${i}`,
             match1: { rank: 0, kills: 0 },
             match2: { rank: 0, kills: 0 },
+            match3: { rank: 0, kills: 0 },
+            match4: { rank: 0, kills: 0 },
             totalPoints: 0
         });
     }
@@ -2058,6 +2107,34 @@ function performReset() {
                            class="w-full bg-slate-700/50 border border-slate-600/50 rounded px-2 py-1 text-slate-200 text-sm focus:border-yellow-400 focus:outline-none"
                            onchange="updateTeamData(${index}, 'match2', 'kills', parseInt(this.value) || 0)">
                 </td>
+                <td class="px-2 py-3">
+                    <select class="w-full bg-slate-700/50 border border-slate-600/50 rounded px-2 py-1 text-slate-200 text-sm focus:border-yellow-400 focus:outline-none"
+                            onchange="updateTeamData(${index}, 'match3', 'rank', parseInt(this.value))">
+                        <option value="0">-</option>
+                        ${generateRankOptions(team.match3.rank)}
+                    </select>
+                </td>
+                <td class="px-2 py-3">
+                    <input type="number" 
+                           min="0" max="50" 
+                           value="${team.match3.kills}" 
+                           class="w-full bg-slate-700/50 border border-slate-600/50 rounded px-2 py-1 text-slate-200 text-sm focus:border-yellow-400 focus:outline-none"
+                           onchange="updateTeamData(${index}, 'match3', 'kills', parseInt(this.value) || 0)">
+                </td>
+                <td class="px-2 py-3">
+                    <select class="w-full bg-slate-700/50 border border-slate-600/50 rounded px-2 py-1 text-slate-200 text-sm focus:border-yellow-400 focus:outline-none"
+                            onchange="updateTeamData(${index}, 'match4', 'rank', parseInt(this.value))">
+                        <option value="0">-</option>
+                        ${generateRankOptions(team.match4.rank)}
+                    </select>
+                </td>
+                <td class="px-2 py-3">
+                    <input type="number" 
+                           min="0" max="50" 
+                           value="${team.match4.kills}" 
+                           class="w-full bg-slate-700/50 border border-slate-600/50 rounded px-2 py-1 text-slate-200 text-sm focus:border-yellow-400 focus:outline-none"
+                           onchange="updateTeamData(${index}, 'match4', 'kills', parseInt(this.value) || 0)">
+                </td>
             `;
             
             inputTableBody.appendChild(row);
@@ -2078,6 +2155,12 @@ function performReset() {
                 </td>
                 <td class="px-3 py-3 text-center">
                     <span class="font-medium text-slate-500">-</span>
+                </td>
+                <td class="px-2 py-3 text-center">
+                    <span class="text-slate-500">0</span>
+                </td>
+                <td class="px-2 py-3 text-center">
+                    <span class="text-slate-500">0</span>
                 </td>
                 <td class="px-2 py-3 text-center">
                     <span class="text-slate-500">0</span>

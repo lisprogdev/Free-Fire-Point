@@ -282,6 +282,56 @@ table input[type="number"] {
     text-align: center;
 }
 
+/* Input Table - Wider inputs and better scrolling */
+#inputTableBody input[type="text"],
+#inputTableBody input[type="number"],
+#inputTableBody select {
+    min-width: 120px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+#inputTableBody input[type="text"] {
+    min-width: 150px;
+}
+
+#inputTableBody select {
+    min-width: 100px;
+}
+
+/* Better scrolling for input table */
+.overflow-x-auto {
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(251, 191, 36, 0.5) rgba(15, 23, 42, 0.3);
+}
+
+.overflow-x-auto::-webkit-scrollbar {
+    height: 8px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+    background: rgba(251, 191, 36, 0.5);
+    border-radius: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+    background: rgba(251, 191, 36, 0.7);
+}
+
+/* Table container with min-width for better scrolling - only for input table */
+.overflow-x-auto:has(#inputTableBody) table,
+.overflow-x-auto table:has(#inputTableBody) {
+    min-width: 700px;
+}
+
 /* Tournament Info Form Styles */
 .tournament-info input[type="text"] {
     transition: all 0.3s ease;
@@ -624,11 +674,13 @@ table input[type="number"] {
 }
 
 @media (max-width: 640px) {
-    .kalkulator-section .overflow-x-auto {
+    .overflow-x-auto {
         -webkit-overflow-scrolling: touch;
     }
     
-    .kalkulator-section table {
+    /* Only apply min-width to input table, not results table */
+    .overflow-x-auto:has(#inputTableBody) table,
+    .overflow-x-auto table:has(#inputTableBody) {
         min-width: 600px;
     }
 }

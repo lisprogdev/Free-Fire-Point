@@ -1,12 +1,12 @@
-// Blog Section JavaScript
+// Usage Section JavaScript
 (function() {
     'use strict';
 
-    function initBlogSection() {
-        // Fade in up animation for blog cards
-        const blogCards = document.querySelectorAll('.blog-card');
+    function initUsageSection() {
+        // Fade in up animation for step cards
+        const stepCards = document.querySelectorAll('.usage-step-card');
         
-        if (blogCards.length > 0) {
+        if (stepCards.length > 0) {
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
@@ -16,24 +16,25 @@
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         const delay = entry.target.getAttribute('data-delay') || 0;
-        setTimeout(() => {
+                        setTimeout(() => {
                             entry.target.classList.add('visible');
                         }, delay);
                         observer.unobserve(entry.target);
-        }
+                    }
                 });
             }, observerOptions);
 
-            blogCards.forEach(card => {
+            stepCards.forEach(card => {
                 observer.observe(card);
             });
+        }
     }
-}
 
     // Initialize on DOM ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initBlogSection);
+        document.addEventListener('DOMContentLoaded', initUsageSection);
     } else {
-        initBlogSection();
+        initUsageSection();
     }
 })();
+

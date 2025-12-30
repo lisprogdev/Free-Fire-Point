@@ -5,7 +5,7 @@
     <!-- Main Page - Free Fire Point Calculator -->
     <url>
         <loc>https://freefirepoint.my.id/</loc>
-        <lastmod>2025-10-11T12:00:00+07:00</lastmod>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -21,7 +21,7 @@
     <!-- Fast Turnamen 12 Team - 2 Match Calculator -->
     <url>
         <loc>https://freefirepoint.my.id/pages/Fast%20Turnamen%20-%2012%20Team/2%20Match.html</loc>
-        <lastmod>2025-10-11T12:00:00+07:00</lastmod>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.98</priority>
         <image:image>
@@ -29,27 +29,28 @@
             <image:title>Cara Hitung Poin Turnamen Free Fire 2 Match</image:title>
         </image:image>
     </url>
-    
-    <!-- Blog Articles -->
+
+    <!-- Fast Turnamen 12 Team - 3 Match Calculator -->
     <url>
-        <loc>https://freefirepoint.my.id/pages/blog/sistem-poin-free-fire-2024.html</loc>
-        <lastmod>2025-10-11T12:00:00+07:00</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
+        <loc>https://freefirepoint.my.id/pages/Fast%20Turnamen%20-%2012%20Team/3%20Match.html</loc>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.98</priority>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Sistem Poin Free Fire 2024</image:title>
+            <image:title>Cara Hitung Poin Turnamen Free Fire 3 Match</image:title>
         </image:image>
     </url>
-    
+
+    <!-- Fast Turnamen 12 Team - 4 Match Calculator -->
     <url>
-        <loc>https://freefirepoint.my.id/pages/blog/strategi-turnamen-free-fire.html</loc>
-        <lastmod>2025-10-11T12:00:00+07:00</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
+        <loc>https://freefirepoint.my.id/pages/Fast%20Turnamen%20-%2012%20Team/4%20Match.html</loc>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.98</priority>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Strategi Turnamen Free Fire 2024</image:title>
+            <image:title>Cara Hitung Poin Turnamen Free Fire 4 Match</image:title>
         </image:image>
     </url>
     
@@ -61,11 +62,86 @@
         <priority>0.90</priority>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Cara Penggunaan Kalkulator Poin Free Fire - Tutorial Lengkap 2024</image:title>
+            <image:title>Cara Penggunaan Kalkulator Poin Free Fire - Tutorial Lengkap 2025</image:title>
         </image:image>
         <image:image>
             <image:loc>https://freefirepoint.my.id/images/Logo/Booyah Logo.png</image:loc>
             <image:title>Tutorial Kalkulator Fast Turnamen FF</image:title>
+        </image:image>
+    </url>
+
+    <!-- Tentang Kami Page -->
+    <url>
+        <loc>https://freefirepoint.my.id/pages/more/tentang-kami.html</loc>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
+            <image:title>Tentang Kami - Free Fire Point Calculator Indonesia</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://freefirepoint.my.id/images/Logo/Logo.png</image:loc>
+            <image:title>Logo Free Fire Point Calculator</image:title>
+        </image:image>
+    </url>
+    
+    <!-- Blog Articles - Cara Menggunakan Fast Turnamen 12 Team 2 Match -->
+    <url>
+        <loc>https://freefirepoint.my.id/pages/blog/cara-menggunakan-fast-turnamen-12-team-2-match.html</loc>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.88</priority>
+        <image:image>
+            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
+            <image:title>Cara Menggunakan Fast Turnamen 12 Team 2 Match - Panduan Lengkap 2025</image:title>
+        </image:image>
+    </url>
+
+    <!-- Blog Articles - Cara Menggunakan Fast Turnamen 12 Team 3 Match -->
+    <url>
+        <loc>https://freefirepoint.my.id/pages/blog/cara-menggunakan-fast-turnamen-12-team-3-match.html</loc>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.88</priority>
+        <image:image>
+            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
+            <image:title>Cara Menggunakan Fast Turnamen 12 Team 3 Match - Panduan Lengkap 2025</image:title>
+        </image:image>
+    </url>
+
+    <!-- Blog Articles - Cara Menggunakan Fast Turnamen 12 Team 4 Match -->
+    <url>
+        <loc>https://freefirepoint.my.id/pages/blog/cara-menggunakan-fast-turnamen-12-team-4-match.html</loc>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.88</priority>
+        <image:image>
+            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
+            <image:title>Cara Menggunakan Fast Turnamen 12 Team 4 Match - Panduan Lengkap 2025</image:title>
+        </image:image>
+    </url>
+    
+    <!-- Blog Articles - Legacy -->
+    <url>
+        <loc>https://freefirepoint.my.id/pages/blog/sistem-poin-free-fire-2024.html</loc>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+        <image:image>
+            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
+            <image:title>Sistem Poin Free Fire 2024</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://freefirepoint.my.id/pages/blog/strategi-turnamen-free-fire.html</loc>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+        <image:image>
+            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
+            <image:title>Strategi Turnamen Free Fire 2024</image:title>
         </image:image>
     </url>
     

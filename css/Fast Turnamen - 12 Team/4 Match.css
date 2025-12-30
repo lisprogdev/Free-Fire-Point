@@ -337,7 +337,7 @@ table input[type="number"] {
 /* Table container with min-width for better scrolling - only for input table */
 .overflow-x-auto:has(#inputTableBody) table,
 .overflow-x-auto table:has(#inputTableBody) {
-    min-width: 800px;
+    min-width: 900px;
 }
 
 .alert-info {

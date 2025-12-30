@@ -85,16 +85,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalPointsDisplay = document.getElementById('totalPoints');
     
     // Tournament Calculator Functionality
-    const inputTableBody = document.getElementById('inputTableBody');
-    const resultsTableBody = document.getElementById('resultsTableBody');
+    let inputTableBody = document.getElementById('inputTableBody');
+    let resultsTableBody = document.getElementById('resultsTableBody');
     const saveAllDataBtn = document.getElementById('saveAllData');
     const calculateResultsBtn = document.getElementById('calculateResults');
     const resetAllDataBtn = document.getElementById('resetAllData');
     const downloadJPGBtn = document.getElementById('downloadJPG');
+    
+    // Re-check elements if not found initially
+    if (!inputTableBody) {
+        inputTableBody = document.getElementById('inputTableBody');
+    }
+    if (!resultsTableBody) {
+        resultsTableBody = document.getElementById('resultsTableBody');
+    }
 
     // IndexedDB Setup
     let db;
-    const DB_NAME = 'FFPointCalculator3Match';
+    const DB_NAME = 'FFPointCalculator';
     const DB_VERSION = 1;
     const STORE_NAME = 'tournamentData';
 
@@ -197,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Team data storage
     let teamsData = [];
 
-    // Initialize teams data for 3 MATCH
+    // Initialize teams data
     function initializeTeamsData() {
         teamsData = [];
         for (let i = 1; i <= 12; i++) {
@@ -212,10 +220,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Generate input table for 3 MATCH
+    // Generate input table
     function generateInputTable() {
         if (!inputTableBody) {
+            console.error('inputTableBody not found!');
             return;
+        }
+        
+        // Ensure teamsData is initialized
+        if (!teamsData || teamsData.length === 0) {
+            console.log('teamsData is empty, initializing...');
+            initializeTeamsData();
         }
         
         inputTableBody.innerHTML = '';
@@ -301,11 +316,11 @@ document.addEventListener('DOMContentLoaded', function() {
         generateKillStats();
     };
 
-    // Calculate team points for 3 MATCH
+    // Calculate team points
     function calculateTeamPoints(team) {
-        const match1Points = (placementPoints[team.match1.rank] || 0) + team.match1.kills;
-        const match2Points = (placementPoints[team.match2.rank] || 0) + team.match2.kills;
-        const match3Points = (placementPoints[team.match3.rank] || 0) + team.match3.kills;
+        const match1Points = (placementPoints[team.match1.rank] || 0) + (team.match1.kills || 0);
+        const match2Points = (placementPoints[team.match2.rank] || 0) + (team.match2.kills || 0);
+        const match3Points = (placementPoints[team.match3.rank] || 0) + (team.match3.kills || 0);
         return {
             match1: match1Points,
             match2: match2Points,
@@ -314,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // Generate results table for 3 MATCH
+    // Generate results table
     function generateResultsTable() {
         // Calculate points for all teams
         const teamsWithPoints = teamsData.map(team => {
@@ -404,7 +419,7 @@ document.addEventListener('DOMContentLoaded', function() {
         generateKillStats();
     }
 
-    // Generate kill statistics for 3 MATCH
+    // Generate kill statistics
     function generateKillStats() {
         const killStatsSection = document.getElementById('killStatsSection');
         const killStatsContent = document.getElementById('killStatsContent');
@@ -441,7 +456,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 maxMatch2Kills = team.match2.kills;
                 mostKillMatch2Team = team;
             }
-
+            
             // Match 3 kills
             if (team.match3.kills > maxMatch3Kills) {
                 maxMatch3Kills = team.match3.kills;
@@ -456,8 +471,8 @@ document.addEventListener('DOMContentLoaded', function() {
             killStatsSection.classList.remove('hidden');
             
             killStatsContent.innerHTML = `
-                <!-- Total Kills -->
-                <div class="bg-gradient-to-br from-red-500/20 to-red-600/20 border border-red-400/30 rounded-lg p-4 text-center">
+                <!-- Total Kills - Full Width -->
+                <div class="bg-gradient-to-br from-red-500/20 to-red-600/20 border border-red-400/30 rounded-lg p-4 text-center col-span-full">
                     <div class="flex items-center justify-center mb-2">
                         <i class="fas fa-trophy text-red-400 mr-2"></i>
                         <h4 class="font-gaming font-bold text-red-400">Total Kills</h4>
@@ -492,7 +507,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Match 3 Kills -->
                 <div class="bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-400/30 rounded-lg p-4 text-center">
                     <div class="flex items-center justify-center mb-2">
-                        <i class="fas fa-fire text-green-400 mr-2"></i>
+                        <i class="fas fa-target text-green-400 mr-2"></i>
                         <h4 class="font-gaming font-bold text-green-400">Match 3</h4>
                     </div>
                     <div class="text-slate-200 font-bold text-lg">${mostKillMatch3Team ? mostKillMatch3Team.name : 'Belum ada data'}</div>
@@ -556,7 +571,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Download JPG Button for 3 MATCH
+
+
+    // Download JPG Button
     if (downloadJPGBtn) {
         downloadJPGBtn.addEventListener('click', function() {
             // Show ad modal first
@@ -611,11 +628,11 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             titleDiv.innerHTML = `
                 <h1 style="font-size: 28px; font-weight: bold; margin: 0 0 12px 0; color: #fbbf24; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); letter-spacing: 0.5px;">HASIL PERINGKAT TURNAMEN</h1>
-                <h2 style="font-size: 20px; margin: 0 0 8px 0; color: #e2e8f0; font-weight: 600;">${tournamentNameValue || 'TURNAMEN FREE FIRE 3 MATCH'}</h2>
+                <h2 style="font-size: 20px; margin: 0 0 8px 0; color: #e2e8f0; font-weight: 600;">${tournamentNameValue || 'TURNAMEN FREE FIRE'}</h2>
                 <h3 style="font-size: 16px; margin: 0 0 15px 0; color: #94a3b8; font-weight: normal; font-style: italic;">${tournamentPhaseValue || 'Babak Penyisihan'}</h3>
                 <div style="width: 80px; height: 2px; background: linear-gradient(90deg, #fbbf24, #f59e0b); margin: 0 auto 10px auto; border-radius: 1px;"></div>
                 <p style="font-size: 14px; margin: 0; color: #64748b; font-weight: 500;">
-                    Kalkulator Poin Free Fire Indonesia - 3 Match
+                    Kalkulator Poin Free Fire Indonesia
                 </p>
             `;
             
@@ -704,7 +721,7 @@ document.addEventListener('DOMContentLoaded', function() {
             table.appendChild(tbody);
             tableContainer.appendChild(table);
             
-            // Add Most Kill Team Statistics to poster for 3 MATCH
+            // Add Most Kill Team Statistics to poster
             const killStatsDiv = document.createElement('div');
             killStatsDiv.style.cssText = `
                 margin-top: 15px;
@@ -742,7 +759,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     maxMatch2Kills = team.match2.kills;
                     mostKillMatch2Team = team;
                 }
-
+                
                 if (team.match3.kills > maxMatch3Kills) {
                     maxMatch3Kills = team.match3.kills;
                     mostKillMatch3Team = team;
@@ -752,33 +769,37 @@ document.addEventListener('DOMContentLoaded', function() {
             killStatsDiv.innerHTML = `
                 <div style="text-align: center; margin-bottom: 12px;">
                     <h3 style="color: #ef4444; font-size: 16px; font-weight: bold; margin: 0; display: flex; align-items: center; justify-content: center;">
-                        🎯 MOST KILL TEAM STATISTICS - 3 MATCH
+                        MOST KILL TEAM STATISTICS
                     </h3>
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px;">
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <!-- Total Kills - Full Width -->
                     <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 10px; text-align: center;">
-                        <div style="color: #ef4444; font-size: 10px; font-weight: bold; margin-bottom: 4px;">🏆 TOTAL</div>
-                        <div style="color: #e2e8f0; font-size: 12px; font-weight: bold; margin-bottom: 2px;">${mostKillTeam ? mostKillTeam.name : '-'}</div>
-                        <div style="color: #ef4444; font-size: 15px; font-weight: bold;">${maxTotalKills} Kills</div>
-                        <div style="color: #94a3b8; font-size: 8px; margin-top: 2px;">M1:${mostKillTeam ? mostKillTeam.match1.kills : 0} M2:${mostKillTeam ? mostKillTeam.match2.kills : 0} M3:${mostKillTeam ? mostKillTeam.match3.kills : 0}</div>
+                        <div style="color: #ef4444; font-size: 11px; font-weight: bold; margin-bottom: 4px;">TOTAL KILLS</div>
+                        <div style="color: #e2e8f0; font-size: 13px; font-weight: bold; margin-bottom: 2px;">${mostKillTeam ? mostKillTeam.name : '-'}</div>
+                        <div style="color: #ef4444; font-size: 16px; font-weight: bold;">${maxTotalKills} Kills</div>
+                        <div style="color: #94a3b8; font-size: 9px; margin-top: 2px;">M1: ${mostKillTeam ? mostKillTeam.match1.kills : 0} | M2: ${mostKillTeam ? mostKillTeam.match2.kills : 0} | M3: ${mostKillTeam ? mostKillTeam.match3.kills : 0}</div>
                     </div>
+                    <!-- Match 1, 2, 3 - Side by Side -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
                     <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 10px; text-align: center;">
-                        <div style="color: #f59e0b; font-size: 10px; font-weight: bold; margin-bottom: 4px;">🎯 M1</div>
-                        <div style="color: #e2e8f0; font-size: 12px; font-weight: bold; margin-bottom: 2px;">${mostKillMatch1Team ? mostKillMatch1Team.name : '-'}</div>
-                        <div style="color: #f59e0b; font-size: 15px; font-weight: bold;">${maxMatch1Kills} Kills</div>
-                        <div style="color: #94a3b8; font-size: 8px; margin-top: 2px;">Match 1</div>
+                            <div style="color: #f59e0b; font-size: 11px; font-weight: bold; margin-bottom: 4px;">MATCH 1</div>
+                        <div style="color: #e2e8f0; font-size: 13px; font-weight: bold; margin-bottom: 2px;">${mostKillMatch1Team ? mostKillMatch1Team.name : '-'}</div>
+                        <div style="color: #f59e0b; font-size: 16px; font-weight: bold;">${maxMatch1Kills} Kills</div>
+                        <div style="color: #94a3b8; font-size: 9px; margin-top: 2px;">Terbanyak Match 1</div>
                     </div>
                     <div style="background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.3); border-radius: 8px; padding: 10px; text-align: center;">
-                        <div style="color: #fbbf24; font-size: 10px; font-weight: bold; margin-bottom: 4px;">🎯 M2</div>
-                        <div style="color: #e2e8f0; font-size: 12px; font-weight: bold; margin-bottom: 2px;">${mostKillMatch2Team ? mostKillMatch2Team.name : '-'}</div>
-                        <div style="color: #fbbf24; font-size: 15px; font-weight: bold;">${maxMatch2Kills} Kills</div>
-                        <div style="color: #94a3b8; font-size: 8px; margin-top: 2px;">Match 2</div>
-                    </div>
-                    <div style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 8px; padding: 10px; text-align: center;">
-                        <div style="color: #22c55e; font-size: 10px; font-weight: bold; margin-bottom: 4px;">🎯 M3</div>
-                        <div style="color: #e2e8f0; font-size: 12px; font-weight: bold; margin-bottom: 2px;">${mostKillMatch3Team ? mostKillMatch3Team.name : '-'}</div>
-                        <div style="color: #22c55e; font-size: 15px; font-weight: bold;">${maxMatch3Kills} Kills</div>
-                        <div style="color: #94a3b8; font-size: 8px; margin-top: 2px;">Match 3</div>
+                            <div style="color: #fbbf24; font-size: 11px; font-weight: bold; margin-bottom: 4px;">MATCH 2</div>
+                        <div style="color: #e2e8f0; font-size: 13px; font-weight: bold; margin-bottom: 2px;">${mostKillMatch2Team ? mostKillMatch2Team.name : '-'}</div>
+                        <div style="color: #fbbf24; font-size: 16px; font-weight: bold;">${maxMatch2Kills} Kills</div>
+                        <div style="color: #94a3b8; font-size: 9px; margin-top: 2px;">Terbanyak Match 2</div>
+                        </div>
+                        <div style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 8px; padding: 10px; text-align: center;">
+                            <div style="color: #22c55e; font-size: 11px; font-weight: bold; margin-bottom: 4px;">MATCH 3</div>
+                            <div style="color: #e2e8f0; font-size: 13px; font-weight: bold; margin-bottom: 2px;">${mostKillMatch3Team ? mostKillMatch3Team.name : '-'}</div>
+                            <div style="color: #22c55e; font-size: 16px; font-weight: bold;">${maxMatch3Kills} Kills</div>
+                            <div style="color: #94a3b8; font-size: 9px; margin-top: 2px;">Terbanyak Match 3</div>
+                        </div>
                     </div>
                 </div>
             `;
@@ -799,7 +820,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 flex-shrink: 0;
             `;
             footerDiv.innerHTML = `
-                <p style="margin: 0 0 6px 0; font-weight: bold; color: #fbbf24; font-size: 12px; text-align: center;">© 2025 Free Fire Point Calculator Indonesia - 3 Match</p>
+                <p style="margin: 0 0 6px 0; font-weight: bold; color: #fbbf24; font-size: 12px; text-align: center;">© 2024 Free Fire Point Calculator Indonesia</p>
                 <p style="margin: 0 0 5px 0; color: #e2e8f0; font-size: 11px; text-align: center;">Dibuat oleh <span style="color: #fbbf24; font-weight: 600;">Tekno Ogi</span> | Kalkulator Poin FF Terpercaya</p>
                 <p style="margin: 0; font-size: 9px; color: #94a3b8; font-style: italic; text-align: center;">Semua hak cipta dilindungi undang-undang</p>
             `;
@@ -876,8 +897,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Convert to JPG and download
                 const link = document.createElement('a');
                 const fileName = tournamentNameValue 
-                    ? `Hasil-${tournamentNameValue.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '-')}-3Match-${new Date().toISOString().split('T')[0]}.jpg`
-                    : `Hasil-Turnamen-FF-3Match-${new Date().toISOString().split('T')[0]}.jpg`;
+                    ? `Hasil-${tournamentNameValue.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '-')}-${new Date().toISOString().split('T')[0]}.jpg`
+                    : `Hasil-Turnamen-FF-${new Date().toISOString().split('T')[0]}.jpg`;
                 link.download = fileName;
                 link.href = canvas.toDataURL('image/jpeg', 0.9);
                 link.click();
@@ -907,6 +928,473 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500); // Wait 500ms for iframe to fully load
         });
     }
+
+    // Certificate Buttons
+    const downloadCertificate1Btn = document.getElementById('downloadCertificate1');
+    const downloadCertificate2Btn = document.getElementById('downloadCertificate2');
+    const downloadCertificate3Btn = document.getElementById('downloadCertificate3');
+    const downloadCertificateKillBtn = document.getElementById('downloadCertificateKill');
+    const certificateStatus = document.getElementById('certificateStatus');
+    
+    // Function to get winners and most kill team
+    function getWinnersData() {
+        const teamsWithPoints = teamsData.map(team => {
+            const points = calculateTeamPoints(team);
+            return {
+                ...team,
+                points: points
+            };
+        });
+        
+        teamsWithPoints.sort((a, b) => b.points.total - a.points.total);
+        
+        // Get top 3
+        const winner1 = teamsWithPoints[0];
+        const winner2 = teamsWithPoints[1];
+        const winner3 = teamsWithPoints[2];
+        
+        // Get most kill team (3 matches)
+        let maxTotalKills = 0;
+        let mostKillTeam = null;
+        teamsData.forEach(team => {
+            const totalKills = team.match1.kills + team.match2.kills + team.match3.kills;
+            if (totalKills > maxTotalKills) {
+                maxTotalKills = totalKills;
+                mostKillTeam = team;
+            }
+        });
+        
+        return { winner1, winner2, winner3, mostKillTeam };
+    }
+    
+    // Function to update certificate button state
+    function updateCertificateButtonState() {
+        const { winner1, winner2, winner3, mostKillTeam } = getWinnersData();
+        
+        // Update buttons
+        if (downloadCertificate1Btn) {
+            downloadCertificate1Btn.disabled = !(winner1 && winner1.points.total > 0);
+        }
+        if (downloadCertificate2Btn) {
+            downloadCertificate2Btn.disabled = !(winner2 && winner2.points.total > 0);
+        }
+        if (downloadCertificate3Btn) {
+            downloadCertificate3Btn.disabled = !(winner3 && winner3.points.total > 0);
+        }
+        if (downloadCertificateKillBtn) {
+            const hasKills = mostKillTeam && (mostKillTeam.match1.kills + mostKillTeam.match2.kills + mostKillTeam.match3.kills) > 0;
+            downloadCertificateKillBtn.disabled = !hasKills;
+        }
+        
+        // Update status
+        if (certificateStatus) {
+            const hasData = (winner1 && winner1.points.total > 0) || 
+                           (mostKillTeam && (mostKillTeam.match1.kills + mostKillTeam.match2.kills + mostKillTeam.match3.kills) > 0);
+            if (!hasData) {
+                certificateStatus.textContent = 'Harap hitung hasil turnamen terlebih dahulu untuk membuat sertifikat.';
+                certificateStatus.classList.remove('hidden');
+            } else {
+                certificateStatus.classList.add('hidden');
+            }
+        }
+    }
+    
+    // Update button state when results are calculated
+    const originalGenerateResultsTable = generateResultsTable;
+    generateResultsTable = function() {
+        originalGenerateResultsTable();
+        setTimeout(updateCertificateButtonState, 100);
+    };
+    
+    // Function to generate horizontal certificate (same as 2 Match, but adapted for 3 matches)
+    function generateHorizontalCertificate(team, rank, rankText, rankColor, tournamentName, tournamentPhase, isKillTeam = false) {
+        return new Promise((resolve, reject) => {
+            // Show loading state
+            const btnId = isKillTeam ? 'downloadCertificateKill' : `downloadCertificate${rank}`;
+            const btn = document.getElementById(btnId);
+            if (btn) {
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Membuat...';
+                btn.disabled = true;
+            }
+            
+            // Create certificate container (horizontal: 1600x1000)
+            const certificateContainer = document.createElement('div');
+            certificateContainer.style.cssText = `
+                position: absolute;
+                left: -9999px;
+                top: 0;
+                width: 1600px;
+                height: 1000px;
+                background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+                font-family: 'Arial', sans-serif;
+                color: white;
+                display: flex;
+                box-sizing: border-box;
+            `;
+            
+            // Load images first
+            const currentPath = window.location.pathname;
+            const basePath = currentPath.substring(0, currentPath.lastIndexOf('/'));
+            
+            const logoImage = new Image();
+            logoImage.crossOrigin = 'anonymous';
+            logoImage.src = basePath + '/../../images/Logo/Logo.png';
+            
+            const booyahImage = new Image();
+            booyahImage.crossOrigin = 'anonymous';
+            booyahImage.src = basePath + '/../../images/Logo/Booyah Logo.png';
+            
+            const ffLogoImage = new Image();
+            ffLogoImage.crossOrigin = 'anonymous';
+            ffLogoImage.src = basePath + '/../../images/Logo/Logo FF.png';
+            
+            const lunaImage = new Image();
+            lunaImage.crossOrigin = 'anonymous';
+            lunaImage.src = basePath + '/../../images/element/Luna FF.png';
+            
+            Promise.all([
+                new Promise((res, rej) => {
+                    logoImage.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.width = logoImage.width;
+                        canvas.height = logoImage.height;
+                        ctx.drawImage(logoImage, 0, 0);
+                        res(canvas.toDataURL('image/png'));
+                    };
+                    logoImage.onerror = () => res(null);
+                }),
+                new Promise((res, rej) => {
+                    booyahImage.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.width = booyahImage.width;
+                        canvas.height = booyahImage.height;
+                        ctx.drawImage(booyahImage, 0, 0);
+                        res(canvas.toDataURL('image/png'));
+                    };
+                    booyahImage.onerror = () => res(null);
+                }),
+                new Promise((res, rej) => {
+                    ffLogoImage.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.width = ffLogoImage.width;
+                        canvas.height = ffLogoImage.height;
+                        ctx.drawImage(ffLogoImage, 0, 0);
+                        res(canvas.toDataURL('image/png'));
+                    };
+                    ffLogoImage.onerror = () => res(null);
+                }),
+                new Promise((res, rej) => {
+                    lunaImage.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.width = lunaImage.width;
+                        canvas.height = lunaImage.height;
+                        ctx.drawImage(lunaImage, 0, 0);
+                        res(canvas.toDataURL('image/png'));
+                    };
+                    lunaImage.onerror = () => res(null);
+                })
+            ]).then(([logoBase64, booyahBase64, ffBase64, lunaBase64]) => {
+                // Create certificate HTML (same structure as 2 Match)
+                certificateContainer.innerHTML = `
+                    <div style="width: 100%; height: 100%; min-height: 1000px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%); border: 4px solid ${rankColor}; border-radius: 20px; padding: 0; display: flex; position: relative; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); overflow: hidden;">
+                        <!-- Luna Character as Background Image -->
+                        ${lunaBase64 ? `
+                        <div style="position: absolute; left: 0; top: 0; width: 500px; height: 100%; z-index: 1; opacity: 0.12; pointer-events: none; display: flex; align-items: flex-end;">
+                            <img src="${lunaBase64}" alt="Luna FF Background" style="width: 100%; height: auto; max-height: 80%; object-fit: contain; object-position: left bottom;">
+                        </div>
+                        ` : ''}
+                        
+                        <!-- Decorative Gaming Corners -->
+                        <!-- Top Left Corner -->
+                        <div style="position: absolute; top: 20px; left: 20px; width: 120px; height: 120px; z-index: 15; opacity: 0.7;">
+                            <div style="width: 100%; height: 100%; border: 4px solid ${rankColor}; border-right: none; border-bottom: none; border-radius: 10px 0 0 0; position: relative; box-shadow: 0 0 20px ${rankColor}40;">
+                                <div style="position: absolute; top: -4px; left: -4px; width: 24px; height: 24px; background: ${rankColor}; border-radius: 50%; box-shadow: 0 0 20px ${rankColor}80, inset 0 0 10px rgba(255,255,255,0.3);"></div>
+                                <div style="position: absolute; top: 15px; left: 15px; width: 10px; height: 10px; background: ${rankColor}; border-radius: 50%; box-shadow: 0 0 12px ${rankColor}60;"></div>
+                                <div style="position: absolute; top: 35px; left: 35px; width: 6px; height: 6px; background: ${rankColor}; border-radius: 50%; opacity: 0.8;"></div>
+                                <div style="position: absolute; top: 50px; left: 50px; width: 3px; height: 3px; background: ${rankColor}; border-radius: 50%; opacity: 0.6;"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Top Right Corner -->
+                        <div style="position: absolute; top: 20px; right: 20px; width: 120px; height: 120px; z-index: 15; opacity: 0.7;">
+                            <div style="width: 100%; height: 100%; border: 4px solid ${rankColor}; border-left: none; border-bottom: none; border-radius: 0 10px 0 0; position: relative; box-shadow: 0 0 20px ${rankColor}40;">
+                                <div style="position: absolute; top: -4px; right: -4px; width: 24px; height: 24px; background: ${rankColor}; border-radius: 50%; box-shadow: 0 0 20px ${rankColor}80, inset 0 0 10px rgba(255,255,255,0.3);"></div>
+                                <div style="position: absolute; top: 15px; right: 15px; width: 10px; height: 10px; background: ${rankColor}; border-radius: 50%; box-shadow: 0 0 12px ${rankColor}60;"></div>
+                                <div style="position: absolute; top: 35px; right: 35px; width: 6px; height: 6px; background: ${rankColor}; border-radius: 50%; opacity: 0.8;"></div>
+                                <div style="position: absolute; top: 50px; right: 50px; width: 3px; height: 3px; background: ${rankColor}; border-radius: 50%; opacity: 0.6;"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bottom Left Corner -->
+                        <div style="position: absolute; bottom: 20px; left: 20px; width: 120px; height: 120px; z-index: 15; opacity: 0.7;">
+                            <div style="width: 100%; height: 100%; border: 4px solid ${rankColor}; border-right: none; border-top: none; border-radius: 0 0 0 10px; position: relative; box-shadow: 0 0 20px ${rankColor}40;">
+                                <div style="position: absolute; bottom: -4px; left: -4px; width: 24px; height: 24px; background: ${rankColor}; border-radius: 50%; box-shadow: 0 0 20px ${rankColor}80, inset 0 0 10px rgba(255,255,255,0.3);"></div>
+                                <div style="position: absolute; bottom: 15px; left: 15px; width: 10px; height: 10px; background: ${rankColor}; border-radius: 50%; box-shadow: 0 0 12px ${rankColor}60;"></div>
+                                <div style="position: absolute; bottom: 35px; left: 35px; width: 6px; height: 6px; background: ${rankColor}; border-radius: 50%; opacity: 0.8;"></div>
+                                <div style="position: absolute; bottom: 50px; left: 50px; width: 3px; height: 3px; background: ${rankColor}; border-radius: 50%; opacity: 0.6;"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bottom Right Corner -->
+                        <div style="position: absolute; bottom: 20px; right: 20px; width: 120px; height: 120px; z-index: 15; opacity: 0.7;">
+                            <div style="width: 100%; height: 100%; border: 4px solid ${rankColor}; border-left: none; border-top: none; border-radius: 0 0 10px 0; position: relative; box-shadow: 0 0 20px ${rankColor}40;">
+                                <div style="position: absolute; bottom: -4px; right: -4px; width: 24px; height: 24px; background: ${rankColor}; border-radius: 50%; box-shadow: 0 0 20px ${rankColor}80, inset 0 0 10px rgba(255,255,255,0.3);"></div>
+                                <div style="position: absolute; bottom: 15px; right: 15px; width: 10px; height: 10px; background: ${rankColor}; border-radius: 50%; box-shadow: 0 0 12px ${rankColor}60;"></div>
+                                <div style="position: absolute; bottom: 35px; right: 35px; width: 6px; height: 6px; background: ${rankColor}; border-radius: 50%; opacity: 0.8;"></div>
+                                <div style="position: absolute; bottom: 50px; right: 50px; width: 3px; height: 3px; background: ${rankColor}; border-radius: 50%; opacity: 0.6;"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Center Content -->
+                        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; padding: 60px 50px; min-height: 100%; z-index: 10;">
+                            <!-- Top Left - Logo and Brand Name -->
+                            <div style="position: absolute; top: 40px; left: 40px; display: flex; align-items: center; gap: 15px; z-index: 30; background: rgba(15, 23, 42, 0.8); padding: 10px 15px; border-radius: 10px; backdrop-filter: blur(5px);">
+                                ${logoBase64 ? `<img src="${logoBase64}" alt="Logo" style="height: 75px; width: auto; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));">` : ''}
+                                <div>
+                                    <div style="font-size: 24px; font-weight: bold; color: #fbbf24; line-height: 1.2; text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); letter-spacing: 1.5px;">FREE FIRE</div>
+                                    <div style="font-size: 24px; font-weight: bold; color: #fbbf24; line-height: 1.2; text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); letter-spacing: 1.5px;">POINT</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Top Right - Booyah and FF Logo (Horizontal, Same Size) -->
+                            <div style="position: absolute; top: 40px; right: 40px; display: flex; flex-direction: row; align-items: center; gap: 10px; z-index: 30; background: rgba(15, 23, 42, 0.8); padding: 8px 12px; border-radius: 10px; backdrop-filter: blur(5px);">
+                                ${booyahBase64 ? `<img src="${booyahBase64}" alt="Booyah" style="height: 35px; width: auto; filter: brightness(0) invert(1) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));">` : ''}
+                                ${ffBase64 ? `<img src="${ffBase64}" alt="FF Logo" style="height: 35px; width: auto; filter: brightness(0) invert(1) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));">` : ''}
+                            </div>
+                            
+                            <!-- Main Content -->
+                            <div style="max-width: 1000px; width: 100%; position: relative; z-index: 10;">
+                                <div style="font-size: 26px; color: ${rankColor}; font-weight: bold; letter-spacing: 5px; text-transform: uppercase; text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); margin-bottom: 8px;">SERTIFIKAT JUARA</div>
+                                
+                                <div style="font-size: 48px; color: ${rankColor}; font-weight: bold; margin-bottom: 20px; text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7); letter-spacing: 3px; margin-top: -5px;">TURNAMEN FREE FIRE</div>
+                                
+                                <!-- Tournament Name with decorative lines -->
+                                <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px; gap: 15px;">
+                                    <div style="width: 60px; height: 2px; background: linear-gradient(90deg, transparent, ${rankColor}80, ${rankColor}); align-self: center;"></div>
+                                    <div style="font-size: 26px; color: #e2e8f0; font-weight: 600; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); white-space: nowrap; line-height: 1; display: flex; align-items: center;">${tournamentName}</div>
+                                    <div style="width: 60px; height: 2px; background: linear-gradient(90deg, ${rankColor}, ${rankColor}80, transparent); align-self: center;"></div>
+                                </div>
+                                
+                                <!-- Tournament Phase with decorative lines -->
+                                <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 55px; gap: 12px;">
+                                    <div style="width: 50px; height: 1.5px; background: linear-gradient(90deg, transparent, ${rankColor}60, ${rankColor}40); align-self: center;"></div>
+                                    <div style="font-size: 20px; color: #94a3b8; font-style: italic; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); white-space: nowrap; line-height: 1; display: flex; align-items: center;">${tournamentPhase}</div>
+                                    <div style="width: 50px; height: 1.5px; background: linear-gradient(90deg, ${rankColor}40, ${rankColor}60, transparent); align-self: center;"></div>
+                                </div>
+                                
+                                <div style="font-size: 22px; color: #94a3b8; margin-bottom: 30px; font-style: italic; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">Dengan bangga menyatakan bahwa</div>
+                                
+                                <!-- Team Name -->
+                                <div style="margin-bottom: 35px;">
+                                    <div style="font-size: 80px; color: ${rankColor}; font-weight: bold; text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8), 0 0 20px ${rankColor}40; letter-spacing: 5px; text-transform: uppercase; line-height: 1.1;">
+                                        ${team.name}
+                                    </div>
+                                </div>
+                                
+                                <div style="font-size: 40px; color: #e2e8f0; font-weight: 600; margin-bottom: 20px; text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);">Sebagai ${rankText}</div>
+                                
+                                <!-- Thank You Message -->
+                                <div style="font-size: 18px; color: #94a3b8; font-style: italic; margin-bottom: 70px; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto;">
+                                    Terima kasih atas dedikasi, kerja keras, dan semangat juang yang luar biasa<br>
+                                    dalam turnamen ini. Prestasi ini adalah bukti dari komitmen dan kemampuan tim yang hebat.
+                                </div>
+                                
+                                <!-- Footer -->
+                                <div style="margin-top: 70px; padding-top: 35px; border-top: 2px solid ${rankColor}30;">
+                                    <div style="font-size: 16px; color: #64748b; margin-bottom: 12px; font-weight: 500; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">Diterbitkan pada ${new Date().toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+                                    <div style="font-size: 14px; color: #475569; font-style: italic; margin-bottom: 6px; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">Free Fire Point Calculator Indonesia</div>
+                                    <div style="font-size: 12px; color: #64748b; margin-top: 6px; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">© 2025 Tekno Ogi - Kalkulator Poin FF Terpercaya</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(certificateContainer);
+                
+                // Create iframe
+                const iframe = document.createElement('iframe');
+                iframe.style.position = 'absolute';
+                iframe.style.left = '-9999px';
+                iframe.style.width = '1600px';
+                iframe.style.height = '1000px';
+                document.body.appendChild(iframe);
+                
+                // Write to iframe
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                iframeDoc.open();
+                iframeDoc.write(`
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <meta charset="UTF-8">
+                        <style>
+                            * { margin: 0; padding: 0; box-sizing: border-box; }
+                            body { 
+                                background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); 
+                                font-family: 'Arial', sans-serif; 
+                                color: white; 
+                                padding: 0;
+                                margin: 0;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                min-height: 100vh;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        ${certificateContainer.innerHTML}
+                    </body>
+                    </html>
+                `);
+                iframeDoc.close();
+                
+                setTimeout(() => {
+                    html2canvas(iframe.contentDocument.body, {
+                        backgroundColor: '#0f172a',
+                        scale: 2,
+                        logging: false,
+                        useCORS: true,
+                        allowTaint: true,
+                        width: 1600,
+                        height: 1000,
+                        scrollX: 0,
+                        scrollY: 0,
+                        windowWidth: 1600,
+                        windowHeight: 1000
+                    }).then(canvas => {
+                        const link = document.createElement('a');
+                        const fileName = `Sertifikat-${rankText.replace(/\s+/g, '-')}-${team.name.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '-')}-${new Date().toISOString().split('T')[0]}.jpg`;
+                        link.download = fileName;
+                        link.href = canvas.toDataURL('image/jpeg', 0.95);
+                        link.click();
+                        
+                        document.body.removeChild(certificateContainer);
+                        document.body.removeChild(iframe);
+                        
+                        if (btn) {
+                            btn.innerHTML = isKillTeam ? '<i class="fas fa-download mr-2"></i>Download Most Kill' : `<i class="fas fa-download mr-2"></i>Download Juara ${rank}`;
+                            btn.disabled = false;
+                        }
+                        
+                        showAlert(`Sertifikat ${rankText} berhasil diunduh!`, 'success');
+                        resolve();
+                    }).catch(error => {
+                        console.error('Error generating certificate:', error);
+                        document.body.removeChild(certificateContainer);
+                        if (iframe.parentNode) {
+                            document.body.removeChild(iframe);
+                        }
+                        
+                        if (btn) {
+                            btn.innerHTML = isKillTeam ? '<i class="fas fa-download mr-2"></i>Download Most Kill' : `<i class="fas fa-download mr-2"></i>Download Juara ${rank}`;
+                            btn.disabled = false;
+                        }
+                        
+                        showAlert('Gagal membuat sertifikat. Silakan coba lagi.', 'error');
+                        reject(error);
+                    });
+                }, 1000);
+            }).catch(error => {
+                console.error('Error loading images:', error);
+                reject(error);
+            });
+        });
+    }
+    
+    // Function to validate tournament information
+    function validateTournamentInfo() {
+        const tournamentName = document.getElementById('tournamentName')?.value.trim();
+        const tournamentPhase = document.getElementById('tournamentPhase')?.value.trim();
+        
+        if (!tournamentName || tournamentName === '') {
+            showAlert('Harap isi Nama Turnamen terlebih dahulu!', 'error');
+            document.getElementById('tournamentName')?.focus();
+            return false;
+        }
+        
+        if (!tournamentPhase || tournamentPhase === '') {
+            showAlert('Harap isi Fase Turnamen terlebih dahulu!', 'error');
+            document.getElementById('tournamentPhase')?.focus();
+            return false;
+        }
+        
+        return true;
+    }
+    
+    // Download Certificate 1 Button
+    if (downloadCertificate1Btn) {
+        downloadCertificate1Btn.addEventListener('click', function() {
+            if (!validateTournamentInfo()) return;
+            showAdModal();
+            const { winner1 } = getWinnersData();
+            const tournamentName = document.getElementById('tournamentName')?.value.trim();
+            const tournamentPhase = document.getElementById('tournamentPhase')?.value.trim();
+            if (!winner1 || winner1.points.total === 0) {
+                showAlert('Tidak ada data juara 1!', 'error');
+                return;
+            }
+            generateHorizontalCertificate(winner1, 1, 'Juara Pertama', '#fbbf24', tournamentName, tournamentPhase);
+        });
+    }
+    
+    // Download Certificate 2 Button
+    if (downloadCertificate2Btn) {
+        downloadCertificate2Btn.addEventListener('click', function() {
+            if (!validateTournamentInfo()) return;
+            showAdModal();
+            const { winner2 } = getWinnersData();
+            const tournamentName = document.getElementById('tournamentName')?.value.trim();
+            const tournamentPhase = document.getElementById('tournamentPhase')?.value.trim();
+            if (!winner2 || winner2.points.total === 0) {
+                showAlert('Tidak ada data juara 2!', 'error');
+                return;
+            }
+            generateHorizontalCertificate(winner2, 2, 'Juara Kedua', '#94a3b8', tournamentName, tournamentPhase);
+        });
+    }
+    
+    // Download Certificate 3 Button
+    if (downloadCertificate3Btn) {
+        downloadCertificate3Btn.addEventListener('click', function() {
+            if (!validateTournamentInfo()) return;
+            showAdModal();
+            const { winner3 } = getWinnersData();
+            const tournamentName = document.getElementById('tournamentName')?.value.trim();
+            const tournamentPhase = document.getElementById('tournamentPhase')?.value.trim();
+            if (!winner3 || winner3.points.total === 0) {
+                showAlert('Tidak ada data juara 3!', 'error');
+                return;
+            }
+            generateHorizontalCertificate(winner3, 3, 'Juara Ketiga', '#d97706', tournamentName, tournamentPhase);
+        });
+    }
+    
+    // Download Certificate Most Kill Button
+    if (downloadCertificateKillBtn) {
+        downloadCertificateKillBtn.addEventListener('click', function() {
+            if (!validateTournamentInfo()) return;
+            showAdModal();
+            const { mostKillTeam } = getWinnersData();
+            const tournamentName = document.getElementById('tournamentName')?.value.trim();
+            const tournamentPhase = document.getElementById('tournamentPhase')?.value.trim();
+            if (!mostKillTeam || (mostKillTeam.match1.kills + mostKillTeam.match2.kills + mostKillTeam.match3.kills) === 0) {
+                showAlert('Tidak ada data most kill team!', 'error');
+                return;
+            }
+            generateHorizontalCertificate(mostKillTeam, 0, 'Most Kill Team', '#ef4444', tournamentName, tournamentPhase, true);
+        });
+    }
+    
+    // Initialize certificate button state
+    setTimeout(() => {
+        updateCertificateButtonState();
+    }, 500);
 
     // Load saved data
     async function loadSavedData() {
@@ -939,10 +1427,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 showAlert('Data turnamen berhasil dimuat!', 'info');
             } else {
                 initializeTeamsData();
+                generateInputTable();
+                generateResultsTable();
             }
         } catch (error) {
             // Fallback to localStorage for backward compatibility
-            const localData = localStorage.getItem('ffTournamentData3Match');
+            const localData = localStorage.getItem('ffTournamentData');
             if (localData) {
                 try {
                     teamsData = JSON.parse(localData);
@@ -951,34 +1441,52 @@ document.addEventListener('DOMContentLoaded', function() {
                     generateKillStats();
                     // Migrate to IndexedDB
                     await saveToIndexedDB(teamsData);
-                    localStorage.removeItem('ffTournamentData3Match'); // Clean up old data
+                    localStorage.removeItem('ffTournamentData'); // Clean up old data
                 } catch (e) {
                     initializeTeamsData();
+                    generateInputTable();
+                    generateResultsTable();
                 }
             } else {
                 initializeTeamsData();
+                generateInputTable();
+                generateResultsTable();
             }
         }
     }
 
     // Initialize calculator
     async function initializeCalculator() {
+        console.log('initializeCalculator called');
+        console.log('inputTableBody:', inputTableBody);
+        console.log('resultsTableBody:', resultsTableBody);
+        
         if (inputTableBody && resultsTableBody) {
             try {
                 await initDB();
                 initializeTeamsData();
+                console.log('teamsData initialized, length:', teamsData.length);
                 generateInputTable();
                 generateResultsTable();
                 await loadSavedData();
             } catch (error) {
+                console.error('Error initializing calculator:', error);
                 showAlert('Terjadi kesalahan saat memuat kalkulator.', 'error');
                 // Fallback initialization
                 initializeTeamsData();
                 generateInputTable();
                 generateResultsTable();
             }
+        } else {
+            console.error('inputTableBody or resultsTableBody not found!');
+            console.log('inputTableBody:', inputTableBody);
+            console.log('resultsTableBody:', resultsTableBody);
         }
     }
+
+
+
+
 
     // Make initializeCalculator globally available
     window.initializeCalculator = initializeCalculator;
@@ -1003,8 +1511,345 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Only run old calculator functionality if elements exist
     if (killInput && placementInput && calculateBtn) {
-        // Old calculator code here (if needed)
+
+    // Calculate button click handler
+    calculateBtn.addEventListener('click', function() {
+        const killCount = parseInt(killInput.value) || 0;
+        const placementRank = parseInt(placementInput.value);
+
+        // Validation
+        if (killCount < 0 || killCount > 50) {
+            showError('Jumlah kill harus antara 0-50');
+            return;
+        }
+
+        if (!placementRank || placementRank < 1 || placementRank > 12) {
+            showError('Pilih ranking placement yang valid');
+            return;
+        }
+
+        // Calculate points
+        const killPoints = killCount; // 1 kill = 1 point
+        const placementPts = placementPoints[placementRank];
+        const totalPoints = killPoints + placementPts;
+
+        // Show loading animation
+        showLoading();
+
+        // Simulate calculation delay for better UX
+        setTimeout(() => {
+            displayResults(killPoints, placementPts, totalPoints);
+        }, 800);
+    });
+
+    // Input validation and real-time feedback
+    killInput.addEventListener('input', function() {
+        const value = parseInt(this.value);
+        if (value < 0) this.value = 0;
+        if (value > 50) this.value = 50;
+        
+        // Clear results if inputs change
+        if (resultSection && !resultSection.classList.contains('hidden')) {
+            clearResults();
+        }
+    });
+
+    placementInput.addEventListener('change', function() {
+        // Clear results if inputs change
+        if (resultSection && !resultSection.classList.contains('hidden')) {
+            clearResults();
+        }
+    });
+
+    // Enter key support
+    killInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            calculateBtn.click();
+        }
+    });
+
+    placementInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            calculateBtn.click();
+        }
+    });
+
+    // Functions
+    function showError(message) {
+        // Create or update error message
+        let errorDiv = document.getElementById('errorMessage');
+        if (!errorDiv) {
+            errorDiv = document.createElement('div');
+            errorDiv.id = 'errorMessage';
+            errorDiv.className = 'bg-red-500/10 border border-red-500/30 rounded-lg p-4 mb-4 text-red-400 text-center';
+            calculateBtn.parentNode.insertBefore(errorDiv, calculateBtn.nextSibling);
+        }
+        
+        errorDiv.innerHTML = `
+            <i class="fas fa-exclamation-triangle mr-2"></i>
+            ${message}
+        `;
+        
+        // Auto-hide error after 3 seconds
+        setTimeout(() => {
+            if (errorDiv) {
+                errorDiv.remove();
+            }
+        }, 3000);
     }
+
+    function showLoading() {
+        const originalText = calculateBtn.innerHTML;
+        calculateBtn.innerHTML = `
+            <i class="fas fa-spinner loading-spinner mr-2"></i>
+            Menghitung...
+        `;
+        calculateBtn.disabled = true;
+        
+        // Store original text for restoration
+        calculateBtn.dataset.originalText = originalText;
+    }
+
+    function displayResults(killPts, placementPts, totalPts) {
+        // Restore button
+        calculateBtn.innerHTML = calculateBtn.dataset.originalText;
+        calculateBtn.disabled = false;
+        
+        // Remove error message if exists
+        const errorDiv = document.getElementById('errorMessage');
+        if (errorDiv) {
+            errorDiv.remove();
+        }
+        
+        // Hide placeholder and show results
+        placeholderSection.classList.add('hidden');
+        resultSection.classList.remove('hidden');
+        resultSection.classList.add('result-animation');
+        
+        // Animate numbers counting up
+        animateNumber(killPointsDisplay, killPts);
+        animateNumber(placementPointsDisplay, placementPts);
+        animateNumber(totalPointsDisplay, totalPts);
+        
+        // Add bounce animation to total points
+        setTimeout(() => {
+            totalPointsDisplay.parentElement.parentElement.classList.add('bounce-in');
+        }, 500);
+        
+        // Scroll to results on mobile
+        if (window.innerWidth <= 768) {
+            setTimeout(() => {
+                resultSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }, 600);
+        }
+    }
+
+    function clearResults() {
+        placeholderSection.classList.remove('hidden');
+        resultSection.classList.add('hidden');
+        resultSection.classList.remove('result-animation');
+        
+        // Reset displays
+        killPointsDisplay.textContent = '0';
+        placementPointsDisplay.textContent = '0';
+        totalPointsDisplay.textContent = '0';
+    }
+
+    function animateNumber(element, targetNumber) {
+        const startNumber = 0;
+        const duration = 1000; // 1 second
+        const steps = 50;
+        const stepValue = targetNumber / steps;
+        const stepDuration = duration / steps;
+        
+        let currentNumber = startNumber;
+        const interval = setInterval(() => {
+            currentNumber += stepValue;
+            if (currentNumber >= targetNumber) {
+                element.textContent = targetNumber;
+                clearInterval(interval);
+            } else {
+                element.textContent = Math.floor(currentNumber);
+            }
+        }, stepDuration);
+    }
+
+    // Add visual feedback for form interactions
+    const formInputs = document.querySelectorAll('input, select');
+    formInputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.classList.add('scale-105');
+        });
+        
+        input.addEventListener('blur', function() {
+            this.parentElement.classList.remove('scale-105');
+        });
+    });
+
+    // Add hover effects to table rows
+    const tableRows = document.querySelectorAll('table tbody tr');
+    tableRows.forEach(row => {
+        row.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(4px)';
+        });
+        
+        row.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0)';
+        });
+    });
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', function(e) {
+        // Ctrl/Cmd + Enter to calculate
+        if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+            e.preventDefault();
+            calculateBtn.click();
+        }
+        
+        // Escape to clear results
+        if (e.key === 'Escape') {
+            clearResults();
+            killInput.value = '';
+            placementInput.value = '';
+            killInput.focus();
+        }
+    });
+
+    // Auto-focus on kill input when page loads
+    setTimeout(() => {
+        killInput.focus();
+    }, 500);
+
+    // Add tooltips for better UX
+    const addTooltip = (element, text) => {
+        element.setAttribute('title', text);
+        element.addEventListener('mouseenter', function(e) {
+            const tooltip = document.createElement('div');
+            tooltip.className = 'fixed bg-gray-800 text-white px-2 py-1 rounded text-sm z-50 pointer-events-none';
+            tooltip.textContent = text;
+            tooltip.style.left = e.pageX + 10 + 'px';
+            tooltip.style.top = e.pageY - 30 + 'px';
+            tooltip.id = 'tooltip';
+            document.body.appendChild(tooltip);
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            const tooltip = document.getElementById('tooltip');
+            if (tooltip) tooltip.remove();
+        });
+    };
+
+    // Add tooltips to form elements
+    addTooltip(killInput, 'Masukkan jumlah kill yang didapat (0-50)');
+    addTooltip(placementInput, 'Pilih ranking akhir tim Anda');
+    addTooltip(calculateBtn, 'Klik untuk menghitung total poin (Ctrl+Enter)');
+
+    // Performance optimization: Debounce input events
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    // Debounced input validation
+    const debouncedValidation = debounce(() => {
+        const killCount = parseInt(killInput.value) || 0;
+        const placementRank = parseInt(placementInput.value);
+        
+        // Enable/disable calculate button based on input validity
+        if (killCount >= 0 && killCount <= 50 && placementRank >= 1 && placementRank <= 12) {
+            calculateBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            calculateBtn.disabled = false;
+        } else {
+            calculateBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            calculateBtn.disabled = true;
+        }
+    }, 300);
+
+    killInput.addEventListener('input', debouncedValidation);
+    placementInput.addEventListener('change', debouncedValidation);
+
+    // Initialize button state
+    debouncedValidation();
+
+    // Add success sound effect (optional - can be enabled later)
+    function playSuccessSound() {
+        // Create audio context for success sound
+        if (typeof AudioContext !== 'undefined' || typeof webkitAudioContext !== 'undefined') {
+            const AudioContextClass = AudioContext || webkitAudioContext;
+            const audioContext = new AudioContextClass();
+            
+            // Create a simple success tone
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+            oscillator.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.1);
+            
+            gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.1);
+        }
+    }
+
+    // Enhanced visual feedback
+    function addPulseEffect(element) {
+        element.classList.add('pulse-animation');
+        setTimeout(() => {
+            element.classList.remove('pulse-animation');
+        }, 2000);
+    }
+
+    // Local storage for user preferences (optional feature)
+    function saveToHistory(killPoints, placementPoints, totalPoints) {
+        const calculation = {
+            killPoints,
+            placementPoints,
+            totalPoints,
+            timestamp: new Date().toISOString()
+        };
+        
+        let history = JSON.parse(localStorage.getItem('ffCalculatorHistory') || '[]');
+        history.unshift(calculation);
+        
+        // Keep only last 10 calculations
+        if (history.length > 10) {
+            history = history.slice(0, 10);
+        }
+        
+        localStorage.setItem('ffCalculatorHistory', JSON.stringify(history));
+    }
+
+    // Add to displayResults function
+    const originalDisplayResults = displayResults;
+    displayResults = function(killPts, placementPts, totalPts) {
+        originalDisplayResults(killPts, placementPts, totalPts);
+        
+        // Save to history
+        saveToHistory(killPts, placementPts, totalPts);
+        
+        // Add pulse effect to total points
+        addPulseEffect(totalPointsDisplay.parentElement.parentElement);
+        
+        // Optional: Play success sound
+        // playSuccessSound();
+    };
+
+    } // End of calculator functionality block
 
     // Support Modal Functions (Always run regardless of calculator elements)
     function showSupportModal() {
@@ -1027,7 +1872,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Check if modal should be shown on page load
     function checkShowModal() {
-        const dontShowAgain = localStorage.getItem('ffpoint_dont_show_support_modal_3match');
+        const dontShowAgain = localStorage.getItem('ffpoint_dont_show_support_modal');
         
         // Don't show if user clicked "don't show again"
         if (dontShowAgain === 'true') {
@@ -1064,7 +1909,7 @@ function closeSupportModal() {
 }
 
 function dontShowAgain() {
-    localStorage.setItem('ffpoint_dont_show_support_modal_3match', 'true');
+    localStorage.setItem('ffpoint_dont_show_support_modal', 'true');
     closeSupportModal();
 }
 
@@ -1135,9 +1980,14 @@ function closeResetModal() {
             resetModal.classList.add('hidden');
         }, 300);
     }
+
+
+
+
+
 }
 
-// Global Reset Function for 3 MATCH
+// Global Reset Function
 function performReset() {
     // Get DOM elements
     const inputTableBody = document.getElementById('inputTableBody');
@@ -1150,7 +2000,7 @@ function performReset() {
     if (tournamentName) tournamentName.value = '';
     if (tournamentPhase) tournamentPhase.value = '';
     
-    // Reset teams data structure FOR 3 MATCH
+    // Reset teams data structure
     const resetTeamsData = [];
     for (let i = 1; i <= 12; i++) {
         resetTeamsData.push({
@@ -1163,21 +2013,12 @@ function performReset() {
         });
     }
     
-    // Clear input table and regenerate FOR 3 MATCH
+    // Clear input table and regenerate
     if (inputTableBody) {
         inputTableBody.innerHTML = '';
         resetTeamsData.forEach((team, index) => {
             const row = document.createElement('tr');
             row.className = 'bg-slate-800/20 hover:bg-slate-700/30 transition-all duration-300';
-            
-            function generateRankOptions(selectedRank) {
-                let options = '';
-                for (let i = 1; i <= 12; i++) {
-                    const selected = i === selectedRank ? 'selected' : '';
-                    options += `<option value="${i}" ${selected}>#${i}</option>`;
-                }
-                return options;
-            }
             
             row.innerHTML = `
                 <td class="px-3 py-3">
@@ -1234,7 +2075,7 @@ function performReset() {
         });
     }
     
-    // Clear results table - show empty 12 rows FOR 3 MATCH
+    // Clear results table - show empty 12 rows
     if (resultsTableBody) {
         resultsTableBody.innerHTML = '';
         for (let i = 0; i < 12; i++) {
@@ -1274,7 +2115,7 @@ function performReset() {
     
     // Clear IndexedDB
     try {
-        const request = indexedDB.open('FFPointCalculator3Match', 1);
+        const request = indexedDB.open('FFPointCalculator', 1);
         request.onsuccess = function(event) {
             const db = event.target.result;
             if (db.objectStoreNames.contains('tournamentData')) {
@@ -1305,7 +2146,7 @@ function performReset() {
     alert.className = 'alert alert-success';
     alert.innerHTML = `
         <i class="fas fa-check-circle mr-2"></i>
-        🔥 Semua data berhasil direset! Siap untuk turnamen baru 3 Match.
+        🔥 Semua data berhasil direset! Siap untuk turnamen baru.
     `;
     
     alertContainer.appendChild(alert);
