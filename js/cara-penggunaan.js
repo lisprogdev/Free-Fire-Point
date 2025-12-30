@@ -54,7 +54,7 @@ function initParallax() {
             const before = section.querySelector('::before');
             if (section) {
                 section.style.transform = `translateY(${rate * 0.1}px)`;
-            }
+    }
         });
     });
 }
@@ -109,7 +109,7 @@ function initSmoothScroll() {
                     behavior: 'smooth',
                     block: 'start'
                 });
-            }
+    }
         });
     });
 }
