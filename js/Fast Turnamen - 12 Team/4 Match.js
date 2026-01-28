@@ -1,65 +1,65 @@
-// Ad Modal Functions for Calculator
-function showAdModal() {
-    const adModal = document.getElementById('adModal');
-    const adModalContent = document.getElementById('adModalContent');
-    
-    if (adModal && adModalContent) {
-        adModal.classList.remove('hidden');
-        adModal.classList.add('show');
-        
-        // Trigger animation
-        setTimeout(() => {
-            adModalContent.classList.add('show');
-        }, 10);
-        
-        // Blur main content
-        const mainContent = document.getElementById('mainContent');
-        if (mainContent) {
-            mainContent.classList.add('blur-active');
-        }
-    }
-}
+// Ad Modal Functions for Calculator - REMOVED for AdSense Compliance
+// function showAdModal() {
+//     const adModal = document.getElementById('adModal');
+//     const adModalContent = document.getElementById('adModalContent');
+//     
+//     if (adModal && adModalContent) {
+//         adModal.classList.remove('hidden');
+//         adModal.classList.add('show');
+//         
+//         // Trigger animation
+//         setTimeout(() => {
+//             adModalContent.classList.add('show');
+//         }, 10);
+//         
+//         // Blur main content
+//         const mainContent = document.getElementById('mainContent');
+//         if (mainContent) {
+//             mainContent.classList.add('blur-active');
+//         }
+//     }
+// }
 
-function closeAdModal() {
-    const adModal = document.getElementById('adModal');
-    const adModalContent = document.getElementById('adModalContent');
-    
-    if (adModal && adModalContent) {
-        adModalContent.classList.remove('show');
-        
-        setTimeout(() => {
-            adModal.classList.add('hidden');
-            adModal.classList.remove('show');
-        }, 300);
-        
-        // Remove blur from main content
-        const mainContent = document.getElementById('mainContent');
-        if (mainContent) {
-            mainContent.classList.remove('blur-active');
-        }
-    }
-}
+// function closeAdModal() {
+//     const adModal = document.getElementById('adModal');
+//     const adModalContent = document.getElementById('adModalContent');
+//     
+//     if (adModal && adModalContent) {
+//         adModalContent.classList.remove('show');
+//         
+//         setTimeout(() => {
+//             adModal.classList.add('hidden');
+//             adModal.classList.remove('show');
+//         }, 300);
+//         
+//         // Remove blur from main content
+//         const mainContent = document.getElementById('mainContent');
+//         if (mainContent) {
+//             mainContent.classList.remove('blur-active');
+//         }
+//     }
+// }
 
-// Close modal when clicking outside
-document.addEventListener('click', function(event) {
-    const adModal = document.getElementById('adModal');
-    
-    if (adModal && !adModal.classList.contains('hidden')) {
-        if (event.target === adModal) {
-            closeAdModal();
-        }
-    }
-});
+// // Close modal when clicking outside
+// document.addEventListener('click', function(event) {
+//     const adModal = document.getElementById('adModal');
+//     
+//     if (adModal && !adModal.classList.contains('hidden')) {
+//         if (event.target === adModal) {
+//             closeAdModal();
+//         }
+//     }
+// });
 
-// Close modal with Escape key
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        const adModal = document.getElementById('adModal');
-        if (adModal && !adModal.classList.contains('hidden')) {
-            closeAdModal();
-        }
-    }
-});
+// // Close modal with Escape key
+// document.addEventListener('keydown', function(event) {
+//     if (event.key === 'Escape') {
+//         const adModal = document.getElementById('adModal');
+//         if (adModal && !adModal.classList.contains('hidden')) {
+//             closeAdModal();
+//         }
+//     }
+// });
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize AOS (Animate On Scroll)
