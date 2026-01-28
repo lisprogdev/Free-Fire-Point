@@ -98,27 +98,4 @@
         </image:image>
     </url>
     
-    <!-- Blog Articles - Legacy -->
-    <url>
-        <loc>https://freefirepoint.my.id/pages/blog/sistem-poin-free-fire-2024.html</loc>
-        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-        <image:image>
-            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Sistem Poin Free Fire 2024</image:title>
-        </image:image>
-    </url>
-    
-    <url>
-        <loc>https://freefirepoint.my.id/pages/blog/strategi-turnamen-free-fire.html</loc>
-        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-        <image:image>
-            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Strategi Turnamen Free Fire 2024</image:title>
-        </image:image>
-    </url>
-    
 </urlset>
