@@ -1,65 +1,107 @@
-// Ad Modal Functions for Calculator - REMOVED for AdSense Compliance
-// function showAdModal() {
-//     const adModal = document.getElementById('adModal');
-//     const adModalContent = document.getElementById('adModalContent');
-//     
-//     if (adModal && adModalContent) {
-//         adModal.classList.remove('hidden');
-//         adModal.classList.add('show');
-//         
-//         // Trigger animation
-//         setTimeout(() => {
-//             adModalContent.classList.add('show');
-//         }, 10);
-//         
-//         // Blur main content
-//         const mainContent = document.getElementById('mainContent');
-//         if (mainContent) {
-//             mainContent.classList.add('blur-active');
-//         }
-//     }
-// }
+function ensureDonationModal() {
+    let modal = document.getElementById('donationModalFF');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'donationModalFF';
+        modal.style.position = 'fixed';
+        modal.style.top = '0';
+        modal.style.left = '0';
+        modal.style.width = '100%';
+        modal.style.height = '100%';
+        modal.style.background = 'rgba(0,0,0,0.7)';
+        modal.style.display = 'none';
+        modal.style.zIndex = '9999';
+        modal.style.backdropFilter = 'blur(2px)';
+        const content = document.createElement('div');
+        content.id = 'donationModalFFContent';
+        content.style.position = 'absolute';
+        content.style.top = '50%';
+        content.style.left = '50%';
+        content.style.transform = 'translate(-50%, -50%)';
+        content.style.width = '90%';
+        content.style.maxWidth = '520px';
+        content.style.background = 'linear-gradient(135deg,#0f172a,#1e293b)';
+        content.style.border = '1px solid rgba(148,163,184,0.25)';
+        content.style.borderRadius = '16px';
+        content.style.boxShadow = '0 20px 40px rgba(0,0,0,0.4)';
+        content.style.padding = '24px';
+        content.style.color = '#e2e8f0';
+        const title = document.createElement('div');
+        title.style.fontFamily = 'inherit';
+        title.style.fontSize = '18px';
+        title.style.fontWeight = '700';
+        title.style.marginBottom = '8px';
+        title.style.color = '#fde047';
+        title.textContent = 'Dukung Proyek Ini';
+        const msg = document.createElement('div');
+        msg.style.fontSize = '14px';
+        msg.style.lineHeight = '1.6';
+        msg.style.marginBottom = '16px';
+        msg.innerHTML = 'Website ini akan ditutup dalam 2 minggu jika target donasi tidak tercapai karena keterbatasan budget perpanjangan domain. Mohon dukung dengan donasi agar layanan tetap berjalan.';
+        const actions = document.createElement('div');
+        actions.style.display = 'flex';
+        actions.style.gap = '10px';
+        actions.style.marginTop = '10px';
+        actions.style.flexWrap = 'wrap';
+        const donateBtn = document.createElement('a');
+        donateBtn.href = 'https://saweria.co/teknoogi';
+        donateBtn.target = '_blank';
+        donateBtn.rel = 'noopener noreferrer';
+        donateBtn.textContent = 'Donasi Sekarang';
+        donateBtn.style.flex = '1';
+        donateBtn.style.textAlign = 'center';
+        donateBtn.style.padding = '10px 14px';
+        donateBtn.style.borderRadius = '10px';
+        donateBtn.style.background = '#22c55e';
+        donateBtn.style.color = '#0b1220';
+        donateBtn.style.fontWeight = '700';
+        const continueBtn = document.createElement('button');
+        continueBtn.textContent = 'Lanjutkan';
+        continueBtn.style.flex = '1';
+        continueBtn.style.textAlign = 'center';
+        continueBtn.style.padding = '10px 14px';
+        continueBtn.style.borderRadius = '10px';
+        continueBtn.style.background = '#334155';
+        continueBtn.style.color = '#e2e8f0';
+        continueBtn.style.fontWeight = '700';
+        continueBtn.addEventListener('click', function() {
+            closeDonationModal();
+        });
+        content.addEventListener('click', function(e){ e.stopPropagation(); });
+        modal.addEventListener('click', function(){ closeDonationModal(); });
+        actions.appendChild(donateBtn);
+        actions.appendChild(continueBtn);
+        content.appendChild(title);
+        content.appendChild(msg);
+        content.appendChild(actions);
+        modal.appendChild(content);
+        document.body.appendChild(modal);
+        document.addEventListener('keydown', function(e){
+            if (e.key === 'Escape') closeDonationModal();
+        });
+    }
+}
 
-// function closeAdModal() {
-//     const adModal = document.getElementById('adModal');
-//     const adModalContent = document.getElementById('adModalContent');
-//     
-//     if (adModal && adModalContent) {
-//         adModalContent.classList.remove('show');
-//         
-//         setTimeout(() => {
-//             adModal.classList.add('hidden');
-//             adModal.classList.remove('show');
-//         }, 300);
-//         
-//         // Remove blur from main content
-//         const mainContent = document.getElementById('mainContent');
-//         if (mainContent) {
-//             mainContent.classList.remove('blur-active');
-//         }
-//     }
-// }
+function showDonationModal() {
+    ensureDonationModal();
+    const modal = document.getElementById('donationModalFF');
+    const mainContent = document.getElementById('mainContent');
+    if (modal) {
+        modal.style.display = 'block';
+        if (mainContent) mainContent.classList.add('blur-active');
+    }
+}
 
-// // Close modal when clicking outside
-// document.addEventListener('click', function(event) {
-//     const adModal = document.getElementById('adModal');
-//     
-//     if (adModal && !adModal.classList.contains('hidden')) {
-//         if (event.target === adModal) {
-//             closeAdModal();
-//         }
-//     }
-// });
+function closeDonationModal() {
+    const modal = document.getElementById('donationModalFF');
+    const mainContent = document.getElementById('mainContent');
+    if (modal) {
+        modal.style.display = 'none';
+        if (mainContent) mainContent.classList.remove('blur-active');
+    }
+}
 
-// // Close modal with Escape key
-// document.addEventListener('keydown', function(event) {
-//     if (event.key === 'Escape') {
-//         const adModal = document.getElementById('adModal');
-//         if (adModal && !adModal.classList.contains('hidden')) {
-//             closeAdModal();
-//         }
-//     }
-// });
+function showAdModal() { showDonationModal(); return Promise.resolve(); }
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize AOS (Animate On Scroll)
@@ -229,7 +271,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Ensure teamsData is initialized
         if (!teamsData || teamsData.length === 0) {
-            console.log('teamsData is empty, initializing...');
             initializeTeamsData();
         }
         
@@ -1457,15 +1498,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize calculator
     async function initializeCalculator() {
-        console.log('initializeCalculator called');
-        console.log('inputTableBody:', inputTableBody);
-        console.log('resultsTableBody:', resultsTableBody);
         
         if (inputTableBody && resultsTableBody) {
             try {
                 await initDB();
                 initializeTeamsData();
-                console.log('teamsData initialized, length:', teamsData.length);
                 generateInputTable();
                 generateResultsTable();
                 await loadSavedData();
@@ -1479,8 +1516,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         } else {
             console.error('inputTableBody or resultsTableBody not found!');
-            console.log('inputTableBody:', inputTableBody);
-            console.log('resultsTableBody:', resultsTableBody);
         }
     }
 

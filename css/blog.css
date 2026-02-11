@@ -314,7 +314,11 @@
 
 /* Mock UI Container */
 .mock-ui-container {
-    background: linear-gradient(145deg, #1e293b, #0f172a);
+    background-color: #0f172a;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
     overflow: hidden;
@@ -329,6 +333,15 @@
     right: 0;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.3), transparent);
+    z-index: 10;
+}
+
+/* Mock Input Grid */
+.mock-input-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 0.5rem;
+    align-items: center;
 }
 
 /* Mock Input Elements */
