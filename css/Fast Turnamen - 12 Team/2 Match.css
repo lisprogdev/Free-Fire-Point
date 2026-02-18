@@ -326,10 +326,14 @@ table input[type="number"] {
     background: rgba(251, 191, 36, 0.7);
 }
 
-/* Table container with min-width for better scrolling - only for input table */
+/* Table container with min-width for better horizontal scrolling */
 .overflow-x-auto:has(#inputTableBody) table,
 .overflow-x-auto table:has(#inputTableBody) {
     min-width: 700px;
+}
+.overflow-x-auto:has(#resultsTableBody) table,
+.overflow-x-auto table:has(#resultsTableBody) {
+    min-width: 600px;
 }
 
 /* Tournament Info Form Styles */

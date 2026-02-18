@@ -334,10 +334,14 @@ table input[type="number"] {
     border: 1px solid #dc2626;
 }
 
-/* Table container with min-width for better scrolling - only for input table */
+/* Table container with min-width for better horizontal scrolling */
 .overflow-x-auto:has(#inputTableBody) table,
 .overflow-x-auto table:has(#inputTableBody) {
     min-width: 900px;
+}
+.overflow-x-auto:has(#resultsTableBody) table,
+.overflow-x-auto table:has(#resultsTableBody) {
+    min-width: 700px;
 }
 
 .alert-info {
