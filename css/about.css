@@ -45,6 +45,55 @@
     }
 }
 
+/* 4-character grid in About section (index) */
+.about-characters-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+}
+
+.about-character-grid-item {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    min-height: 140px;
+}
+
+.about-character-grid-item .about-character-card {
+    min-height: 100%;
+    padding: 0.75rem;
+}
+
+.about-character-grid-item .about-character-image {
+    max-height: 100%;
+    width: auto;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .about-characters-grid {
+        gap: 1.25rem;
+    }
+
+    .about-character-grid-item {
+        min-height: 180px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .about-characters-grid {
+        gap: 1rem;
+    }
+
+    .about-character-grid-item {
+        min-height: 200px;
+    }
+
+    .about-character-grid-item .about-character-card {
+        padding: 1rem;
+    }
+}
+
 .about-features-column {
     display: flex;
     flex-direction: column;
