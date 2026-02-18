@@ -5,7 +5,7 @@
     <!-- Main Page - Free Fire Point Calculator -->
     <url>
         <loc>https://freefirepoint.my.id/</loc>
-        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <lastmod>2025-01-11</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -21,7 +21,7 @@
     <!-- Fast Turnamen 12 Team - 2 Match Calculator -->
     <url>
         <loc>https://freefirepoint.my.id/pages/Fast%20Turnamen%20-%2012%20Team/2%20Match.html</loc>
-        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <lastmod>2025-01-11</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.98</priority>
         <image:image>
@@ -33,7 +33,7 @@
     <!-- Fast Turnamen 12 Team - 3 Match Calculator -->
     <url>
         <loc>https://freefirepoint.my.id/pages/Fast%20Turnamen%20-%2012%20Team/3%20Match.html</loc>
-        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <lastmod>2025-01-11</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.98</priority>
         <image:image>
@@ -45,7 +45,7 @@
     <!-- Fast Turnamen 12 Team - 4 Match Calculator -->
     <url>
         <loc>https://freefirepoint.my.id/pages/Fast%20Turnamen%20-%2012%20Team/4%20Match.html</loc>
-        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <lastmod>2025-01-11</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.98</priority>
         <image:image>
@@ -57,7 +57,7 @@
     <!-- Cara Penggunaan Tutorial Page -->
     <url>
         <loc>https://freefirepoint.my.id/pages/more/cara-penggunaan.html</loc>
-        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <lastmod>2025-01-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.90</priority>
         <image:image>
@@ -65,7 +65,7 @@
             <image:title>Cara Penggunaan Kalkulator Poin Free Fire - Tutorial Lengkap 2025</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://freefirepoint.my.id/images/Logo/Booyah Logo.png</image:loc>
+            <image:loc>https://freefirepoint.my.id/images/Logo/Booyah%20Logo.png</image:loc>
             <image:title>Tutorial Kalkulator Fast Turnamen FF</image:title>
         </image:image>
     </url>
@@ -73,7 +73,7 @@
     <!-- Tentang Kami Page -->
     <url>
         <loc>https://freefirepoint.my.id/pages/more/tentang-kami.html</loc>
-        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <lastmod>2025-01-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
         <image:image>
@@ -89,19 +89,19 @@
     <!-- Informasi: Privacy Policy, Terms, Disclaimer -->
     <url>
         <loc>https://freefirepoint.my.id/pages/informasi/privacy-policy.html</loc>
-        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <lastmod>2025-01-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://freefirepoint.my.id/pages/informasi/terms-of-service.html</loc>
-        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <lastmod>2025-01-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://freefirepoint.my.id/pages/informasi/disclaimer.html</loc>
-        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <lastmod>2025-01-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>

@@ -112,4 +112,5 @@ ErrorDocument 404 /404.html
     AddType image/webp .webp
     AddType application/manifest+json .webmanifest
     AddType text/plain .txt
+    AddType application/xml .xml
 </IfModule>
