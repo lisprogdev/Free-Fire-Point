@@ -1,0 +1,198 @@
+/* Section Fitur - Parallax + Ticker Kiri ke Kanan */
+
+.fitur-section {
+    position: relative;
+    min-height: 420px;
+}
+
+.fitur-parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.fitur-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+        rgba(15, 23, 42, 0.88) 0%,
+        rgba(30, 41, 59, 0.85) 50%,
+        rgba(15, 23, 42, 0.9) 100%);
+    pointer-events: none;
+}
+
+.fitur-section-header {
+    margin-bottom: 2rem;
+}
+
+.fitur-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.75rem;
+    background: rgba(251, 191, 36, 0.15);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+}
+
+.fitur-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.fitur-title-gradient {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.fitur-subtitle {
+    color: #e2e8f0;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    font-weight: 600;
+}
+
+/* Ticker wrapper - overflow hidden + fade edges */
+.fitur-ticker-wrap {
+    overflow: hidden;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.fitur-ticker-wrap::before,
+.fitur-ticker-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.fitur-ticker-wrap::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(15, 23, 42, 0.95), transparent);
+}
+
+.fitur-ticker-wrap::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(15, 23, 42, 0.95), transparent);
+}
+
+/* Track - animasi kiri ke kanan (content bergerak dari kiri ke kanan) */
+.fitur-ticker-track {
+    display: flex;
+    width: max-content;
+    animation: fiturTickerKiriKanan 45s linear infinite;
+    will-change: transform;
+}
+
+.fitur-ticker-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes fiturTickerKiriKanan {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.fitur-ticker-content {
+    display: flex;
+    align-items: stretch;
+    gap: 1.25rem;
+    padding: 0 1rem;
+    flex-shrink: 0;
+}
+
+/* Kartu fitur */
+.fitur-card {
+    flex-shrink: 0;
+    width: 280px;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(51, 65, 85, 0.85));
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    border-radius: 16px;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.fitur-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(251, 191, 36, 0.4);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.fitur-card-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.25), rgba(245, 158, 11, 0.2));
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.fitur-card-icon i {
+    font-size: 1.35rem;
+    color: #fbbf24;
+}
+
+.fitur-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin: 0 0 0.5rem 0;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.fitur-card-desc {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    line-height: 1.45;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .fitur-section {
+        min-height: 380px;
+    }
+
+    .fitur-parallax-bg {
+        background-attachment: scroll;
+    }
+
+    .fitur-card {
+        width: 260px;
+        padding: 1.25rem;
+    }
+
+    .fitur-ticker-wrap::before,
+    .fitur-ticker-wrap::after {
+        width: 40px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fitur-ticker-track {
+        animation: none;
+    }
+}

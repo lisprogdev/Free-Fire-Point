@@ -35,14 +35,40 @@
 .about-characters-column {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    gap: 2rem;
+    justify-content: flex-start;
+    gap: 1.5rem;
 }
 
 @media (min-width: 1024px) {
     .about-characters-column {
-        gap: 2.5rem;
+        gap: 2rem;
     }
+}
+
+/* Kartu isian di atas grid karakter (hilangkan area kosong kanan atas) */
+.about-character-highlight {
+    flex-shrink: 0;
+    padding: 1.25rem 1.5rem;
+}
+
+.about-character-highlight .about-card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-character-highlight .about-card-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Judul di atas grid karakter */
+.about-characters-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin: 0 0 0.75rem 0;
+    display: flex;
+    align-items: center;
 }
 
 /* 4-character grid in About section (index) */
@@ -62,12 +88,27 @@
 .about-character-grid-item .about-character-card {
     min-height: 100%;
     padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .about-character-grid-item .about-character-image {
     max-height: 100%;
     width: auto;
     margin: 0 auto;
+    flex: 1;
+    object-fit: contain;
+}
+
+.about-character-name {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fbbf24;
+    text-align: center;
+    font-family: 'Exo 2', sans-serif;
 }
 
 @media (min-width: 640px) {
@@ -92,6 +133,55 @@
     .about-character-grid-item .about-character-card {
         padding: 1rem;
     }
+}
+
+/* Blok di bawah 4 card foto karakter */
+.about-character-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem !important;
+    flex-shrink: 0;
+}
+
+.about-character-footer-text {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #94a3b8;
+    line-height: 1.55;
+}
+
+.about-character-footer-text strong {
+    color: #e2e8f0;
+}
+
+.about-character-footer-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.about-character-footer-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.15);
+    border: 1px solid rgba(251, 191, 36, 0.35);
+    border-radius: 10px;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.about-character-footer-btn:hover {
+    background: rgba(251, 191, 36, 0.25);
+    border-color: rgba(251, 191, 36, 0.5);
+    color: #fcd34d;
 }
 
 .about-features-column {
