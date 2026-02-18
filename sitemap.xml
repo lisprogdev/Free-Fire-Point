@@ -86,16 +86,24 @@
         </image:image>
     </url>
     
-    <!-- Blog Articles - Panduan Lengkap Kalkulator Free Fire -->
+    <!-- Informasi: Privacy Policy, Terms, Disclaimer -->
     <url>
-        <loc>https://freefirepoint.my.id/pages/blog/panduan-lengkap-kalkulator-free-fire.html</loc>
-        <lastmod>2025-01-29T12:00:00+07:00</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.95</priority>
-        <image:image>
-            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Panduan Lengkap Menggunakan Kalkulator Free Fire Point (2, 3, & 4 Match)</image:title>
-        </image:image>
+        <loc>https://freefirepoint.my.id/pages/informasi/privacy-policy.html</loc>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://freefirepoint.my.id/pages/informasi/terms-of-service.html</loc>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://freefirepoint.my.id/pages/informasi/disclaimer.html</loc>
+        <lastmod>2025-01-11T12:00:00+07:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
     </url>
     
 </urlset>

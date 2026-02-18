@@ -104,6 +104,8 @@
     <link rel="stylesheet" href="../../css/about.css">
     <link rel="stylesheet" href="../../css/page-hero.css">
     <link rel="stylesheet" href="../../css/faq.css">
+    <link rel="stylesheet" href="../../css/cta.css">
+    <link rel="stylesheet" href="../../css/breadcrumb.css">
     <link rel="stylesheet" href="../../css/floating.css">
     <link rel="stylesheet" href="../../css/chat-features.css">
 
@@ -370,6 +372,22 @@
 
             <!-- Main Content Area -->
             <main class="pt-16">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+                            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                <a itemprop="item" href="../../index.html"><span itemprop="name">Beranda</span></a>
+                                <meta itemprop="position" content="1">
+                            </li>
+                            <li class="breadcrumb-sep" aria-hidden="true">/</li>
+                            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                <span itemprop="name" class="breadcrumb-current" aria-current="page">Privacy Policy</span>
+                                <meta itemprop="position" content="2">
+                            </li>
+                        </ol>
+                    </div>
+                </nav>
                 <!-- Page Hero (Brand) -->
                 <section class="page-hero" style="background-image: url('../../images/element/7c971112678f863ef69561f8a38e31c7.jpg');">
                     <div class="page-hero-overlay"></div>
@@ -450,6 +468,21 @@
 
             <!-- Floating Chat Bubbles Container -->
             <div id="floating-chat-bubbles" class="floating-chat-container"></div>
+
+            <!-- CTA Section -->
+            <section class="cta-section" data-aos="fade-up">
+                <div class="cta-inner max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="cta-title">Gunakan Free Fire Point Calculator</h2>
+                    <p class="cta-subtitle">Hitung poin turnamen FF dengan akurat. Pilih kalkulator 2, 3, atau 4 match.</p>
+                    <div class="cta-buttons">
+                        <a href="../../index.html" class="cta-btn cta-btn-primary"><i class="fas fa-home"></i> Beranda</a>
+                        <a href="../Fast Turnamen - 12 Team/2 Match.html" class="cta-btn cta-btn-secondary"><i class="fas fa-calculator"></i> 2 Match</a>
+                        <a href="../Fast Turnamen - 12 Team/3 Match.html" class="cta-btn cta-btn-secondary"><i class="fas fa-calculator"></i> 3 Match</a>
+                        <a href="../Fast Turnamen - 12 Team/4 Match.html" class="cta-btn cta-btn-secondary"><i class="fas fa-calculator"></i> 4 Match</a>
+                        <a href="../../index.html#kontak" class="cta-btn cta-btn-secondary"><i class="fas fa-envelope"></i> Kontak</a>
+                    </div>
+                </div>
+            </section>
 
             <!-- Footer -->
             <footer class="bg-gray-900 border-t border-slate-700/50 py-8">

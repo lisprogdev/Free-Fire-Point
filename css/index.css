@@ -1969,7 +1969,46 @@ html {
     filter: grayscale(0%) contrast(1.2) brightness(1);
 }
 
-/* Contact section background effects */
+/* Contact section - parallax background */
+.contact-section-parallax {
+    position: relative;
+    min-height: 1px;
+}
+
+.contact-parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.contact-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: linear-gradient(135deg,
+        rgba(15, 23, 42, 0.92) 0%,
+        rgba(30, 41, 59, 0.9) 50%,
+        rgba(15, 23, 42, 0.94) 100%);
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .contact-parallax-bg {
+        background-attachment: scroll;
+    }
+}
+
+/* Contact section background effects (fallback when no parallax) */
 .contact-section {
     position: relative;
 }
@@ -1984,6 +2023,7 @@ html {
     background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 20% 80%, rgba(34, 197, 94, 0.1) 0%, transparent 50%);
     pointer-events: none;
+    z-index: 1;
 }
 
 /* Contact form enhancements */
