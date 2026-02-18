@@ -446,6 +446,7 @@
             </div>
         </aside>
 
+    <main class="pt-16">
     <!-- Breadcrumb -->
     <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -952,28 +953,6 @@
         </div>
     </section>
 
-    <!-- Reset Confirmation Modal -->
-    <div id="resetModal" class="modal-overlay fixed inset-0 z-[100] flex items-center justify-center p-4 hidden bg-black/70 backdrop-blur-sm transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="resetModalTitle" onclick="if (event.target === this) closeResetModal()">
-        <div id="resetModalContent" class="modal-content relative max-w-md w-full rounded-2xl p-6 border border-slate-600/50 transition-all duration-300" style="transform: scale(0.95); opacity: 0;" onclick="event.stopPropagation()">
-            <h3 id="resetModalTitle" class="text-xl font-gaming font-bold text-slate-100 mb-2 flex items-center">
-                <i class="fas fa-exclamation-triangle text-red-400 mr-2 animate-pulse"></i>
-                Reset Semua Data?
-            </h3>
-            <p class="text-slate-300 text-sm mb-6">
-                Semua data turnamen (nama tim, rank, kill) akan dihapus permanen. Anda yakin ingin melanjutkan?
-            </p>
-            <div class="flex gap-3 justify-end">
-                <button type="button" onclick="closeResetModal()" class="btn-gaming-nav px-4 py-2 rounded-lg font-gaming-menu text-sm">
-                    Batal
-                </button>
-                <button type="button" onclick="performReset()" class="btn-gaming-nav bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-gaming-menu text-sm">
-                    <i class="fas fa-trash mr-2"></i>
-                    Ya, Reset
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- Google AdSense Multiplex Ad - After FAQ -->
     <section class="py-8 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1017,6 +996,8 @@
             </div>
         </section>
 
+    </main>
+
         <!-- Footer -->
         <footer class="bg-gray-900 border-t border-slate-700/50 py-8">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1040,6 +1021,28 @@
         </footer>
     </div>
     <!-- End Main Content Wrapper -->
+
+    <!-- Reset Confirmation Modal (outside mainContent so it stays on top and not blurred) -->
+    <div id="resetModal" class="modal-overlay fixed inset-0 flex items-center justify-center p-4 hidden bg-black/70 backdrop-blur-sm transition-opacity duration-300" style="z-index: 99999;" role="dialog" aria-modal="true" aria-labelledby="resetModalTitle" onclick="if (event.target === this) closeResetModal()">
+        <div id="resetModalContent" class="modal-content relative max-w-md w-full rounded-2xl p-6 border border-slate-600/50 transition-all duration-300" style="transform: scale(0.95); opacity: 0;" onclick="event.stopPropagation()">
+            <h3 id="resetModalTitle" class="text-xl font-gaming font-bold text-slate-100 mb-2 flex items-center">
+                <i class="fas fa-exclamation-triangle text-red-400 mr-2 animate-pulse"></i>
+                Reset Semua Data?
+            </h3>
+            <p class="text-slate-300 text-sm mb-6">
+                Semua data turnamen (nama tim, rank, kill) akan dihapus permanen. Anda yakin ingin melanjutkan?
+            </p>
+            <div class="flex gap-3 justify-end">
+                <button type="button" onclick="closeResetModal()" class="btn-gaming-nav px-4 py-2 rounded-lg font-gaming-menu text-sm">
+                    Batal
+                </button>
+                <button type="button" onclick="performReset()" class="btn-gaming-nav bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-gaming-menu text-sm">
+                    <i class="fas fa-trash mr-2"></i>
+                    Ya, Reset
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- AOS JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
