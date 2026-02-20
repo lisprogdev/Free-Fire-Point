@@ -114,6 +114,7 @@
     <link rel="stylesheet" href="css/cta.css">
     <link rel="stylesheet" href="css/breadcrumb.css">
     <link rel="stylesheet" href="css/chat-features.css">
+    <link rel="stylesheet" href="css/welcome-modal.css">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5J9WWT57D"></script>
@@ -1603,6 +1604,42 @@
     </div>
     <!-- End Main Content Wrapper -->
 
+    <!-- Welcome Modal: Donasi & Bergabung Channel (muncul setiap kunjungan) -->
+    <div id="welcomeModal" role="dialog" aria-modal="true" aria-labelledby="welcomeModalTitle" aria-describedby="welcomeModalDesc">
+        <div class="welcome-modal-backdrop" id="welcomeModalBackdrop"></div>
+        <div class="welcome-modal-box">
+            <button type="button" class="welcome-modal-close-x" id="welcomeModalCloseX" aria-label="Tutup">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="welcome-modal-inner">
+                <div class="welcome-modal-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h2 id="welcomeModalTitle" class="welcome-modal-title">Dukung & Dapatkan Info Terbaru</h2>
+                <p id="welcomeModalDesc" class="welcome-modal-desc">
+                    Bergabung ke channel <strong class="text-yellow-400/90">TEKNO OGI</strong> di WhatsApp untuk update kalkulator, tips FF, dan info turnamen. Bantu kami tetap gratis dengan donasi.
+                </p>
+                <div class="welcome-modal-actions">
+                    <a href="https://whatsapp.com/channel/0029VbCZBikLdQeXdQJHdH2P" target="_blank" rel="noopener noreferrer" class="welcome-modal-btn welcome-modal-btn-wa">
+                        <i class="fab fa-whatsapp"></i>
+                        Bergabung Channel WhatsApp
+                    </a>
+                    <a href="https://saweria.co/teknoogi" target="_blank" rel="noopener noreferrer" class="welcome-modal-btn welcome-modal-btn-donasi">
+                        <i class="fas fa-heart"></i>
+                        Donasi
+                    </a>
+                    <button type="button" class="welcome-modal-btn welcome-modal-btn-close" id="welcomeModalCloseBtn">
+                        Tutup
+                    </button>
+                </div>
+                <div class="welcome-modal-opt">
+                    <input type="checkbox" id="welcomeModalHideToday" />
+                    <label for="welcomeModalHideToday">Jangan tampilkan lagi hari ini</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- AOS JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
         integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
@@ -1622,6 +1659,54 @@
     <script src="js/usage-ads.js"></script>
     <script src="js/faq.js"></script>
     <script src="js/chat-features.js"></script>
+
+    <!-- Welcome Modal: tampil setiap kunjungan, bisa disembunyikan "hari ini" -->
+    <script>
+    (function() {
+        var KEY = 'welcomeModalHiddenDate';
+        var modal = document.getElementById('welcomeModal');
+        var backdrop = document.getElementById('welcomeModalBackdrop');
+        var closeBtn = document.getElementById('welcomeModalCloseBtn');
+        var closeX = document.getElementById('welcomeModalCloseX');
+        var hideToday = document.getElementById('welcomeModalHideToday');
+
+        function todayStr() {
+            var d = new Date();
+            return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+        }
+
+        function shouldShow() {
+            if (!hideToday || !hideToday.checked) return true;
+            var stored = typeof sessionStorage !== 'undefined' && sessionStorage.getItem(KEY);
+            return stored !== todayStr();
+        }
+
+        function closeModal() {
+            if (modal) modal.classList.remove('show');
+            if (hideToday && hideToday.checked && typeof sessionStorage !== 'undefined') {
+                sessionStorage.setItem(KEY, todayStr());
+            }
+        }
+
+        function openModal() {
+            if (modal && shouldShow()) {
+                setTimeout(function() {
+                    modal.classList.add('show');
+                }, 700);
+            }
+        }
+
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (closeX) closeX.addEventListener('click', closeModal);
+        if (backdrop) backdrop.addEventListener('click', closeModal);
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', openModal);
+        } else {
+            openModal();
+        }
+    })();
+    </script>
 
 </body>
 
