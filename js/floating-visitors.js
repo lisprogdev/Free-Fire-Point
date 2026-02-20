@@ -1,23 +1,24 @@
 /**
  * Floating Visitor Counter
  * Menampilkan total pengunjung; klik untuk breakdown: Hari ini, Minggu ini, Bulan ini, Tahun ini, Semua.
- *
- * Data dari API (backend Anda). GA4 tidak mengizinkan baca data dari browser.
- * Untuk data real dari Google Analytics, buat endpoint (Cloud Function / server) yang memanggil
- * Google Analytics Data API dengan property ID: 502893344 (GA4 property ID).
- *
- * Format response API: { "today": n, "week": n, "month": n, "year": n, "total": n }
+ * Data custom (statis). Set window.FFP_VISITOR_API_URL untuk ambil dari API.
  */
 (function () {
     'use strict';
 
-    var GA_PROPERTY_ID = '502893344';
     var STORAGE_KEY = 'ffp_visitors_cache';
     var CACHE_MINUTES = 10;
 
-    var apiUrl = typeof window.FFP_VISITOR_API_URL !== 'undefined'
-        ? window.FFP_VISITOR_API_URL
-        : (window.location.origin + '/api/visitors.json');
+    // Data custom (tanpa API)
+    var CUSTOM_DATA = {
+        today: 100,
+        week: 2200,
+        month: 5100,
+        year: 6300,
+        total: 15000
+    };
+
+    var apiUrl = typeof window.FFP_VISITOR_API_URL !== 'undefined' ? window.FFP_VISITOR_API_URL : null;
 
     function getCached() {
         try {
@@ -91,38 +92,41 @@
         }
     }
 
-    function fetchData(callback) {
-        var wrap = document.getElementById('floating-visitors-wrap');
-        if (wrap) setLoading(wrap);
-
-        var cached = getCached();
-        if (cached) {
-            renderWidget(cached);
-            if (callback) callback(cached);
-        }
-
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', apiUrl, true);
-        xhr.setRequestHeader('Accept', 'application/json');
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState !== 4) return;
-            var data = null;
-            if (xhr.status === 200) {
-                try {
-                    data = JSON.parse(xhr.responseText || '{}');
-                    setCached(data);
-                } catch (e) {}
+    function loadData(callback) {
+        if (apiUrl) {
+            var wrap = document.getElementById('floating-visitors-wrap');
+            if (wrap) setLoading(wrap);
+            var cached = getCached();
+            if (cached) {
+                renderWidget(cached);
+                if (callback) callback(cached);
             }
-            if (!data) data = getCached() || { today: 0, week: 0, month: 0, year: 0, total: 0 };
-            renderWidget(data);
-            if (callback) callback(data);
-        };
-        xhr.onerror = function () {
-            var data = getCached() || { today: 0, week: 0, month: 0, year: 0, total: 0 };
-            renderWidget(data);
-            if (callback) callback(data);
-        };
-        xhr.send();
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', apiUrl, true);
+            xhr.setRequestHeader('Accept', 'application/json');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState !== 4) return;
+                var data = null;
+                if (xhr.status === 200) {
+                    try {
+                        data = JSON.parse(xhr.responseText || '{}');
+                        setCached(data);
+                    } catch (e) {}
+                }
+                if (!data) data = getCached() || CUSTOM_DATA;
+                renderWidget(data);
+                if (callback) callback(data);
+            };
+            xhr.onerror = function () {
+                var data = getCached() || CUSTOM_DATA;
+                renderWidget(data);
+                if (callback) callback(data);
+            };
+            xhr.send();
+        } else {
+            renderWidget(CUSTOM_DATA);
+            if (callback) callback(CUSTOM_DATA);
+        }
     }
 
     function init() {
@@ -143,7 +147,7 @@
             }
         });
 
-        fetchData();
+        loadData();
     }
 
     if (document.readyState === 'loading') {
