@@ -1,0 +1,169 @@
+/* Floating Visitor Counter - tema project (freefirepoint.my.id) */
+
+#floating-visitors-wrap {
+    position: fixed;
+    left: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 9985;
+    font-family: 'Rajdhani', 'Orbitron', sans-serif;
+}
+
+.floating-visitors-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.875rem;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(251, 191, 36, 0.08);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: #f1f5f9;
+}
+
+.floating-visitors-trigger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35),
+                0 0 0 1px rgba(251, 191, 36, 0.2);
+}
+
+.floating-visitors-trigger:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.4);
+}
+
+.floating-visitors-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.25) 0%, rgba(245, 158, 11, 0.2) 100%);
+    border-radius: 50%;
+    color: #fbbf24;
+    font-size: 0.9rem;
+}
+
+.floating-visitors-total {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #f1f5f9;
+}
+
+.floating-visitors-label {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Panel dropdown */
+.floating-visitors-panel {
+    position: absolute;
+    left: 0;
+    bottom: calc(100% + 0.5rem);
+    width: 220px;
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.98) 0%, rgba(15, 23, 42, 0.99) 100%);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(251, 191, 36, 0.06);
+    padding: 0.75rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+}
+
+#floating-visitors-wrap.is-open .floating-visitors-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.floating-visitors-panel::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 1.5rem;
+    border: 6px solid transparent;
+    border-top-color: rgba(30, 41, 59, 0.98);
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+}
+
+.floating-visitors-panel-title {
+    padding: 0 1rem 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #94a3b8;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+    margin-bottom: 0.5rem;
+}
+
+.floating-visitors-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 1rem;
+    transition: background 0.15s ease;
+}
+
+.floating-visitors-row:hover {
+    background: rgba(251, 191, 36, 0.06);
+}
+
+.floating-visitors-row-label {
+    font-size: 0.875rem;
+    color: #cbd5e1;
+}
+
+.floating-visitors-row-value {
+    font-weight: 700;
+    font-size: 0.9375rem;
+    color: #fbbf24;
+}
+
+.floating-visitors-loading .floating-visitors-row-value,
+.floating-visitors-row-value.loading {
+    color: #64748b;
+}
+
+.floating-visitors-loading .floating-visitors-row-value::after,
+.floating-visitors-row-value.loading::after {
+    content: '...';
+    animation: visitorsDots 1s steps(4, end) infinite;
+}
+
+@keyframes visitorsDots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
+
+@media (max-width: 768px) {
+    #floating-visitors-wrap {
+        left: 0.75rem;
+        bottom: 0.75rem;
+    }
+    .floating-visitors-panel {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-visitors-trigger {
+        padding: 0.4rem 0.65rem;
+    }
+    .floating-visitors-total {
+        font-size: 1rem;
+    }
+    .floating-visitors-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+}

@@ -95,6 +95,7 @@
     <link rel="stylesheet" href="../../css/cta.css">
     <link rel="stylesheet" href="../../css/breadcrumb.css">
     <link rel="stylesheet" href="../../css/floating.css">
+    <link rel="stylesheet" href="../../css/floating-visitors.css">
     <link rel="stylesheet" href="../../css/chat-features.css">
     <link rel="stylesheet" href="../../css/Fast Turnamen - 12 Team/4 Match.css">
 
@@ -1035,6 +1036,14 @@
     </div>
     <!-- End Main Content Wrapper -->
 
+    <div id="floating-visitors-wrap">
+        <button type="button" class="floating-visitors-trigger" aria-label="Lihat jumlah pengunjung">
+            <span class="floating-visitors-icon"><i class="fas fa-users"></i></span>
+            <span><span class="floating-visitors-total">0</span><br><span class="floating-visitors-label">Pengunjung</span></span>
+        </button>
+        <div class="floating-visitors-panel" aria-hidden="true"></div>
+    </div>
+
     <!-- Reset Confirmation Modal (outside mainContent so it stays on top and not blurred) -->
     <div id="resetModal" class="modal-overlay fixed inset-0 flex items-center justify-center p-4 hidden bg-black/70 backdrop-blur-sm transition-opacity duration-300" style="z-index: 99999;" role="dialog" aria-modal="true" aria-labelledby="resetModalTitle" onclick="if (event.target === this) closeResetModal()">
         <div id="resetModalContent" class="modal-content relative max-w-md w-full rounded-2xl p-6 border border-slate-600/50 transition-all duration-300" style="transform: scale(0.95); opacity: 0;" onclick="event.stopPropagation()">
@@ -1072,6 +1081,7 @@
     <script src="../../js/faq.js"></script>
     <script src="../../js/floating.js"></script>
     <script src="../../js/chat-features.js"></script>
+    <script src="../../js/floating-visitors.js"></script>
     <script src="../../js/Fast Turnamen - 12 Team/4 Match.js"></script>
     
     <!-- Debug Script -->

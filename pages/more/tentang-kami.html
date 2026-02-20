@@ -105,6 +105,7 @@
     <link rel="stylesheet" href="../../css/cta.css">
     <link rel="stylesheet" href="../../css/breadcrumb.css">
     <link rel="stylesheet" href="../../css/floating.css">
+    <link rel="stylesheet" href="../../css/floating-visitors.css">
     <link rel="stylesheet" href="../../css/chat-features.css">
 
     <!-- Google tag (gtag.js) -->
@@ -1012,6 +1013,14 @@
         <!-- End Main Content Wrapper -->
     </div>
 
+    <div id="floating-visitors-wrap">
+        <button type="button" class="floating-visitors-trigger" aria-label="Lihat jumlah pengunjung">
+            <span class="floating-visitors-icon"><i class="fas fa-users"></i></span>
+            <span><span class="floating-visitors-total">0</span><br><span class="floating-visitors-label">Pengunjung</span></span>
+        </button>
+        <div class="floating-visitors-panel" aria-hidden="true"></div>
+    </div>
+
     <!-- AOS JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
         integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
@@ -1025,6 +1034,7 @@
     <script src="../../js/faq.js"></script>
     <script src="../../js/floating.js"></script>
     <script src="../../js/chat-features.js"></script>
+    <script src="../../js/floating-visitors.js"></script>
     
     <!-- Initialize AOS -->
     <script>
