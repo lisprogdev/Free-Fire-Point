@@ -30,6 +30,8 @@
     position: relative;
     width: 100%;
     max-width: 420px;
+    max-height: 90vh;
+    overflow-y: auto;
     background: linear-gradient(145deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
     border: 1px solid rgba(148, 163, 184, 0.15);
     border-radius: 1.25rem;
@@ -98,7 +100,53 @@
     color: #94a3b8;
     text-align: center;
     line-height: 1.5;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Gabung komunitas & grup */
+#welcomeModal .welcome-modal-community {
+    margin-bottom: 1.25rem;
+    padding: 1rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 0.75rem;
+}
+
+#welcomeModal .welcome-modal-community-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: #e2e8f0;
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+#welcomeModal .welcome-modal-community-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    transition: color 0.2s, background 0.2s;
+    margin-bottom: 0.5rem;
+}
+
+#welcomeModal .welcome-modal-community-link:last-child {
+    margin-bottom: 0;
+}
+
+#welcomeModal .welcome-modal-community-link:hover {
+    color: #25d366;
+    background: rgba(37, 211, 102, 0.08);
+}
+
+#welcomeModal .welcome-modal-community-link i {
+    color: #25d366;
+    flex-shrink: 0;
 }
 
 /* Buttons */

@@ -97,6 +97,8 @@
     <link rel="stylesheet" href="../../css/floating.css">
     <link rel="stylesheet" href="../../css/floating-visitors.css">
     <link rel="stylesheet" href="../../css/chat-features.css">
+    <link rel="stylesheet" href="../../css/welcome-modal.css">
+    <link rel="stylesheet" href="../../css/tutorial-modal.css">
     <link rel="stylesheet" href="../../css/Fast Turnamen - 12 Team/4 Match.css">
 
     <!-- Google tag (gtag.js) -->
@@ -1066,6 +1068,85 @@
         </div>
     </div>
 
+    <!-- Welcome Modal: Donasi & Komunitas (muncul saat klik Reset / Simpan Semua / Hitung / Download JPG) -->
+    <div id="welcomeModal" role="dialog" aria-modal="true" aria-labelledby="welcomeModalTitle" aria-describedby="welcomeModalDesc">
+        <div class="welcome-modal-backdrop" id="welcomeModalBackdrop"></div>
+        <div class="welcome-modal-box">
+            <button type="button" class="welcome-modal-close-x" id="welcomeModalCloseX" aria-label="Tutup">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="welcome-modal-inner">
+                <div class="welcome-modal-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h2 id="welcomeModalTitle" class="welcome-modal-title">Dukung & Dapatkan Info Terbaru</h2>
+                <p id="welcomeModalDesc" class="welcome-modal-desc">
+                    Bergabung ke channel <strong class="text-yellow-400/90">TEKNO OGI</strong> di WhatsApp untuk update kalkulator, tips FF, dan info turnamen. Bantu kami tetap gratis dengan donasi.
+                </p>
+                <div class="welcome-modal-community">
+                    <h3 class="welcome-modal-community-title">Gabung ke komunitas dan grup</h3>
+                    <a href="https://chat.whatsapp.com/L75xKqHollb8pBjf1Kb0OD" target="_blank" rel="noopener noreferrer" class="welcome-modal-community-link">
+                        <i class="fab fa-whatsapp"></i>
+                        <span><strong>Komunitas Tekno Ogi</strong></span>
+                    </a>
+                    <a href="https://chat.whatsapp.com/L75xKqHollb8pBjf1Kb0OD" target="_blank" rel="noopener noreferrer" class="welcome-modal-community-link">
+                        <i class="fab fa-whatsapp"></i>
+                        <span><strong>Grup Free Fire Point</strong> — obrolin update terbaru. Kalau 30 orang bergabung kita bahas.</span>
+                    </a>
+                </div>
+                <div class="welcome-modal-actions">
+                    <a href="https://whatsapp.com/channel/0029VbCZBikLdQeXdQJHdH2P" target="_blank" rel="noopener noreferrer" class="welcome-modal-btn welcome-modal-btn-wa">
+                        <i class="fab fa-whatsapp"></i>
+                        Bergabung Channel WhatsApp
+                    </a>
+                    <a href="https://saweria.co/teknoogi" target="_blank" rel="noopener noreferrer" class="welcome-modal-btn welcome-modal-btn-donasi">
+                        <i class="fas fa-heart"></i>
+                        Donasi
+                    </a>
+                    <button type="button" class="welcome-modal-btn welcome-modal-btn-close" id="welcomeModalCloseBtn">
+                        Tutup
+                    </button>
+                </div>
+                <div class="welcome-modal-opt">
+                    <input type="checkbox" id="welcomeModalHideToday" />
+                    <label for="welcomeModalHideToday">Jangan tampilkan lagi hari ini</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tutorial Modal: tonton video tutorial (muncul setiap buka halaman) -->
+    <div id="tutorialModal" role="dialog" aria-modal="true" aria-labelledby="tutorialModalTitle">
+        <div class="tutorial-modal-backdrop" id="tutorialModalBackdrop"></div>
+        <div class="tutorial-modal-box">
+            <button type="button" class="tutorial-modal-close-x" id="tutorialModalCloseX" aria-label="Tutup">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="tutorial-modal-inner">
+                <h2 id="tutorialModalTitle" class="tutorial-modal-title">
+                    <i class="fab fa-youtube"></i>
+                    Tonton Tutorial Kalkulator
+                </h2>
+                <div class="tutorial-modal-video-wrap">
+                    <iframe src="https://www.youtube.com/embed/1dadCZLCGaM?rel=0" title="Tutorial Free Fire Point Calculator" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="tutorial-modal-actions">
+                    <a href="https://youtu.be/1dadCZLCGaM" target="_blank" rel="noopener noreferrer" class="tutorial-modal-btn tutorial-modal-btn-close">
+                        <i class="fab fa-youtube"></i>
+                        Buka di YouTube
+                    </a>
+                    <button type="button" class="tutorial-modal-btn tutorial-modal-btn-close" id="tutorialModalCloseBtn">
+                        Tutup
+                    </button>
+                </div>
+                <div class="tutorial-modal-opt">
+                    <input type="checkbox" id="tutorialModalHideToday" />
+                    <label for="tutorialModalHideToday">Jangan tampilkan lagi hari ini</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- AOS JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
         integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
@@ -1084,6 +1165,64 @@
     <script src="../../js/floating-visitors.js"></script>
     <script src="../../js/Fast Turnamen - 12 Team/4 Match.js"></script>
     
+    <!-- Tutorial Modal: tampil setiap buka halaman -->
+    <script>
+    (function() {
+        var KEY = 'tutorialModalHiddenDate';
+        var modal = document.getElementById('tutorialModal');
+        var backdrop = document.getElementById('tutorialModalBackdrop');
+        var closeBtn = document.getElementById('tutorialModalCloseBtn');
+        var closeX = document.getElementById('tutorialModalCloseX');
+        var hideToday = document.getElementById('tutorialModalHideToday');
+        function todayStr() {
+            var d = new Date();
+            return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+        }
+        function shouldShow() {
+            if (!hideToday || !hideToday.checked) return true;
+            var stored = typeof sessionStorage !== 'undefined' && sessionStorage.getItem(KEY);
+            return stored !== todayStr();
+        }
+        function closeTutorialModal() {
+            if (modal) modal.classList.remove('show');
+            if (hideToday && hideToday.checked && typeof sessionStorage !== 'undefined') sessionStorage.setItem(KEY, todayStr());
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            if (closeBtn) closeBtn.addEventListener('click', closeTutorialModal);
+            if (closeX) closeX.addEventListener('click', closeTutorialModal);
+            if (backdrop) backdrop.addEventListener('click', closeTutorialModal);
+            if (modal && shouldShow()) setTimeout(function() { modal.classList.add('show'); }, 600);
+        });
+    })();
+    </script>
+
+    <!-- Welcome Modal: tampil saat klik Reset / Simpan Semua / Hitung / Download JPG -->
+    <script>
+    (function() {
+        function openWelcomeModal() {
+            var m = document.getElementById('welcomeModal');
+            if (m) m.classList.add('show');
+        }
+        function closeWelcomeModal() {
+            var m = document.getElementById('welcomeModal');
+            if (m) m.classList.remove('show');
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById('welcomeModal');
+            var backdrop = document.getElementById('welcomeModalBackdrop');
+            var closeBtn = document.getElementById('welcomeModalCloseBtn');
+            var closeX = document.getElementById('welcomeModalCloseX');
+            if (closeBtn) closeBtn.addEventListener('click', closeWelcomeModal);
+            if (closeX) closeX.addEventListener('click', closeWelcomeModal);
+            if (backdrop) backdrop.addEventListener('click', closeWelcomeModal);
+            ['resetAllData', 'saveAllData', 'calculateResults', 'downloadJPG'].forEach(function(id) {
+                var btn = document.getElementById(id);
+                if (btn) btn.addEventListener('click', function() { setTimeout(openWelcomeModal, 100); });
+            });
+        });
+    })();
+    </script>
+
     <!-- Debug Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {

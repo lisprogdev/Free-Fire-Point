@@ -107,6 +107,7 @@
     <link rel="stylesheet" href="../../css/floating.css">
     <link rel="stylesheet" href="../../css/floating-visitors.css">
     <link rel="stylesheet" href="../../css/chat-features.css">
+    <link rel="stylesheet" href="../../css/tutorial-modal.css">
     <link rel="stylesheet" href="../../css/usage.css">
 
     <!-- Google tag (gtag.js) -->
@@ -1191,6 +1192,38 @@
         <!-- End Main Content Wrapper -->
     </div>
 
+    <!-- Tutorial Modal: tonton video tutorial (muncul setiap buka halaman) -->
+    <div id="tutorialModal" role="dialog" aria-modal="true" aria-labelledby="tutorialModalTitle">
+        <div class="tutorial-modal-backdrop" id="tutorialModalBackdrop"></div>
+        <div class="tutorial-modal-box">
+            <button type="button" class="tutorial-modal-close-x" id="tutorialModalCloseX" aria-label="Tutup">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="tutorial-modal-inner">
+                <h2 id="tutorialModalTitle" class="tutorial-modal-title">
+                    <i class="fab fa-youtube"></i>
+                    Tonton Tutorial Kalkulator
+                </h2>
+                <div class="tutorial-modal-video-wrap">
+                    <iframe src="https://www.youtube.com/embed/1dadCZLCGaM?rel=0" title="Tutorial Free Fire Point Calculator" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="tutorial-modal-actions">
+                    <a href="https://youtu.be/1dadCZLCGaM" target="_blank" rel="noopener noreferrer" class="tutorial-modal-btn tutorial-modal-btn-close">
+                        <i class="fab fa-youtube"></i>
+                        Buka di YouTube
+                    </a>
+                    <button type="button" class="tutorial-modal-btn tutorial-modal-btn-close" id="tutorialModalCloseBtn">
+                        Tutup
+                    </button>
+                </div>
+                <div class="tutorial-modal-opt">
+                    <input type="checkbox" id="tutorialModalHideToday" />
+                    <label for="tutorialModalHideToday">Jangan tampilkan lagi hari ini</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- AOS JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
         integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
@@ -1205,6 +1238,37 @@
     <script src="../../js/cara-penggunaan.js"></script>
     <script src="../../js/usage-ads.js"></script>
     
+    <!-- Tutorial Modal: tampil setiap buka halaman -->
+    <script>
+    (function() {
+        var KEY = 'tutorialModalHiddenDate';
+        var modal = document.getElementById('tutorialModal');
+        var backdrop = document.getElementById('tutorialModalBackdrop');
+        var closeBtn = document.getElementById('tutorialModalCloseBtn');
+        var closeX = document.getElementById('tutorialModalCloseX');
+        var hideToday = document.getElementById('tutorialModalHideToday');
+        function todayStr() {
+            var d = new Date();
+            return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+        }
+        function shouldShow() {
+            if (!hideToday || !hideToday.checked) return true;
+            var stored = typeof sessionStorage !== 'undefined' && sessionStorage.getItem(KEY);
+            return stored !== todayStr();
+        }
+        function closeTutorialModal() {
+            if (modal) modal.classList.remove('show');
+            if (hideToday && hideToday.checked && typeof sessionStorage !== 'undefined') sessionStorage.setItem(KEY, todayStr());
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            if (closeBtn) closeBtn.addEventListener('click', closeTutorialModal);
+            if (closeX) closeX.addEventListener('click', closeTutorialModal);
+            if (backdrop) backdrop.addEventListener('click', closeTutorialModal);
+            if (modal && shouldShow()) setTimeout(function() { modal.classList.add('show'); }, 600);
+        });
+    })();
+    </script>
+
     <!-- Initialize AOS -->
     <script>
         AOS.init({
