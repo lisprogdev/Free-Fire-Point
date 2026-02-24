@@ -565,37 +565,7 @@
     <script src="../../js/floating.js"></script>
     <script src="../../js/chat-features.js"></script>
     <script src="../../js/floating-visitors.js"></script>
-    
-    <!-- Tutorial Modal: tampil setiap buka halaman -->
-    <script>
-    (function() {
-        var KEY = 'tutorialModalHiddenDate';
-        var modal = document.getElementById('tutorialModal');
-        var backdrop = document.getElementById('tutorialModalBackdrop');
-        var closeBtn = document.getElementById('tutorialModalCloseBtn');
-        var closeX = document.getElementById('tutorialModalCloseX');
-        var hideToday = document.getElementById('tutorialModalHideToday');
-        function todayStr() {
-            var d = new Date();
-            return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
-        }
-        function shouldShow() {
-            if (!hideToday || !hideToday.checked) return true;
-            var stored = typeof sessionStorage !== 'undefined' && sessionStorage.getItem(KEY);
-            return stored !== todayStr();
-        }
-        function closeTutorialModal() {
-            if (modal) modal.classList.remove('show');
-            if (hideToday && hideToday.checked && typeof sessionStorage !== 'undefined') sessionStorage.setItem(KEY, todayStr());
-        }
-        document.addEventListener('DOMContentLoaded', function() {
-            if (closeBtn) closeBtn.addEventListener('click', closeTutorialModal);
-            if (closeX) closeX.addEventListener('click', closeTutorialModal);
-            if (backdrop) backdrop.addEventListener('click', closeTutorialModal);
-            if (modal && shouldShow()) setTimeout(function() { modal.classList.add('show'); }, 600);
-        });
-    })();
-    </script>
+    <script src="../../js/tutorial-modal.js"></script>
 
     <!-- Initialize AOS -->
     <script>

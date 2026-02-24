@@ -1143,64 +1143,8 @@
     <script src="../../js/chat-features.js"></script>
     <script src="../../js/floating-visitors.js"></script>
     <script src="../../js/Fast Turnamen - 12 Team/3 match.js"></script>
-    
-    <!-- Tutorial Modal: tampil setiap buka halaman -->
-    <script>
-    (function() {
-        var KEY = 'tutorialModalHiddenDate';
-        var modal = document.getElementById('tutorialModal');
-        var backdrop = document.getElementById('tutorialModalBackdrop');
-        var closeBtn = document.getElementById('tutorialModalCloseBtn');
-        var closeX = document.getElementById('tutorialModalCloseX');
-        var hideToday = document.getElementById('tutorialModalHideToday');
-        function todayStr() {
-            var d = new Date();
-            return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
-        }
-        function shouldShow() {
-            if (!hideToday || !hideToday.checked) return true;
-            var stored = typeof sessionStorage !== 'undefined' && sessionStorage.getItem(KEY);
-            return stored !== todayStr();
-        }
-        function closeTutorialModal() {
-            if (modal) modal.classList.remove('show');
-            if (hideToday && hideToday.checked && typeof sessionStorage !== 'undefined') sessionStorage.setItem(KEY, todayStr());
-        }
-        document.addEventListener('DOMContentLoaded', function() {
-            if (closeBtn) closeBtn.addEventListener('click', closeTutorialModal);
-            if (closeX) closeX.addEventListener('click', closeTutorialModal);
-            if (backdrop) backdrop.addEventListener('click', closeTutorialModal);
-            if (modal && shouldShow()) setTimeout(function() { modal.classList.add('show'); }, 600);
-        });
-    })();
-    </script>
-
-    <!-- Welcome Modal: tampil saat klik Reset / Simpan Semua / Hitung / Download JPG -->
-    <script>
-    (function() {
-        function openWelcomeModal() {
-            var m = document.getElementById('welcomeModal');
-            if (m) m.classList.add('show');
-        }
-        function closeWelcomeModal() {
-            var m = document.getElementById('welcomeModal');
-            if (m) m.classList.remove('show');
-        }
-        document.addEventListener('DOMContentLoaded', function() {
-            var modal = document.getElementById('welcomeModal');
-            var backdrop = document.getElementById('welcomeModalBackdrop');
-            var closeBtn = document.getElementById('welcomeModalCloseBtn');
-            var closeX = document.getElementById('welcomeModalCloseX');
-            if (closeBtn) closeBtn.addEventListener('click', closeWelcomeModal);
-            if (closeX) closeX.addEventListener('click', closeWelcomeModal);
-            if (backdrop) backdrop.addEventListener('click', closeWelcomeModal);
-            ['resetAllData', 'saveAllData', 'calculateResults', 'downloadJPG'].forEach(function(id) {
-                var btn = document.getElementById(id);
-                if (btn) btn.addEventListener('click', function() { setTimeout(openWelcomeModal, 100); });
-            });
-        });
-    })();
-    </script>
+    <script src="../../js/welcome-modal.js"></script>
+    <script src="../../js/tutorial-modal.js"></script>
 
     <!-- Debug Script -->
     <script>
