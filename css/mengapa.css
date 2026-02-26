@@ -181,23 +181,26 @@
 
 @media (max-width: 480px) {
     .mengapa-section-header {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.25rem;
+    }
+    .mengapa-grid {
+        grid-template-columns: 1fr;
     }
     .mengapa-cards {
-        gap: 0.875rem;
+        gap: 0.75rem;
     }
     .mengapa-card {
-        padding: 0.875rem 1rem;
+        padding: 0.75rem 1rem;
     }
     .mengapa-card-icon {
-        width: 36px;
-        height: 36px;
+        width: 34px;
+        height: 34px;
     }
     .mengapa-card-title {
-        font-size: 0.9375rem;
+        font-size: 0.875rem;
     }
     .mengapa-card-desc {
-        font-size: 0.8125rem;
+        font-size: 0.75rem;
     }
     .mengapa-images {
         gap: 0.5rem;
@@ -205,8 +208,26 @@
 }
 
 @media (max-width: 360px) {
+    .mengapa-grid {
+        grid-template-columns: 1fr;
+    }
+    .mengapa-images {
+        grid-template-columns: 1fr;
+    }
     .mengapa-card {
-        padding: 0.75rem 0.875rem;
-        gap: 0.75rem;
+        padding: 0.625rem 0.75rem;
+        gap: 0.625rem;
+    }
+    .mengapa-card-title {
+        font-size: 0.8125rem;
+    }
+    .mengapa-card-desc {
+        font-size: 0.6875rem;
+    }
+    .mengapa-title-gradient {
+        font-size: 1rem;
+    }
+    .mengapa-subtitle {
+        font-size: 0.875rem;
     }
 }

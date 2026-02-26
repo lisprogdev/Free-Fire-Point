@@ -757,23 +757,73 @@
 
 @media (max-width: 480px) {
     .usage-section-header {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.25rem;
     }
     .usage-section-title {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+    }
+    .usage-section-subtitle {
+        font-size: 0.9375rem;
+    }
+    .usage-section-description {
+        font-size: 0.875rem;
+    }
+    .usage-step-title {
+        font-size: 0.9375rem;
+    }
+    .usage-step-description {
+        font-size: 0.8125rem;
     }
     .usage-read-more-btn {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.8125rem;
+        padding: 0.625rem 1.25rem;
+        font-size: 0.75rem;
     }
 }
 
 @media (max-width: 360px) {
+    .usage-section-title {
+        font-size: 1.125rem;
+    }
+    .usage-section-subtitle {
+        font-size: 0.875rem;
+    }
+    .usage-section-description {
+        font-size: 0.8125rem;
+    }
     .usage-step-card,
     .usage-guide-card,
     .usage-tips-card,
     .usage-calculator-card {
-        padding: 1rem;
+        padding: 0.875rem;
+    }
+    .usage-step-number,
+    .usage-calculator-badge {
+        width: 48px;
+        height: 48px;
+        font-size: 1.125rem;
+    }
+    .usage-step-title {
+        font-size: 0.875rem;
+    }
+    .usage-step-description {
+        font-size: 0.75rem;
+    }
+    .usage-read-more-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.6875rem;
+    }
+}
+
+/* Grid vertical on mobile - usage steps */
+@media (max-width: 768px) {
+    .usage-section .grid.lg\:grid-cols-4 {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .usage-section .grid.md\:grid-cols-2 {
+        grid-template-columns: 1fr !important;
     }
 }
 

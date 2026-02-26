@@ -758,13 +758,18 @@ table input[type="number"] {
     
     .kalkulator-section th,
     .kalkulator-section td {
-        padding: 0.4rem 0.2rem;
-        font-size: 0.6875rem;
+        padding: 0.35rem 0.15rem;
+        font-size: 0.625rem;
     }
     
     .alert-container {
         top: 100px;
-        min-width: 240px;
+        min-width: 220px;
+    }
+    
+    .alert {
+        padding: 8px 12px;
+        font-size: 0.6875rem;
     }
 }
 

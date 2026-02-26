@@ -950,7 +950,7 @@
 /* Extra Small Mobile (max-width: 360px) */
 @media (max-width: 360px) {
     .giveaway-banner-section {
-        padding: 2rem 0;
+        padding: 1.75rem 0;
     }
     
     .giveaway-container {
@@ -958,45 +958,64 @@
     }
     
     .giveaway-grid {
-        padding: 1.25rem 0.875rem;
-        gap: 1rem;
+        padding: 1rem 0.75rem;
+        gap: 0.875rem;
+        grid-template-columns: 1fr;
+    }
+    
+    .giveaway-item.giveaway-content-section,
+    .giveaway-item.giveaway-features-section,
+    .giveaway-item.giveaway-cta-section {
+        grid-column: 1 / -1;
     }
     
     .giveaway-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 1.5rem;
-    }
-    
-    .giveaway-icon-glow {
-        width: 65px;
-        height: 65px;
-    }
-    
-    .giveaway-title {
-        font-size: 1.25rem;
-    }
-    
-    .giveaway-description {
-        font-size: 0.8125rem;
-    }
-    
-    .giveaway-pricing {
-        padding: 0.875rem;
-    }
-    
-    .price-free {
+        width: 42px;
+        height: 42px;
         font-size: 1.375rem;
     }
     
+    .giveaway-icon-glow {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .giveaway-title {
+        font-size: 1.125rem;
+    }
+    
+    .giveaway-description {
+        font-size: 0.75rem;
+    }
+    
+    .giveaway-pricing {
+        padding: 0.75rem;
+    }
+    
+    .price-free {
+        font-size: 1.25rem;
+    }
+    
+    .price-strikethrough {
+        font-size: 0.875rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-text {
+        font-size: 0.6875rem;
+    }
+    
     .giveaway-cta-button {
-        padding: 0.75rem 1.25rem;
-        font-size: 0.8125rem;
+        padding: 0.625rem 1rem;
+        font-size: 0.75rem;
     }
     
     .scroll-text-item {
-        font-size: 0.625rem;
-        padding: 0 1.25rem;
+        font-size: 0.5625rem;
+        padding: 0 1rem;
     }
 }
 

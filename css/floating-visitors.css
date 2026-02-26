@@ -167,11 +167,14 @@
 
 @media (max-width: 640px) {
     .floating-visitors-panel {
-        width: 190px;
+        width: 180px;
     }
     .floating-visitors-row-label,
     .floating-visitors-row-value {
-        font-size: 0.8125rem;
+        font-size: 0.75rem;
+    }
+    .floating-visitors-total {
+        font-size: 1rem;
     }
 }
 
@@ -181,37 +184,48 @@
         bottom: 0.5rem;
     }
     .floating-visitors-trigger {
-        padding: 0.4rem 0.65rem;
-    }
-    .floating-visitors-total {
-        font-size: 1rem;
-    }
-    .floating-visitors-icon {
-        width: 28px;
-        height: 28px;
-        font-size: 0.8rem;
-    }
-    .floating-visitors-panel {
-        width: 180px;
-    }
-}
-
-@media (max-width: 360px) {
-    .floating-visitors-trigger {
-        padding: 0.35rem 0.5rem;
+        padding: 0.35rem 0.6rem;
     }
     .floating-visitors-total {
         font-size: 0.9375rem;
+    }
+    .floating-visitors-label {
+        font-size: 0.625rem;
     }
     .floating-visitors-icon {
         width: 26px;
         height: 26px;
         font-size: 0.75rem;
     }
+    .floating-visitors-panel {
+        width: 170px;
+    }
+    .floating-visitors-row-label,
+    .floating-visitors-row-value {
+        font-size: 0.6875rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .floating-visitors-trigger {
+        padding: 0.3rem 0.5rem;
+    }
+    .floating-visitors-total {
+        font-size: 0.875rem;
+    }
+    .floating-visitors-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 0.6875rem;
+    }
     .floating-visitors-label {
-        font-size: 0.625rem;
+        font-size: 0.5625rem;
     }
     .floating-visitors-panel {
-        width: 160px;
+        width: 150px;
+    }
+    .floating-visitors-row-label,
+    .floating-visitors-row-value {
+        font-size: 0.625rem;
     }
 }

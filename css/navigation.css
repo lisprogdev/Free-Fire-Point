@@ -337,7 +337,7 @@ body {
 
 @media (max-width: 480px) {
     .logo-text {
-        font-size: 0.9rem;
+        font-size: 0.8125rem;
     }
     .nav-gaming-bg .h-16 {
         height: 3.5rem;
@@ -350,7 +350,7 @@ body {
 
 @media (max-width: 360px) {
     .logo-text {
-        font-size: 0.8125rem;
+        font-size: 0.75rem;
     }
     .nav-gaming-bg .h-16 {
         height: 3.25rem;
