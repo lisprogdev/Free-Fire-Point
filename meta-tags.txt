@@ -71,9 +71,9 @@
 - kalkulator ff indonesia (280/month)
 
 ## Meta Description Templates (Optimized):
-**Homepage:**
-- "🔥 Free Fire Point Calculator #1 Indonesia! Cara hitung poin turnamen free fire untuk fast turnamen ff 2, 3 & 4 match. Kill point, placement point. Kalkulator poin FF gratis & akurat 2025." ✓ RECOMMENDED
-- "Free Fire Point - Cara hitung poin fast turnamen ff dengan mudah. Kalkulator kill point, placement point, dan strategi BOOYAH terbaru 2025. 100% gratis & akurat!"
+**Homepage (Target: free fire point, free fire point calculator, poin turnamen ff, sistem poin turnamen ff):**
+- "Free Fire Point Calculator gratis! Hitung poin turnamen FF & sistem poin turnamen FF: kill point, placement, BOOYAH. 2, 3, 4 match. 100% akurat, tanpa daftar." ✓ CURRENT
+- "🔥 Free Fire Point Calculator #1 Indonesia! Cara hitung poin turnamen free fire untuk fast turnamen ff 2, 3 & 4 match. Kill point, placement point. Kalkulator poin FF gratis & akurat 2025."
 
 **2 Match Calculator Page:**
 - "🏆 Cara hitung poin turnamen free fire 2 match! Point free fire 2 match fast turnamen ff 2025. Turnamen ff 2 match calculator Indonesia - FF Esport ID akurat 100% gratis!" ✓ RECOMMENDED
@@ -91,9 +91,9 @@
 - "Tentang Kami - Free Fire Point Calculator Indonesia. Kalkulator poin turnamen FF fast turnamen 12 tim. Gratis, akurat, tanpa registrasi."
 
 ## Title Tag Variations (Optimized):
-**Homepage:**
-- "Free Fire Point Calculator Indonesia | Hitung Poin Fast Turnamen FF 2, 3 & 4 Match 2025" ✓ RECOMMENDED
-- "🔥 Free Fire Point - Kalkulator Poin Turnamen FF Gratis Indonesia"
+**Homepage (Target: free fire point my id, free fire point, free fire point calculator, poin turnamen ff):**
+- "Free Fire Point Calculator - Poin Turnamen FF Gratis 2025 | freefirepoint.my.id" ✓ CURRENT
+- "Free Fire Point Calculator Indonesia | Hitung Poin Fast Turnamen FF 2, 3 & 4 Match 2025"
 
 **2 Match Calculator Page:**
 - "Kalkulator Poin Free Fire 2 Match - Fast Turnamen FF Indonesia 2025" ✓ RECOMMENDED
@@ -158,11 +158,20 @@
 8. https://freefirepoint.my.id/pages/informasi/terms-of-service.html
 9. https://freefirepoint.my.id/pages/informasi/disclaimer.html
 
+## E-E-A-T Status (2025-02-25):
+✅ Organization schema
+✅ FAQPage schema (6 FAQ)
+✅ HowTo schema (cara-penggunaan)
+✅ BreadcrumbList schema
+✅ Article schema (cara-penggunaan)
+✅ Author: Tekno Ogi (schema + humans.txt)
+✅ Tentang Kami page lengkap
+✅ Panduan step-by-step
+✅ Lihat EEAT-AUDIT.md untuk detail
+
 ## Next SEO Improvements:
 🔄 Google Search Console - Submit sitemap & monitor
 🔄 Google Analytics 4 integration
 🔄 Blog/content section untuk long-tail keywords
 🔄 Backlink building strategy
-🔄 Social media content calendar
-🔄 Video tutorials (YouTube SEO)
-🔄 Structured data for FAQ & HowTo
+🔄 Video tutorials (YouTube) + embed
