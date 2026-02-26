@@ -171,23 +171,111 @@
     margin: 0;
 }
 
+/* Responsive - All devices */
+@media (max-width: 1024px) {
+    .fitur-section {
+        min-height: 400px;
+    }
+    .fitur-card {
+        width: 270px;
+    }
+}
+
 @media (max-width: 768px) {
     .fitur-section {
         min-height: 380px;
     }
-
     .fitur-parallax-bg {
         background-attachment: scroll;
     }
-
     .fitur-card {
         width: 260px;
         padding: 1.25rem;
     }
-
     .fitur-ticker-wrap::before,
     .fitur-ticker-wrap::after {
         width: 40px;
+    }
+    .fitur-section-header {
+        margin-bottom: 1.5rem;
+    }
+    .fitur-ticker-content {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .fitur-section {
+        min-height: 340px;
+    }
+    .fitur-card {
+        width: 230px;
+        padding: 1rem;
+    }
+    .fitur-card-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    .fitur-card-title {
+        font-size: 0.875rem;
+    }
+    .fitur-card-desc {
+        font-size: 0.75rem;
+    }
+    .fitur-title-gradient {
+        font-size: 1.25rem;
+    }
+    .fitur-subtitle {
+        font-size: 0.8125rem;
+    }
+    .fitur-ticker-wrap::before,
+    .fitur-ticker-wrap::after {
+        width: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fitur-section {
+        min-height: 300px;
+    }
+    .fitur-card {
+        width: 210px;
+        padding: 0.75rem;
+    }
+    .fitur-card-title {
+        font-size: 0.8125rem;
+    }
+    .fitur-card-desc {
+        font-size: 0.6875rem;
+    }
+    .fitur-title-gradient {
+        font-size: 1.125rem;
+    }
+    .fitur-subtitle {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .fitur-section {
+        min-height: 280px;
+    }
+    .fitur-card {
+        width: 190px;
+        padding: 0.625rem;
+    }
+    .fitur-card-title {
+        font-size: 0.75rem;
+    }
+    .fitur-card-desc {
+        font-size: 0.625rem;
+    }
+    .fitur-title-gradient {
+        font-size: 1rem;
+    }
+    .fitur-subtitle {
+        font-size: 0.6875rem;
     }
 }
 

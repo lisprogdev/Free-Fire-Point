@@ -1362,3 +1362,110 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
+
+/* Responsive - Additional breakpoints for all devices */
+@media (max-width: 768px) {
+    .about-section-title {
+        font-size: 1.75rem;
+    }
+    .about-section-description {
+        font-size: 0.9375rem;
+    }
+    .about-card-title {
+        font-size: 1rem;
+    }
+    .about-card-description {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .about-section-header {
+        margin-bottom: 1.75rem;
+    }
+    .about-character-highlight {
+        padding: 1rem 1.25rem;
+    }
+    .about-section-title {
+        font-size: 1.5rem;
+    }
+    .about-section-description {
+        font-size: 0.875rem;
+    }
+    .about-card-title {
+        font-size: 0.9375rem;
+    }
+    .about-card-description {
+        font-size: 0.8125rem;
+    }
+    .about-character-footer-text {
+        font-size: 0.8125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-grid {
+        gap: 1.25rem;
+    }
+    .about-character-footer {
+        padding: 0.875rem 1rem !important;
+    }
+    .about-section-title {
+        font-size: 1.25rem;
+    }
+    .about-section-description {
+        font-size: 0.8125rem;
+    }
+    .about-card-title {
+        font-size: 0.875rem;
+    }
+    .about-card-description {
+        font-size: 0.75rem;
+    }
+    .about-character-highlight .about-card-title {
+        font-size: 0.9375rem;
+    }
+    .about-character-highlight .about-card-description {
+        font-size: 0.8125rem;
+    }
+    .about-characters-title {
+        font-size: 0.9375rem;
+    }
+    .about-character-name {
+        font-size: 0.75rem;
+    }
+    .about-character-footer-text {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .about-characters-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-character-grid-item {
+        min-height: 110px;
+    }
+    .about-character-grid-item .about-character-card {
+        padding: 0.5rem;
+    }
+    .about-character-name {
+        font-size: 0.625rem;
+    }
+    .about-section-title {
+        font-size: 1.125rem;
+    }
+    .about-card-title {
+        font-size: 0.8125rem;
+    }
+    .about-card-description {
+        font-size: 0.6875rem;
+    }
+    .about-character-footer-text {
+        font-size: 0.6875rem;
+    }
+}

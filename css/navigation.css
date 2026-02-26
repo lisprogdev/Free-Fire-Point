@@ -308,32 +308,53 @@ body {
     background: linear-gradient(45deg, var(--ff-accent-hover), #d97706);
 }
 
-/* Responsive Design */
+/* Responsive - All devices */
+@media (max-width: 1024px) {
+    .calculator-dropdown .dropdown-menu {
+        max-height: 20rem;
+    }
+}
+
 @media (max-width: 768px) {
     .logo-text {
         font-size: 1rem;
     }
-    
     .social-icon {
         font-size: 1rem;
     }
-    
     .btn-gaming-nav {
         padding: 0.5rem 1rem;
         font-size: 0.8rem;
     }
-    
+}
+
+@media (max-width: 640px) {
+    .calculator-dropdown .dropdown-menu {
+        width: 92vw !important;
+        max-width: 18rem !important;
+    }
 }
 
 @media (max-width: 480px) {
     .logo-text {
         font-size: 0.9rem;
     }
-    
     .nav-gaming-bg .h-16 {
         height: 3.5rem;
     }
-    
+    .calculator-dropdown .dropdown-menu {
+        width: 95vw !important;
+        max-width: 16rem !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo-text {
+        font-size: 0.8125rem;
+    }
+    .nav-gaming-bg .h-16 {
+        height: 3.25rem;
+    }
 }
 
 /* Smooth scroll behavior & prevent horizontal scrollbar */
@@ -642,23 +663,38 @@ html {
 }
 
 
-/* Responsive Design */
+/* Responsive - All devices */
 @media (max-width: 768px) {
     .modern-sidebar {
         width: 280px;
     }
-    
     .sidebar-header {
         padding: 1.25rem;
     }
-    
     .sidebar-section {
         padding: 0 0.75rem;
     }
-    
     .sidebar-item {
         padding: 0.75rem 0.875rem;
         font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modern-sidebar {
+        width: 100%;
+        max-width: 320px;
+    }
+    .sidebar-item {
+        padding: 0.625rem 0.75rem;
+        font-size: 0.8125rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .modern-sidebar {
+        width: 100%;
+        max-width: 100%;
     }
 }
 

@@ -186,11 +186,61 @@
     background: rgba(148, 163, 184, 0.15);
 }
 
+/* Responsive - All devices */
+@media (max-width: 768px) {
+    #tutorialModal {
+        padding: 0.875rem;
+    }
+    #tutorialModal .tutorial-modal-box {
+        max-width: 95vw;
+    }
+}
+
 @media (max-width: 680px) {
     #tutorialModal .tutorial-modal-inner {
         padding: 1rem 1rem 1.25rem;
     }
     #tutorialModal .tutorial-modal-title {
         font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 640px) {
+    #tutorialModal {
+        padding: 0.75rem;
+    }
+    #tutorialModal .tutorial-modal-inner {
+        padding: 0.875rem 0.875rem 1rem;
+    }
+    #tutorialModal .tutorial-modal-title {
+        font-size: 1.0625rem;
+    }
+    #tutorialModal .tutorial-modal-btn {
+        padding: 0.625rem 1rem;
+        font-size: 0.9375rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #tutorialModal {
+        padding: 0.5rem;
+    }
+    #tutorialModal .tutorial-modal-box {
+        max-height: 95vh;
+    }
+    #tutorialModal .tutorial-modal-inner {
+        padding: 0.75rem 0.75rem 0.875rem;
+    }
+    #tutorialModal .tutorial-modal-title {
+        font-size: 1rem;
+    }
+    #tutorialModal .tutorial-modal-opt label {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 360px) {
+    #tutorialModal .tutorial-modal-inner {
+        padding: 0.625rem 0.625rem 0.75rem;
     }
 }
