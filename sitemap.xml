@@ -1,92 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-    
-    <!-- Main Page - Free Fire Point Calculator -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://freefirepoint.my.id/</loc>
         <lastmod>2025-02-25</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
-        <image:image>
-            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Free Fire Point Calculator Indonesia 2025</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://freefirepoint.my.id/images/Logo/Logo.png</image:loc>
-            <image:title>Logo Free Fire Point Calculator</image:title>
-        </image:image>
     </url>
-
-    <!-- Fast Turnamen 12 Team - 2 Match Calculator -->
     <url>
         <loc>https://freefirepoint.my.id/pages/Fast%20Turnamen%20-%2012%20Team/2%20Match.html</loc>
         <lastmod>2025-02-25</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.98</priority>
-        <image:image>
-            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Cara Hitung Poin Turnamen Free Fire 2 Match</image:title>
-        </image:image>
     </url>
-    
-    <!-- Fast Turnamen 12 Team - 3 Match Calculator -->
     <url>
         <loc>https://freefirepoint.my.id/pages/Fast%20Turnamen%20-%2012%20Team/3%20Match.html</loc>
         <lastmod>2025-02-25</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.98</priority>
-        <image:image>
-            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Cara Hitung Poin Turnamen Free Fire 3 Match</image:title>
-        </image:image>
     </url>
-    
-    <!-- Fast Turnamen 12 Team - 4 Match Calculator -->
     <url>
         <loc>https://freefirepoint.my.id/pages/Fast%20Turnamen%20-%2012%20Team/4%20Match.html</loc>
         <lastmod>2025-02-25</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.98</priority>
-        <image:image>
-            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Cara Hitung Poin Turnamen Free Fire 4 Match</image:title>
-        </image:image>
     </url>
-    
-    <!-- Cara Penggunaan Tutorial Page -->
     <url>
         <loc>https://freefirepoint.my.id/pages/more/cara-penggunaan.html</loc>
         <lastmod>2025-02-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.90</priority>
-        <image:image>
-            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Cara Penggunaan Kalkulator Poin Free Fire - Tutorial Lengkap 2025</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://freefirepoint.my.id/images/Logo/Booyah%20Logo.png</image:loc>
-            <image:title>Tutorial Kalkulator Fast Turnamen FF</image:title>
-        </image:image>
     </url>
-
-    <!-- Tentang Kami Page -->
     <url>
         <loc>https://freefirepoint.my.id/pages/more/tentang-kami.html</loc>
         <lastmod>2025-02-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
-        <image:image>
-            <image:loc>https://freefirepoint.my.id/images/favicon/android-chrome-512x512.png</image:loc>
-            <image:title>Tentang Kami - Free Fire Point Calculator Indonesia</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://freefirepoint.my.id/images/Logo/Logo.png</image:loc>
-            <image:title>Logo Free Fire Point Calculator</image:title>
-        </image:image>
     </url>
-    
-    <!-- Informasi: Privacy Policy, Terms, Disclaimer -->
     <url>
         <loc>https://freefirepoint.my.id/pages/informasi/privacy-policy.html</loc>
         <lastmod>2025-02-25</lastmod>
@@ -105,5 +54,4 @@
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
-    
 </urlset>
