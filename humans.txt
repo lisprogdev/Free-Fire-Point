@@ -37,19 +37,21 @@
     
 # SITE
 
-    Last update: 2025/01/11
+    Last update: 2025/02/25
     Language: Indonesian / Bahasa Indonesia
     Doctype: HTML5
     IDE: Cursor / Visual Studio Code
     Hosting: GitHub Pages
     Domain: freefirepoint.my.id
     Repository: Public
-    Pages: Homepage + 2 Match Calculator + Cara Penggunaan Tutorial (Fully SEO Optimized)
+    Pages: Homepage + 2/3/4 Match Calculator + Cara Penggunaan + Tentang Kami + Info (SEO Optimized)
     
 # KEYWORDS
 
     Primary (Homepage): free fire point, cara hitung poin turnamen free fire, fast turnamen ff
     Primary (2 Match): cara hitung poin turnamen free fire 2 match, point free fire 2 match, fast turnamen ff 2 match
+    Primary (3 Match): kalkulator poin ff 3 match, turnamen ff 3 match
+    Primary (4 Match): kalkulator poin ff 4 match, turnamen ff 4 match
     Primary (Cara Penggunaan): cara penggunaan kalkulator free fire, tutorial kalkulator poin ff, panduan hitung poin turnamen
     Secondary: kalkulator poin ff, free fire point calculator, kill point ff, placement point ff
     Tertiary: sistem poin free fire, booyah point, turnamen free fire, turnamen ff 2 match, cara pakai kalkulator ff
@@ -71,7 +73,7 @@
     
 # FEATURES
 
-    ✓ 2-Match Tournament Calculator
+    ✓ 2, 3 & 4 Match Tournament Calculator
     ✓ Kill Point & Placement Point System
     ✓ Real-time Calculation
     ✓ Data Persistence (IndexedDB)
@@ -80,7 +82,7 @@
     ✓ Interactive FAQ with Accordion
     ✓ Step-by-Step Usage Guide
     ✓ Mobile Responsive Design
-    ✓ SEO Optimized (Homepage + 2 Match + Cara Penggunaan)
+    ✓ SEO Optimized (Homepage + 2/3/4 Match + Cara Penggunaan + Tentang Kami)
     ✓ Fast Loading (GitHub Pages)
     ✓ Free to Use
     

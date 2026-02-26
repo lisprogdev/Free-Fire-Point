@@ -72,8 +72,9 @@
 
 @media (max-width: 480px) {
     .floating-chat-bubble {
-        max-width: 220px;
-        right: 10px;
+        max-width: min(220px, calc(100vw - 1.5rem));
+        right: 0.5rem;
+        left: auto;
         bottom: 70px;
     }
     .floating-chat-bubble-avatar {
@@ -89,14 +90,16 @@
     }
     .floating-chat-bubble-message {
         font-size: 0.625rem;
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
 }
 
 @media (max-width: 360px) {
     .floating-chat-bubble {
-        max-width: calc(100vw - 2rem);
+        max-width: min(200px, calc(100vw - 1.5rem));
         right: 0.5rem;
-        left: 0.5rem;
+        left: auto;
         bottom: 65px;
     }
     .floating-chat-bubble-name {
@@ -104,6 +107,9 @@
     }
     .floating-chat-bubble-message {
         font-size: 0.5625rem;
+        line-height: 1.4;
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
 }
 
