@@ -57,8 +57,8 @@
     let currentIndex = 0;
     let currentBubble = null;
     let isRunning = false;
-    const showDelay = 4000; // 4 seconds between new bubbles
-    const hideDelay = 3500; // 3.5 seconds before hiding current bubble (slight overlap for smooth transition)
+    const showDelay = 12000; // 12 seconds - kurangi gangguan
+    const hideDelay = 3500;
 
     function createBubble(feature) {
         const container = document.getElementById('floating-chat-bubbles');
@@ -160,10 +160,7 @@
     }
 
     function initFloatingChatBubbles() {
-        // Wait a bit before starting to let page load
-        setTimeout(() => {
-            startBubbleAnimation();
-        }, 2000);
+        setTimeout(() => { startBubbleAnimation(); }, 8000); // Delay 8 detik setelah load
     }
 
     // Initialize on DOM ready

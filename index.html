@@ -334,6 +334,7 @@
 </head>
 
 <body class="bg-gray-900 text-slate-100">
+    <a href="#hero" class="skip-link">Lompat ke konten utama</a>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-587Z38W8" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -528,9 +529,21 @@
                             <div class="sidebar-item-icon">
                                 <img src="images/icon/how to use.png" alt="How to Use"
                                     class="w-5 h-5 nav-icon gradient-icon">
-                                        </div>
+                            </div>
                             <span class="sidebar-item-text">Cara Penggunaan</span>
                         </a>
+                        <button class="sidebar-item sidebar-dropdown-toggle" id="sidebar-artikel-trigger">
+                            <div class="sidebar-item-icon"><i class="fas fa-book text-slate-300"></i></div>
+                            <span class="sidebar-item-text">Artikel</span>
+                            <i class="fas fa-chevron-down sidebar-dropdown-arrow ml-auto"></i>
+                        </button>
+                        <div class="sidebar-dropdown" id="sidebar-artikel-dropdown">
+                            <div class="sidebar-dropdown-content">
+                                <a href="pages/more/sistem-poin-ff.html" class="sidebar-dropdown-item"><i class="fas fa-calculator mr-2 text-slate-400"></i> Sistem Poin FF</a>
+                                <a href="pages/more/kill-vs-placement.html" class="sidebar-dropdown-item"><i class="fas fa-balance-scale mr-2 text-slate-400"></i> Kill vs Placement</a>
+                                <a href="pages/more/sejarah-fast-turnamen.html" class="sidebar-dropdown-item"><i class="fas fa-history mr-2 text-slate-400"></i> Sejarah Fast Turnamen</a>
+                            </div>
+                        </div>
                         <a href="#faq" class="sidebar-item" data-section="faq">
                             <div class="sidebar-item-icon">
                                 <i class="fas fa-question-circle text-slate-300"></i>
@@ -1871,7 +1884,7 @@
                     Tonton Tutorial Kalkulator
                 </h2>
                 <div class="tutorial-modal-video-wrap">
-                    <iframe src="https://www.youtube.com/embed/1dadCZLCGaM?rel=0" title="Tutorial Free Fire Point Calculator" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe data-src="https://www.youtube.com/embed/1dadCZLCGaM?rel=0" title="Tutorial Free Fire Point Calculator" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                 </div>
                 <div class="tutorial-modal-actions">
                     <a href="https://youtu.be/1dadCZLCGaM" target="_blank" rel="noopener noreferrer" class="tutorial-modal-btn tutorial-modal-btn-close">

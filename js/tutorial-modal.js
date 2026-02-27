@@ -1,10 +1,10 @@
 /**
- * Tutorial Modal - Tonton video tutorial (muncul setiap buka halaman)
- * Dipakai di: index, 2/3/4 Match, disclaimer, privacy-policy, terms-of-service, cara-penggunaan, tentang-kami
+ * Tutorial Modal - Tonton video tutorial
+ * UX: Hanya tampil sekali per 7 hari, delay 8 detik. Tidak tampil di halaman kalkulator (user fokus hitung).
  */
 (function() {
     'use strict';
-    var KEY = 'tutorialModalHiddenDate';
+    var KEY = 'tutorialModalLastSeen';
     var modal = document.getElementById('tutorialModal');
     if (!modal) return;
 
@@ -12,22 +12,37 @@
     var closeBtn = document.getElementById('tutorialModalCloseBtn');
     var closeX = document.getElementById('tutorialModalCloseX');
     var hideToday = document.getElementById('tutorialModalHideToday');
+    var DAYS_COOLDOWN = 7;
+    var DELAY_MS = 8000;
 
-    function todayStr() {
-        var d = new Date();
-        return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+    function daysSince(str) {
+        if (!str) return 999;
+        var then = new Date(str);
+        var now = new Date();
+        return (now - then) / (24 * 60 * 60 * 1000);
     }
 
     function shouldShow() {
-        if (!hideToday || !hideToday.checked) return true;
-        var stored = typeof sessionStorage !== 'undefined' && sessionStorage.getItem(KEY);
-        return stored !== todayStr();
+        if (document.getElementById('resetAllData')) return false;
+        var stored = localStorage && localStorage.getItem(KEY);
+        return daysSince(stored) >= DAYS_COOLDOWN;
     }
 
     function closeTutorialModal() {
         modal.classList.remove('show');
-        if (hideToday && hideToday.checked && typeof sessionStorage !== 'undefined') {
-            sessionStorage.setItem(KEY, todayStr());
+        if (localStorage) localStorage.setItem(KEY, new Date().toISOString());
+        if (hideToday && hideToday.checked) {
+            var d = new Date();
+            d.setDate(d.getDate() + DAYS_COOLDOWN);
+            if (localStorage) localStorage.setItem(KEY, d.toISOString());
+        }
+    }
+
+    function loadIframeLazy() {
+        var wrap = modal.querySelector('.tutorial-modal-video-wrap');
+        var iframe = wrap && wrap.querySelector('iframe');
+        if (iframe && iframe.dataset.src && !iframe.src) {
+            iframe.src = iframe.dataset.src;
         }
     }
 
@@ -37,8 +52,9 @@
         if (backdrop) backdrop.addEventListener('click', closeTutorialModal);
         if (shouldShow()) {
             setTimeout(function() {
+                loadIframeLazy();
                 modal.classList.add('show');
-            }, 600);
+            }, DELAY_MS);
         }
     }
 

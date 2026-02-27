@@ -301,28 +301,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Sidebar dropdown functionality
-    const sidebarCalculatorTrigger = document.getElementById('sidebar-calculator-trigger');
-    const sidebarCalculatorDropdown = document.getElementById('sidebar-calculator-dropdown');
-    
-    if (sidebarCalculatorTrigger && sidebarCalculatorDropdown) {
-        sidebarCalculatorTrigger.addEventListener('click', function(e) {
-            e.preventDefault();
-            sidebarCalculatorTrigger.classList.toggle('active');
-            sidebarCalculatorDropdown.classList.toggle('active');
-        });
-    }
-    
+    // Sidebar dropdown functionality (calculator, artikel, dll.)
+    document.querySelectorAll('.sidebar-dropdown-toggle').forEach(function(trigger) {
+        var dropdown = trigger.nextElementSibling;
+        if (dropdown && dropdown.classList.contains('sidebar-dropdown')) {
+            trigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                trigger.classList.toggle('active');
+                dropdown.classList.toggle('active');
+            });
+        }
+    });
+
     // Close dropdowns when clicking outside
     document.addEventListener('click', function(event) {
-        if (sidebarCalculatorTrigger && sidebarCalculatorDropdown) {
-            const isClickInside = sidebarCalculatorTrigger.contains(event.target) || 
-                                 sidebarCalculatorDropdown.contains(event.target);
-            if (!isClickInside) {
-                sidebarCalculatorTrigger.classList.remove('active');
-                sidebarCalculatorDropdown.classList.remove('active');
+        document.querySelectorAll('.sidebar-dropdown-toggle').forEach(function(trigger) {
+            var dropdown = trigger.nextElementSibling;
+            if (dropdown && dropdown.classList.contains('sidebar-dropdown')) {
+                var isClickInside = trigger.contains(event.target) || dropdown.contains(event.target);
+                if (!isClickInside) {
+                    trigger.classList.remove('active');
+                    dropdown.classList.remove('active');
+                }
             }
-        }
+        });
     });
     
     // Update active navigation in sidebar
