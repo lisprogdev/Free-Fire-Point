@@ -60,6 +60,9 @@
   position: relative;
   z-index: 2;
   padding: 0.75rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .breadcrumb-nav {
@@ -70,11 +73,13 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 0.35rem 0.5rem;
   margin: 0;
   padding: 0;
   list-style: none;
   font-size: 0.8125rem;
+  text-align: center;
 }
 
 .breadcrumb-list li {

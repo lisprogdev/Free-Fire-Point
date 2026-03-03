@@ -1,0 +1,507 @@
+/* ============================================
+   HERO SECTION - RESPONSIVE (Semua Device)
+   ============================================ */
+
+/* ----- Mobile: judul & deskripsi selalu tampil, section cukup tinggi ----- */
+@media (max-width: 1023px) {
+  .hero-section.hero-decorative {
+    min-height: 185vh; /* cukup tinggi saat hero turun lagi */
+  }
+
+  /* Sembunyikan img slider di mobile */
+  .hero-col-img {
+    display: none !important;
+  }
+
+  .hero-title {
+    display: block;
+    visibility: visible;
+    margin-bottom: 0.5rem;
+    opacity: 1;
+  }
+
+  .hero-desc {
+    display: block;
+    visibility: visible;
+    overflow: visible;
+    max-height: none;
+    margin-top: 0.25rem;
+    opacity: 1;
+    -webkit-line-clamp: unset;
+  }
+}
+
+/* ----- Extra small (320px - 374px) ----- */
+@media (max-width: 374px) {
+  .hero-section.hero-decorative {
+    min-height: 180vh;
+  }
+
+  .hero-content-wrap {
+    top: 5.5rem; /* hero naik di mobile */
+    padding: 1rem 0.75rem;
+  }
+
+  .hero-content-inner {
+    padding: 0 0.75rem;
+  }
+
+  .hero-grid {
+    gap: 1.25rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-desc {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+  }
+
+  .hero-features {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    max-width: 100%;
+  }
+
+  .hero-feature-card {
+    padding: 0.65rem 0.85rem;
+  }
+
+  .hero-feature-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    font-size: 0.8rem;
+  }
+
+  .hero-feature-title {
+    font-size: 0.8125rem;
+  }
+
+  .hero-feature-desc {
+    font-size: 0.6875rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-btn {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .hero-img-wrap {
+    max-width: 100%;
+    margin-top: 2.5rem;
+    padding: 0.75rem;
+  }
+
+  .hero-slider-slides {
+    min-height: 220px;
+    max-height: 320px;
+  }
+
+  .hero-img-slider .slider-nav {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.75rem;
+  }
+
+  .hero-img-slider .slider-prev {
+    left: 0.35rem;
+  }
+
+  .hero-img-slider .slider-next {
+    right: 0.35rem;
+  }
+
+  .hero-slider-indicators {
+    padding: 0.5rem;
+  }
+
+  .hero-img-slider .slider-indicator {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* ----- Small (375px - 479px) ----- */
+@media (min-width: 375px) and (max-width: 479px) {
+  .hero-section.hero-decorative {
+    min-height: 185vh;
+  }
+
+  .hero-content-wrap {
+    top: 6rem; /* hero naik di mobile */
+    padding: 1.25rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.625rem;
+  }
+
+  .hero-desc {
+    font-size: 0.875rem;
+  }
+
+  .hero-features {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .hero-btn {
+    width: 100%;
+  }
+
+  .hero-img-wrap {
+    margin-top: 3rem;
+  }
+
+  .hero-slider-slides {
+    min-height: 240px;
+    max-height: 340px;
+  }
+}
+
+/* ----- Mobile (480px - 639px) ----- */
+@media (min-width: 480px) and (max-width: 639px) {
+  .hero-section.hero-decorative {
+    min-height: 185vh;
+  }
+
+  .hero-content-wrap {
+    top: 6rem; /* hero naik di mobile */
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-grid {
+    gap: 1.75rem;
+  }
+
+  .hero-title {
+    font-size: 1.875rem;
+  }
+
+  .hero-desc {
+    font-size: 0.9rem;
+  }
+
+  .hero-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    max-width: 28rem;
+  }
+
+  .hero-cta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-btn {
+    width: auto;
+  }
+
+  .hero-img-wrap {
+    max-width: 260px;
+    margin-top: 3.5rem;
+  }
+
+  .hero-slider-slides {
+    min-height: 250px;
+    max-height: 360px;
+  }
+}
+
+/* ----- Large mobile / Small tablet (640px - 767px) ----- */
+@media (min-width: 640px) and (max-width: 767px) {
+  .hero-section.hero-decorative {
+    min-height: 185vh;
+  }
+
+  .hero-content-wrap {
+    top: 6rem; /* hero naik di mobile */
+    padding: 1.5rem 1.5rem;
+  }
+
+  .hero-content-inner {
+    padding: 0 1.25rem;
+  }
+
+  .hero-grid {
+    gap: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-desc {
+    font-size: 0.9rem;
+  }
+
+  .hero-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+    max-width: 32rem;
+  }
+
+  .hero-img-wrap {
+    max-width: 280px;
+    margin-top: 4rem;
+  }
+
+  .hero-slider-slides {
+    min-height: 260px;
+    max-height: 380px;
+  }
+}
+
+/* ----- Tablet (768px - 1023px) ----- */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-section.hero-decorative {
+    min-height: 185vh;
+  }
+
+  .hero-content-wrap {
+    top: 6rem; /* hero naik di mobile */
+    padding: 1.5rem 2rem;
+  }
+
+  .hero-content-inner {
+    padding: 0 1.5rem;
+  }
+
+  .hero-grid {
+    gap: 2.25rem;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-desc {
+    font-size: 0.9375rem;
+  }
+
+  .hero-features {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+    max-width: 40rem;
+  }
+
+  .hero-img-wrap {
+    max-width: 300px;
+    margin-top: 4.5rem;
+  }
+
+  .hero-slider-slides {
+    min-height: 280px;
+    max-height: 400px;
+  }
+}
+
+/* ----- Desktop (1024px - 1279px) ----- */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .hero-section.hero-decorative {
+    min-height: 115vh;
+  }
+
+  .hero-content-wrap {
+    top: 4rem;
+    padding: 1.5rem 2rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr minmax(260px, 300px);
+    gap: 2rem 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-features {
+    gap: 0.85rem 0.9rem;
+  }
+
+  .hero-img-wrap {
+    max-width: 300px;
+    margin-top: 5rem;
+  }
+
+  .hero-slider-slides {
+    max-height: 400px;
+  }
+}
+
+/* ----- Large desktop (1280px - 1535px) ----- */
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .hero-section.hero-decorative {
+    min-height: 115vh;
+  }
+
+  .hero-content-inner {
+    max-width: 72rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr minmax(280px, 320px);
+    gap: 2.5rem 3rem;
+  }
+
+  .hero-title {
+    font-size: 2.75rem;
+  }
+
+  .hero-img-wrap {
+    max-width: 320px;
+    margin-top: 5.5rem;
+  }
+
+  .hero-slider-slides {
+    max-height: 420px;
+  }
+}
+
+/* ----- Extra large (1536px+) ----- */
+@media (min-width: 1536px) {
+  .hero-section.hero-decorative {
+    min-height: 115vh;
+  }
+
+  .hero-content-inner {
+    max-width: 80rem;
+    padding: 0 2.5rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1.1fr minmax(300px, 360px);
+    gap: 3rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-desc {
+    font-size: 0.9375rem;
+  }
+
+  .hero-features {
+    gap: 1rem;
+  }
+
+  .hero-img-wrap {
+    max-width: 360px;
+    margin-top: 6rem;
+  }
+
+  .hero-slider-slides {
+    min-height: 280px;
+    max-height: 460px;
+  }
+
+  .hero-img-slider .slider-nav {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .hero-img-slider .slider-prev {
+    left: 0.75rem;
+  }
+
+  .hero-img-slider .slider-next {
+    right: 0.75rem;
+  }
+}
+
+/* ----- Landscape mobile (max-height) ----- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-section.hero-decorative {
+    min-height: 140vh;
+  }
+
+  .hero-content-wrap {
+    top: 5.5rem; /* hero naik di landscape */
+    padding: 1rem;
+  }
+
+  .hero-grid {
+    gap: 1rem;
+  }
+
+  .hero-col {
+    gap: 0.75rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-desc {
+    font-size: 0.8125rem;
+    /* tetap tampil penuh, tidak disembunyikan */
+    max-height: none;
+    overflow: visible;
+    display: block;
+    -webkit-line-clamp: unset;
+  }
+
+  .hero-features {
+    gap: 0.5rem;
+  }
+
+  .hero-feature-card {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .hero-feature-title {
+    font-size: 0.8125rem;
+  }
+
+  .hero-feature-desc {
+    display: none;
+  }
+
+  .hero-img-wrap {
+    margin-top: 1.5rem;
+  }
+
+  .hero-slider-slides {
+    min-height: 180px;
+    max-height: 220px;
+  }
+}
+
+/* ----- Touch device: larger tap targets ----- */
+@media (hover: none) and (pointer: coarse) {
+  .hero-feature-card {
+    min-height: 44px;
+    padding: 0.9rem 1rem;
+  }
+
+  .hero-btn {
+    min-height: 44px;
+    padding: 0.75rem 1.35rem;
+  }
+
+  .hero-img-slider .slider-indicator {
+    width: 10px;
+    height: 10px;
+    padding: 4px;
+  }
+
+  .hero-img-slider .slider-nav {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
