@@ -125,13 +125,16 @@
 /* Kartu fitur */
 .fitur-card {
     flex-shrink: 0;
-    width: 280px;
+    width: 300px;
+    min-height: 200px;
     padding: 1.5rem;
     background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(51, 65, 85, 0.85));
     backdrop-filter: blur(12px);
     border: 1px solid rgba(251, 191, 36, 0.2);
     border-radius: 16px;
     transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .fitur-card:hover {
@@ -160,15 +163,24 @@
     font-size: 1rem;
     font-weight: 700;
     color: #f1f5f9;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.35rem 0;
     font-family: 'Exo 2', sans-serif;
 }
 
+.fitur-card-headline {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #fbbf24;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+}
+
 .fitur-card-desc {
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     color: #94a3b8;
     line-height: 1.45;
     margin: 0;
+    flex: 1;
 }
 
 /* Responsive - All devices */
@@ -177,7 +189,14 @@
         min-height: 400px;
     }
     .fitur-card {
-        width: 270px;
+        width: 285px;
+        min-height: 195px;
+    }
+    .fitur-card-headline {
+        font-size: 0.75rem;
+    }
+    .fitur-card-desc {
+        font-size: 0.78125rem;
     }
 }
 
@@ -189,8 +208,18 @@
         background-attachment: scroll;
     }
     .fitur-card {
-        width: 260px;
+        width: 268px;
+        min-height: 190px;
         padding: 1.25rem;
+    }
+    .fitur-card-title {
+        font-size: 0.9375rem;
+    }
+    .fitur-card-headline {
+        font-size: 0.75rem;
+    }
+    .fitur-card-desc {
+        font-size: 0.75rem;
     }
     .fitur-ticker-wrap::before,
     .fitur-ticker-wrap::after {
@@ -209,7 +238,8 @@
         min-height: 340px;
     }
     .fitur-card {
-        width: 230px;
+        width: 250px;
+        min-height: 180px;
         padding: 1rem;
     }
     .fitur-card-icon {
@@ -220,8 +250,11 @@
     .fitur-card-title {
         font-size: 0.875rem;
     }
+    .fitur-card-headline {
+        font-size: 0.6875rem;
+    }
     .fitur-card-desc {
-        font-size: 0.75rem;
+        font-size: 0.6875rem;
     }
     .fitur-title-gradient {
         font-size: 1.25rem;
@@ -240,14 +273,18 @@
         min-height: 300px;
     }
     .fitur-card {
-        width: 210px;
+        width: 220px;
+        min-height: 175px;
         padding: 0.75rem;
     }
     .fitur-card-title {
         font-size: 0.8125rem;
     }
+    .fitur-card-headline {
+        font-size: 0.625rem;
+    }
     .fitur-card-desc {
-        font-size: 0.6875rem;
+        font-size: 0.625rem;
     }
     .fitur-title-gradient {
         font-size: 1.125rem;
@@ -262,8 +299,12 @@
         min-height: 280px;
     }
     .fitur-card {
-        width: 190px;
+        width: 200px;
+        min-height: 170px;
         padding: 0.625rem;
+    }
+    .fitur-card-headline {
+        font-size: 0.625rem;
     }
     .fitur-card-title {
         font-size: 0.75rem;
