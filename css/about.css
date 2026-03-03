@@ -1,0 +1,316 @@
+/* About Section - Base */
+.about-section {
+    position: relative;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.95) 50%, rgba(26, 26, 46, 0.95) 100%);
+    overflow: hidden;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(251, 191, 36, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(102, 126, 234, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* ========== Tentang Kami Baru: Header + Headline + Kiri Teks | Kanan 4 Grid ========== */
+
+.about-new-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-new-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    background: rgba(251, 191, 36, 0.15);
+    border: 1px solid rgba(251, 191, 36, 0.35);
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+}
+
+.about-new-badge-icon {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    color: #fbbf24;
+}
+
+.about-new-badge-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fbbf24;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.about-new-headline {
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    font-weight: 700;
+    color: #e2e8f0;
+    margin: 0;
+    line-height: 1.3;
+    max-width: 32rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Layout: Kiri teks | Kanan 4 grid */
+.about-new-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+@media (min-width: 1024px) {
+    .about-new-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+}
+
+.about-new-left {
+    min-width: 0;
+}
+
+.about-new-body {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.75) 0%, rgba(51, 65, 85, 0.6) 100%);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 16px;
+    padding: 1.5rem 1.25rem;
+}
+
+@media (min-width: 640px) {
+    .about-new-body {
+        padding: 2rem 1.75rem;
+    }
+}
+
+.about-new-p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin: 0 0 1rem 0;
+}
+
+.about-new-p:last-of-type {
+    margin-bottom: 1.25rem;
+}
+
+.about-new-p strong {
+    color: #fbbf24;
+}
+
+.about-new-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fbbf24;
+    text-decoration: none;
+    transition: color 0.2s, gap 0.2s;
+}
+
+.about-new-link:hover {
+    color: #fcd34d;
+    gap: 0.5rem;
+}
+
+.about-new-link i {
+    font-size: 0.7rem;
+}
+
+.about-new-powered {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.15);
+    font-size: 0.8125rem;
+    color: #94a3b8;
+}
+
+.about-new-powered a {
+    color: #fbbf24;
+    text-decoration: none;
+}
+
+.about-new-powered a:hover {
+    text-decoration: underline;
+}
+
+/* Kanan: 4 gambar grid */
+.about-new-right {
+    min-width: 0;
+}
+
+.about-new-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.about-new-img-item {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.85) 0%, rgba(51, 65, 85, 0.7) 100%);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 14px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.about-new-img-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(251, 191, 36, 0.25);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.about-new-img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    display: block;
+}
+
+.about-new-img-name {
+    margin-top: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #fbbf24;
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .about-new-grid-4 {
+        gap: 1.25rem;
+    }
+    .about-new-img {
+        max-height: 240px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .about-new-grid-4 {
+        gap: 1rem;
+    }
+    .about-new-img {
+        max-height: 220px;
+    }
+}
+
+/* Donasi card (tetap dipakai di bawah) */
+.about-card {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(51, 65, 85, 0.8) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-card:hover {
+    border-color: rgba(251, 191, 36, 0.25);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+.about-card-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+.about-card-icon i {
+    font-size: 1.35rem;
+    color: #1a1a2e;
+}
+
+.about-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fbbf24;
+    margin: 0 0 0.75rem 0;
+}
+
+.about-card-description {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.55;
+    margin: 0 0 1.25rem 0;
+}
+
+.about-donation-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.about-donation-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(251, 191, 36, 0.35);
+}
+
+.about-ads-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Section header (untuk section Panduan / artikel-poin) */
+.about-section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.about-section-badge {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+.about-section-badge-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    background: rgba(251, 191, 36, 0.15);
+    border: 1px solid rgba(251, 191, 36, 0.35);
+    border-radius: 9999px;
+    font-size: 0.8125rem;
+    color: #fbbf24;
+}
+.about-section-title {
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    font-weight: 700;
+    color: #e2e8f0;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.35;
+}
+.about-section-title-gradient {
+    color: #fbbf24;
+}
+.about-section-subtitle {
+    font-size: 0.95em;
+    color: #94a3b8;
+    font-weight: 500;
+}

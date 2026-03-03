@@ -505,3 +505,390 @@
     height: 2.75rem;
   }
 }
+
+/* ============================================
+   ABOUT SECTION (Tentang Kami) - RESPONSIVE ALL DEVICES
+   ============================================ */
+
+/* ----- Extra small (≤374px) ----- */
+@media (max-width: 374px) {
+  .about-section.about-section-new {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .about-new-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-new-badge {
+    padding: 0.3rem 0.65rem;
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .about-new-badge-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  .about-new-badge-text {
+    font-size: 0.6875rem;
+  }
+
+  .about-new-headline {
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+
+  .about-new-layout {
+    gap: 1.5rem;
+  }
+
+  .about-new-body {
+    padding: 1rem 0.9rem;
+    border-radius: 12px;
+  }
+
+  .about-new-p {
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    margin-bottom: 0.85rem;
+  }
+
+  .about-new-link {
+    font-size: 0.8125rem;
+  }
+
+  .about-new-powered {
+    font-size: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 0.85rem;
+  }
+
+  .about-new-grid-4 {
+    gap: 0.65rem;
+  }
+
+  .about-new-img-item {
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+
+  .about-new-img {
+    max-height: 140px;
+  }
+
+  .about-new-img-name {
+    font-size: 0.75rem;
+    margin-top: 0.35rem;
+  }
+
+  .about-card.about-donation-card {
+    padding: 1.25rem 1rem;
+    margin-top: 1.5rem;
+    border-radius: 14px;
+  }
+
+  .about-card.about-donation-card .about-card-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+  }
+
+  .about-card.about-donation-card .about-card-title {
+    font-size: 1rem;
+  }
+
+  .about-card.about-donation-card .about-card-description {
+    font-size: 0.8125rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .about-donation-btn {
+    padding: 0.55rem 1rem;
+    font-size: 0.8125rem;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ----- Small mobile (375px - 479px) ----- */
+@media (min-width: 375px) and (max-width: 479px) {
+  .about-section.about-section-new {
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+  }
+
+  .about-new-header {
+    margin-bottom: 1.75rem;
+  }
+
+  .about-new-headline {
+    font-size: 1.2rem;
+  }
+
+  .about-new-body {
+    padding: 1.25rem 1rem;
+  }
+
+  .about-new-p {
+    font-size: 0.875rem;
+  }
+
+  .about-new-img {
+    max-height: 160px;
+  }
+
+  .about-card.about-donation-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .about-donation-btn {
+    min-height: 44px;
+  }
+}
+
+/* ----- Mobile (480px - 639px) ----- */
+@media (min-width: 480px) and (max-width: 639px) {
+  .about-section.about-section-new {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .about-new-header {
+    margin-bottom: 2rem;
+  }
+
+  .about-new-headline {
+    font-size: 1.35rem;
+  }
+
+  .about-new-layout {
+    gap: 2rem;
+  }
+
+  .about-new-body {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .about-new-grid-4 {
+    gap: 1rem;
+  }
+
+  .about-new-img {
+    max-height: 180px;
+  }
+
+  .about-card.about-donation-card {
+    padding: 1.75rem 1.5rem;
+  }
+}
+
+/* ----- Tablet (640px - 1023px) ----- */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .about-section.about-section-new {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .about-new-header {
+    margin-bottom: 2rem;
+  }
+
+  .about-new-headline {
+    font-size: 1.5rem;
+    max-width: 28rem;
+  }
+
+  .about-new-layout {
+    gap: 2.5rem;
+  }
+
+  .about-new-body {
+    padding: 2rem 1.75rem;
+  }
+
+  .about-new-p {
+    font-size: 0.9375rem;
+  }
+
+  .about-new-grid-4 {
+    gap: 1.25rem;
+  }
+
+  .about-new-img {
+    max-height: 220px;
+  }
+
+  .about-new-img-item:hover {
+    transform: translateY(-3px);
+  }
+
+  .about-card.about-donation-card {
+    padding: 2rem 1.75rem;
+    margin-top: 2.5rem;
+  }
+
+  .about-card.about-donation-card .about-card-description {
+    margin-bottom: 1rem;
+  }
+}
+
+/* ----- Desktop (1024px+) ----- */
+@media (min-width: 1024px) {
+  .about-section.about-section-new {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .about-new-header {
+    margin-bottom: 2.25rem;
+  }
+
+  .about-new-headline {
+    font-size: 1.6rem;
+    max-width: 32rem;
+  }
+
+  .about-new-layout {
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .about-new-body {
+    padding: 2rem 1.75rem;
+  }
+
+  .about-new-grid-4 {
+    gap: 1rem;
+  }
+
+  .about-new-img {
+    max-height: 220px;
+  }
+
+  .about-card.about-donation-card {
+    margin-top: 2.5rem;
+    padding: 2rem 2.25rem;
+  }
+}
+
+/* ----- Large desktop (1280px+) ----- */
+@media (min-width: 1280px) {
+  .about-section.about-section-new .max-w-7xl {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .about-new-headline {
+    font-size: 1.75rem;
+  }
+
+  .about-new-layout {
+    gap: 3.5rem;
+  }
+
+  .about-new-body {
+    padding: 2.25rem 2rem;
+  }
+
+  .about-new-p {
+    font-size: 1rem;
+  }
+
+  .about-new-grid-4 {
+    gap: 1.25rem;
+  }
+
+  .about-new-img {
+    max-height: 240px;
+  }
+
+  .about-card.about-donation-card {
+    padding: 2.25rem 2.5rem;
+  }
+}
+
+/* ----- Extra large (1536px+) ----- */
+@media (min-width: 1536px) {
+  .about-section.about-section-new {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .about-new-headline {
+    font-size: 1.85rem;
+  }
+
+  .about-new-layout {
+    gap: 4rem;
+  }
+
+  .about-new-img {
+    max-height: 260px;
+  }
+}
+
+/* ----- Landscape mobile/tablet (short height) ----- */
+@media (max-width: 1023px) and (orientation: landscape) and (max-height: 500px) {
+  .about-section.about-section-new {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .about-new-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .about-new-badge {
+    margin-bottom: 0.5rem;
+  }
+
+  .about-new-headline {
+    font-size: 1.15rem;
+  }
+
+  .about-new-layout {
+    gap: 1.25rem;
+  }
+
+  .about-new-body {
+    padding: 1rem 1.25rem;
+  }
+
+  .about-new-p {
+    margin-bottom: 0.65rem;
+    font-size: 0.8125rem;
+  }
+
+  .about-new-grid-4 {
+    gap: 0.75rem;
+  }
+
+  .about-new-img {
+    max-height: 140px;
+  }
+
+  .about-card.about-donation-card {
+    margin-top: 1.25rem;
+    padding: 1.25rem 1rem;
+  }
+
+  .about-card.about-donation-card .about-card-description {
+    margin-bottom: 0.65rem;
+  }
+
+  .about-donation-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* ----- Touch: larger tap target donasi ----- */
+@media (hover: none) and (pointer: coarse) {
+  .about-donation-btn {
+    min-height: 44px;
+    padding: 0.75rem 1.5rem;
+  }
+}
