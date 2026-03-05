@@ -483,6 +483,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Show success alert
                 showAlert('Data turnamen berhasil disimpan!', 'success');
                 
+                // Update results table and kill stats when data is saved
+                generateResultsTable();
+                generateKillStats();
+                
             } catch (error) {
                 showAlert('Gagal menyimpan data. Silakan coba lagi.', 'error');
             }
